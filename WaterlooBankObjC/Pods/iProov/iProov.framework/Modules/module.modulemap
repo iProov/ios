@@ -1,0 +1,10 @@
+framework module iProov {
+  umbrella header "iProov-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module iProov.Swift {
+    header "iProov-Swift.h"
+}
