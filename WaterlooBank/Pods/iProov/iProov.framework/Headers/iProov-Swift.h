@@ -145,10 +145,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nu
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)verifyWithServiceProviderWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Nullable)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-+ (void)verifyWithTokenWithEncryptedToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-+ (void)enrolWithServiceProviderWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Null_unspecified)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-+ (void)enrolWithTokenWithEncryptedToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Null_unspecified)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)verifyWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Nullable)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)verifyWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)enrolWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {

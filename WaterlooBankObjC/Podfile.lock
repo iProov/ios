@@ -19,16 +19,15 @@ PODS:
   - Socket.IO-Client-Swift (8.3.0)
 
 DEPENDENCIES:
-  - iProov (from `https://github.com/iProov/iproov-ios-pod.git`, branch `staging`)
+  - iProov (from `https://github.com/iProov/iproov-ios-pod.git`)
 
 EXTERNAL SOURCES:
   iProov:
-    :branch: staging
     :git: https://github.com/iProov/iproov-ios-pod.git
 
 CHECKOUT OPTIONS:
   iProov:
-    :commit: 84fcc28ee9da090a8ea508c09cf43acef841900d
+    :commit: afdfefc157e7bc7ff6d78a3e767af9651b24f88f
     :git: https://github.com/iProov/iproov-ios-pod.git
 
 SPEC CHECKSUMS:
@@ -42,6 +41,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Socket.IO-Client-Swift: 7ad3aded3c0f74d99555e950ac3aa82ca3eefbaf
 
-PODFILE CHECKSUM: d4f1badd76b83f6e6d006ebe3d5cd9422c0ef785
+PODFILE CHECKSUM: c55a9c9dfc37c0a5cd93148d4bb0f1d4543f7221
 
 COCOAPODS: 1.2.0.beta.1

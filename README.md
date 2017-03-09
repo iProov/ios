@@ -250,6 +250,13 @@ When compiling your Swift app you get a Swift Compiler Error:
 
 `‘iProov’ is unavailable: cannot find Swift declaration for this class`
 
+Or, when compiling your Objective-C app, you get a linker command failure:
+
+```
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
 ####Solution
 
 The iProov framework only supports the arm64, armv7s and armv7 architectures, so it only runs on devices, not the iOS Simulator.
