@@ -220,8 +220,8 @@ A description of these cases is as follows:
 * **unknownIdentity** - Some Service Providers will reject invalid usernames.
 * **userPressedBack** - The user voluntarily pressed the back button to end the claim
 * **userPressedHome** - The user voluntarily pressed the device’s home button to send the app to the background.
-* **unsupportedDevice** - The device is not supported, i.e. does not have a front-facing camera. (At present, this error should never be triggered!)
-* **unknownError** - An unknown error has occurred (this should not happen!)
+* **unsupportedDevice** - The device is not supported, i.e. does not have a front-facing camera. At present, this error should never be triggered.
+* **unknownError** - An unknown error has occurred (this should not happen!). If you find this returned please contact support@iproov.com
 
 **_Objective-C:_**
 
