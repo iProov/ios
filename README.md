@@ -7,7 +7,6 @@ iProov is an SDK providing a programmatic interface for embedding the iProov tec
 iProov has been developed as a dynamic iOS framework distributed as a Cocoapod dependency and is supported on iOS 9.0 and above with Xcode 8.0 and above.
 
 The framework has been written in Swift 3.0, and we recommend use of Swift 3.0 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift 3.0 code.
-Contents
 
 The framework package is provided via this repository, which contains the following:-
 
