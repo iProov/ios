@@ -11,7 +11,7 @@ Contents
 
 The framework package is provided via this repository, which contains the following:-
 
-* **README.pdf** -- this document
+* **README.md** -- this document
 * **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious “Waterloo Bank” written in Swift.
 * **WaterlooBankObjC** -- a folder containing an Xcode sample project for “Waterloo Bank” written in Objective-C.
 * **iProov.framework & iProov.podspec** -- these are the files which will be pulled in automatically by Cocoapods. You do not need to do anything with these files.
