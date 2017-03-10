@@ -8,7 +8,7 @@ iProov has been developed as a dynamic iOS framework distributed as a Cocoapod d
 
 The framework has been written in Swift 3.0, and we recommend use of Swift 3.0 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift 3.0 code.
 
-The framework package is provided via this repository, which contains the following:-
+The framework package is provided via this repository, which contains the following:
 
 * **README.md** -- this document
 * **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious “Waterloo Bank” written in Swift.
@@ -89,7 +89,7 @@ Swift: `static func verify(withToken encryptedToken: String, username: String, a
 
 Objective-C: `+ (void)verifyWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;`
 
-You would use this method where you already have the encrypted token for the user you wish to authenticate (you may have already generated this elsewhere and now wish to authenticate the user). The other parameters are exactly the same as verify(withServiceProvider…).
+You would use this method where you already have the encrypted token for the user you wish to authenticate (you may have already generated this elsewhere and now wish to authenticate the user). The other parameters are exactly the same as verify (withServiceProvider…).
 
 After the verification process completes, the framework waits for the result of the authentication process and then calls the completion closure/blocks.
 
@@ -153,9 +153,10 @@ Comparison of iProov.framework launch modes:
 When an iProov native claim completes (whether a verification or enrolment), there are 4 possible results:
 
 * **success** - the user was successfully verified/enrolled, and a token is now provided for this user.
-failure - the user was not successfully verified/enrolled, as their identity could not be verified, or there was another issue with their verification/enrollment, and a reason (as a string) is provided as to why the claim failed.
 
-* **error** - the user was not successfully verified/enrolled due to an error (e.g. no internet connection, etc) along with an iProovError with more information about the error (NSError in Objective-C).
+* **failure** - the user was not successfully verified/enrolled, as their identity could not be verified, or there was another issue with their verification/enrollment, and a reason (as a string) is provided as to why the claim failed.
+
+* **error** - the user was not successfully verified/enrolled due to an error (e.g. lost internet connection, etc) along with an iProovError with more information about the error (NSError in Objective-C).
 
 * **pending** - the user may have been successfully verified/enrolled, but the outcome of the verification/enrolment is not yet known, but will become known at a later point in time. _NOTE: The pending result is not currently returned by the native claim, and may be removed in a future update._
 
@@ -171,7 +172,7 @@ The parameter is as follows:
 
 `token` - The token that was generated for this claim.
 
-SECURITY WARNING: Never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but must always independently validate the token server-side before performing any authenticated user actions.
+SECURITY WARNING: Never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side before performing any authenticated user actions.
 
 ####failure
 
@@ -191,7 +192,7 @@ Objective-C: `(void (^ _Nonnull)(NSError * _Nonnull))error`
 
 The parameter is as follows:
 
-error 		Provides the reason the iProov process failed. This is an IProovError in Swift, and a standard NSError in Objective-C.
+`error` Provides the reason the iProov process failed. This is an IProovError in Swift, and a standard NSError in Objective-C.
 
 **_Swift:_**
 
