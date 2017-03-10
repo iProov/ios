@@ -217,11 +217,11 @@ A description of these cases is as follows:
 * **apiError** - An issue occurred with the API (e.g. timeout, disconnection, etc.). Consult the error associated value (or localizedDescription in Objective-C) for more information.
 * **streamingError** - An error occurred with the video streaming process. Consult the error associated value (or localizedDescription in Objective-C) for more information.
 * **alreadyEnrolled** - During enrolment, a user with this username has already enrolled.
-unknownIdentity	Some Service Providers will reject invalid usernames.
-userPressedBack	The user voluntarily pressed the back button to end the claim
-userPressedHome	The user voluntarily pressed the device’s home button to send the app to the background.
-unsupportedDevice	The device is not supported, i.e. does not have a front-facing camera. (At present, this error should never be triggered!)
-unknownError	An unknown error has occurred (this should not happen!)
+* **unknownIdentity** - Some Service Providers will reject invalid usernames.
+* **userPressedBack** - The user voluntarily pressed the back button to end the claim
+* **userPressedHome** - The user voluntarily pressed the device’s home button to send the app to the background.
+* **unsupportedDevice** - The device is not supported, i.e. does not have a front-facing camera. (At present, this error should never be triggered!)
+* **unknownError** - An unknown error has occurred (this should not happen!)
 
 **_Objective-C:_**
 
