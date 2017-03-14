@@ -18,14 +18,13 @@ The framework package is provided via this repository, which contains the follow
 > NOTE: The framework is only provided for device architectures (we do not provide “fat” binaries with all architectures due to App Store acceptance issues with fat binaries). This means that the framework cannot currently be used in the iOS simulator. If you wish to build your app for the simulator, please contact iProov for i386 and x86_64-compatible framework binaries. (However, since the iOS simulator has no camera, it cannot be used for iProov anyway).
 
 
-
 ##Installation
 
 > NOTE: If you are upgrading from an older version of the iProov SDK, please see the Upgrade Guide in the next section before following these instructions.
 
 1. If you are currently using Swift 2.x, you must first upgrade your app to Swift 3.0 (or above).
 
-NOTE: iProov SDK v5.0 and above is only compatible with Swift 3.0 and above. If you require Support for Swift 2.x, you should continue using iProov v4.x in your app.
+> NOTE: iProov SDK v5.0 and above is only compatible with Swift 3.0 and above. If you require Support for Swift 2.x, you should continue using iProov v4.x in your app.
 
 2. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://cocoapods.org/).)
 
