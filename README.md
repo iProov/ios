@@ -32,7 +32,7 @@ NOTE: iProov SDK v5.0 and above is only compatible with Swift 3.0 and above. If 
 3. Add the following to your Podfile (inside the target section):
 
 ```
-pod 'iProov' :git='https://github.com/iProov/iproov-ios-pod'
+pod 'iProov', :git => 'https://github.com/iProov/iproov-ios-pod.git'
 ```
 
 4. Run `pod install`.
