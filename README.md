@@ -1,6 +1,6 @@
-#iProov iOS SDK (v5.0)
-####Technical Documentation
-####Jonathan Ellis - Last updated 9/3/17
+# iProov iOS SDK (v5.0)
+#### Technical Documentation
+#### Jonathan Ellis - Last updated 9/3/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
@@ -18,7 +18,7 @@ The framework package is provided via this repository, which contains the follow
 > NOTE: The framework is only provided for device architectures (we do not provide “fat” binaries with all architectures due to App Store acceptance issues with fat binaries). This means that the framework cannot currently be used in the iOS simulator. If you wish to build your app for the simulator, please contact iProov for i386 and x86_64-compatible framework binaries. (However, since the iOS simulator has no camera, it cannot be used for iProov anyway).
 
 
-##Installation
+## Installation
 
 > NOTE: If you are upgrading from an older version of the iProov SDK, please see the Upgrade Guide in the next section before following these instructions.
 
@@ -41,7 +41,7 @@ pod 'iProov', :git => 'https://github.com/iProov/iproov-ios-pod.git'
 You can now call one of the iProov methods to either verify an existing user, or enrol a new one.
 
 
-##Upgrade Guide
+## Upgrade Guide
 
 If you are upgrading from a previous version of iProov, please note the following:-
 
@@ -56,7 +56,7 @@ If you are upgrading from a previous version of iProov, please note the followin
 5. The public APIs of iProov have changed, and you will need to update your iProov method calls. Please consult the guide below for the new public iProov methods. The new APIs have been designed to be more Swift 3-like, make better use of Swift language features and conventions, as well as being easier to use. We always try and avoid making breaking API changes, however with the release of Swift 3 and iProov 5.0 we have taken this opportunity to fully modernise our API.
 
 
-##Launch Modes
+## Launch Modes
 
 There are 3 primary ways iProov can be launched for enrolment or verification:
 
@@ -68,9 +68,9 @@ There are 3 primary ways iProov can be launched for enrolment or verification:
 
 You need to ensure you `import iProov` in any Swift file where you use iProov (or `#import <iProov/iProov-Swift.h>` in Objective-C).
 
-###1. Launch from a native framework method call
+### 1. Launch from a native framework method call
 
-####_Verify with Service Provider_
+#### _Verify with Service Provider_
 
 Swift: `static func verify(withServiceProvider serviceProvider: String, username: String?, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
 
@@ -82,7 +82,7 @@ For a given iProov serviceProvider (an API key for a service provider) and a use
 
 After the verification process completes, the framework waits for the result of the authentication process and then calls the completion closure (or in the case of Objective-C, one of the completion blocks depending on the result).
 
-####_Verify with Token_
+#### _Verify with Token_
 
 Swift: `static func verify(withToken encryptedToken: String, username: String, animated: Bool, completion: @escaping ((iProov.Result) ->Void))`
 
@@ -92,7 +92,7 @@ You would use this method where you already have the encrypted token for the use
 
 After the verification process completes, the framework waits for the result of the authentication process and then calls the completion closure/blocks.
 
-####_Enrol with Service Provider_
+#### _Enrol with Service Provider_
 
 Swift: `static func enrol(withServiceProvider serviceProvider: String, username: String!, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
 
@@ -104,7 +104,7 @@ For a given iProov serviceProvider and username, launches an iProov enrolment se
 
 After the enrolment process completes, the framework waits for the result of the authentication process and then calls the completion closure/blocks.
 
-####_Enrol with Token_
+#### _Enrol with Token_
 
 Swift: `static func enrol(withToken encryptedToken: String, username: String!, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
 
@@ -114,7 +114,7 @@ You would use this method where you already have the encrypted token for the use
 
 After the enrolment process completes, the framework waits for the result of the authentication process and then calls one of the completion closure/blocks.
 
-###2. Launch with URL
+### 2. Launch with URL
 
 Swift: `static func launch(withURL url: URL)`
 
@@ -126,7 +126,7 @@ The method takes an iproov:// url and launches an iProov session based on it.
 
 After the capture process completes, the framework brings the browser back to the foreground, where the authentication process completes within the browser.
 
-###3. Launch with Notification
+### 3. Launch with Notification
 
 Swift: `static func launch(withNotification notification: [AnyHashable : Any])`
 
@@ -146,8 +146,9 @@ Comparison of iProov.framework launch modes:
 |-------------|--------|----------------|-----------------|
 | Native | Host application | In app | Callback
 | URL | URL | In browser | None
-| Push | APNS notification | In app | Dialog
-##Completion Callbacks
+| Push | APNS notification | In app | Dialog
+
+## Completion Callbacks
 
 When an iProov native claim completes (whether a verification or enrolment), there are 4 possible results:
 
@@ -161,7 +162,7 @@ When an iProov native claim completes (whether a verification or enrolment), the
 
 In Swift apps, the result is provided as an enum with associated values in the completion closure. In Objective-C apps, the result is provided via 3 separate callbacks (pending is not handled).
 
-####success
+#### success
 
 Swift: `case success(token: String)`
 
@@ -173,7 +174,7 @@ The parameter is as follows:
 
 SECURITY WARNING: Never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side before performing any authenticated user actions.
 
-####failure
+#### failure
 
 Swift: `case failure(reason: String)`
 
@@ -183,7 +184,7 @@ The parameter is as follows:
 
 `reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time.
 
-####error
+#### error
 
 Swift: `case error(error: iProov.IProovError)`
 
@@ -241,9 +242,9 @@ typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
 };
 ```
 
-##Troubleshooting
+## Troubleshooting
 
-####Problem
+#### Problem
 
 When compiling your Swift app you get a Swift Compiler Error:
 
@@ -256,7 +257,7 @@ ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
-####Solution
+#### Solution
 
 The iProov framework only supports the arm64, armv7s and armv7 architectures, so it only runs on devices, not the iOS Simulator.
 
