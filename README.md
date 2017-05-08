@@ -1,4 +1,4 @@
-# iProov iOS SDK (v5.0)
+# iProov iOS SDK (v5.1)
 #### Technical Documentation
 #### Jonathan Ellis - Last updated 9/3/17
 
@@ -6,7 +6,7 @@ iProov is an SDK providing a programmatic interface for embedding the iProov tec
 
 iProov has been developed as a dynamic iOS framework distributed as a Cocoapod dependency and is supported on iOS 9.0 and above with Xcode 8.0 and above.
 
-The framework has been written in Swift 3.0, and we recommend use of Swift 3.0 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift 3.0 code.
+The framework has been written in Swift 3, and we recommend use of Swift 3 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift 3 code.
 
 The framework package is provided via this repository, which contains the following:
 
@@ -17,14 +17,13 @@ The framework package is provided via this repository, which contains the follow
 
 > NOTE: The framework is only provided for device architectures (we do not provide “fat” binaries with all architectures due to App Store acceptance issues with fat binaries). This means that the framework cannot currently be used in the iOS simulator. If you wish to build your app for the simulator, please contact iProov for i386 and x86_64-compatible framework binaries. (However, since the iOS simulator has no camera, it cannot be used for iProov anyway).
 
-
 ## Installation
 
 > NOTE: If you are upgrading from an older version of the iProov SDK, please see the Upgrade Guide in the next section before following these instructions.
 
-1. If you are currently using Swift 2.x, you must first upgrade your app to Swift 3.0 (or above).
+1. If you are currently using Swift 2.x, you must first upgrade your app to Swift 3.1 (or above).
 
-> NOTE: iProov SDK v5.0 and above is only compatible with Swift 3.0 and above. If you require Support for Swift 2.x, you should continue using iProov v4.x in your app.
+> NOTE: iProov SDK v5.1 and above is only compatible with Swift 3.1 and above. If you require support for Swift 3.0, you should continue using iProov 5.0. If you require support for Swift 2.x, you should continue using iProov v4.x in your app.
 
 2. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://cocoapods.org/).)
 
@@ -47,11 +46,11 @@ If you are upgrading from a previous version of iProov, please note the followin
 
 1. iProov is no longer distributed as a Git submodule, please use Cocoapods instead. Cocoapods allows much easier integration with your project, simpler integration with other libraries, and better distribution and version management.
 
-2. iProov is only compatible with Swift 3.0+ and Objective-C in Xcode 8. Please upgrade your project to Swift 3.0 before upgrading to iProov 5.0.
+2. iProov is only compatible with Swift 3.0+ and Objective-C in Xcode 8. Please upgrade your project to Swift 3.0 before upgrading to iProov 5.x.
 
 3. Before upgrading your project, please remove iProov.framework, GPUImage.framework and SSKeychain.framework from your project, as all dependencies will now be handled automatically by Cocoapods.
 
-4. Please follow the “Installation” steps in the previous chapter to integrate Cocoapods with your project (if you haven’t already) and install iProov 5.0 in your Xcode project.
+4. Please follow the “Installation” steps in the previous chapter to integrate Cocoapods with your project (if you haven’t already) and install iProov 5.x in your Xcode project.
 
 5. The public APIs of iProov have changed, and you will need to update your iProov method calls. Please consult the guide below for the new public iProov methods. The new APIs have been designed to be more Swift 3-like, make better use of Swift language features and conventions, as well as being easier to use. We always try and avoid making breaking API changes, however with the release of Swift 3 and iProov 5.0 we have taken this opportunity to fully modernise our API.
 
@@ -64,7 +63,7 @@ There are 3 primary ways iProov can be launched for enrolment or verification:
 
 * From an iProov URL (e.g. iproov://verify/xxxxxxx) from an iProov IFrame running in the browser (currently only Mobile Safari is supported).
 
-* From an iOS (APNS) push notification. _NOTE: This mode is currently unavailable in v5.0 and will be fixed in a future update._
+* From an iOS (APNS) push notification.
 
 You need to ensure you `import iProov` in any Swift file where you use iProov (or `#import <iProov/iProov-Swift.h>` in Objective-C).
 
@@ -131,8 +130,6 @@ After the capture process completes, the framework brings the browser back to th
 Swift: `static func launch(withNotification notification: [AnyHashable : Any])`
 
 Objective-C: `+ (void)launchWithNotification:(NSDictionary * _Nonnull)notification;`
-
-This mode is currently unavailable in v5.0 and will be fixed in a future update.
 
 You would use this launch mode where you want to launch an iProov session from an incoming push notification, for authenticating with an application or service running on another device (e.g. VPN or PC software).
 
