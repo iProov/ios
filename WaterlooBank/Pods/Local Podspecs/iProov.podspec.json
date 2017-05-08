@@ -1,6 +1,6 @@
 {
   "name": "iProov",
-  "version": "5.1",
+  "version": "5.1.0",
   "summary": "It's never been so simple to authenticate securely",
   "homepage": "https://www.iproov.com/",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/iProov/iproov-ios-pod.git",
-    "tag": "5.1"
+    "tag": "5.1.0"
   },
   "platforms": {
     "ios": "9.0"
