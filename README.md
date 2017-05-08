@@ -1,4 +1,4 @@
-# iProov iOS SDK (v5.1)
+# iProov iOS SDK v5.1
 #### Technical Documentation
 #### Jonathan Ellis - Last updated 9/3/17
 
@@ -46,7 +46,7 @@ If you are upgrading from a previous version of iProov, please note the followin
 
 1. iProov is no longer distributed as a Git submodule, please use Cocoapods instead. Cocoapods allows much easier integration with your project, simpler integration with other libraries, and better distribution and version management.
 
-2. iProov is only compatible with Swift 3.0+ and Objective-C in Xcode 8. Please upgrade your project to Swift 3.0 before upgrading to iProov 5.x.
+2. iProov is only compatible with Swift 3.1+ and Objective-C in Xcode 8. Please upgrade your project to Swift 3.1 before upgrading to iProov 5.x.
 
 3. Before upgrading your project, please remove iProov.framework, GPUImage.framework and SSKeychain.framework from your project, as all dependencies will now be handled automatically by Cocoapods.
 
