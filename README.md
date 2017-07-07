@@ -1,6 +1,6 @@
-# iProov iOS SDK v5.1
+# iProov iOS SDK v5.1.1
 #### Technical Documentation
-#### Jonathan Ellis - Last updated 9/3/17
+#### Jonathan Ellis - Last updated 07/07/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
@@ -105,9 +105,9 @@ After the enrolment process completes, the framework waits for the result of the
 
 #### _Enrol with Token_
 
-Swift: `static func enrol(withToken encryptedToken: String, username: String!, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
+Swift: `static func enrol(withToken encryptedToken: String, username: String!, pod: String!, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
 
-Objective-C: `+ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;`
+Objective-C: `+ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username pod:(NSString * _Nonnull) animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;`
 
 You would use this method where you already have the encrypted token for the user you wish to enrol (you may have already generated this elsewhere and now wish to enrol the user). The other parameters are exactly the same as enrol(withServiceProvider…).
 
