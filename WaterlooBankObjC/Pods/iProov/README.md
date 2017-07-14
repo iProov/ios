@@ -1,6 +1,6 @@
-# iProov iOS SDK v5.1.2
+# iProov iOS SDK v5.2.0
 #### Technical Documentation
-#### Jonathan Ellis - Last updated 07/07/17
+#### Jonathan Ellis - Last updated 14/07/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
@@ -14,8 +14,6 @@ The framework package is provided via this repository, which contains the follow
 * **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious “Waterloo Bank” written in Swift.
 * **WaterlooBankObjC** -- a folder containing an Xcode sample project for “Waterloo Bank” written in Objective-C.
 * **iProov.framework & iProov.podspec** -- these are the files which will be pulled in automatically by Cocoapods. You do not need to do anything with these files.
-
-> NOTE: The framework is only provided for device architectures (we do not provide “fat” binaries with all architectures due to App Store acceptance issues with fat binaries). This means that the framework cannot currently be used in the iOS simulator. If you wish to build your app for the simulator, please contact iProov for i386 and x86_64-compatible framework binaries. (However, since the iOS simulator has no camera, it cannot be used for iProov anyway).
 
 ## Installation
 
@@ -112,6 +110,24 @@ Objective-C: `+ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken usernam
 You would use this method where you already have the encrypted token for the user you wish to enrol (you may have already generated this elsewhere and now wish to enrol the user). The other parameters are exactly the same as enrol(withServiceProvider…).
 
 After the enrolment process completes, the framework waits for the result of the authentication process and then calls one of the completion closure/blocks.
+
+#### New in 5.2: UI Customization Options
+
+The above methods can now be called with an optional UIOptions struct:
+
+```
+  var uiOptions = UIOptions()
+  uiOptions.autoStart = //instead of requiring a user tap, auto-countdown from 3 when face is detected. Default true
+  uiOptions.localeOverride = "en" //overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
+  uiOptions.backgroundTint = UIColor.black //background colour shown after the flashing stops. Default UIColor.black
+  uiOptions.indeterminateSpinner = false //when true, shows an indeterminate upload progress instead of a progress bar. Default false
+  uiOptions.spinnerTint = UIColor.white //only has an effect when setShowIndeterminateSpinner is true. Default UIColor.white
+
+  IProov.verify(withServiceProvider: serviceProvider, username: username, animated: true, uiOptions: uiOptions) { (result) in
+
+    ...
+
+```
 
 ### 2. Launch with URL
 
@@ -238,26 +254,3 @@ typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
   IProovErrorCodeUnknownError = 9999,
 };
 ```
-
-## Troubleshooting
-
-#### Problem
-
-When compiling your Swift app you get a Swift Compiler Error:
-
-`‘iProov’ is unavailable: cannot find Swift declaration for this class`
-
-Or, when compiling your Objective-C app, you get a linker command failure:
-
-```
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-```
-
-#### Solution
-
-The iProov framework only supports the arm64, armv7s and armv7 architectures, so it only runs on devices, not the iOS Simulator.
-
-Please re-build your target for your device, or contact iProov for further information on building simulator targets with the framework embedded.
-
-
