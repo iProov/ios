@@ -155,8 +155,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nu
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (void)registerWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)registerWithDeviceToken:(NSData * _Nonnull)deviceToken;
-+ (void)launchWithURL:(NSURL * _Nonnull)url;
-+ (void)launchWithNotification:(NSDictionary * _Nonnull)notification;
 @end
 
 @class NSError;

@@ -5,7 +5,7 @@ PODS:
   - CocoaAsyncSocket (7.6.1)
   - GPUImage (0.1.7)
   - GZIP (1.2.1)
-  - iProov (5.2.0):
+  - iProov (5.2.1):
     - Alamofire (~> 4.3)
     - AlamofireImage (~> 3.2)
     - CocoaAsyncSocket (~> 7.5)
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   iProov:
-    :commit: 68a131836bf581d6adf65e1cb704229fb5ff1219
+    :commit: c2e4b7ef3c37c35defe8a21b936649f61212914d
     :git: https://github.com/iProov/iproov-ios-pod.git
 
 SPEC CHECKSUMS:
@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   GZIP: 7ee835f989fb3c6ea79005fc90b8fa6af710a70d
-  iProov: 090ce58b9f6821fab8ceedfe88316e9e1992b114
+  iProov: 1d257452e01b6605639543a5c5ee0a8d7f4a143c
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Socket.IO-Client-Swift: a2faffdbde89c63aebc5d631041530c1068b02b8
