@@ -1,6 +1,6 @@
-# iProov iOS SDK v5.2.1
+# iProov iOS SDK v5.2.2
 #### Technical Documentation
-#### Jonathan Ellis - Last updated 14/07/17
+#### Jonathan Ellis - Last updated 18/07/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
@@ -113,17 +113,20 @@ After the enrolment process completes, the framework waits for the result of the
 
 #### New in 5.2: UI Customization Options
 
-The above methods can now be called with an optional UIOptions struct:
+The above methods can now be called with an optional IProovConfig struct:
 
 ```
-  var uiOptions = UIOptions()
-  uiOptions.autoStart = //instead of requiring a user tap, auto-countdown from 3 when face is detected. Default true
-  uiOptions.localeOverride = "en" //overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
-  uiOptions.backgroundTint = UIColor.black //background colour shown after the flashing stops. Default UIColor.black
-  uiOptions.indeterminateSpinner = false //when true, shows an indeterminate upload progress instead of a progress bar. Default false
-  uiOptions.spinnerTint = UIColor.white //only has an effect when setShowIndeterminateSpinner is true. Default UIColor.white
+  var iproovConfig = IProovConfig()
+  iproovConfig.autoStart = true //instead of requiring a user tap, auto-countdown from 3 when face is detected. Default true
+  iproovConfig.localeOverride = "en" //overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
+  iproovConfig.backgroundTint = UIColor.black //background colour shown after the flashing stops. Default UIColor.black
+  iproovConfig.indeterminateSpinner = false //when true, shows an indeterminate upload progress instead of a progress bar. Default false
+  iproovConfig.spinnerTint = UIColor.white //only has an effect when setShowIndeterminateSpinner is true. Default UIColor.white
+  iproovConfig.privacyPolicyDisabled = false //when true, prevents the privacy policy from showing on first IProov. Default false
+  iproovConfig.instructionsDialogDisabled = false //when true, prevents the instructions dialog pop-up from showing. Default false
+  iproovConfig.messageDisabled = false //when true, prevents the "you are about to IProov as <user>" message from showing. Default false
 
-  IProov.verify(withServiceProvider: serviceProvider, username: username, animated: true, uiOptions: uiOptions) { (result) in
+  IProov.verify(withServiceProvider: serviceProvider, username: username, animated: true, iproovConfig: iproovConfig) { (result) in
 
     ...
 
