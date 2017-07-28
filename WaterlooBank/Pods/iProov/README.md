@@ -1,6 +1,6 @@
-# iProov iOS SDK v5.2.3
+# iProov iOS SDK v5.2.4
 #### Technical Documentation
-#### Peter Rocker - Last updated 24/07/17
+#### Peter Rocker - Last updated 28/07/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
