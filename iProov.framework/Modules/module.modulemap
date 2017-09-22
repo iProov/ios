@@ -7,4 +7,5 @@ framework module iProov {
 
 module iProov.Swift {
     header "iProov-Swift.h"
+    requires objc
 }

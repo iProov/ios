@@ -18,4 +18,4 @@ FOUNDATION_EXPORT const unsigned char iProovVersionString[];
 
 #import <AudioToolbox/AudioToolbox.h>
 #import <iProov/Encoder.h>
-#import <iProov/InvertFilter.h>
+#import <iProov/FlashingFilter.h>
