@@ -1,4 +1,4 @@
-# iProov iOS SDK v5.3.1
+# iProov iOS SDK v5.3.2
 #### Technical Documentation
 #### Peter Rocker - Last updated 28/07/17
 
