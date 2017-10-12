@@ -1,6 +1,6 @@
-# iProov iOS SDK v5.3.3
+# iProov iOS SDK v6.0.0
 #### Technical Documentation
-#### Peter Rocker - Last updated 28/07/17
+#### Peter Rocker - Last updated 11/10/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
@@ -208,13 +208,17 @@ SECURITY WARNING: Never use iProov as a local authentication method. You cannot 
 
 #### failure
 
-Swift: `case failure(reason: String)`
+Swift: `case failure(reason: String, feedback: String?))`
 
 Objective-C: `(void (^ _Nonnull)(NSString * _Nonnull))reason`
 
 The parameter is as follows:
 
 `reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time.
+`feedback` - Where available, provides additional feedback on the reason the user could not be verified/enrolled. Some possible values are:
+
+* `ambiguous_outcome`
+* `network_problem`
 
 #### error
 
