@@ -1,6 +1,6 @@
-# iProov iOS SDK v5.2.4
+# iProov iOS SDK v6.0.0
 #### Technical Documentation
-#### Peter Rocker - Last updated 28/07/17
+#### Peter Rocker - Last updated 11/10/17
 
 iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
 
@@ -52,6 +52,9 @@ If you are upgrading from a previous version of iProov, please note the followin
 
 5. The public APIs of iProov have changed, and you will need to update your iProov method calls. Please consult the guide below for the new public iProov methods. The new APIs have been designed to be more Swift 3-like, make better use of Swift language features and conventions, as well as being easier to use. We always try and avoid making breaking API changes, however with the release of Swift 3 and iProov 5.0 we have taken this opportunity to fully modernise our API.
 
+## Important Note: Certificate Pinning
+
+SDK versions 5.3.0 and above now implement certificate pinning by default. This improves the security of SSL transport, but means you will need to release a new build of your application with an updated SDK if the remote certificate ever changes. A new configuration option to disable pinning is now available (see below) if required.
 
 ## Launch Modes
 
@@ -103,15 +106,15 @@ After the enrolment process completes, the framework waits for the result of the
 
 #### _Enrol with Token_
 
-Swift: `static func enrol(withToken encryptedToken: String, username: String!, pod: String!, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
+Swift: `static func enrol(withToken encryptedToken: String, username: String!, animated: Bool, completion: @escaping ((iProov.Result) -> Void))`
 
-Objective-C: `+ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username pod:(NSString * _Nonnull) animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;`
+Objective-C: `+ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;`
 
 You would use this method where you already have the encrypted token for the user you wish to enrol (you may have already generated this elsewhere and now wish to enrol the user). The other parameters are exactly the same as enrol(withServiceProvider…).
 
 After the enrolment process completes, the framework waits for the result of the authentication process and then calls one of the completion closure/blocks.
 
-#### New in 5.2: UI Customization Options
+#### Configuration Options
 
 The above methods can now be called with an optional IProovConfig struct:
 
@@ -125,6 +128,19 @@ The above methods can now be called with an optional IProovConfig struct:
   iproovConfig.privacyPolicyDisabled = false //when true, prevents the privacy policy from showing on first IProov. Default false
   iproovConfig.instructionsDialogDisabled = false //when true, prevents the instructions dialog pop-up from showing. Default false
   iproovConfig.messageDisabled = false //when true, prevents the "you are about to IProov as <user>" message from showing. Default false
+
+  //change the colour of the edge and background for the starting face visualisation, for normal light and low light conditions
+  //NB: for low light colour scheme, please use a background colour sufficiently bright to allow the face to be illuminated for face detection purposes.
+  iproovConfig.startingEdgeColor = UIColor.white
+  iproovConfig.startingBackgroundColor = UIColor.black
+  iproovConfig.lowLightEdgeColor = UIColor.black
+  iproovConfig.lowLightBackgroundColor = UIColor.white
+    
+
+  iproovConfig.disablePinning = false //when true (not recommended), disables certificate pinning to the server. Default false
+  iproovConfig.baseURL = "https://mybackend.com" //change the server base URL. This is an advanced setting - please contact us if you wish to use your own base URL (eg. for proxying requests)
+  iproovConfig.certificateFiles = [Bundle.main.path(forResource: "custom", ofType: "der")!] //optionally supply an array of paths of certificates to be used for pinning. Useful when using your own baseURL or for overriding the built-in certificate pinning for some other reason.
+      //certificates should be generated in DER-encoded X.509 certificate format, eg. with the command $ openssl x509 -in cert.crt -outform der -out cert.der
 
   IProov.verify(withServiceProvider: serviceProvider, username: username, animated: true, iproovConfig: iproovConfig) { (result) in
 
@@ -192,13 +208,17 @@ SECURITY WARNING: Never use iProov as a local authentication method. You cannot 
 
 #### failure
 
-Swift: `case failure(reason: String)`
+Swift: `case failure(reason: String, feedback: String?))`
 
 Objective-C: `(void (^ _Nonnull)(NSString * _Nonnull))reason`
 
 The parameter is as follows:
 
 `reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time.
+`feedback` - Where available, provides additional feedback on the reason the user could not be verified/enrolled. Some possible values are:
+
+* `ambiguous_outcome`
+* `network_problem`
 
 #### error
 

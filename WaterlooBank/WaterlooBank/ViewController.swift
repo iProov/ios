@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.usernameTextField.text = nil
                 
             case let .failure(reason):
-                let alert = UIAlertController(title: "Login failed", message: reason, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login failed", message: reason.reason, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (action) -> Void in
                     self.login(username)
@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             case let .failure(reason):
                 
-                let alert = UIAlertController(title: "Registration failed", message: reason, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Registration failed", message: reason.reason, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (action) -> Void in
                     self.register(username)
