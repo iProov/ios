@@ -19,16 +19,16 @@ PODS:
   - Socket.IO-Client-Swift (9.0.1)
 
 DEPENDENCIES:
-  - iProov (from `https://github.com/iProov/iproov-ios-pod.git`)
+  - iProov (from `https://github.com/iProov/ios.git`)
 
 EXTERNAL SOURCES:
   iProov:
-    :git: https://github.com/iProov/iproov-ios-pod.git
+    :git: https://github.com/iProov/ios.git
 
 CHECKOUT OPTIONS:
   iProov:
-    :commit: 68cc1c8f568d16ea7db4dee3f5660d8ddb37fc50
-    :git: https://github.com/iProov/iproov-ios-pod.git
+    :commit: bf2cbc574468cb39cd6f01f96410a74a806dac97
+    :git: https://github.com/iProov/ios.git
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -41,6 +41,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Socket.IO-Client-Swift: 60b71a684692a312c4aba3ef52f186e0e254e868
 
-PODFILE CHECKSUM: 153ef2f857b7ce6fd8b0a422e8f151b7e9a541b9
+PODFILE CHECKSUM: 7f0b39f8daca2103fcddefe8f47d84adc65b8871
 
 COCOAPODS: 1.3.1

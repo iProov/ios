@@ -6,6 +6,6 @@ target 'WaterlooBank' do
   use_frameworks!
 
   # Pods for WaterlooBank
-  pod 'iProov', :git => 'https://github.com/iProov/iproov-ios-pod.git'
+  pod 'iProov', :git => 'https://github.com/iProov/ios.git'
 
 end

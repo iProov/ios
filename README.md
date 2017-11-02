@@ -28,7 +28,7 @@ The framework package is provided via this repository, which contains the follow
 3. Add the following to your Podfile (inside the target section):
 
 ```
-pod 'iProov', :git => 'https://github.com/iProov/iproov-ios-pod.git'
+pod 'iProov', :git => 'https://github.com/iProov/ios.git'
 ```
 
 4. Run `pod install`.
