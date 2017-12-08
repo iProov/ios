@@ -25,9 +25,25 @@ The framework package is provided via this repository, which contains the follow
 pod 'iProov', :git => 'https://github.com/iProov/ios.git'
 ```
 
-3. Run `pod install`.
+3. Add the following to the end of your **Podfile** (after the last `end`):
 
-4. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+```
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if target.name == 'Socket.IO-Client-Swift'
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+            end
+        end
+    end
+end
+```
+
+This is a workaround to allow some of the iProov dependencies to compile on Swift 3.2 from within a Swift 4 project - we hope to be able to remove this step in a later update.
+
+4. Run `pod install`.
+
+5. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
 You can now call one of the iProov methods to either verify an existing user, or enrol a new one.
 
