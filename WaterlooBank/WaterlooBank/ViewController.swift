@@ -11,7 +11,7 @@ import iProov
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    let serviceProvider = "a73e90cf90e3ede70fd38639ef621f072aca8364"
+    let serviceProvider: String? = nil //TODO: define your API key here
 
     @IBOutlet var usernameTextField: UITextField!
 
@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        if usernameTextField.text!.characters.count == 0 {
+        if usernameTextField.text?.isEmpty != false {
             let alert = UIAlertController(title: "Error", message: "Please enter your username/email to login.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -42,7 +42,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func login(_ username: String) {
         
-        IProov.verify(withServiceProvider: serviceProvider, username: username, animated: true) { (result) in
+        guard serviceProvider != nil else{
+            let alert = UIAlertController(title: "Missing API key", message: "Please edit serviceProvider in ViewController.swift", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        IProov.verify(withServiceProvider: serviceProvider!, username: username, animated: true) { (result) in
             
             switch result {
             case let .success(token):
@@ -76,7 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         
-        if usernameTextField.text!.characters.count == 0 {
+        if usernameTextField.text?.isEmpty != false {
             let alert = UIAlertController(title: "Error", message: "Please enter your username/email to register.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -90,7 +98,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func register(_ username: String) {
         
-        IProov.enrol(withServiceProvider: serviceProvider, username: username, animated: true) { (result) in
+        guard serviceProvider != nil else{
+            let alert = UIAlertController(title: "Missing API key", message: "Please edit serviceProvider in ViewController.swift", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        IProov.enrol(withServiceProvider: serviceProvider!, username: username, animated: true) { (result) in
             
             switch result {
                 

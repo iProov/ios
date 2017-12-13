@@ -554,7 +554,7 @@
 		145B2484CC2597B19EA1428FE64C9F07 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		147BC48B491DAB82D393C319945F06D1 /* GPUImageFalseColorFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageFalseColorFilter.m; path = framework/Source/GPUImageFalseColorFilter.m; sourceTree = "<group>"; };
 		15C1035B8DFF9DC1EFA380F524655802 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		15DA9D15150E4E8AEACF1DFF3F33E6C4 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15DA9D15150E4E8AEACF1DFF3F33E6C4 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DBB1BBCC98A45444DD13140FAD58E3 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		167E8F71E1E0D6E6B4AEECB844406161 /* GPUImageLuminanceRangeFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageLuminanceRangeFilter.h; path = framework/Source/GPUImageLuminanceRangeFilter.h; sourceTree = "<group>"; };
 		1721332E99CA22747D70406F87379820 /* GPUImageAdaptiveThresholdFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageAdaptiveThresholdFilter.m; path = framework/Source/GPUImageAdaptiveThresholdFilter.m; sourceTree = "<group>"; };
@@ -573,7 +573,7 @@
 		1C44C7A976EA6C193659EB2A50ECAE80 /* SocketTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = Source/SocketTypes.swift; sourceTree = "<group>"; };
 		1D6C6781BA897A5DAED5CA0C63BF3189 /* SocketLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketLogger.swift; path = Source/SocketLogger.swift; sourceTree = "<group>"; };
 		1ED95A88B334A30CC6BB33706790C545 /* GPUImageTwoPassTextureSamplingFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageTwoPassTextureSamplingFilter.h; path = framework/Source/GPUImageTwoPassTextureSamplingFilter.h; sourceTree = "<group>"; };
-		1EF07EF8E3EDF1E591BF82C1C88103B3 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
+		1EF07EF8E3EDF1E591BF82C1C88103B3 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
 		1FEE0A04B4A0B90A2333F653BB88BFE0 /* AlamofireImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireImage-prefix.pch"; sourceTree = "<group>"; };
 		20A45557DC96276572E938330D494374 /* GPUImageMovieWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageMovieWriter.m; path = framework/Source/iOS/GPUImageMovieWriter.m; sourceTree = "<group>"; };
 		2136A50131E85411E65F14FA85A5682C /* GPUImageLuminanceThresholdFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageLuminanceThresholdFilter.h; path = framework/Source/GPUImageLuminanceThresholdFilter.h; sourceTree = "<group>"; };
@@ -591,7 +591,7 @@
 		28D55D173C419975A72AEEDCA178E718 /* GPUImageSaturationBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageSaturationBlendFilter.m; path = framework/Source/GPUImageSaturationBlendFilter.m; sourceTree = "<group>"; };
 		28F7FE03B9B8350ECB36510616B7AF2F /* GPUImageOpacityFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageOpacityFilter.m; path = framework/Source/GPUImageOpacityFilter.m; sourceTree = "<group>"; };
 		294C1ED3458671FEA673F8098F97A74E /* GPUImageScreenBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageScreenBlendFilter.m; path = framework/Source/GPUImageScreenBlendFilter.m; sourceTree = "<group>"; };
-		2987E89C3CBDB7CF759DBBD0EBA340F8 /* KeychainAccess.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KeychainAccess.modulemap; sourceTree = "<group>"; };
+		2987E89C3CBDB7CF759DBBD0EBA340F8 /* KeychainAccess.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KeychainAccess.modulemap; sourceTree = "<group>"; };
 		29D81C9F0534B23395380A3840B37187 /* GPUImageTwoInputFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageTwoInputFilter.h; path = framework/Source/GPUImageTwoInputFilter.h; sourceTree = "<group>"; };
 		2A0C8DA379AF24142FAA6A84054DF814 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2A71D592EB0ECE9BDE66155FF09BD3FC /* GPUImageFramebuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageFramebuffer.h; path = framework/Source/GPUImageFramebuffer.h; sourceTree = "<group>"; };
@@ -622,7 +622,7 @@
 		36B42D44FB5A8BEF1AA0F37D320C24BF /* GPUImageFASTCornerDetectionFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageFASTCornerDetectionFilter.h; path = framework/Source/GPUImageFASTCornerDetectionFilter.h; sourceTree = "<group>"; };
 		378D96663F3A123B3167454B971D7A90 /* GPUImagePrewittEdgeDetectionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImagePrewittEdgeDetectionFilter.m; path = framework/Source/GPUImagePrewittEdgeDetectionFilter.m; sourceTree = "<group>"; };
 		37F5409F1B7D1ABE996ED7686A0FE788 /* GPUImagePolarPixellateFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImagePolarPixellateFilter.h; path = framework/Source/GPUImagePolarPixellateFilter.h; sourceTree = "<group>"; };
-		383E3716B68A3ACBC6ED1468EC751B03 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		383E3716B68A3ACBC6ED1468EC751B03 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B741AA0D9C8863876D9F0D9A05EF39 /* KeychainAccess-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-prefix.pch"; sourceTree = "<group>"; };
 		390EFAA89507DF1AFB0F04DEEFAB817A /* GLProgram.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLProgram.m; path = framework/Source/GLProgram.m; sourceTree = "<group>"; };
 		39460EA51318887F58113EE0F957FA9C /* GPUImageLocalBinaryPatternFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageLocalBinaryPatternFilter.h; path = framework/Source/GPUImageLocalBinaryPatternFilter.h; sourceTree = "<group>"; };
@@ -656,19 +656,19 @@
 		4876769717E838F8748810A71A133F5D /* Pods-WaterlooBank-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WaterlooBank-resources.sh"; sourceTree = "<group>"; };
 		48B11EC6A9A8E2410449DE612981C7E1 /* SocketExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketExtensions.swift; path = Source/SocketExtensions.swift; sourceTree = "<group>"; };
 		493D2BC850ACE851A4DAF780A9D35C6B /* GPUImagePolarPixellateFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImagePolarPixellateFilter.m; path = framework/Source/GPUImagePolarPixellateFilter.m; sourceTree = "<group>"; };
-		4978485D67A545859DED9412E49068EB /* GPUImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GPUImage.framework; path = GPUImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4978485D67A545859DED9412E49068EB /* GPUImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GPUImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BE46D25292886EF359CD0B80BA979F /* GPUImageDifferenceBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageDifferenceBlendFilter.m; path = framework/Source/GPUImageDifferenceBlendFilter.m; sourceTree = "<group>"; };
 		4A790ABE267B33DBD0A4B4697055AC73 /* GPUImageDilationFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageDilationFilter.h; path = framework/Source/GPUImageDilationFilter.h; sourceTree = "<group>"; };
 		4B9F23456F4297C720E830924598DD49 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		4C3468EB5AA290BA2AF6F3232305E4D6 /* SocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngine.swift; path = Source/SocketEngine.swift; sourceTree = "<group>"; };
-		4C7E5D2460BF733089AAC30839E98E75 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		4C7E5D2460BF733089AAC30839E98E75 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		4CACDCC578369D381045AD82F3CF2CDA /* KeychainAccess-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-umbrella.h"; sourceTree = "<group>"; };
 		4D3B2994882F9C2532C49BA81ADB76E9 /* GPUImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImage.h; path = framework/Source/GPUImage.h; sourceTree = "<group>"; };
 		4DEEB44F5F9901A1F01C95A4D430E947 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Source/SSLSecurity.swift; sourceTree = "<group>"; };
 		4DF86F8D0D319A5A98AD5054E4137853 /* NSData+GZIP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+GZIP.m"; path = "GZIP/NSData+GZIP.m"; sourceTree = "<group>"; };
 		4E19E2DBA4407728364F255FCD649411 /* iProov.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iProov.framework; sourceTree = "<group>"; };
 		4E35B51240FF9F22C0F790CDB5EFE0F8 /* GPUImageBrightnessFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageBrightnessFilter.m; path = framework/Source/GPUImageBrightnessFilter.m; sourceTree = "<group>"; };
-		4E746BF29306367CD83B73190F3956DF /* GZIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GZIP.framework; path = GZIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E746BF29306367CD83B73190F3956DF /* GZIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GZIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5106A1C276BFD5280B8C43048302A7D5 /* GPUImageHalftoneFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageHalftoneFilter.h; path = framework/Source/GPUImageHalftoneFilter.h; sourceTree = "<group>"; };
 		5196A48F28CFB34A14399E56CB232E82 /* GPUImageDissolveBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageDissolveBlendFilter.m; path = framework/Source/GPUImageDissolveBlendFilter.m; sourceTree = "<group>"; };
 		5221082ABB779E5D079432C0D8C48C73 /* GPUImageRGBDilationFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageRGBDilationFilter.h; path = framework/Source/GPUImageRGBDilationFilter.h; sourceTree = "<group>"; };
@@ -678,7 +678,7 @@
 		551B956D8664D2EF8B2F938A3C0F736E /* GPUImage3x3ConvolutionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImage3x3ConvolutionFilter.m; path = framework/Source/GPUImage3x3ConvolutionFilter.m; sourceTree = "<group>"; };
 		5533A25F2937369A6A577FAE6FE033DE /* GPUImageHoughTransformLineDetector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageHoughTransformLineDetector.h; path = framework/Source/GPUImageHoughTransformLineDetector.h; sourceTree = "<group>"; };
 		562A485D4D6E881DAAB7B06AFC20A018 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+AlamofireImage.swift"; path = "Source/UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
-		56412DB1BD9C35C7189641FDD2001FCD /* GZIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GZIP.modulemap; sourceTree = "<group>"; };
+		56412DB1BD9C35C7189641FDD2001FCD /* GZIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GZIP.modulemap; sourceTree = "<group>"; };
 		57B34F5385EFD20E730DAB1A1200A920 /* GPUImageContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageContext.h; path = framework/Source/iOS/GPUImageContext.h; sourceTree = "<group>"; };
 		5824600C350E5631FD90EB66887E28B8 /* GPUImageGaussianSelectiveBlurFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageGaussianSelectiveBlurFilter.h; path = framework/Source/GPUImageGaussianSelectiveBlurFilter.h; sourceTree = "<group>"; };
 		5AA982B499C9290ED458C9112B8254E4 /* GPUImageLookupFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageLookupFilter.m; path = framework/Source/GPUImageLookupFilter.m; sourceTree = "<group>"; };
@@ -714,7 +714,7 @@
 		708CC25941350F3E7A48282682DD2178 /* GPUImageColorPackingFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageColorPackingFilter.m; path = framework/Source/GPUImageColorPackingFilter.m; sourceTree = "<group>"; };
 		708DD514EBCDCDD0096CC77651EB3054 /* GPUImageLightenBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageLightenBlendFilter.m; path = framework/Source/GPUImageLightenBlendFilter.m; sourceTree = "<group>"; };
 		71439BF4A8BB5C7504F83D9C53DDB7EA /* GPUImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GPUImage.xcconfig; sourceTree = "<group>"; };
-		718D84F16434CA74682089B40C21EB41 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketIO.framework; path = "Socket.IO-Client-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		718D84F16434CA74682089B40C21EB41 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D75805EE8000D50ED55DA23D691385 /* GPUImageLocalBinaryPatternFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageLocalBinaryPatternFilter.m; path = framework/Source/GPUImageLocalBinaryPatternFilter.m; sourceTree = "<group>"; };
 		72846FD3051328386D840CC357290290 /* lookup.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = lookup.png; path = framework/Resources/lookup.png; sourceTree = "<group>"; };
 		72BC22EEEC396A7A9BE9860A3B92E9F3 /* AFIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFIError.swift; path = Source/AFIError.swift; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 		7713215BF6D8ED8E709DA0915D82A9B4 /* GPUImageJFAVoronoiFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageJFAVoronoiFilter.m; path = framework/Source/GPUImageJFAVoronoiFilter.m; sourceTree = "<group>"; };
 		77B573597907907B54C6E27A5326353C /* GPUImageStretchDistortionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageStretchDistortionFilter.m; path = framework/Source/GPUImageStretchDistortionFilter.m; sourceTree = "<group>"; };
 		77DB50959B18EC31F44DDC6CD8A4DD92 /* GPUImageAverageColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageAverageColor.m; path = framework/Source/GPUImageAverageColor.m; sourceTree = "<group>"; };
-		78A6EBF6A34EB8EAA7736C899676F0BB /* Pods_WaterlooBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WaterlooBank.framework; path = "Pods-WaterlooBank.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78A6EBF6A34EB8EAA7736C899676F0BB /* Pods_WaterlooBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterlooBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AFA7F663974D401469AC199EAC74E8 /* GPUImageMonochromeFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageMonochromeFilter.h; path = framework/Source/GPUImageMonochromeFilter.h; sourceTree = "<group>"; };
 		78CB2BD7E6BF39182DD2CE95D53FCC9A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		7A90E4DEE6C0A9186E5DCFD7F5B5BD9C /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientSpec.swift; path = Source/SocketIOClientSpec.swift; sourceTree = "<group>"; };
@@ -763,7 +763,7 @@
 		8ABA0EF02204E58E4CA2F1C4DA85ADB0 /* GPUImageLuminosity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageLuminosity.m; path = framework/Source/GPUImageLuminosity.m; sourceTree = "<group>"; };
 		8AF1D2F8ACD6BE86D844A9054C00A499 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		8B015234DE0442ABA68528D8814B8124 /* GPUImageDissolveBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageDissolveBlendFilter.h; path = framework/Source/GPUImageDissolveBlendFilter.h; sourceTree = "<group>"; };
-		8B021093D379DEE8B49B3C7DE4FF4BD2 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireImage.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B021093D379DEE8B49B3C7DE4FF4BD2 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE18C9D51558FEAADEE640F6DDC1544 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = lookup_soft_elegance_2.png; path = framework/Resources/lookup_soft_elegance_2.png; sourceTree = "<group>"; };
 		8C0942EE96025BE29D8C8E7C09F90424 /* GPUImageFASTCornerDetectionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageFASTCornerDetectionFilter.m; path = framework/Source/GPUImageFASTCornerDetectionFilter.m; sourceTree = "<group>"; };
 		8C37529AFB8D0F1180FBF71A8B6BC546 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
@@ -774,13 +774,13 @@
 		8E02408D4DAECB3E9D74162E2C8879CE /* GPUImageExclusionBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageExclusionBlendFilter.h; path = framework/Source/GPUImageExclusionBlendFilter.h; sourceTree = "<group>"; };
 		8F7CC0E4798616752465CF95803E6D39 /* GPUImageExposureFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageExposureFilter.h; path = framework/Source/GPUImageExposureFilter.h; sourceTree = "<group>"; };
 		8FE54D79F63F8F07D910CC1F787741E2 /* GPUImageXYDerivativeFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageXYDerivativeFilter.h; path = framework/Source/GPUImageXYDerivativeFilter.h; sourceTree = "<group>"; };
-		9021D349B72FD6E0FBA5AB43D7336C3A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9021D349B72FD6E0FBA5AB43D7336C3A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		907B79D9FD03B8C609F3749BF9CBA4AF /* GPUImageLanczosResamplingFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageLanczosResamplingFilter.m; path = framework/Source/GPUImageLanczosResamplingFilter.m; sourceTree = "<group>"; };
 		9092CE6D3E8DE0761AECBAB5AA63399A /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
 		90B036D35E372D80C345E79AAF9176CD /* SocketAckEmitter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckEmitter.swift; path = Source/SocketAckEmitter.swift; sourceTree = "<group>"; };
 		9293B7077CD34505381E418C1A7A01B2 /* GPUImageClosingFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageClosingFilter.m; path = framework/Source/GPUImageClosingFilter.m; sourceTree = "<group>"; };
 		929F4B5FF3A54C30D52AC351A46C5B6A /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94329618AB0BB0D109927F2CD5E0B7C9 /* GPUImageTextureInput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageTextureInput.m; path = framework/Source/GPUImageTextureInput.m; sourceTree = "<group>"; };
 		94B33CEC5D583A39B520CD3183F7DEDC /* GPUImageFramebufferCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageFramebufferCache.h; path = framework/Source/GPUImageFramebufferCache.h; sourceTree = "<group>"; };
 		950334D7AB66B02D44BCF7F936E931B8 /* SocketEngineClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineClient.swift; path = Source/SocketEngineClient.swift; sourceTree = "<group>"; };
@@ -812,7 +812,7 @@
 		A21E04579A65CD2C9F69998A3F053E47 /* GPUImageHarrisCornerDetectionFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageHarrisCornerDetectionFilter.h; path = framework/Source/GPUImageHarrisCornerDetectionFilter.h; sourceTree = "<group>"; };
 		A2F78C532B98D9D6E8F2F935E9F500A9 /* GPUImageMovie.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageMovie.m; path = framework/Source/GPUImageMovie.m; sourceTree = "<group>"; };
 		A3182D4DFB3C97BB80AD1128A390DF1B /* GPUImageThresholdedNonMaximumSuppressionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageThresholdedNonMaximumSuppressionFilter.m; path = framework/Source/GPUImageThresholdedNonMaximumSuppressionFilter.m; sourceTree = "<group>"; };
-		A3D6B8FD8768DD1A1ED8B2895F1FDE33 /* AlamofireImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AlamofireImage.modulemap; sourceTree = "<group>"; };
+		A3D6B8FD8768DD1A1ED8B2895F1FDE33 /* AlamofireImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AlamofireImage.modulemap; sourceTree = "<group>"; };
 		A42753D873D3D00A92E8D3FC635A785D /* GPUImageNobleCornerDetectionFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageNobleCornerDetectionFilter.h; path = framework/Source/GPUImageNobleCornerDetectionFilter.h; sourceTree = "<group>"; };
 		A47A925FA6892706F2100F29E3485FE6 /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineWebsocket.swift; path = Source/SocketEngineWebsocket.swift; sourceTree = "<group>"; };
 		A4C9F71B05E93EF04868FB1C4BD44F9E /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Source/WebSocket.swift; sourceTree = "<group>"; };
@@ -859,7 +859,7 @@
 		B98371195B3A3A5A0965187924107B33 /* GPUImagePixellatePositionFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImagePixellatePositionFilter.h; path = framework/Source/GPUImagePixellatePositionFilter.h; sourceTree = "<group>"; };
 		B9B6A3492903B8B69BD742AD4D294A9E /* GPUImageBrightnessFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageBrightnessFilter.h; path = framework/Source/GPUImageBrightnessFilter.h; sourceTree = "<group>"; };
 		BA04561670AA6B939A4E04F7F8186F1E /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		BA2A27B46DE9855D812600817599A258 /* GPUImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GPUImage.modulemap; sourceTree = "<group>"; };
+		BA2A27B46DE9855D812600817599A258 /* GPUImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GPUImage.modulemap; sourceTree = "<group>"; };
 		BAE5C71923388E3511C5B0170C452C30 /* GPUImageRGBOpeningFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageRGBOpeningFilter.m; path = framework/Source/GPUImageRGBOpeningFilter.m; sourceTree = "<group>"; };
 		BB2F4DE510610D9E7ECCFBD90CC3734B /* GPUImageMovieWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageMovieWriter.h; path = framework/Source/iOS/GPUImageMovieWriter.h; sourceTree = "<group>"; };
 		BC5593546405D4274C5DF9211C95300F /* GPUImageSoftLightBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageSoftLightBlendFilter.m; path = framework/Source/GPUImageSoftLightBlendFilter.m; sourceTree = "<group>"; };
@@ -898,10 +898,10 @@
 		D0EB358182D6F385A3B793CFB259316D /* GPUImageGaussianSelectiveBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageGaussianSelectiveBlurFilter.m; path = framework/Source/GPUImageGaussianSelectiveBlurFilter.m; sourceTree = "<group>"; };
 		D14BABF1C4C2DCF8C13EDE696BF46F69 /* GPUImageContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageContext.m; path = framework/Source/iOS/GPUImageContext.m; sourceTree = "<group>"; };
 		D16D39A66DE33CEB1CB533329BE880AA /* GPUImageCGAColorspaceFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageCGAColorspaceFilter.h; path = framework/Source/GPUImageCGAColorspaceFilter.h; sourceTree = "<group>"; };
-		D1A02778DB2DE925FD3E5E6A0401698C /* Pods-WaterlooBank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WaterlooBank.modulemap"; sourceTree = "<group>"; };
+		D1A02778DB2DE925FD3E5E6A0401698C /* Pods-WaterlooBank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WaterlooBank.modulemap"; sourceTree = "<group>"; };
 		D3541D7487B6FCB6DF4B0A8AB117C462 /* GPUImageLanczosResamplingFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageLanczosResamplingFilter.h; path = framework/Source/GPUImageLanczosResamplingFilter.h; sourceTree = "<group>"; };
 		D4C331E0CB0CA2DD68A419878A3D7FCF /* GPUImageMotionBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageMotionBlurFilter.m; path = framework/Source/GPUImageMotionBlurFilter.m; sourceTree = "<group>"; };
-		D5DBF06DB0B6BA068AF9BBD7F9B0F883 /* Socket.IO-Client-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Socket.IO-Client-Swift.modulemap"; sourceTree = "<group>"; };
+		D5DBF06DB0B6BA068AF9BBD7F9B0F883 /* Socket.IO-Client-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Socket.IO-Client-Swift.modulemap"; sourceTree = "<group>"; };
 		D65B5C5902DF4D9F23805E1BEFE8D111 /* GPUImageHighPassFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageHighPassFilter.m; path = framework/Source/GPUImageHighPassFilter.m; sourceTree = "<group>"; };
 		D68B5BA0321EC964B2052A5F844D229F /* SocketClientManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketClientManager.swift; path = Source/SocketClientManager.swift; sourceTree = "<group>"; };
 		D6BD73A20A98996AF8474FD39DB1FB44 /* GPUImageSourceOverBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageSourceOverBlendFilter.h; path = framework/Source/GPUImageSourceOverBlendFilter.h; sourceTree = "<group>"; };
@@ -920,14 +920,14 @@
 		DCD7CFA7B672BA2FCAD9BDEADEBD9813 /* GPUImageColorBurnBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageColorBurnBlendFilter.h; path = framework/Source/GPUImageColorBurnBlendFilter.h; sourceTree = "<group>"; };
 		DD10E6C8A3491D1D2D0E70351AEA30C5 /* GPUImageOpeningFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageOpeningFilter.m; path = framework/Source/GPUImageOpeningFilter.m; sourceTree = "<group>"; };
 		DD148CB734830DB72836B47B668D289E /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		DDFE0C6D4E2DC91EBF192DBD6E96561B /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFE0C6D4E2DC91EBF192DBD6E96561B /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE46BE28B737ACF3AE81C5F44A0AE9D9 /* GPUImageChromaKeyBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageChromaKeyBlendFilter.h; path = framework/Source/GPUImageChromaKeyBlendFilter.h; sourceTree = "<group>"; };
 		DEDC418C90BBF461C6A26CD3F8ED27BA /* GPUImageMissEtikateFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageMissEtikateFilter.m; path = framework/Source/GPUImageMissEtikateFilter.m; sourceTree = "<group>"; };
 		DFB929BECAD3224193E8A74CC95D3446 /* GPUImageAmatorkaFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageAmatorkaFilter.h; path = framework/Source/GPUImageAmatorkaFilter.h; sourceTree = "<group>"; };
 		DFE50139E9EF65A4F960F625DA756C4B /* SocketEnginePollable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePollable.swift; path = Source/SocketEnginePollable.swift; sourceTree = "<group>"; };
 		E04EB9F9EF2187AB1C741420E7645DDA /* GPUImageExclusionBlendFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageExclusionBlendFilter.m; path = framework/Source/GPUImageExclusionBlendFilter.m; sourceTree = "<group>"; };
 		E061B87AEE47D7486A349024F6BAC3B3 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		E082DB5D9E6C36FF799CAF3EE80A96B6 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		E082DB5D9E6C36FF799CAF3EE80A96B6 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
 		E0AAEC8601292F81732FB033B2B8E355 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		E1A003805106A476B0A0C82D2CCB8318 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D87429A57D543C3E2D7827BC9C9254 /* GPUImageTiltShiftFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageTiltShiftFilter.h; path = framework/Source/GPUImageTiltShiftFilter.h; sourceTree = "<group>"; };
@@ -1075,7 +1075,6 @@
 				4DF86F8D0D319A5A98AD5054E4137853 /* NSData+GZIP.m */,
 				3CADFA88C5E4F1773DC2EC54E24523A0 /* Support Files */,
 			);
-			name = GZIP;
 			path = GZIP;
 			sourceTree = "<group>";
 		};
@@ -1145,7 +1144,6 @@
 				983B97D6458EFDC9832C8980E50AB251 /* GCDAsyncUdpSocket.m */,
 				07EECAD5F4568A276C5DA7432AD3C365 /* Support Files */,
 			);
-			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -1187,7 +1185,6 @@
 				A4C9F71B05E93EF04868FB1C4BD44F9E /* WebSocket.swift */,
 				FB4F10FDC4C00CB3B62AD0573012BAD8 /* Support Files */,
 			);
-			name = "Socket.IO-Client-Swift";
 			path = "Socket.IO-Client-Swift";
 			sourceTree = "<group>";
 		};
@@ -1197,7 +1194,6 @@
 				0B76F49E975BFDA3CF49B024D0082934 /* Keychain.swift */,
 				50F26B34FE0EDA719888C75C1A8A4FE8 /* Support Files */,
 			);
-			name = KeychainAccess;
 			path = KeychainAccess;
 			sourceTree = "<group>";
 		};
@@ -1553,7 +1549,6 @@
 				706273C96A95CE8A53FB62CD98070F37 /* Resources */,
 				ABF1758400EC4C6C778F6817BB18603A /* Support Files */,
 			);
-			name = GPUImage;
 			path = GPUImage;
 			sourceTree = "<group>";
 		};
@@ -1623,7 +1618,6 @@
 				DD148CB734830DB72836B47B668D289E /* MBProgressHUD.m */,
 				A8E70BC513AE53B23859BEFAFACBAF46 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1684,7 +1678,6 @@
 			children = (
 				6BCAD24BFAA47B11DC78C59127827905 /* Frameworks */,
 			);
-			name = iProov;
 			path = iProov;
 			sourceTree = "<group>";
 		};
@@ -1710,7 +1703,6 @@
 				E061B87AEE47D7486A349024F6BAC3B3 /* Validation.swift */,
 				181BDA3C6ED95EB85132EFE6136BFEE5 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1728,7 +1720,6 @@
 				CF6E7CF1446DAFF865B7C19608EB1883 /* UIImageView+AlamofireImage.swift */,
 				0E766ABB724919C76DC3D990BB669DBE /* Support Files */,
 			);
-			name = AlamofireImage;
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
@@ -2184,6 +2175,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					C50B00A8E0BE7C8BA29C6A222865B477 = {
+						LastSwiftMigration = 0920;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2577,9 +2573,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00907EAD0B41CF86A40603463249FD62 /* Debug */ = {
+		13DA7762236329A12F9D7D632A856603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 614C5AC2C107A393A1E81C1008BEC3DF /* KeychainAccess.xcconfig */;
+			baseConfigurationReference = 71439BF4A8BB5C7504F83D9C53DDB7EA /* GPUImage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2590,27 +2586,26 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KeychainAccess/KeychainAccess-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KeychainAccess/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/GPUImage/GPUImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GPUImage/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/KeychainAccess/KeychainAccess.modulemap";
-				PRODUCT_NAME = KeychainAccess;
+				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
+				PRODUCT_NAME = GPUImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		06BFDAFAD40566C1E7358557E1069C82 /* Debug */ = {
+		18A74452F53D0016BF84CEBB9981437B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33AB196EC20CEF5572ACDA0388D96AAE /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 81FE789445996B731A0CBE0EDDB05E9E /* CocoaAsyncSocket.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2621,17 +2616,80 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				PRODUCT_NAME = MBProgressHUD;
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				PRODUCT_NAME = CocoaAsyncSocket;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C5DAB39976688A93021E071A70593C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D90C1AFFA010F9117F1CCA8607F0EEB1 /* AlamofireImage.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AlamofireImage/AlamofireImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlamofireImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
+				PRODUCT_NAME = AlamofireImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		23D382772C29133EA182C9B45FD4BDE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81FE789445996B731A0CBE0EDDB05E9E /* CocoaAsyncSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2672,9 +2730,9 @@
 			};
 			name = Release;
 		};
-		465D059484A777C071D6864F49ECE8B7 /* Release */ = {
+		62B172E6B93A05E472567F03D4D4206D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E1DCFDF9073196E0FDDC0AD28DC06B /* Socket.IO-Client-Swift.xcconfig */;
+			baseConfigurationReference = 33AB196EC20CEF5572ACDA0388D96AAE /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2685,50 +2743,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
-				PRODUCT_NAME = SocketIO;
+				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
+				PRODUCT_NAME = MBProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6CD2CF3CB56F8D2390B8CD744515AD17 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15DBB1BBCC98A45444DD13140FAD58E3 /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2791,9 +2816,9 @@
 			};
 			name = Release;
 		};
-		78536CC22DBF90ADCED899F5B0D3DAF8 /* Debug */ = {
+		751B90BBDF8E0306B9FEBD3AFC3D32D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81FE789445996B731A0CBE0EDDB05E9E /* CocoaAsyncSocket.xcconfig */;
+			baseConfigurationReference = D90C1AFFA010F9117F1CCA8607F0EEB1 /* AlamofireImage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2804,26 +2829,27 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AlamofireImage/AlamofireImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlamofireImage/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
-				PRODUCT_NAME = CocoaAsyncSocket;
+				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
+				PRODUCT_NAME = AlamofireImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		84CEB707B60F80444D9C4438B72DDCD0 /* Release */ = {
+		80CF6D17D5DDFCD088DD75F99647AF2A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81FE789445996B731A0CBE0EDDB05E9E /* CocoaAsyncSocket.xcconfig */;
+			baseConfigurationReference = 10E1DCFDF9073196E0FDDC0AD28DC06B /* Socket.IO-Client-Swift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2834,56 +2860,25 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
-				PRODUCT_NAME = CocoaAsyncSocket;
+				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
+				PRODUCT_NAME = SocketIO;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		85D887D9FE1A37D375422C301B31C84F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71439BF4A8BB5C7504F83D9C53DDB7EA /* GPUImage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GPUImage/GPUImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GPUImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
-				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		95C576983B1DE94FFFFDFEFED55AA93A /* Debug */ = {
+		9907823D129C24374106E081545B9A06 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B255E1C42808D978F451ACAF7DD9D884 /* GZIP.xcconfig */;
 			buildSettings = {
@@ -2906,14 +2901,76 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A811568E8926073F0FBCB00F762347B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B255E1C42808D978F451ACAF7DD9D884 /* GZIP.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GZIP/GZIP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GZIP/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GZIP/GZIP.modulemap";
+				PRODUCT_NAME = GZIP;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		972BD31D68F98035DE59A64D32AC1F3A /* Debug */ = {
+		AC4E4A6A5EB89298137A8551FD611446 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71439BF4A8BB5C7504F83D9C53DDB7EA /* GPUImage.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GPUImage/GPUImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GPUImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
+				PRODUCT_NAME = GPUImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B0F5F1530D3F4E518BE2B1A52F98487A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 15DBB1BBCC98A45444DD13140FAD58E3 /* Alamofire.xcconfig */;
 			buildSettings = {
@@ -2937,16 +2994,16 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		973B1618506F1B069AAF7632BF5FC9EB /* Release */ = {
+		B2DE63A699A40C7779C655603CE26401 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33AB196EC20CEF5572ACDA0388D96AAE /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 10E1DCFDF9073196E0FDDC0AD28DC06B /* Socket.IO-Client-Swift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2957,49 +3014,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AEAC3997249CC114C5B12A3D9C3498E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D90C1AFFA010F9117F1CCA8607F0EEB1 /* AlamofireImage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AlamofireImage/AlamofireImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AlamofireImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
-				PRODUCT_NAME = AlamofireImage;
+				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
+				PRODUCT_NAME = SocketIO;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3067,9 +3093,9 @@
 			};
 			name = Debug;
 		};
-		C2E988790FB96415D22B121CF01DDC0B /* Debug */ = {
+		B8CA02655A4B738D82484691EE8CA58F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71439BF4A8BB5C7504F83D9C53DDB7EA /* GPUImage.xcconfig */;
+			baseConfigurationReference = 15DBB1BBCC98A45444DD13140FAD58E3 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3080,26 +3106,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GPUImage/GPUImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GPUImage/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
-				PRODUCT_NAME = GPUImage;
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		CB9EA91B61F3A11C6D04C11F35679639 /* Debug */ = {
+		EAF862DDCC91AD02A705F8BB1D31B68F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E1DCFDF9073196E0FDDC0AD28DC06B /* Socket.IO-Client-Swift.xcconfig */;
+			baseConfigurationReference = 33AB196EC20CEF5572ACDA0388D96AAE /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3110,56 +3138,24 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift.modulemap";
-				PRODUCT_NAME = SocketIO;
+				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
+				PRODUCT_NAME = MBProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		D4A05B6981367CD35876D9A5005EDD54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D90C1AFFA010F9117F1CCA8607F0EEB1 /* AlamofireImage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AlamofireImage/AlamofireImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AlamofireImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
-				PRODUCT_NAME = AlamofireImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E5C9A7BFEF89165422CD9DA4D9373261 /* Release */ = {
+		FAFCDC0ABAA83BD2AD86801B22A645EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 614C5AC2C107A393A1E81C1008BEC3DF /* KeychainAccess.xcconfig */;
 			buildSettings = {
@@ -3183,7 +3179,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3191,9 +3187,9 @@
 			};
 			name = Release;
 		};
-		EAF1869B0AC0E7AEC6683C46C6E006F5 /* Release */ = {
+		FE237C240F748624F495007B041D45F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B255E1C42808D978F451ACAF7DD9D884 /* GZIP.xcconfig */;
+			baseConfigurationReference = 614C5AC2C107A393A1E81C1008BEC3DF /* KeychainAccess.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3204,23 +3200,23 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GZIP/GZIP-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GZIP/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/KeychainAccess/KeychainAccess-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KeychainAccess/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GZIP/GZIP.modulemap";
-				PRODUCT_NAME = GZIP;
+				MODULEMAP_FILE = "Target Support Files/KeychainAccess/KeychainAccess.modulemap";
+				PRODUCT_NAME = KeychainAccess;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		FF09BB0B9E2B8B922C035FA2C5438BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3262,8 +3258,8 @@
 		01F2198AF9DCCF3700AE9DD21E64D480 /* Build configuration list for PBXNativeTarget "AlamofireImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4A05B6981367CD35876D9A5005EDD54 /* Debug */,
-				AEAC3997249CC114C5B12A3D9C3498E4 /* Release */,
+				751B90BBDF8E0306B9FEBD3AFC3D32D5 /* Debug */,
+				1C5DAB39976688A93021E071A70593C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3271,8 +3267,8 @@
 		0B4EA6F5084E58580D3CC5D77B232AAC /* Build configuration list for PBXNativeTarget "GPUImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2E988790FB96415D22B121CF01DDC0B /* Debug */,
-				85D887D9FE1A37D375422C301B31C84F /* Release */,
+				13DA7762236329A12F9D7D632A856603 /* Debug */,
+				AC4E4A6A5EB89298137A8551FD611446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3289,8 +3285,8 @@
 		39B0FD601ED17A4CBD34929A914DAE27 /* Build configuration list for PBXNativeTarget "Socket.IO-Client-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CB9EA91B61F3A11C6D04C11F35679639 /* Debug */,
-				465D059484A777C071D6864F49ECE8B7 /* Release */,
+				80CF6D17D5DDFCD088DD75F99647AF2A /* Debug */,
+				B2DE63A699A40C7779C655603CE26401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3298,8 +3294,8 @@
 		419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				972BD31D68F98035DE59A64D32AC1F3A /* Debug */,
-				6CD2CF3CB56F8D2390B8CD744515AD17 /* Release */,
+				B0F5F1530D3F4E518BE2B1A52F98487A /* Debug */,
+				B8CA02655A4B738D82484691EE8CA58F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3307,8 +3303,8 @@
 		9FA048BBEA093CDB3F69C5B36929A5AF /* Build configuration list for PBXNativeTarget "KeychainAccess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00907EAD0B41CF86A40603463249FD62 /* Debug */,
-				E5C9A7BFEF89165422CD9DA4D9373261 /* Release */,
+				FE237C240F748624F495007B041D45F7 /* Debug */,
+				FAFCDC0ABAA83BD2AD86801B22A645EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3316,8 +3312,8 @@
 		A6F3B4763B01ED519A892762BD609E08 /* Build configuration list for PBXNativeTarget "GZIP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95C576983B1DE94FFFFDFEFED55AA93A /* Debug */,
-				EAF1869B0AC0E7AEC6683C46C6E006F5 /* Release */,
+				A811568E8926073F0FBCB00F762347B8 /* Debug */,
+				9907823D129C24374106E081545B9A06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3325,8 +3321,8 @@
 		CC1874913BA1F82C4953C3C7F551AB22 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06BFDAFAD40566C1E7358557E1069C82 /* Debug */,
-				973B1618506F1B069AAF7632BF5FC9EB /* Release */,
+				EAF862DDCC91AD02A705F8BB1D31B68F /* Debug */,
+				62B172E6B93A05E472567F03D4D4206D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3343,8 +3339,8 @@
 		F2A03B912F777B2BFB05E7B9E903B15F /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				78536CC22DBF90ADCED899F5B0D3DAF8 /* Debug */,
-				84CEB707B60F80444D9C4438B72DDCD0 /* Release */,
+				23D382772C29133EA182C9B45FD4BDE7 /* Debug */,
+				18A74452F53D0016BF84CEBB9981437B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

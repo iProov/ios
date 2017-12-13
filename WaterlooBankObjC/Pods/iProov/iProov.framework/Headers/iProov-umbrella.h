@@ -11,7 +11,7 @@
 #endif
 
 #import "Encoder.h"
-#import "InvertFilter.h"
+#import "FlashingFilter.h"
 #import "iProov.h"
 
 FOUNDATION_EXPORT double iProovVersionNumber;

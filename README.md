@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.0.3)
+# iProov iOS SDK (v6.0.4)
 
 ## 🤖 Introduction
 

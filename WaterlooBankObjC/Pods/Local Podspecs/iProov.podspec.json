@@ -1,6 +1,6 @@
 {
   "name": "iProov",
-  "version": "5.2.4",
+  "version": "6.0.3",
   "summary": "It's never been so simple to authenticate securely",
   "homepage": "https://www.iproov.com/",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/iProov/iproov-ios-pod.git",
-    "tag": "5.2.4"
+    "tag": "6.0.3"
   },
   "platforms": {
     "ios": "9.0"
@@ -43,7 +43,7 @@
       "~> 3.2"
     ],
     "Socket.IO-Client-Swift": [
-      "~> 8.3"
+      "~> 9"
     ]
   }
 }

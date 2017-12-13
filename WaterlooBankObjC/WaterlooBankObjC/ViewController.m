@@ -10,7 +10,7 @@
 #import "MainViewController.h"
 #import <iProov/iProov-Swift.h>
 
-#define WB_SERVICE_PROVIDER @"a73e90cf90e3ede70fd38639ef621f072aca8364"
+#define WB_SERVICE_PROVIDER nil //TODO: define your API key here
 
 @interface ViewController ()
 
@@ -50,6 +50,14 @@
 }
 
 - (void)login:(NSString *)username {
+    
+    if(!WB_SERVICE_PROVIDER){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing API key" message:@"Please edit WB_SERVICE_PROVIDER in ViewController.m" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        return;
+    }
     
     [IProov verifyWithServiceProvider:WB_SERVICE_PROVIDER
                              username:username
@@ -99,6 +107,14 @@
 
 - (void)registerUser:(NSString *)username {
 
+    if(!WB_SERVICE_PROVIDER){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing API key" message:@"Please edit WB_SERVICE_PROVIDER in ViewController.m" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        return;
+    }
+    
     [IProov enrolWithServiceProvider:WB_SERVICE_PROVIDER
                             username:username
                             animated:YES
