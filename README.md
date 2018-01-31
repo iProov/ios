@@ -295,6 +295,7 @@ typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
     IProovErrorCodeAlreadyEnrolled = 2001,
     IProovErrorCodeUserPressedBack = 3000,
     IProovErrorCodeUserPressedHome = 3001,
+    IProovErrorCodeCameraDenied = 4000,
     IProovErrorCodeUnsupportedDevice = 9000,
     IProovErrorCodeUnknownError = 9999,
 };
