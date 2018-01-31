@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '6.0.4'
+  s.version          = '6.0.6'
   s.summary          = 'It\'s never been so simple to authenticate securely'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'licenses/3rdparty.md' }

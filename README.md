@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.0.4)
+# iProov iOS SDK (v6.0.6)
 
 ## 🤖 Introduction
 
@@ -27,7 +27,7 @@ pod 'iProov', :git => 'https://github.com/iProov/ios.git'
 
 3. Add the following to the end of your **Podfile** (after the last `end`):
 
-```
+```ruby
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         if target.name == 'Socket.IO-Client-Swift'
@@ -45,9 +45,9 @@ This is a workaround to allow some of the iProov dependencies to compile on Swif
 
 5. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
-You can now call one of the iProov methods to either verify an existing user, or enrol a new one.
+You can now call one of the iProov launch methods to either verify an existing user, or enrol a new one.
 
-## Carthage Support
+### Carthage Support
 
 Instead of using Cocoapods, as of 6.0.4 you may now install using Carthage. Add the following to your Cartfile:
 
@@ -257,6 +257,7 @@ public enum IProovError : Error, Equatable {
     case userPressedBack
     case userPressedHome
     case unsupportedDevice
+    case cameraDenied
     case unknownError(String?)
     public var stringValues: (String, String?) { get }
 }
@@ -269,9 +270,10 @@ A description of these cases are as follows:
 * **alreadyEnrolled** - During enrolment, a user with this user ID has already enrolled.
 * **unknownIdentity** - Some Service Providers will reject user IDs that have not enrolled.
 * **userPressedBack** - The user voluntarily pressed the back button to end the claim.
-* **userPressedHome** - The user voluntarily pressed the device’s home button to send the app to the background.
-* **unsupportedDevice** - The device is not supported, i.e. does not have a front-facing camera. At present, this error should never be triggered.
-* **unknownError** - An unknown error has occurred (this should not happen). If you find this returned, please let us know.
+* **userPressedHome** - The user voluntarily pressed the device's home button to send the app to the background.
+* **unsupportedDevice** - The device is not supported, (i.e. does not have a front-facing camera). At present, this error should never be triggered.
+* **cameraDenied** - The user disallowed access to the camera when prompted.
+* **unknownError** - An unknown error has occurred (this should not happen). If you find this returned, please let us know the associated value.
 
 **Objective-C:**
 ```objc
