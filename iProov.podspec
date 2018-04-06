@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '6.0.7'
+  s.version          = '6.0.8'
   s.summary          = 'It\'s never been so simple to authenticate securely'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'licenses/3rdparty.md' }
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.ios.vendored_frameworks = 'iProov.framework'
-  s.dependency 'KeychainAccess', '~> 3.0'
+  s.dependency 'KeychainAccess', '~> 3.1.0'
   s.dependency 'GPUImage', '~> 0.1.7'
   s.dependency 'GZIP', '~> 1.1'
   s.dependency 'MBProgressHUD', '~> 1.0'

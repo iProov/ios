@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.0.7)
+# iProov iOS SDK (v6.0.8)
 
 ## 🤖 Introduction
 
@@ -259,6 +259,7 @@ public enum IProovError : Error, Equatable {
     case unsupportedDevice
     case cameraDenied
     case unknownError(String?)
+    case serverAbort(String?)
     public var stringValues: (String, String?) { get }
 }
 ```
@@ -274,6 +275,7 @@ A description of these cases are as follows:
 * **unsupportedDevice** - The device is not supported, (i.e. does not have a front-facing camera). At present, this error should never be triggered.
 * **cameraDenied** - The user disallowed access to the camera when prompted.
 * **unknownError** - An unknown error has occurred (this should not happen). If you find this returned, please let us know the associated value.
+* **serverAbort** - The token was invalidated server-side.
 
 **Objective-C:**
 ```objc
@@ -291,6 +293,7 @@ The possible code values are defined as follows:
 typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
     IProovErrorCodeAPIError = 1000,
     IProovErrorCodeStreamingError = 1001,
+    IProovErrorCodeServerAbort = 1002,
     IProovErrorCodeUnknownIdentity = 2000,
     IProovErrorCodeAlreadyEnrolled = 2001,
     IProovErrorCodeUserPressedBack = 3000,
