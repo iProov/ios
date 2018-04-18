@@ -1,20 +1,20 @@
 PODS:
-  - Alamofire (4.6.0)
-  - AlamofireImage (3.3.0):
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
-  - CocoaAsyncSocket (7.6.2)
+  - CocoaAsyncSocket (7.6.3)
   - GPUImage (0.1.7)
   - GZIP (1.2.1)
-  - iProov (6.0.3):
+  - iProov (6.0.8):
     - Alamofire (~> 4.3)
     - AlamofireImage (~> 3.2)
     - CocoaAsyncSocket (~> 7.5)
-    - GPUImage (~> 0.1)
+    - GPUImage (~> 0.1.7)
     - GZIP (~> 1.1)
-    - KeychainAccess (~> 3.0)
+    - KeychainAccess (~> 3.1.0)
     - MBProgressHUD (~> 1.0)
     - Socket.IO-Client-Swift (~> 9)
-  - KeychainAccess (3.1.0)
+  - KeychainAccess (3.1.1)
   - MBProgressHUD (1.1.0)
   - Socket.IO-Client-Swift (9.0.1)
 
@@ -27,17 +27,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   iProov:
-    :commit: 9fdf77f73cfed7a22f2e67c7d26c1ba19e0abab2
+    :commit: 07dad478eccbc03be9b467f94c4d340ef5d8e34b
     :git: https://github.com/iProov/ios.git
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   GZIP: 7ee835f989fb3c6ea79005fc90b8fa6af710a70d
-  iProov: bb0f33a72c41317fbf4c58100bc5730e261f6b07
-  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  iProov: 1b29ee32703a27cd138bc1c51933a84c177dc7ec
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Socket.IO-Client-Swift: 60b71a684692a312c4aba3ef52f186e0e254e868
 

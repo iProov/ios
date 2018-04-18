@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.0.3)
+# iProov iOS SDK (v6.0.8)
 
 ## 🤖 Introduction
 
@@ -27,7 +27,7 @@ pod 'iProov', :git => 'https://github.com/iProov/ios.git'
 
 3. Add the following to the end of your **Podfile** (after the last `end`):
 
-```
+```ruby
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         if target.name == 'Socket.IO-Client-Swift'
@@ -45,7 +45,27 @@ This is a workaround to allow some of the iProov dependencies to compile on Swif
 
 5. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
-You can now call one of the iProov methods to either verify an existing user, or enrol a new one.
+You can now call one of the iProov launch methods to either verify an existing user, or enrol a new one.
+
+### Carthage Support
+
+Instead of using Cocoapods, as of 6.0.4 you may now install using Carthage. Add the following to your Cartfile:
+
+```
+github "kishikawakatsumi/KeychainAccess"
+github "jdg/MBProgressHUD" ~> 1.1.0
+github "robbiehanson/CocoaAsyncSocket"
+github "Alamofire/Alamofire" ~> 4.3
+github "Alamofire/AlamofireImage" ~> 3.2
+github "socketio/socket.io-client-swift" ~> 9.0.1
+binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/GPUImage.json"
+binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/GZIP.json"
+binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
+```
+
+Full instructions for using Carthage available at https://github.com/Carthage/Carthage
+
+After installation, you will still need to add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
 ## 🚀 Launch Modes
 
@@ -237,7 +257,9 @@ public enum IProovError : Error, Equatable {
     case userPressedBack
     case userPressedHome
     case unsupportedDevice
+    case cameraDenied
     case unknownError(String?)
+    case serverAbort(String?)
     public var stringValues: (String, String?) { get }
 }
 ```
@@ -249,9 +271,11 @@ A description of these cases are as follows:
 * **alreadyEnrolled** - During enrolment, a user with this user ID has already enrolled.
 * **unknownIdentity** - Some Service Providers will reject user IDs that have not enrolled.
 * **userPressedBack** - The user voluntarily pressed the back button to end the claim.
-* **userPressedHome** - The user voluntarily pressed the device’s home button to send the app to the background.
-* **unsupportedDevice** - The device is not supported, i.e. does not have a front-facing camera. At present, this error should never be triggered.
-* **unknownError** - An unknown error has occurred (this should not happen). If you find this returned, please let us know.
+* **userPressedHome** - The user voluntarily pressed the device's home button to send the app to the background.
+* **unsupportedDevice** - The device is not supported, (i.e. does not have a front-facing camera). At present, this error should never be triggered.
+* **cameraDenied** - The user disallowed access to the camera when prompted.
+* **unknownError** - An unknown error has occurred (this should not happen). If you find this returned, please let us know the associated value.
+* **serverAbort** - The token was invalidated server-side.
 
 **Objective-C:**
 ```objc
@@ -269,10 +293,12 @@ The possible code values are defined as follows:
 typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
     IProovErrorCodeAPIError = 1000,
     IProovErrorCodeStreamingError = 1001,
+    IProovErrorCodeServerAbort = 1002,
     IProovErrorCodeUnknownIdentity = 2000,
     IProovErrorCodeAlreadyEnrolled = 2001,
     IProovErrorCodeUserPressedBack = 3000,
     IProovErrorCodeUserPressedHome = 3001,
+    IProovErrorCodeCameraDenied = 4000,
     IProovErrorCodeUnsupportedDevice = 9000,
     IProovErrorCodeUnknownError = 9999,
 };

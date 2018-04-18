@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.present(alert, animated: true, completion: nil)
                 
             case let .error(error):
-                let alert = UIAlertController(title: "Login failed", message: error.localizedDescription, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login failed", message: "\(error.stringValues.0) \(error.stringValues.1 ?? "")", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (action) -> Void in
                     self.login(username)
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             case let .error(error):
                 
-                let alert = UIAlertController(title: "Registration failed", message: error.localizedDescription, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Registration failed", message: "\(error.stringValues.0) \(error.stringValues.1 ?? "")", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (action) -> Void in
                     self.register(username)
