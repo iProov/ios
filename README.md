@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.0.8)
+# iProov iOS SDK (v6.0.9)
 
 ## 🤖 Introduction
 
@@ -318,6 +318,7 @@ iproovConfig.spinnerTint = UIColor.white         //only has an effect when setSh
 iproovConfig.privacyPolicyDisabled = false       //when true, prevents the privacy policy from showing on first IProov. Default false
 iproovConfig.instructionsDialogDisabled = false  //when true, prevents the instructions dialog pop-up from showing. Default false
 iproovConfig.messageDisabled = false             //when true, prevents the "you are about to IProov as <user>" message from showing. Default false
+iproovConfig.swapMessagePosition = false         //when true, feedback messages during face positioning will display at the top of the screen instead of the bottom
 
 //change the colour of the edge and background for the starting face visualisation, for normal light and low light conditions
 //NB: for low light colour scheme, please use a background colour sufficiently bright to allow the face to be illuminated for face detection purposes.
