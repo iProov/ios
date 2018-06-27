@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.0.9)
+# iProov iOS SDK (v6.0.12)
 
 ## 🤖 Introduction
 
@@ -6,7 +6,9 @@ iProov is an SDK providing a programmatic interface for embedding the iProov tec
 
 iProov has been developed as a dynamic iOS framework distributed as a Cocoapod dependency and is supported on iOS 9.0 and above with Xcode 8.0 and above.
 
-The framework has been written in Swift 4, and we recommend use of Swift 4 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift 4 code.
+The framework has been written in Swift, and we recommend use of Swift 4 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift code.
+
+Please note that iProov is distributed as a binary framework. The version of Swift used to compile the iProov framework must exactly match the version of Swift used to compile your app. The Swift compiler version used to compile iProov is 4.1.2. If you are using an older version of Swift/Xcode, you will need to use an older version of the SDK (contact iProov for further details).
 
 The framework package is provided via this repository, which contains the following:
 
