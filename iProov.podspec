@@ -1,16 +1,17 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '6.0.10'
+  s.version          = '6.0.11'
   s.summary          = 'It\'s never been so simple to authenticate securely'
   s.homepage         = 'https://www.iproov.com/'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'licenses/3rdparty.md' }
   s.author           = { 'Jonathan Ellis' => 'jonathan.ellis@iproov.com' }
-  s.source           = { :git => 'https://github.com/iProov/ios2.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/iProov/ios.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
   s.source_files = 'iProov/Classes/**/*'
   s.resources = ['iProov/Assets/**/*']
 
+  s.ios.vendored_frameworks = 'iProov.framework'
   s.dependency 'KeychainAccess', '~> 3.1.0'
   s.dependency 'GPUImage', '~> 0.1'
   s.dependency 'GZIP', '~> 1.1'
