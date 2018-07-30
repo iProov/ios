@@ -163,6 +163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -183,6 +184,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+
+
+
+
 SWIFT_CLASS("_TtC6iProov12DeviceCompat")
 @interface DeviceCompat : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -195,6 +200,8 @@ SWIFT_CLASS("_TtC6iProov6IProov")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+
+
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
@@ -203,6 +210,8 @@ SWIFT_CLASS("_TtC6iProov6IProov")
 + (void)enrolWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 + (void)enrolWithToken:(NSString * _Nonnull)encryptedToken serviceProvider:(NSString * _Nonnull)serviceProvider animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
+
+
 
 typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
   IProovErrorCodeAPIError = 1000,
