@@ -1,40 +1,39 @@
 {
   "name": "iProov",
-  "version": "6.0.3",
+  "version": "6.2.1",
   "summary": "It's never been so simple to authenticate securely",
   "homepage": "https://www.iproov.com/",
   "license": {
     "type": "MIT",
-    "file": "LICENSE"
+    "file": "licenses/3rdparty.md"
   },
   "authors": {
     "Jonathan Ellis": "jonathan.ellis@iproov.com"
   },
   "source": {
-    "git": "https://github.com/iProov/iproov-ios-pod.git",
-    "tag": "6.0.3"
+    "git": "https://github.com/iProov/ios.git",
+    "tag": "6.2.1"
   },
   "platforms": {
     "ios": "9.0"
   },
+  "swift_version": "4.1.2",
+  "source_files": "iProov/Classes/**/*",
+  "resources": [
+    "iProov/Assets/**/*"
+  ],
   "ios": {
     "vendored_frameworks": "iProov.framework"
   },
   "dependencies": {
     "KeychainAccess": [
-      "~> 3.0"
+      "~> 3.1.0"
     ],
     "GPUImage": [
       "~> 0.1"
     ],
-    "GZIP": [
-      "~> 1.1"
-    ],
     "MBProgressHUD": [
       "~> 1.0"
-    ],
-    "CocoaAsyncSocket": [
-      "~> 7.5"
     ],
     "Alamofire": [
       "~> 4.3"

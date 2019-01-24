@@ -1,6 +1,6 @@
 {
   "name": "iProov",
-  "version": "6.0.12",
+  "version": "6.2.1",
   "summary": "It's never been so simple to authenticate securely",
   "homepage": "https://www.iproov.com/",
   "license": {
@@ -12,11 +12,12 @@
   },
   "source": {
     "git": "https://github.com/iProov/ios.git",
-    "tag": "6.0.12"
+    "tag": "6.2.1"
   },
   "platforms": {
     "ios": "9.0"
   },
+  "swift_version": "4.1.2",
   "source_files": "iProov/Classes/**/*",
   "resources": [
     "iProov/Assets/**/*"
@@ -31,14 +32,8 @@
     "GPUImage": [
       "~> 0.1"
     ],
-    "GZIP": [
-      "~> 1.1"
-    ],
     "MBProgressHUD": [
       "~> 1.0"
-    ],
-    "CocoaAsyncSocket": [
-      "~> 7.5"
     ],
     "Alamofire": [
       "~> 4.3"
