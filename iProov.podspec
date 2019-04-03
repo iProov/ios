@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '6.2.1'
+  s.version          = '6.3.0'
   s.summary          = 'It\'s never been so simple to authenticate securely'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'licenses/3rdparty.md' }
@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'MBProgressHUD', '~> 1.0'
   s.dependency 'Alamofire', '~> 4.3'
   s.dependency 'AlamofireImage', '~> 3.2'
-  s.dependency 'Socket.IO-Client-Swift', '~> 9'
+  s.dependency 'Socket.IO-Client-Swift', '~> 15.0.0'
 end
