@@ -1,4 +1,4 @@
-# iProov iOS SDK (v6.2.1)
+# iProov iOS SDK (v6.3.0)
 
 ## 🤖 Introduction
 
@@ -6,9 +6,9 @@ iProov is an SDK providing a programmatic interface for embedding the iProov tec
 
 iProov has been developed as a dynamic iOS framework distributed as a Cocoapod dependency and is supported on iOS 9.0 and above.
 
-The framework has been written in Swift, and we recommend use of Swift 4 for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift code.
+The framework has been written in Swift, and we recommend use of Swift for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift code.
 
-Please note that iProov is distributed as a binary framework. The version of Swift used to compile the iProov framework must exactly match the version of Swift used to compile your app. The Swift compiler version used to compile iProov is 4.2.1. If you are using an older version of Swift/Xcode, you will need to use an older version of the SDK (contact iProov for further details).
+Please note that iProov is distributed as a binary framework. The version of Swift used to compile the iProov framework must exactly match the version of Swift used to compile your app. The Swift compiler version used to compile iProov is 5.0. If you are using an older version of Swift/Xcode, you will need to use an older version of the SDK (contact iProov for further details).
 
 The framework package is provided via this repository, which contains the following:
 
@@ -27,25 +27,9 @@ The framework package is provided via this repository, which contains the follow
 pod 'iProov', :git => 'https://github.com/iProov/ios.git'
 ```
 
-3. Add the following to the end of your **Podfile** (after the last `end`):
+3. Run `pod install`.
 
-```ruby
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if target.name == 'Socket.IO-Client-Swift'
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.2'
-            end
-        end
-    end
-end
-```
-
-This is a workaround to allow some of the iProov dependencies to compile on Swift 3.2 from within a Swift 4 project - we hope to be able to remove this step in a later update.
-
-4. Run `pod install`.
-
-5. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+4. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
 You can now call one of the iProov launch methods to either verify an existing user, or enrol a new one.
 
@@ -59,7 +43,7 @@ github "jdg/MBProgressHUD" ~> 1.1.0
 github "robbiehanson/CocoaAsyncSocket"
 github "Alamofire/Alamofire" ~> 4.3
 github "Alamofire/AlamofireImage" ~> 3.2
-github "socketio/socket.io-client-swift" ~> 9.0.1
+github "socketio/socket.io-client-swift" ~> 15.0.0
 binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/GPUImage.json"
 binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/GZIP.json"
 binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"

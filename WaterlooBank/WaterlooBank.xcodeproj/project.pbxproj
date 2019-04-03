@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD2447E864A8EB263F6A20FD /* Pods_WaterlooBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82321E17B907F9F521F2FD98 /* Pods_WaterlooBank.framework */; };
+		1D93C188C17B343380C5A427 /* Pods_WaterlooBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9471E34D546399E4C2FD4633 /* Pods_WaterlooBank.framework */; };
 		FC31DDBE1B3B3A63006F1A64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31DDBD1B3B3A63006F1A64 /* MainViewController.swift */; };
 		FC4AA0621B38C7D60053C313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AA0611B38C7D60053C313 /* AppDelegate.swift */; };
 		FC4AA0641B38C7D60053C313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AA0631B38C7D60053C313 /* ViewController.swift */; };
@@ -30,9 +30,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		82321E17B907F9F521F2FD98 /* Pods_WaterlooBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterlooBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2F4A3C5D96D38EE18AACD1A /* Pods-WaterlooBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.release.xcconfig"; sourceTree = "<group>"; };
-		F7700E66809741EC06A980C7 /* Pods-WaterlooBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.debug.xcconfig"; sourceTree = "<group>"; };
+		092ED8F4CA564CF7189CFBE7 /* Pods-WaterlooBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.release.xcconfig"; path = "Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.release.xcconfig"; sourceTree = "<group>"; };
+		2976C09ABC556B179DCE1168 /* Pods-WaterlooBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.debug.xcconfig"; path = "Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.debug.xcconfig"; sourceTree = "<group>"; };
+		9471E34D546399E4C2FD4633 /* Pods_WaterlooBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterlooBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC31DDBD1B3B3A63006F1A64 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC4AA05C1B38C7D60053C313 /* WaterlooBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterlooBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4AA0601B38C7D60053C313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,28 +48,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD2447E864A8EB263F6A20FD /* Pods_WaterlooBank.framework in Frameworks */,
+				1D93C188C17B343380C5A427 /* Pods_WaterlooBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A2636C11A572E34FC2D7FD8 /* Frameworks */ = {
+		923E6446813E9431174A21A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82321E17B907F9F521F2FD98 /* Pods_WaterlooBank.framework */,
+				9471E34D546399E4C2FD4633 /* Pods_WaterlooBank.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A10A0E6AAC6B646D8579D980 /* Pods */ = {
+		A4D4EEF810F4B1FEB6694FCE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F7700E66809741EC06A980C7 /* Pods-WaterlooBank.debug.xcconfig */,
-				C2F4A3C5D96D38EE18AACD1A /* Pods-WaterlooBank.release.xcconfig */,
+				2976C09ABC556B179DCE1168 /* Pods-WaterlooBank.debug.xcconfig */,
+				092ED8F4CA564CF7189CFBE7 /* Pods-WaterlooBank.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		FC4AA0531B38C7D60053C313 = {
@@ -77,8 +78,8 @@
 			children = (
 				FC4AA05E1B38C7D60053C313 /* WaterlooBank */,
 				FC4AA05D1B38C7D60053C313 /* Products */,
-				A10A0E6AAC6B646D8579D980 /* Pods */,
-				5A2636C11A572E34FC2D7FD8 /* Frameworks */,
+				A4D4EEF810F4B1FEB6694FCE /* Pods */,
+				923E6446813E9431174A21A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,12 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC4AA07B1B38C7D60053C313 /* Build configuration list for PBXNativeTarget "WaterlooBank" */;
 			buildPhases = (
-				54D81DCC5563FCEF57A18BAC /* [CP] Check Pods Manifest.lock */,
+				AF791C953799600DB00829F2 /* [CP] Check Pods Manifest.lock */,
 				FC4AA0581B38C7D60053C313 /* Sources */,
 				FC4AA0591B38C7D60053C313 /* Frameworks */,
 				FC4AA05A1B38C7D60053C313 /* Resources */,
 				FC951F621B5964450071D8E2 /* Embed Frameworks */,
-				3590E35BA3E983AEE84ECCF4 /* [CP] Embed Pods Frameworks */,
+				AE90F6EC583AE0FE3800D74D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,22 +186,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3590E35BA3E983AEE84ECCF4 /* [CP] Embed Pods Frameworks */ = {
+		AE90F6EC583AE0FE3800D74D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${PODS_ROOT}/iProov/iProov.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
@@ -208,23 +214,28 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iProov.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54D81DCC5563FCEF57A18BAC /* [CP] Check Pods Manifest.lock */ = {
+		AF791C953799600DB00829F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-WaterlooBank-checkManifestLockResult.txt",
 			);
@@ -369,7 +380,7 @@
 		};
 		FC4AA07C1B38C7D60053C313 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7700E66809741EC06A980C7 /* Pods-WaterlooBank.debug.xcconfig */;
+			baseConfigurationReference = 2976C09ABC556B179DCE1168 /* Pods-WaterlooBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
@@ -398,7 +409,7 @@
 		};
 		FC4AA07D1B38C7D60053C313 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2F4A3C5D96D38EE18AACD1A /* Pods-WaterlooBank.release.xcconfig */;
+			baseConfigurationReference = 092ED8F4CA564CF7189CFBE7 /* Pods-WaterlooBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
