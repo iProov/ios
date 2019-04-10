@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D93C188C17B343380C5A427 /* Pods_WaterlooBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9471E34D546399E4C2FD4633 /* Pods_WaterlooBank.framework */; };
-		FC31DDBE1B3B3A63006F1A64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31DDBD1B3B3A63006F1A64 /* MainViewController.swift */; };
+		BA338943DE7F765A1E15428D /* Pods_WaterlooBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822A5013F35E89DCBB9CCCE5 /* Pods_WaterlooBank.framework */; };
+		FC31DDBE1B3B3A63006F1A64 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31DDBD1B3B3A63006F1A64 /* AccountViewController.swift */; };
 		FC4AA0621B38C7D60053C313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AA0611B38C7D60053C313 /* AppDelegate.swift */; };
-		FC4AA0641B38C7D60053C313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AA0631B38C7D60053C313 /* ViewController.swift */; };
+		FC4AA0641B38C7D60053C313 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AA0631B38C7D60053C313 /* HomeViewController.swift */; };
 		FC4AA0671B38C7D60053C313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4AA0651B38C7D60053C313 /* Main.storyboard */; };
 		FC4AA0691B38C7D60053C313 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4AA0681B38C7D60053C313 /* Images.xcassets */; };
 		FC4AA06C1B38C7D60053C313 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4AA06A1B38C7D60053C313 /* LaunchScreen.xib */; };
+		FC6E0DFC21F618510025064B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E0DFB21F618510025064B /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,17 +31,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		092ED8F4CA564CF7189CFBE7 /* Pods-WaterlooBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.release.xcconfig"; path = "Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.release.xcconfig"; sourceTree = "<group>"; };
-		2976C09ABC556B179DCE1168 /* Pods-WaterlooBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.debug.xcconfig"; path = "Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.debug.xcconfig"; sourceTree = "<group>"; };
-		9471E34D546399E4C2FD4633 /* Pods_WaterlooBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterlooBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC31DDBD1B3B3A63006F1A64 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		12ADD233400EA638F3D52080 /* Pods-WaterlooBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.debug.xcconfig"; sourceTree = "<group>"; };
+		822A5013F35E89DCBB9CCCE5 /* Pods_WaterlooBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterlooBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7AEEA50DC7118955178E38 /* Pods-WaterlooBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterlooBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank.release.xcconfig"; sourceTree = "<group>"; };
+		FC31DDBD1B3B3A63006F1A64 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		FC4AA05C1B38C7D60053C313 /* WaterlooBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterlooBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4AA0601B38C7D60053C313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC4AA0611B38C7D60053C313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC4AA0631B38C7D60053C313 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC4AA0631B38C7D60053C313 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FC4AA0661B38C7D60053C313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC4AA0681B38C7D60053C313 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC4AA06B1B38C7D60053C313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FC6E0DFB21F618510025064B /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,29 +50,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D93C188C17B343380C5A427 /* Pods_WaterlooBank.framework in Frameworks */,
+				BA338943DE7F765A1E15428D /* Pods_WaterlooBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		923E6446813E9431174A21A6 /* Frameworks */ = {
+		43A9675B99C996203CFFC957 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9471E34D546399E4C2FD4633 /* Pods_WaterlooBank.framework */,
+				822A5013F35E89DCBB9CCCE5 /* Pods_WaterlooBank.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A4D4EEF810F4B1FEB6694FCE /* Pods */ = {
+		B35BCCF55D4E629E418183AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2976C09ABC556B179DCE1168 /* Pods-WaterlooBank.debug.xcconfig */,
-				092ED8F4CA564CF7189CFBE7 /* Pods-WaterlooBank.release.xcconfig */,
+				12ADD233400EA638F3D52080 /* Pods-WaterlooBank.debug.xcconfig */,
+				8C7AEEA50DC7118955178E38 /* Pods-WaterlooBank.release.xcconfig */,
 			);
 			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		FC4AA0531B38C7D60053C313 = {
@@ -78,8 +79,8 @@
 			children = (
 				FC4AA05E1B38C7D60053C313 /* WaterlooBank */,
 				FC4AA05D1B38C7D60053C313 /* Products */,
-				A4D4EEF810F4B1FEB6694FCE /* Pods */,
-				923E6446813E9431174A21A6 /* Frameworks */,
+				B35BCCF55D4E629E418183AB /* Pods */,
+				43A9675B99C996203CFFC957 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,8 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				FC4AA0611B38C7D60053C313 /* AppDelegate.swift */,
-				FC4AA0631B38C7D60053C313 /* ViewController.swift */,
-				FC31DDBD1B3B3A63006F1A64 /* MainViewController.swift */,
+				FC4AA0631B38C7D60053C313 /* HomeViewController.swift */,
+				FC31DDBD1B3B3A63006F1A64 /* AccountViewController.swift */,
+				FC6E0DFB21F618510025064B /* APIClient.swift */,
 				FC4AA0651B38C7D60053C313 /* Main.storyboard */,
 				FC4AA0681B38C7D60053C313 /* Images.xcassets */,
 				FC4AA06A1B38C7D60053C313 /* LaunchScreen.xib */,
@@ -120,12 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC4AA07B1B38C7D60053C313 /* Build configuration list for PBXNativeTarget "WaterlooBank" */;
 			buildPhases = (
-				AF791C953799600DB00829F2 /* [CP] Check Pods Manifest.lock */,
+				CB10569726582304353C7EFD /* [CP] Check Pods Manifest.lock */,
 				FC4AA0581B38C7D60053C313 /* Sources */,
 				FC4AA0591B38C7D60053C313 /* Frameworks */,
 				FC4AA05A1B38C7D60053C313 /* Resources */,
 				FC951F621B5964450071D8E2 /* Embed Frameworks */,
-				AE90F6EC583AE0FE3800D74D /* [CP] Embed Pods Frameworks */,
+				BAE20E055591E3F43CF0BC17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,7 +188,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AE90F6EC583AE0FE3800D74D /* [CP] Embed Pods Frameworks */ = {
+		BAE20E055591E3F43CF0BC17 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,12 +198,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${PODS_ROOT}/iProov/iProov.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -209,12 +211,12 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iProov.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,7 +224,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF791C953799600DB00829F2 /* [CP] Check Pods Manifest.lock */ = {
+		CB10569726582304353C7EFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,9 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC31DDBE1B3B3A63006F1A64 /* MainViewController.swift in Sources */,
-				FC4AA0641B38C7D60053C313 /* ViewController.swift in Sources */,
+				FC31DDBE1B3B3A63006F1A64 /* AccountViewController.swift in Sources */,
+				FC4AA0641B38C7D60053C313 /* HomeViewController.swift in Sources */,
 				FC4AA0621B38C7D60053C313 /* AppDelegate.swift in Sources */,
+				FC6E0DFC21F618510025064B /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +383,7 @@
 		};
 		FC4AA07C1B38C7D60053C313 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2976C09ABC556B179DCE1168 /* Pods-WaterlooBank.debug.xcconfig */;
+			baseConfigurationReference = 12ADD233400EA638F3D52080 /* Pods-WaterlooBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
@@ -409,7 +412,7 @@
 		};
 		FC4AA07D1B38C7D60053C313 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 092ED8F4CA564CF7189CFBE7 /* Pods-WaterlooBank.release.xcconfig */;
+			baseConfigurationReference = 8C7AEEA50DC7118955178E38 /* Pods-WaterlooBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

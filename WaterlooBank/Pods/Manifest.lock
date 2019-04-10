@@ -1,53 +1,55 @@
 PODS:
   - Alamofire (4.8.2)
-  - AlamofireImage (3.5.2):
-    - Alamofire (~> 4.8)
-  - GPUImage (0.1.7)
-  - iProov (6.3.0):
-    - Alamofire (~> 4.3)
-    - AlamofireImage (~> 3.2)
-    - GPUImage (~> 0.1)
-    - KeychainAccess (~> 3.1.0)
-    - MBProgressHUD (~> 1.0)
+  - Alamofire-SwiftyJSON (3.0.0):
+    - Alamofire (~> 4.5)
+    - SwiftyJSON (~> 4.0.0)
+  - iProov (7.0.0-beta1):
+    - KeychainAccess (~> 3.2.0)
     - Socket.IO-Client-Swift (~> 15.0.0)
-  - KeychainAccess (3.1.2)
+    - SwiftyJSON (~> 4.0.0)
+  - KeychainAccess (3.2.0)
   - MBProgressHUD (1.1.0)
   - Socket.IO-Client-Swift (15.0.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - iProov (from `https://github.com/iProov/ios.git`)
+  - Alamofire (~> 4.0)
+  - Alamofire-SwiftyJSON (~> 3.0)
+  - "iProov (from `git@github.com:iProov/ios.git`, branch `nextgen`)"
+  - MBProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - AlamofireImage
-    - GPUImage
+    - Alamofire-SwiftyJSON
     - KeychainAccess
     - MBProgressHUD
     - Socket.IO-Client-Swift
     - Starscream
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   iProov:
-    :git: https://github.com/iProov/ios.git
+    :branch: nextgen
+    :git: "git@github.com:iProov/ios.git"
 
 CHECKOUT OPTIONS:
   iProov:
-    :commit: 860f0c618963e15c7a840fc751fe9ee02e30c232
-    :git: https://github.com/iProov/ios.git
+    :commit: 359503495ba19b7ff4ec4eba209b115a43f423c2
+    :git: "git@github.com:iProov/ios.git"
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  iProov: 28d24593c0e88c4209ea889cbfe376a9ec171590
-  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  iProov: ed15c6c550115364e409a7f692773beffb0dc092
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Socket.IO-Client-Swift: c039a808195d22a7192962841b8c035cb61ea49e
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 15aab70a159f5e1b96f938e12c33ed19a3616d3a
+PODFILE CHECKSUM: 9154f991f3a1f99c7ed94e3299e2d440656beb68
 
 COCOAPODS: 1.6.1

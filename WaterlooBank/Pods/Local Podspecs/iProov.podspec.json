@@ -1,6 +1,6 @@
 {
   "name": "iProov",
-  "version": "6.3.0",
+  "version": "7.0.0-beta1",
   "summary": "It's never been so simple to authenticate securely",
   "homepage": "https://www.iproov.com/",
   "license": {
@@ -12,37 +12,29 @@
   },
   "source": {
     "git": "https://github.com/iProov/ios.git",
-    "tag": "6.3.0"
+    "tag": "7.0.0-beta1"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "swift_version": "4.1.2",
+  "swift_version": "5.0",
   "source_files": "iProov/Classes/**/*",
-  "resources": [
-    "iProov/Assets/**/*"
-  ],
+  "resources": "iProov/Assets/**/*",
   "ios": {
     "vendored_frameworks": "iProov.framework"
   },
+  "pod_target_xcconfig": {
+    "OTHER_SWIFT_FLAGS": "-DGLES"
+  },
   "dependencies": {
     "KeychainAccess": [
-      "~> 3.1.0"
-    ],
-    "GPUImage": [
-      "~> 0.1"
-    ],
-    "MBProgressHUD": [
-      "~> 1.0"
-    ],
-    "Alamofire": [
-      "~> 4.3"
-    ],
-    "AlamofireImage": [
-      "~> 3.2"
+      "~> 3.2.0"
     ],
     "Socket.IO-Client-Swift": [
       "~> 15.0.0"
+    ],
+    "SwiftyJSON": [
+      "~> 4.0.0"
     ]
   }
 }

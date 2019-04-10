@@ -1,332 +1,250 @@
-# iProov iOS SDK (v6.3.0)
+# iProov iOS SDK v%version
 
-## 🤖 Introduction
+## 🤳 Introduction
 
-iProov is an SDK providing a programmatic interface for embedding the iProov technology within a 3rd party application.
+The iProov iOS SDK allows you to integrate iProov within your own iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
 
-iProov has been developed as a dynamic iOS framework distributed as a Cocoapod dependency and is supported on iOS 9.0 and above.
+The iProov iOS SDK is a dynamic iOS framework distributed as a Cocoapod dependency and is supported on devices running iOS 9.0 and above, on both iPhones and iPads, using Xcode %xcode_version (see note below regarding Xcode version compatibility).
 
-The framework has been written in Swift, and we recommend use of Swift for the simplest and cleanest integration, however it is also usable from within Objective-C using an ObjC compatibility layer which provides an ObjC API to access the Swift code.
+The framework has been written in Swift, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our ObjC compatibility layer which provides an ObjC API to access the Swift code.
 
-Please note that iProov is distributed as a binary framework. The version of Swift used to compile the iProov framework must exactly match the version of Swift used to compile your app. The Swift compiler version used to compile iProov is 5.0. If you are using an older version of Swift/Xcode, you will need to use an older version of the SDK (contact iProov for further details).
+## 📖 Contents
 
 The framework package is provided via this repository, which contains the following:
 
 * **README.md** -- this document
-* **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious “Waterloo Bank” written in Swift.
-* **WaterlooBankObjC** -- a folder containing an Xcode sample project for “Waterloo Bank” written in Objective-C.
+* **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious _Waterloo Bank_ written in Swift.
+* **WaterlooBankObjC** -- a folder containing an Xcode sample project for _Waterloo Bank_ written in Objective-C.
 * **iProov.framework & iProov.podspec** -- these are the files which will be pulled in automatically by Cocoapods. You do not need to do anything with these files.
 
+## 💠 Pre-release software
+
+Please note that iOS SDK v%version is currently beta (pre-release) software for pre-release evaluation/testing purposes only, **and is not intended to be used in production**. Do not put this SDK into a production app without checking with iProov first.
+
+#### Known issues
+
+- The SDK can only be installed via Cocoapods `:git` parameter, and is not available on the trunk repo. v7 will soon be available on the trunk repo.
+- The lighting model is currently disabled. You may experience difficulties iProoving outdoors or in particularly bright environments.
+- Enabling the `swapMessagePosition` option may result in UI glitches.
+- We do not currently have Waterloo Bank sample code in Objective-C.
+
+Look out for the 💠 symbol in the documentation for additional/missing information in relating to pre-release software.
+
+If you find any other issues, please [contact support](mailto:support@iproov.com).
+
+## ⚠️ Important notice regarding Xcode compatibility
+
+Please note that iProov is distributed as a compiled binary framework. Due to [current Swift limitations](https://forums.swift.org/t/plan-for-module-stability/14551), this means that the version of Xcode (and the version of Swift) that was used to compile the iProov framework must exactly match the version of Xcode used to compile your app.
+
+The version of Xcode used to compile v%version of the SDK is Xcode %xcode_version (Swift %swift_version).
+
+Therefore, this is the only supported version of Xcode for iProov. If you are using an older version of Xcode and cannot upgrade for whatever reason, you will need to use an older version of the SDK ([contact iProov](mailto:support@iproov.com) for further details).
+
+## ⬆️ Upgrading from v6.x or earlier
+
+Welcome to the next generation of the iProov SDK! v7 is a substantial overhaul to the SDK and added many new features, and as a result **SDK v7 is a major update and includes breaking changes!**
+
+Please consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app, and look out for the ⬆️ symbol in this README.
+
 ## 📲 Installation
+
+Integration with your app is supported via both Cocoapods and Carthage. We recommend Cocoapods for the easiest installation.
+
+### Cocoapods
 
 1. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://cocoapods.org/).)
 
 2. Add the following to your **Podfile** (inside the target section):
 
-```ruby
-pod 'iProov', :git => 'https://github.com/iProov/ios.git'
-```
+	```ruby
+	pod 'iProov', :git => 'https://github.com/iProov/ios.git', :branch => 'nextgen'
+	```
+> **💠 PRE-RELEASE SOFTWARE:** You will be able to move the `git:` and `:branch` parameters once the final version of the SDK is released.
 
 3. Run `pod install`.
 
-4. Add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+4. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
-You can now call one of the iProov launch methods to either verify an existing user, or enrol a new one.
+### Carthage
 
-### Carthage Support
-
-Instead of using Cocoapods, as of 6.0.4 you may now install using Carthage. Add the following to your Cartfile:
+Instead of using Cocoapods, as of 6.0.4 you may now install using Carthage. Add the following to your Cartfile.
 
 ```
-github "kishikawakatsumi/KeychainAccess"
-github "jdg/MBProgressHUD" ~> 1.1.0
-github "robbiehanson/CocoaAsyncSocket"
-github "Alamofire/Alamofire" ~> 4.3
-github "Alamofire/AlamofireImage" ~> 3.2
 github "socketio/socket.io-client-swift" ~> 15.0.0
-binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/GPUImage.json"
-binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/GZIP.json"
+github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
+github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
 binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 ```
+> **⬆️ UPGRADING NOTICE:** Take note of the new dependencies & versions!
 
-Full instructions for using Carthage available at https://github.com/Carthage/Carthage
+Full instructions for using Carthage available [here](https://github.com/Carthage/Carthage).
 
-After installation, you will still need to add an `NSCameraUsageDescription` entry to your Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+After installation, you will need to add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
-## 🚀 Launch Modes
+## 🚀 Get started
 
-There are 3 primary ways iProov can be launched for enrolment or verification:
+Before being able to launch iProov on iOS, you need to have a token to iProov against. This can either be a **verify** token (for login), an **enrol** token (for initial registration), or an **ID match** token (for matching against a scanned ID document image).
 
-* By being called natively from within a host application. Most native apps will use this approach.
+> **⬆️ UPGRADING NOTICE:** This is a significant change from pre-v7 SDK where the SDK could be passed an API key and then obtain the token for you automatically. This functionality is no longer part of the SDK; in production cases the SDK will be passed the token obtained from a back-end API call, for testing purposes you can use the code below.
 
-* From an iOS (APNS) push notification.
+Once you have obtained the token, you can call `IProov.launch(...)`:
 
-* From an iProov URL (e.g. iproov://verify?token=xxxx) in the browser (currently only Safari is supported).
+```
+let token = "{{ your token here }}"
 
-You need to ensure you `import iProov` in any Swift file where you use iProov (or `#import <iProov/iProov-Swift.h>` in Objective-C).
+IProov.launch(token: token, animated: true, callback: { (status) in
 
-### 1. Verify (with Service Provider)
+	switch status {
+	case let .processing(progress, message):
+		// The SDK will update your app with the progress of streaming to the server and authenticating
+		// the user. This will be called multiple time as the progress updates.
+	    
+	case let .success(token):
+	    // The user was successfully verified/enrolled and the token has been validated.
+	    // The token passed back will be the same as the one passed in to the original call.
+	    
+	case let .failure(reason, feedback):
+		// The user was not successfully verified/enrolled, as their identity could not be verified,
+		// or there was another issue with their verification/enrollment, and a reason (as a string)
+		// is provided as to why the claim failed.
+		
+	case .cancelled:
+		// The user cancelled iProov, either by pressing the close button at the top right, or sending
+		// the app to the background.
+	    
+	case let .error(error):
+		// The user was not successfully verified/enrolled due to an error (e.g. lost internet connection)
+		// along with an `iProovError` with more information about the error (NSError in Objective-C).
+		// It will be called once, or never.
+		
+	}
+	
+}
+```
 
-You would use this method where you are a service provider who knows the user ID on the device. iProov will handle the entire end-to-end process of generating a new token and authenticating the user.
+> **⚠️ SECURITY NOTICE:** You should never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the validate API call) before performing any authenticated user actions.
 
-For a given iProov API Key (serviceProvider) and a User ID (username), this launches an iProov verify session. The presentation of the iProov view controller can optionally be animated.
+--
+> **⬆️ UPGRADING NOTICE:** In v7 you no longer need to call `IProov.verify()` or `IProov.enrol()`. There were previously 6 separate methods to launch iProov, these have now been combined into a single method. (Push & URL launched claims are no longer handled within the SDK itself).
 
-After the verification process completes, the framework waits for the result of the authentication process and then calls the completion closure (or in the case of Objective-C, one of the completion blocks depending on the result).
+--
 
-**Swift:**
+> **⬆️ UPGRADING NOTICE:** Previously, after launching iProov, the SDK would handle the entire user experience end-to-end, from getting a token all the way through to the streaming UI and would then pass back a pass/fail/error result to your app. In v7, the SDK flashes the screen and then hands back control to your app, whilst the capture is streamed in the background. This means that you can now control the UI to display your own streaming UI, or allow the user to continue with another activity whilst the iProov capture streams in the background.
+
+--
+
+> **💠 PRE-RELEASE SOFTWARE:** Objective-C sample code is coming soon.
+
+## ⚙ Options
+
+You can customize the iProov session by passing in an `Options` object when launching iProov and setting any of these variables:
+
 ```swift
-static func verify(withServiceProvider serviceProvider: String, username: String, animated: Bool, iproovConfig: IProovConfig = IProovConfig(), completion: @escaping ((Result) -> Void))
-```
-**Objective-C:**
-```objc
-+ (void)verifyWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Nullable)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-```
+let options = Options()
 
-### 2. Verify (with Token)
+/*
+	UIOptions
+	Configure options relating to the user interface
+*/
 
-You would use this method where you already have the token for the user you wish to authenticate (you have already generated this by calling the REST API from your server and now wish to authenticate the user). The other parameters are the same as verify (with Service Provider).
+options.ui.localeOverride = "en"			// Overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
 
-After the verification process completes, the framework waits for the result of the authentication process and then calls the completion closure/blocks.
+// Change the color of the edge and background for the starting face visualisation, for normal light and low light conditions
+// Note: For low light color scheme, please use a background color sufficiently bright to allow the face to be illuminated for face detection purposes.
 
-**Swift:**
-```swift
-static func verify(withToken encryptedToken: String, serviceProvider: String, animated: Bool, iproovConfig: IProovConfig = IProovConfig(), completion: @escaping ((Result) -> Void))
-```
-**Objective-C:**
-```objc
-+ (void)verifyWithToken:(NSString * _Nonnull)encryptedToken serviceProvider:(NSString * _Nonnull)serviceProvider animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-```
+options.ui.linesColor = .white
+options.ui.backgroundColor = .black
+options.ui.lowLightLinesColor = .black
+options.ui.lowLightBackgroundColor = .white
 
-### 3. Enrol (with Service Provider)
+options.ui.loadingTintColor = .lightGray
+options.ui.notReadyTintColor = .orange
+options.ui.readyTintColor = .green
 
-You would use this method where you are a service provider and wish to enrol (register) a new iProov user.
+options.ui.messageDisabled = false			// Prevents the "Authenticate as X" message from showing. Default false
+options.ui.swapMessagePosition = false		// Feedback messages during face positioning will display at the top of the screen instead of the bottom
 
-For a given iProov API Key (serviceProvider) and a User ID (username), this launches an iProov enrolment session. The presentation of the iProov view controller can optionally be animated.
+options.ui.regularFont = "SomeFont"
+options.ui.boldFont = "SomeFont-Bold"
+options.ui.fonts = ["SomeFont", "SomeFont-Bold"]	// If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
+options.ui.logoImage = UIImage(named: "foo")
+options.ui.disableScanLine = false			// Disables the horizontal sweeping scanline whilst flashing introduced in SDK v7
 
-After the enrolment process completes, the framework waits for the result of the authentication process and then calls the completion closure/blocks.
+/*
+	NetworkOptions
+	Configure options relating to networking & security
+*/
 
-**Swift:**
-```swift
-static func enrol(withServiceProvider serviceProvider: String, username: String, animated: Bool, iproovConfig: IProovConfig = IProovConfig(), completion: @escaping ((Result) -> Void))
-```
-**Objective-C:**
-```objc
-+ (void)enrolWithServiceProvider:(NSString * _Nonnull)serviceProvider username:(NSString * _Nonnull)username animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-```
+options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own proxy server, or for overriding the built-in certificate pinning for some other reason. Certificates should be generated in DER-encoded X.509 certificate format, eg. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
+options.network.disableCertificatePinning = false	// Disables SSL/TLS certificate pinning to the server. WARNING! Do not enable this in production apps.
 
-### 4. Enrol (with Token)
+/*
+	CaptureOptions
+	Configure options relating to the capture functionality
+*/
 
-You would use this method where you already have the token for the user you wish to enrol (you have already generated this by calling the REST API from your server and now wish to authenticate the user). The other parameters are the same as enrol (with Service Provider).
+options.capture.disableAutoStart = false			// Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving. 
 
-After the enrolment process completes, the framework waits for the result of the authentication process and then calls one of the completion closure/blocks.
+// You can specify max yaw/roll/pitch deviation of the user's face to ensure a given pose. Values are provided in normalised units.
+// These options should not be set for general use. Please contact iProov for further information if you would like to use this feature.
 
-**Swift:**
-```swift
-static func enrol(withToken encryptedToken: String, serviceProvider: String, animated: Bool, iproovConfig: IProovConfig = IProovConfig(), completion: @escaping ((Result) -> Void))
-```
-**Objective-C:**
-```objc
-+ (void)enrolWithToken:(NSString * _Nonnull)encryptedToken serviceProvider:(NSString * _Nonnull)serviceProvider animated:(BOOL)animated success:(void (^ _Nonnull)(NSString * _Nonnull))success failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
-```
+options.capture.maxYaw = 0.03
+options.capture.maxRoll = 0.03
+options.capture.maxPitch = 0.03
 
-### 5. Launch (with Notification)
-
-You would use this when you want to launch an iProov session from an incoming push notification, for authenticating with an application or service running on another device (e.g. VPN or PC software).
-
-The method takes an iOS APNS push notification object directly and launches an iProov session based on it.
-
-After the capture process completes, the framework waits for the result of the authentication process and then prompts the user to end the session by pressing the home button on their iOS device.
-
-**Swift:**
-```swift
-static func launch(withNotification notification: [AnyHashable : Any])
-```
-**Objective-C:**
-```objc
-+ (void)launchWithNotification:(NSDictionary * _Nonnull)notification;
 ```
 
-### 6. Launch (with URL)
+## 🌎 String localization & customization
 
-You would use this when you want to launch an iProov session from a browser URL, perform the capture inside your host app, and then return the user to the browser to complete the authentication and complete the user journey.
+The SDK ships with localized strings for the following locales:
 
-The method takes an iproov:// url and launches an iProov session based on it.
+- English
+- Norwegian Bokmål
+- Norwegian Nynosk
+- Dutch
+- Turkish
 
-After the capture process completes, the framework brings the browser back to the foreground, where the authentication process completes within the browser.
+If the user's device language is set to one of the above, the SDK will be localized accordingingly unless `options.ui.localeOverride` is set, in which case this setting will override the default locale.
 
-**Swift:**
-```swift
-static func launch(withURL url: URL)
-```
-**Objective-C:**
-```objc
-+ (void)launchWithURL:(NSURL * _Nonnull)url;
-```
+It is also possible to manually customize any of the strings in the app, regardless of locale.
 
-#### Comparison of iProov.framework launch modes:
+> **💠 PRE-RELEASE SOFTWARE:** More information on string customization coming soon.
 
-| Launch mode | Source | Authentication | Result handling |
-|-------------|--------|----------------|-----------------|
-| Native | Host application | In app | Callback
-| URL | URL | In browser | None
-| Push | APNS notification | In app | Dialog
+## 💥 Handling failures & errors
 
-## 🎯 Completion Callbacks
+### Failures
 
-When an iProov native claim completes (whether a verification or enrolment), there are 4 possible results:
+Failures occur when the user's identity could not be verified for some reason. A failure means that the capture was successfully received and processed by the server, which returned a result. Crucially, this differs from an error, where the capture could not be completed for some reason.
 
-* **success** - the user was successfully verified/enrolled, and a token is now provided for this session.
+Failures are caught via the `.failure(reason, fallback)` enum case in the callback:
 
-* **failure** - the user was not successfully verified/enrolled, as their identity could not be verified, or there was another issue with their verification/enrollment, and a reason (as a string) is provided as to why the claim failed.
+`reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time
 
-* **error** - the user was not successfully verified/enrolled due to an error (e.g. lost internet connection, etc) along with an iProovError with more information about the error (NSError in Objective-C).
-
-* **pending** - the user may have been successfully verified/enrolled, but the outcome of the verification/enrolment is not yet known, but will become known at a later point in time. _NOTE: The pending result is not currently returned by the native claim, and may be removed in a future update._
-
-In Swift apps, the result is provided as an enum with associated values in the completion closure. In Objective-C apps, the result is provided via 3 separate callbacks (pending is not handled).
-
-### success
-
-**Swift:**
-```swift
-case success(token: String)
-```
-**Objective-C:**
-```objc
-(void (^ _Nonnull)(NSString * _Nonnull))token
-```
-
-The parameter is as follows:
-
-`token` - The token that was generated for this claim.
-
-> SECURITY WARNING: Never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the validate API call) before performing any authenticated user actions.
-
-### failure
-
-**Swift:**
-```swift
-case failure(reason: String, feedback: String?))
-```
-**Objective-C:**
-```objc
-(void (^ _Nonnull)(NSString * _Nonnull))reason
-```
-
-The parameters are as follows:
-
-`reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time.
 `feedback` - Where available, provides additional feedback on the reason the user could not be verified/enrolled. Some possible values are:
 
 * `ambiguous_outcome`
 * `network_problem`
 * `user_timeout`
 
-### error
+### Errors
 
-**Swift:**
-```swift
-case error(error: iProov.IProovError)
-```
-The parameter is as follows:
+Errors occur when the capture could not be completed due to a technical problem or user action which prevents the capture from completing. Errors originate from the device, as opposed to iProov's servers.
 
-`error` Provides the reason the iProov process failed as an IProovError.
+Errors are caught via the `.error(error)` enum case in the callback. The `error` parameter provides the reason the iProov process failed as an `IProovError`.
 
-The IProovError is an enum (some with associated values), and also has a method stringValues which returns a title and message that can be displayed in a dialog.
-
-```swift
-public enum IProovError : Error, Equatable {
-    case apiError(String?)
-    case streamingError(String?)
-    case unknownIdentity
-    case alreadyEnrolled
-    case userPressedBack
-    case userPressedHome
-    case unsupportedDevice
-    case cameraDenied
-    case unknownError(String?)
-    case serverAbort(String?)
-    public var stringValues: (String, String?) { get }
-}
-```
+The `IProovError` is an enum (some with associated values), and also has a method stringValues which returns a title and message that can be displayed in a dialog.
 
 A description of these cases are as follows:
 
-* **apiError** - An issue occurred with the API (e.g. timeout, disconnection, etc.). Consult the error associated value for more information.
-* **streamingError** - An error occurred with the video streaming process. Consult the error associated value for more information.
-* **alreadyEnrolled** - During enrolment, a user with this user ID has already enrolled.
-* **unknownIdentity** - Some Service Providers will reject user IDs that have not enrolled.
-* **userPressedBack** - The user voluntarily pressed the back button to end the claim.
-* **userPressedHome** - The user voluntarily pressed the device's home button to send the app to the background.
-* **unsupportedDevice** - The device is not supported, (i.e. does not have a front-facing camera). At present, this error should never be triggered.
-* **cameraDenied** - The user disallowed access to the camera when prompted.
-* **unknownError** - An unknown error has occurred (this should not happen). If you find this returned, please let us know the associated value.
-* **serverAbort** - The token was invalidated server-side.
+* `streamingError(String?)` - An error occurred with the video streaming process. Consult the error associated value for more information.
+* `encoderError(code: Int32?)` - An error occurred with the video encoder. Report the error code to iProov for further assistance.
+* `unknownIdentity` - Some Service Providers will reject user IDs that have not enrolled.
+* `alreadyEnrolled` - During enrolment, a user with this user ID has already enrolled.
+* `cameraError(String?)` - An error occurred with the camera.
+* `cameraDenied` - The user disallowed access to the camera when prompted.
+* `unknownError(String?)` - An unknown error has occurred (this should not happen). If you find this returned, please let us know the associated value.
+* `serverAbort(String?)` - The token was invalidated server-side.
 
-**Objective-C:**
-```objc
-(void (^ _Nonnull)(NSError * _Nonnull))error
-```
-The parameter is as follows:
+## ❓Help & support
 
-`error` Provides the reason the iProov process failed as a standard NSError.
-
-The NSError has a code which is a categorisation of the error type, and a localizedDescription which you may want to show to the user.
-
-The possible code values are defined as follows:
-
-```objc
-typedef SWIFT_ENUM(NSInteger, IProovErrorCode) {
-    IProovErrorCodeAPIError = 1000,
-    IProovErrorCodeStreamingError = 1001,
-    IProovErrorCodeServerAbort = 1002,
-    IProovErrorCodeUnknownIdentity = 2000,
-    IProovErrorCodeAlreadyEnrolled = 2001,
-    IProovErrorCodeUserPressedBack = 3000,
-    IProovErrorCodeUserPressedHome = 3001,
-    IProovErrorCodeCameraDenied = 4000,
-    IProovErrorCodeUnsupportedDevice = 9000,
-    IProovErrorCodeUnknownError = 9999,
-};
-```
-
-## ⚙ Configuration Options
-
-All launch methods can be called with an optional IProovConfig struct:
-
-```swift
-var iproovConfig = IProovConfig()
-iproovConfig.autoStart = true                    //instead of requiring a user tap, auto-countdown from 3 when face is detected. Default true
-iproovConfig.localeOverride = "en"               //overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
-iproovConfig.backgroundTint = UIColor.black      //background colour shown after the flashing stops. Default UIColor.black
-iproovConfig.indeterminateSpinner = false        //when true, shows an indeterminate upload progress instead of a progress bar. Default false
-iproovConfig.spinnerTint = UIColor.white         //only has an effect when setShowIndeterminateSpinner is true. Default UIColor.white
-iproovConfig.privacyPolicyDisabled = false       //when true, prevents the privacy policy from showing on first IProov. Default false
-iproovConfig.instructionsDialogDisabled = false  //when true, prevents the instructions dialog pop-up from showing. Default false
-iproovConfig.messageDisabled = false             //when true, prevents the "you are about to IProov as <user>" message from showing. Default false
-iproovConfig.swapMessagePosition = false         //when true, feedback messages during face positioning will display at the top of the screen instead of the bottom
-
-//change the colour of the edge and background for the starting face visualisation, for normal light and low light conditions
-//NB: for low light colour scheme, please use a background colour sufficiently bright to allow the face to be illuminated for face detection purposes.
-iproovConfig.startingEdgeColor = UIColor.white
-iproovConfig.startingBackgroundColor = UIColor.black
-iproovConfig.lowLightEdgeColor = UIColor.black
-iproovConfig.lowLightBackgroundColor = UIColor.white
-
-//fonts are identified by name and must either be system fonts or specified in a UIAppFonts array in your Info.plist
-iproovConfig.regularFont = "SomeFont"            //change the default font used within the SDK 
-iproovConfig.boldFont = "SomeFont-Bold"          //boldFont is used for feedback messages and the countdown timer
-
-iproovConfig.disablePinning = false              //when true (not recommended), disables certificate pinning to the server. Default false
-iproovConfig.baseURL = "https://mybackend.com"   //change the server base URL. This is an advanced setting - please contact us if you wish to use your own base URL (eg. for proxying requests)
-//optionally supply an array of paths of certificates to be used for pinning. Useful when using your own baseURL or for overriding the built-in certificate pinning for some other reason.
-//certificates should be generated in DER-encoded X.509 certificate format, eg. with the command $ openssl x509 -in cert.crt -outform der -out cert.der
-iproovConfig.certificateFiles = [Bundle.main.path(forResource: "custom", ofType: "der")!]
-
-IProov.verify(withServiceProvider: serviceProvider, username: username, animated: true, iproovConfig: iproovConfig) { (result) in
-    switch result {
-        //handle result...
-    }
-}
-
-```
+For further help with integrating the SDK, please contact [support@iproov.com](mailto:support@iproov.com).
