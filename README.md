@@ -1,8 +1,10 @@
-# iProov iOS SDK v7.0.0
+# iProov iOS SDK v7.0.0-beta1
 
 ## 🤳 Introduction
 
 The iProov iOS SDK allows you to integrate iProov within your own iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
+
+> **💠 PRE-RELEASE SOFTWARE:** This version is currently in beta and not all features of the SDK are enabled. Please note that the lighting model/face distance logic is disabled in this version.
 
 The iProov iOS SDK is a dynamic iOS framework distributed as a Cocoapod dependency and is supported on devices running iOS 9.0 and above, on both iPhones and iPads, using Xcode 10.2 (see note below regarding Xcode version compatibility).
 
@@ -45,6 +47,10 @@ Therefore, this is the only supported version of Xcode for iProov. If you are us
 Welcome to the next generation of the iProov SDK! v7 is a substantial overhaul to the SDK and added many new features, and as a result **SDK v7 is a major update and includes breaking changes!**
 
 Please consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app, and look out for the ⬆️ symbol in this README.
+
+## ✍️ Registration
+
+You can obtain API credentials by registering on the [iProov Partner Portal](https://www.iproov.net).
 
 ## 📲 Installation
 
@@ -169,7 +175,7 @@ options.ui.regularFont = "SomeFont"
 options.ui.boldFont = "SomeFont-Bold"
 options.ui.fonts = ["SomeFont", "SomeFont-Bold"]	// If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
 options.ui.logoImage = UIImage(named: "foo")
-options.ui.disableScanLine = false			// Disables the horizontal sweeping scanline whilst flashing introduced in SDK v7
+options.ui.disableScanLine = false			// Disables the vertical sweeping scanline whilst flashing introduced in SDK v7
 
 /*
 	NetworkOptions
