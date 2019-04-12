@@ -79,9 +79,13 @@ Instead of using Cocoapods, as of 6.0.4 you may now install using Carthage. Add 
 github "socketio/socket.io-client-swift" ~> 15.0.0
 github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
 github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
-binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
+binary "https://raw.githubusercontent.com/iProov/ios/nextgen/carthage/IProov.json"
 ```
 > **⬆️ UPGRADING NOTICE:** Take note of the new dependencies & versions!
+
+---
+
+> **💠 PRE-RELEASE SOFTWARE:** Take note of the nextgen-specific URL for the IProov binary. This will need to be updated once v7 is released to production.
 
 Full instructions for using Carthage available [here](https://github.com/Carthage/Carthage).
 
@@ -90,6 +94,8 @@ After installation, you will need to add an `NSCameraUsageDescription` entry to 
 ## 🚀 Get started
 
 Before being able to launch iProov on iOS, you need to have a token to iProov against. This can either be a **verify** token (for login), an **enrol** token (for initial registration), or an **ID match** token (for matching against a scanned ID document image).
+
+In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift/Alamofire sample code for obtaining tokens via from both [API v2](https://github.com/iProov/ios/blob/nextgen/Sample%20Code/APIV2Client.swift) or the new [Orchestration API](https://github.com/iProov/ios/blob/nextgen/Sample%20Code/OrchestrationAPIClient.swift).
 
 > **⬆️ UPGRADING NOTICE:** This is a significant change from pre-v7 SDK where the SDK could be passed an API key and then obtain the token for you automatically. This functionality is no longer part of the SDK; in production cases the SDK will be passed the token obtained from a back-end API call, for testing purposes you can use the code below.
 
