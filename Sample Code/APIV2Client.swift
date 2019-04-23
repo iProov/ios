@@ -25,7 +25,7 @@ class APIV2Client {
     private let apiKey: String
     private let secret: String
 
-    init(baseURL: String, apiKey: String, secret: String) {
+    init(baseURL: String = "https://eu.rp.secure.iproov.me", apiKey: String, secret: String) {
         self.baseURL = baseURL
         self.apiKey = apiKey
         self.secret = secret

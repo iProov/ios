@@ -33,7 +33,7 @@ class OrchestrationAPIClient {
     private let sessionManager = SessionManager()
     private let baseURL: String
     
-    init(baseURL: String, username: String, password: String) {
+    init(baseURL: String = "https://iproov.cloud/api/v1", username: String, password: String) {
         self.baseURL = baseURL
         
         let authHandler = AuthHandler(baseURL: baseURL, username: username, password: password)
