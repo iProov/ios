@@ -1,6 +1,6 @@
 {
   "name": "iProov",
-  "version": "7.0.0-beta1",
+  "version": "7.0.0-beta2",
   "summary": "It's never been so simple to authenticate securely",
   "homepage": "https://www.iproov.com/",
   "license": {
@@ -12,12 +12,12 @@
   },
   "source": {
     "git": "https://github.com/iProov/ios.git",
-    "tag": "7.0.0-beta1"
+    "tag": "7.0.0-beta2"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "swift_version": "5.0",
+  "swift_versions": "5.0",
   "source_files": "iProov/Classes/**/*",
   "resources": "iProov/Assets/**/*",
   "ios": {
@@ -36,5 +36,6 @@
     "SwiftyJSON": [
       "~> 4.0.0"
     ]
-  }
+  },
+  "swift_version": "5.0"
 }

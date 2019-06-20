@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "GPUImage.h"
 #import "iProov.h"
 
 FOUNDATION_EXPORT double iProovVersionNumber;

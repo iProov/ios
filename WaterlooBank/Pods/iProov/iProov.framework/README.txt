@@ -1,5 +1,5 @@
 Loco ios export: iOS Localizable.strings
 Project: iProov
 Release: Working copy
-Exported at: Tue, 22 Jan 2019 12:20:17 +0000
+Exported at: Fri, 24 May 2019 10:39:38 +0100
 Exported by: Jonathan Ellis
