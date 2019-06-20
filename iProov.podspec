@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '7.0.0-beta1'
+  s.version          = '7.0.0-beta2'
   s.summary          = 'It\'s never been so simple to authenticate securely'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'licenses/3rdparty.md' }
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'iProov.framework'
   
   s.pod_target_xcconfig = {
-      'OTHER_SWIFT_FLAGS' => '-DGLES' # Required for GPUImage2
+    'OTHER_SWIFT_FLAGS' => '-DGLES' # Required for GPUImage2
   }
   
   s.dependency 'KeychainAccess', '~> 3.2.0'

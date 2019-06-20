@@ -13,4 +13,5 @@
 	"6.2.1": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov_6_2_1.zip",
 	"6.3.0": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov_6_3_0.zip",
 	"7.0.0-beta1": "https://raw.githubusercontent.com/iProov/ios/nextgen/carthage/iProov_7_0_0-beta1.zip",
+	"7.0.0-beta2": "https://raw.githubusercontent.com/iProov/ios/nextgen/carthage/iProov_7_0_0-beta2.zip",
 }
