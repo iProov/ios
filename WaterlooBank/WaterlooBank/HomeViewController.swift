@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         
         apiClient.getToken(type: claimType, userID: username, success: { (token, streamingURL) in
             
-            IProov.launch(streamingURL: streamingURL, token: token, animated: true, callback: { (status) in
+            IProov.launch(streamingURL: streamingURL, token: token, callback: { (status) in
                 
                 switch status {
                     

@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.0.0-beta2
+# iProov iOS SDK v7.0.0-beta3
 
 ## 🤳 Introduction
 
@@ -80,7 +80,7 @@ Full instructions installing and setting up Carthage [are available here](https:
 Add the following to your Cartfile:
 
 ```
-github "socketio/socket.io-client-swift" ~> 15.0.0
+github "socketio/socket.io-client-swift" == 15.1.0
 github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
 github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
 binary "https://raw.githubusercontent.com/iProov/ios/nextgen/carthage/IProov.json"
@@ -111,7 +111,7 @@ Once you have obtained the token, you can simply call `IProov.launch(...)`:
 ```
 let token = "{{ your token here }}"
 
-IProov.launch(token: token, animated: true, callback: { (status) in
+IProov.launch(token: token, callback: { (status) in
 
 	switch status {
 	case let .processing(progress, message):
@@ -169,8 +169,8 @@ let options = Options()
 	Configure options relating to the user interface
 */
 
-options.ui.locale = Locale(identifier: "en")		// Overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
-options.ui.filter = .shaded		// Adjust the filter used for the face preview. Can be .classic (as in pre-v7), .shaded (additional detail, the default in v7) or .vibrant (full colour).
+options.ui.locale = Locale(identifier: "en") // Overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
+options.ui.filter = .shaded // Adjust the filter used for the face preview. Can be .classic (as in pre-v7), .shaded (additional detail, the default in v7) or .vibrant (full color).
 
 // Adjust various colors for the camera preview:
 options.ui.lineColor = .white
@@ -179,13 +179,14 @@ options.ui.loadingTintColor = .lightGray
 options.ui.notReadyTintColor = .orange
 options.ui.readyTintColor = .green
 
-options.ui.messageHidden = false		// Hides the "Authenticate/Enrol as X" message. Default false
+options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
 options.ui.regularFont = "SomeFont"
 options.ui.boldFont = "SomeFont-Bold"
-options.ui.fonts = ["SomeFont", "SomeFont-Bold"]		// If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
+options.ui.fonts = ["SomeFont", "SomeFont-Bold"] // If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
 options.ui.logoImage = UIImage(named: "foo")
-options.ui.scanLineDisabled = false		// Disables the vertical sweeping scanline whilst flashing introduced in SDK v7
-options.ui.autoStartDisabled = false		// Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving. 
+options.ui.scanLineDisabled = false // Disables the vertical sweeping scanline whilst flashing introduced in SDK v7
+options.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving.
+options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
 
 
 /*
@@ -209,6 +210,38 @@ options.capture.maxRoll = 0.03
 options.capture.maxPitch = 0.03
 
 ```
+
+### Custom `IProovPresentationDelegate`
+
+In previous versions of the SDK, when presenting the iProov UI the SDK would get a reference to the app delegate's window's `rootViewController`, then iterate through the stack to find the top-most view controller, and then `present()` iProov's view controller as a modal view controller from the top-most view controller on the stack.
+
+This resulted in an easy-to-use zero-config API surface, however this didn't necessarily work well for all cases, (e.g. modals from modals, or where it would be desirable to push iProov into an existing `UINavigationController` flow).
+
+We listened to your feedback! SDK v7.0 still provides the existing behaviour as a default, however it is now possible to pass a custom `presentationDelegate` to the UI options, which allows you to override the presentation/dismissal behaviour of the iProov view controller:
+
+```
+extension MyViewController: IProovPresentationDelegate {
+
+    func present(iProovViewController: UIViewController) {
+        // How should we present the iProov view controller?
+    }
+
+    func dismiss(iProovViewController: UIViewController) {
+        // How should we dismiss the iProov view controller once it's done?
+    }
+
+}
+```
+
+> ⚠️ **IMPORTANT:** There are a couple of important rules you **must** follow when using this functionality:
+> 
+> 1. With great power comes great responsibility. The iProov view controller requires full cover of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only takes up part of the screen, or is obscured by other views. Also, you must ensure that the view controller is entirely removed from the user's view once dismissed.
+> 
+> 2. To avoid the risk of retain cycles, `Options` only holds a **weak** reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
+
+---
+
+> 📲 **iOS 13 BETA**: If you're building a Swift UI based app (iOS 13+), you will need to produce your own custom presentation delegate, as  there is no longer the concept of the app delegate window. We intend to provide an updated default presentation delegate prior to the release of iOS 13 later this year which fully supports Swift UI based apps, however for now this functionality should enable you to roll your own solution.
 
 ## 🌎 String localization & customization
 
@@ -252,7 +285,7 @@ A description of these cases are as follows:
 
 * `streamingError(String?)` - An error occurred with the video streaming process. Consult the error associated value for more information.
 * `encoderError(code: Int32?)` - An error occurred with the video encoder. Report the error code to iProov for further assistance.
-* `lightingModelError` - An error occurred with the lighting model. This should be reported to iProov for further assistance.
+* `lightingModelError` - An error occurred with the lighting mode. This should be reported to iProov for further assistance.
 * `cameraError(String?)` - An error occurred with the camera.
 * `cameraPermissionDenied` - The user disallowed access to the camera when prompted.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.

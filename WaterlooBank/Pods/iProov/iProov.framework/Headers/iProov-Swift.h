@@ -234,7 +234,7 @@ SWIFT_CLASS("_TtC6iProov6IProov")
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithToken:(NSString * _Nonnull)token animated:(BOOL)animated options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithToken:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 

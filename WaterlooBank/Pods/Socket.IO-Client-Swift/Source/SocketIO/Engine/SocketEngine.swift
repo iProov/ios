@@ -114,6 +114,9 @@ open class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePollable, So
     @available(*, deprecated, message: "No longer needed, if we're not polling, then we must be doing websockets")
     public private(set) var websocket = false
 
+    /// When `true`, the WebSocket `stream` will be configured with the enableSOCKSProxy `true`.
+    public private(set) var enableSOCKSProxy = false
+
     /// The WebSocket for this engine.
     public private(set) var ws: WebSocket?
 
@@ -167,6 +170,7 @@ open class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePollable, So
         self.init(client: client, url: url, config: options?.toSocketConfiguration() ?? [])
     }
 
+    /// :nodoc:
     deinit {
         DefaultSocketLogger.Logger.log("Engine is being released", type: SocketEngine.logType)
         closed = true
@@ -283,7 +287,9 @@ open class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePollable, So
 
         addHeaders(to: &req, includingCookies: session?.configuration.httpCookieStorage?.cookies(for: urlPollingWithSid))
 
-        ws = WebSocket(request: req)
+        let stream = FoundationStream()
+        stream.enableSOCKSProxy = enableSOCKSProxy
+        ws = WebSocket(request: req, stream: stream)
         ws?.callbackQueue = engineQueue
         ws?.enableCompression = compress
         ws?.disableSSLCertValidation = selfSigned
@@ -593,6 +599,8 @@ open class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePollable, So
                 self.security = security
             case .compress:
                 self.compress = true
+            case .enableSOCKSProxy:
+                self.enableSOCKSProxy = true
             default:
                 continue
             }
