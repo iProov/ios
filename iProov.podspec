@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'It\'s never been so simple to authenticate securely'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'licenses/3rdparty.md' }
-  s.author           = { 'Jonathan Ellis' => 'jonathan.ellis@iproov.com' }
+  s.author           = { 'iProov' => 'support@iproov.com' }
   s.source           = { :git => 'https://github.com/iProov/ios.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
