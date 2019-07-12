@@ -3,7 +3,7 @@ PODS:
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
-  - iProov (7.0.0-beta3):
+  - iProov (7.0.0):
     - KeychainAccess (~> 3.2.0)
     - Socket.IO-Client-Swift (~> 15.1.0)
     - SwiftyJSON (~> 4.0.0)
@@ -17,39 +17,30 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Alamofire-SwiftyJSON (~> 3.0)
-  - "iProov (from `git@github.com:iProov/ios.git`, branch `nextgen`)"
+  - iProov
   - MBProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Alamofire-SwiftyJSON
+    - iProov
     - KeychainAccess
     - MBProgressHUD
     - Socket.IO-Client-Swift
     - Starscream
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  iProov:
-    :branch: nextgen
-    :git: "git@github.com:iProov/ios.git"
-
-CHECKOUT OPTIONS:
-  iProov:
-    :commit: 278a8398f8553bd95e2ca47ab962652d5f7b6426
-    :git: "git@github.com:iProov/ios.git"
-
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
-  iProov: 2c0162fb3d26c0a796d05c7ad7b1aab73c44582b
+  iProov: 75306b80dbcb7d1541c940afbabcea723457485f
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 9154f991f3a1f99c7ed94e3299e2d440656beb68
+PODFILE CHECKSUM: b0155484815e6dc7348d007eb68471a7e44f5acc
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.7.4

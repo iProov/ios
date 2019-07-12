@@ -1,10 +1,8 @@
-# iProov iOS SDK v7.0.0-beta3
+# iProov iOS SDK v7.0.0
 
 ## 🤳 Introduction
 
 The iProov iOS SDK allows you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
-
-> **💠 PRE-RELEASE SOFTWARE:** This version is currently in beta and not all features of the SDK are enabled or fully operations.
 
 The iProov iOS SDK is a binary iOS dynamic framework. It is supported on devices running iOS 9.0 and above, on both iPhones and iPads, using Xcode 10.2.1 (see note below regarding Xcode version compatibility).
 
@@ -18,20 +16,6 @@ The framework package is provided via this repository, which contains the follow
 * **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious _Waterloo Bank_ written in Swift.
 * **WaterlooBankObjC** -- a folder containing an Xcode sample project for _Waterloo Bank_ written in Objective-C.
 * **iProov.framework & iProov.podspec** -- these are the files which will be pulled in automatically by Cocoapods. You do not need to do anything with these files.
-
-## 💠 Pre-release software
-
-Please note that iOS SDK v7.0.0 is currently beta (pre-release) software for pre-release evaluation/testing purposes only, **and is not intended to be used in production**. Do not put this SDK into a production app without checking with iProov first.
-
-#### Known issues
-
-- The SDK can only be installed via Cocoapods `:git` parameter, and is not available on the trunk repo. v7 will soon be available on the trunk repo.
-- The new evolutionary adaptive lighting model is still undergoing training. You may experience failures to iProov in particularly bright environments (e.g. outdoors).
-- We do not currently have Waterloo Bank sample code in Objective-C.
-
-Look out for the 💠 symbol in the documentation for additional/missing information in relating to pre-release software.
-
-If you find any other issues, please [contact support](mailto:support@iproov.com).
 
 ## ⚠️ Important notice regarding Xcode compatibility
 
@@ -64,9 +48,8 @@ Integration with your app is supported via both Cocoapods and Carthage. We recom
 2. Add the following to your **Podfile** (inside the target section):
 
 	```ruby
-	pod 'iProov', :git => 'https://github.com/iProov/ios.git', :branch => 'nextgen'
+	pod 'iProov'
 	```
-> **💠 PRE-RELEASE SOFTWARE:** You will be able to move the `git:` and `:branch` parameters once the final version of the SDK is released.
 
 3. Run `pod install`.
 
@@ -83,14 +66,9 @@ Add the following to your Cartfile:
 github "socketio/socket.io-client-swift" == 15.1.0
 github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
 github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
-binary "https://raw.githubusercontent.com/iProov/ios/nextgen/carthage/IProov.json"
+binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 ```
 > **⬆️ UPGRADING NOTICE:** Take note of the new dependencies & versions!
-
----
-
-> **💠 PRE-RELEASE SOFTWARE:** Take note of the nextgen-specific URL for the IProov binary. This will need to be updated once v7 is released to production.
-
 
 After installation, you will need to add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
@@ -153,10 +131,6 @@ By default, iProov will stream to our EU back-end platform. If you wish to strea
 
 > **⬆️ UPGRADING NOTICE:** Previously, after launching iProov, the SDK would handle the entire user experience end-to-end, from getting a token all the way through to the streaming UI and would then pass back a pass/fail/error result to your app. In v7, the SDK flashes the screen and then hands back control to your app, whilst the capture is streamed in the background. This means that you can now control the UI to display your own streaming UI, or allow the user to continue with another activity whilst the iProov capture streams in the background.
 
----
-
-> **💠 PRE-RELEASE SOFTWARE:** Objective-C sample code is coming soon.
-
 ## ⚙ Options
 
 You can customize the iProov session by passing in an `Options` object when launching iProov and setting any of these variables:
@@ -195,7 +169,7 @@ options.ui.presentationDelegate = MyPresentationDelegate() // See the section be
 */
 
 options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own proxy server, or for overriding the built-in certificate pinning for some other reason. Certificates should be generated in DER-encoded X.509 certificate format, eg. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
-options.network.disableCertificatePinning = false	// Disables SSL/TLS certificate pinning to the server. WARNING! Do not enable this in production apps.
+options.network.certificatePinningDisabled = false	// Disables SSL/TLS certificate pinning to the server. WARNING! Do not enable this in production apps.
 
 /*
 	CaptureOptions
@@ -257,8 +231,6 @@ If the user's device language is set to one of the above, the SDK will be locali
 
 It is also possible to manually customize any of the strings in the app, regardless of locale.
 
-> **💠 PRE-RELEASE SOFTWARE:** More information on string customization coming soon.
-
 ## 💥 Handling failures & errors
 
 ### Failures
@@ -283,6 +255,7 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 
 A description of these cases are as follows:
 
+* `captureAlreadyActive` - An existing iProov capture is already in progress. Wait until the current capture completes before starting a new one.
 * `streamingError(String?)` - An error occurred with the video streaming process. Consult the error associated value for more information.
 * `encoderError(code: Int32?)` - An error occurred with the video encoder. Report the error code to iProov for further assistance.
 * `lightingModelError` - An error occurred with the lighting mode. This should be reported to iProov for further assistance.
