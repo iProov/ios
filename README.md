@@ -1,31 +1,21 @@
-# iProov iOS SDK v7.0.0
+# iProov iOS SDK v7.1.0
 
 ## 🤳 Introduction
 
-The iProov iOS SDK allows you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
+The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
 
-The iProov iOS SDK is a binary iOS dynamic framework. It is supported on devices running iOS 9.0 and above, on both iPhones and iPads, using Xcode 10.2.1 (see note below regarding Xcode version compatibility).
+The iProov iOS SDK is a binary iOS dynamic framework. It is supported on devices running iOS 9.0 and above, on both iPhones and iPads,
 
-The framework has been written in Swift, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our Objective-C wrapper, which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.1, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C wrapper](https://github.com/iProov/ios/wiki/Objective-C-Integration), which provides an Objective-C friendly API to invoke the Swift code.
 
 ## 📖 Contents
 
 The framework package is provided via this repository, which contains the following:
 
-* **README.md** -- this document
-* **WaterlooBank** -- a folder containing an Xcode sample project of iProov for the fictitious _Waterloo Bank_ written in Swift.
-* **WaterlooBankObjC** -- a folder containing an Xcode sample project for _Waterloo Bank_ written in Objective-C.
-* **iProov.framework & iProov.podspec** -- these are the files which will be pulled in automatically by Cocoapods. You do not need to do anything with these files.
-
-## ⚠️ Important notice regarding Xcode compatibility
-
-Please note that iProov is distributed as a compiled binary framework. Due to [current Swift limitations](https://forums.swift.org/t/plan-for-module-stability/14551), this means that the version of Xcode (and the version of Swift) that was used to compile the iProov framework must exactly match the version of Xcode used to compile your app.
-
-The version of Xcode used to compile v7.0.0 of the SDK is Xcode 10.2.1 (Swift 5.0.1).
-
-Therefore, this is the only supported version of Xcode for iProov. If you are using an older version of Xcode and cannot upgrade for whatever reason, you will need to use an older version of the SDK ([contact iProov](mailto:support@iproov.com) for further details).
-
-> **NOTE:** With the addition of [module stability in Swift 5.1](https://swift.org/blog/5-1-release-process/) we look forward to providing an updated version of the SDK with the release of iOS 13 later this year, which will support multiple Swift compiler versions.
+* **README.md** - This document
+* **WaterlooBank** - A sample project of iProov for the fictitious _Waterloo Bank_, written in Swift.
+* **iProov.framework** - The framework file itself. You can add this to your project manually, if you aren't using a dependency manager. (Please note this is a "fat" framework for both device & simulator)
+* **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
 
 ## ⬆️ Upgrading from v6.x or earlier
 
@@ -80,11 +70,11 @@ Before being able to launch iProov, you need to get a token to iProov against. T
 2. An **enrol** token - for registering a new user
 3. An **ID match** token - for matching a user against a scanned ID document image.
 
-In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift/Alamofire sample code for obtaining tokens via [iProov API v2](https://github.com/iProov/ios/blob/nextgen/Sample%20Code/APIV2Client.swift) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
+In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift/Alamofire sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
 
 > **⬆️ UPGRADING NOTICE:** This is a significant change from pre-v7 SDK where for ease of debugging/development, the SDK could be passed an API key and then obtain the token for you automatically. This should never have been used for production apps anyway, and the functionality is no longer part of the SDK.
 
-Once you have obtained the token, you can simply call `IProov.launch(...)`:
+Once you have obtained the token, you can simply call `IProov.launch()`:
 
 ```
 let token = "{{ your token here }}"
@@ -100,10 +90,10 @@ IProov.launch(token: token, callback: { (status) in
 	    // The user was successfully verified/enrolled and the token has been validated.
 	    // The token passed back will be the same as the one passed in to the original call.
 	    
-	case let .failure(reason, feedback):
+	case let .failure(reason, feedbackCode):
 		// The user was not successfully verified/enrolled, as their identity could not be verified,
-		// or there was another issue with their verification/enrollment, and a reason (as a string)
-		// is provided as to why the claim failed.
+		// or there was another issue with their verification/enrollment. A reason (as a string)
+		// is provided as to why the claim failed, along with a feedback code from the back-end.
 		
 	case .cancelled:
 		// The user cancelled iProov, either by pressing the close button at the top right, or sending
@@ -170,6 +160,9 @@ options.ui.presentationDelegate = MyPresentationDelegate() // See the section be
 
 options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own proxy server, or for overriding the built-in certificate pinning for some other reason. Certificates should be generated in DER-encoded X.509 certificate format, eg. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
 options.network.certificatePinningDisabled = false	// Disables SSL/TLS certificate pinning to the server. WARNING! Do not enable this in production apps.
+options.network.transport = .webSocket // The transport/streaming protocol to use. Default is .webSocket which uses WebSockets only. You can change this to .polling for HTTP long-polling, or .auto for auto-configuration which will start with polling and attempt to upgrade to WebSockets.
+options.network.timeout = 10 // The network timeout in seconds.
+options.network.path = "/socket.io/v2/" // The path to use when streaming, defaults to /socket.io/v2/. You should not need to change this unless directed to do so by iProov.
 
 /*
 	CaptureOptions
@@ -189,9 +182,9 @@ options.capture.maxPitch = 0.03
 
 In previous versions of the SDK, when presenting the iProov UI the SDK would get a reference to the app delegate's window's `rootViewController`, then iterate through the stack to find the top-most view controller, and then `present()` iProov's view controller as a modal view controller from the top-most view controller on the stack.
 
-This resulted in an easy-to-use zero-config API surface, however this didn't necessarily work well for all cases, (e.g. modals from modals, or where it would be desirable to push iProov into an existing `UINavigationController` flow).
+This resulted in an easy-to-use zero-config API, however this didn't necessarily work well for all cases, (e.g. modals from modals, or where it would be desirable to push iProov into an existing `UINavigationController` flow).
 
-We listened to your feedback! SDK v7.0 still provides the existing behaviour as a default, however it is now possible to pass a custom `presentationDelegate` to the UI options, which allows you to override the presentation/dismissal behaviour of the iProov view controller:
+We listened to your feedback! SDK v7 still provides the existing behaviour as a default, however it is now possible to pass a custom `presentationDelegate` to the UI options, which allows you to override the presentation/dismissal behaviour of the iProov view controller:
 
 ```
 extension MyViewController: IProovPresentationDelegate {
