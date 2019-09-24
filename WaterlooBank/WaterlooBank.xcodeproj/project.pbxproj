@@ -202,7 +202,7 @@
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${PODS_ROOT}/iProov/iProov.framework",
+				"${PODS_ROOT}/../../iProov.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

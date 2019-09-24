@@ -3,7 +3,7 @@ platform :ios, '9.0'
 target 'WaterlooBank' do
   use_frameworks!
 
-  pod 'iProov'
+  pod 'iProov', :path => '../'
   pod 'Alamofire', '~> 4.0'
   pod 'Alamofire-SwiftyJSON', '~> 3.0'
   pod 'MBProgressHUD'
