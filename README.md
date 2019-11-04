@@ -1,12 +1,35 @@
-# iProov iOS SDK v7.1.0
+# iProov iOS SDK v7.2.0-beta1
 
 ## 🤳 Introduction
 
 The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
 
-The iProov iOS SDK is a binary iOS dynamic framework. It is supported on devices running iOS 9.0 and above, on both iPhones and iPads,
+### Requirements
 
-The framework has been written in Swift 5.1, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C wrapper](https://github.com/iProov/ios/wiki/Objective-C-Integration), which provides an Objective-C friendly API to invoke the Swift code.
+- iOS 9.0 and above
+- Xcode 11.0 and above
+
+The framework has been written in Swift 5.1.2, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+
+### Dependencies
+
+The iProov SDK has dependencies on the following third-party frameworks:
+
+- [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)
+- [Socket.IO-Client-Swift](https://github.com/socketio/socket.io-client-swift)
+- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+
+The SDK also utilises a [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2).
+
+### Module Stability
+
+As of iProov SDK 7.2.0, module stability is supported for Swift 5.1 and above. The advantage of this is that the iProov SDK no longer needs to be recompiled for every future version of the Swift compiler.
+
+iProov is now built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is not supported directly in either Cocoapods nor Carthage as of October 2019, therefore some workarounds are required (see installation documentation for details).
+
+### XCFramework Support
+
+The iProov iOS SDK is distributed as a dynamic binary framework. We intend to add support for the new [XCFramework](https://developer.apple.com/videos/play/wwdc2019/416/) binary framework format, once this is properly supported by Cocoapods and/or Carthage.
 
 ## 📖 Contents
 
@@ -14,14 +37,13 @@ The framework package is provided via this repository, which contains the follow
 
 * **README.md** - This document
 * **WaterlooBank** - A sample project of iProov for the fictitious _Waterloo Bank_, written in Swift.
-* **iProov.framework** - The framework file itself. You can add this to your project manually, if you aren't using a dependency manager. (Please note this is a "fat" framework for both device & simulator)
+* **iProov.framework** - The framework file itself. You can add this to your project manually, if you aren't using a dependency manager. (Please note this is a "fat" framework for both device & simulator).
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
+* **resources** -- Directory containing additional development resources you may find helpful.
 
-## ⬆️ Upgrading from v6.x or earlier
+## ⬆️ Upgrading from earlier versions
 
-Welcome to the next generation of the iProov SDK! v7 is a substantial overhaul to the SDK and added many new features, and as a result **SDK v7 is a major update and includes breaking changes!**
-
-Please consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app, and look out for the ⬆️ symbol in this README.
+Consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
 
 ## ✍️ Registration
 
@@ -33,34 +55,57 @@ Integration with your app is supported via both Cocoapods and Carthage. We recom
 
 ### Cocoapods
 
-1. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://cocoapods.org/).)
+1. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://guides.cocoapods.org/using/getting-started.html#installation).)
 
-2. Add the following to your **Podfile** (inside the target section):
+2. Add the following to your Podfile (inside the target section):
 
 	```ruby
 	pod 'iProov'
 	```
+	
+3. Add the following to the bottom of your Podfile:
 
-3. Run `pod install`.
+	```ruby
+	post_install do |installer|
+	    installer.pods_project.targets.each do |target|
+	      if ['KeychainAccess', 'Socket.IO-Client-Swift', 'SwiftyJSON'].include? target.name
+	        target.build_configurations.each do |config|
+	            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+	        end
+	      end
+	    end
+	end
+	```
+	
+	> 🧰 **MODULE STABILITY WORKAROUND:** You must add this code, because whilst iProov (since 7.2.0) supports module stability, it is not directly supported in Cocoapods. This code will manually enable module stability for all of iProov's dependencies. Once Cocoapods supports modular stability, this workaround can be removed. Progress on this feature can be tracked [here](https://github.com/CocoaPods/CocoaPods/issues/9148).
 
-4. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+4. Run `pod install`.
+
+5. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
 ### Carthage
 
 Cocoapods is recommend for the easiest integration, however we also support Carthage. 
 Full instructions installing and setting up Carthage [are available here](https://github.com/Carthage/Carthage).
 
-Add the following to your Cartfile:
+1. Add the following to your Cartfile:
 
-```
-github "socketio/socket.io-client-swift" == 15.1.0
-github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
-github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
-binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
-```
-> **⬆️ UPGRADING NOTICE:** Take note of the new dependencies & versions!
+	```
+	github "socketio/socket.io-client-swift" == 15.1.0
+	github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
+	github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
+	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
+	```
 
-After installation, you will need to add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+2. You can now build the dependencies with Carthage (see the note below about the custom build settings for module stability).
+
+	```
+	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES'>/tmp/iproov.xcconfig; XCODE_XCCONFIG_FILE=/tmp/iproov.xcconfig carthage build; rm /tmp/iproov.xcconfig
+	```
+
+	> 🧰 **MODULE STABILITY WORKAROUND:** iProov 7.2.0 supports module stability and therefore all its dependencies must be built in with the "Build Libraries for Distribution" setting enabled, however this is not currently supported in Carthage. Running this custom build command will ensure Xcode builds the dependencies with the correct settings. Once Carthage supports module stability, this workaround can be removed. Progress on this feature can be tracked [here](https://github.com/Carthage/Carthage/pull/2881).
+
+3. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
 
 ## 🚀 Get started
 
@@ -71,8 +116,6 @@ Before being able to launch iProov, you need to get a token to iProov against. T
 3. An **ID match** token - for matching a user against a scanned ID document image.
 
 In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift/Alamofire sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
-
-> **⬆️ UPGRADING NOTICE:** This is a significant change from pre-v7 SDK where for ease of debugging/development, the SDK could be passed an API key and then obtain the token for you automatically. This should never have been used for production apps anyway, and the functionality is no longer part of the SDK.
 
 Once you have obtained the token, you can simply call `IProov.launch()`:
 
@@ -113,14 +156,6 @@ By default, iProov will stream to our EU back-end platform. If you wish to strea
 
 > **⚠️ SECURITY NOTICE:** You should never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the validate API call) before performing any authenticated user actions.
 
----
-
-> **⬆️ UPGRADING NOTICE:** In v7 you no longer need to call `IProov.verify()` or `IProov.enrol()`. There were previously 6 separate methods to launch iProov, these have now been combined into a single method. (Push & URL launched claims are no longer handled within the SDK itself).
-
----
-
-> **⬆️ UPGRADING NOTICE:** Previously, after launching iProov, the SDK would handle the entire user experience end-to-end, from getting a token all the way through to the streaming UI and would then pass back a pass/fail/error result to your app. In v7, the SDK flashes the screen and then hands back control to your app, whilst the capture is streamed in the background. This means that you can now control the UI to display your own streaming UI, or allow the user to continue with another activity whilst the iProov capture streams in the background.
-
 ## ⚙ Options
 
 You can customize the iProov session by passing in an `Options` object when launching iProov and setting any of these variables:
@@ -133,7 +168,6 @@ let options = Options()
 	Configure options relating to the user interface
 */
 
-options.ui.locale = Locale(identifier: "en") // Overrides the device locale setting for the iProov SDK. Must be a 2-letter ISO 639-1 code: http://www.loc.gov/standards/iso639-2/php/code_list.php
 options.ui.filter = .shaded // Adjust the filter used for the face preview. Can be .classic (as in pre-v7), .shaded (additional detail, the default in v7) or .vibrant (full color).
 
 // Adjust various colors for the camera preview:
@@ -144,14 +178,12 @@ options.ui.notReadyTintColor = .orange
 options.ui.readyTintColor = .green
 
 options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
-options.ui.regularFont = "SomeFont"
-options.ui.boldFont = "SomeFont-Bold"
-options.ui.fonts = ["SomeFont", "SomeFont-Bold"] // If using custom fonts, specify them here (don't forget to add them to your Info.plist!)
-options.ui.logoImage = UIImage(named: "foo")
-options.ui.scanLineDisabled = false // Disables the vertical sweeping scanline whilst flashing introduced in SDK v7
+options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).
+options.ui.logoImage = UIImage(named: "AcmeLogo") // A custom logo to be shown at the top-right of the iProov screen.
+options.ui.scanLineDisabled = false // Disables the vertical sweeping scanline whilst flashing introduced in SDK v7.
 options.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving.
 options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
-
+options.ui.stringsBundle = Bundle(for: Foo.class) // Pass a custom bundle for string localization (see Localization Guide for further information).
 
 /*
 	NetworkOptions
@@ -208,21 +240,11 @@ extension MyViewController: IProovPresentationDelegate {
 
 ---
 
-> 📲 **iOS 13 BETA**: If you're building a Swift UI based app (iOS 13+), you will need to produce your own custom presentation delegate, as  there is no longer the concept of the app delegate window. We intend to provide an updated default presentation delegate prior to the release of iOS 13 later this year which fully supports Swift UI based apps, however for now this functionality should enable you to roll your own solution.
+> 📲 **SWIFTUI USERS**: If you're building a SwiftUI-based app (iOS 13+), you will need to produce your own custom presentation delegate, as there is no longer the concept of the app delegate window. We will provide an updated default presentation delegate in due course to support SwiftUI apps.
 
 ## 🌎 String localization & customization
 
-The SDK ships with localized strings for the following locales:
-
-- English
-- Norwegian Bokmål
-- Norwegian Nynosk
-- Dutch
-- Turkish
-
-If the user's device language is set to one of the above, the SDK will be localized accordingingly unless `options.ui.locale` is set, in which case this setting will override the default locale.
-
-It is also possible to manually customize any of the strings in the app, regardless of locale.
+The SDK ships with English strings only. If you wish to customise the strings in the app or localize them into a different language, see our [Localization Guide](https://github.com/iProov/ios/wiki/Localization).
 
 ## 💥 Handling failures & errors
 
@@ -255,6 +277,18 @@ A description of these cases are as follows:
 * `cameraError(String?)` - An error occurred with the camera.
 * `cameraPermissionDenied` - The user disallowed access to the camera when prompted.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
+
+## 🏦 Waterloo Bank sample code
+
+For a simple iProov experience that is ready to run out-of-the-box, check out the [Waterloo Bank sample project](/tree/master/WaterlooBank).
+
+### Installation
+
+1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the WaterlooBank directory to install the required dependencies.
+
+2. You can run the project by opening `WaterlooBank.xcworkspace` in Xcode and building the project. (Please note you can only launch iProov on a real device, it will not work in the simulator).
+
+> **⚠️ SECURITY NOTICE:** The Waterloo Bank sample project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
 ## ❓Help & support
 
