@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.2.0-beta1
+# iProov iOS SDK v7.2.0
 
 ## 🤳 Introduction
 
@@ -19,17 +19,13 @@ The iProov SDK has dependencies on the following third-party frameworks:
 - [Socket.IO-Client-Swift](https://github.com/socketio/socket.io-client-swift)
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 
-The SDK also utilises a [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2).
+The SDK also utilises a [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2) and includes a vendored copy of [Expression](https://github.com/nicklockwood/Expression).
 
 ### Module Stability
 
 As of iProov SDK 7.2.0, module stability is supported for Swift 5.1 and above. The advantage of this is that the iProov SDK no longer needs to be recompiled for every future version of the Swift compiler.
 
-iProov is now built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is not supported directly in either Cocoapods nor Carthage as of October 2019, therefore some workarounds are required (see installation documentation for details).
-
-### XCFramework Support
-
-The iProov iOS SDK is distributed as a dynamic binary framework. We intend to add support for the new [XCFramework](https://developer.apple.com/videos/play/wwdc2019/416/) binary framework format, once this is properly supported by Cocoapods and/or Carthage.
+iProov is now built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies should also be built in the same fashion. However, this is not supported directly in either Cocoapods nor Carthage as of October 2019, therefore some workarounds are required (see installation documentation for details).
 
 ## 📖 Contents
 
@@ -68,7 +64,7 @@ Integration with your app is supported via both Cocoapods and Carthage. We recom
 	```ruby
 	post_install do |installer|
 	    installer.pods_project.targets.each do |target|
-	      if ['KeychainAccess', 'Socket.IO-Client-Swift', 'SwiftyJSON'].include? target.name
+	      if ['KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream' 'SwiftyJSON'].include? target.name
 	        target.build_configurations.each do |config|
 	            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
 	        end
@@ -192,7 +188,6 @@ options.ui.stringsBundle = Bundle(for: Foo.class) // Pass a custom bundle for st
 
 options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own proxy server, or for overriding the built-in certificate pinning for some other reason. Certificates should be generated in DER-encoded X.509 certificate format, eg. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
 options.network.certificatePinningDisabled = false	// Disables SSL/TLS certificate pinning to the server. WARNING! Do not enable this in production apps.
-options.network.transport = .webSocket // The transport/streaming protocol to use. Default is .webSocket which uses WebSockets only. You can change this to .polling for HTTP long-polling, or .auto for auto-configuration which will start with polling and attempt to upgrade to WebSockets.
 options.network.timeout = 10 // The network timeout in seconds.
 options.network.path = "/socket.io/v2/" // The path to use when streaming, defaults to /socket.io/v2/. You should not need to change this unless directed to do so by iProov.
 
@@ -250,17 +245,29 @@ The SDK ships with English strings only. If you wish to customise the strings in
 
 ### Failures
 
-Failures occur when the user's identity could not be verified for some reason. A failure means that the capture was successfully received and processed by the server, which returned a result. Crucially, this differs from an error, where the capture could not be completed for some reason.
+Failures occur when the user's identity could not be verified for some reason. A failure means that the capture was successfully received and processed by the server, which returned a result. Crucially, this differs from an error, where the capture itself failed due to a system failure.
 
-Failures are caught via the `.failure(reason, fallback)` enum case in the callback:
+Failures are caught via the `.failure(reason, feedbackCode)` enum case in the callback:
 
-`reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time
+- `reason` - The reason that the user could not be verified/enrolled. You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time
 
-`feedback` - Where available, provides additional feedback on the reason the user could not be verified/enrolled. Some possible values are:
+- `feedbackCode` - An internal representation of the failure code.
 
-* `ambiguous_outcome`
-* `network_problem`
-* `user_timeout`
+The current feedback codes and reasons are as follows:
+
+| `feedbackCode` | `reason` |
+|-----------------------------------|---------------------------------------------------------------|
+| `ambiguous_outcome` | Sorry, ambiguous outcome |
+| `network_problem` | Sorry, network problem |
+| `motion_too_much_movement` | Please do not move while iProoving |
+| `lighting_flash_reflection_too_low` | Ambient light too strong or screen brightness too low |
+| `lighting_backlit` | Strong light source detected behind you |
+| `lighting_too_dark` | Your environment appears too dark |
+| `lighting_face_too_bright` | Too much light detected on your face |
+| `motion_too_much_mouth_movement` | Please do not talk while iProoving |
+| `user_timeout` | Sorry, your session has timed out |
+
+The list of feedback codes and reasons is subject to change.
 
 ### Errors
 
@@ -275,7 +282,7 @@ A description of these cases are as follows:
 * `encoderError(code: Int32?)` - An error occurred with the video encoder. Report the error code to iProov for further assistance.
 * `lightingModelError` - An error occurred with the lighting mode. This should be reported to iProov for further assistance.
 * `cameraError(String?)` - An error occurred with the camera.
-* `cameraPermissionDenied` - The user disallowed access to the camera when prompted.
+* `cameraPermissionDenied` - The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
 
 ## 🏦 Waterloo Bank sample code
@@ -291,5 +298,7 @@ For a simple iProov experience that is ready to run out-of-the-box, check out th
 > **⚠️ SECURITY NOTICE:** The Waterloo Bank sample project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
 ## ❓Help & support
+
+You may find your question is answered in our [FAQs](https://github.com/iProov/ios/wiki/Frequently-Asked-Questions) or one of our other [Wiki pages](https://github.com/iProov/ios/wiki).
 
 For further help with integrating the SDK, please contact [support@iproov.com](mailto:support@iproov.com).

@@ -12,7 +12,7 @@ end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
-      if ['KeychainAccess', 'Socket.IO-Client-Swift', 'SwiftyJSON'].include? target.name
+      if ['KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream', 'SwiftyJSON'].include? target.name
         target.build_configurations.each do |config|
             config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
         end

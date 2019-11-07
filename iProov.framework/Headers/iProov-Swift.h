@@ -259,12 +259,6 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 
 
-typedef SWIFT_ENUM(NSInteger, StreamingTransport, open) {
-  StreamingTransportWebSockets = 0,
-  StreamingTransportPolling = 1,
-  StreamingTransportAuto = 2,
-};
-
 
 
 
@@ -552,12 +546,6 @@ SWIFT_CLASS("_TtC6iProov7Options")
 @end
 
 
-
-typedef SWIFT_ENUM(NSInteger, StreamingTransport, open) {
-  StreamingTransportWebSockets = 0,
-  StreamingTransportPolling = 1,
-  StreamingTransportAuto = 2,
-};
 
 
 

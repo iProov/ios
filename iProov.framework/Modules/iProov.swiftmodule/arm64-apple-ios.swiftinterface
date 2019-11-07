@@ -70,7 +70,6 @@ extension IProov {
 @objc public class NetworkOptions : ObjectiveC.NSObject {
   public var certificates: [Swift.String]
   public var certificatePinningDisabled: Swift.Bool
-  public var transport: iProov.StreamingTransport
   public var timeout: Foundation.TimeInterval
   public var path: Swift.String
   @objc override dynamic public init()
@@ -91,14 +90,6 @@ extension IProov {
     get
   }
 }
-@objc public enum StreamingTransport : Swift.Int {
-  case webSockets, polling, auto
-  public typealias RawValue = Swift.Int
-  public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 infix operator --> : AdditionPrecedence
 public typealias Callback = (iProov.Status) -> Swift.Void
 public let defaultStreamingURL: Swift.String
@@ -106,7 +97,7 @@ public enum Status {
   case processing(progress: Swift.Double, message: Swift.String)
   case success(token: Swift.String)
   case cancelled
-  case failure(reason: Swift.String, feedback: Swift.String?)
+  case failure(reason: Swift.String, feedbackCode: Swift.String)
   case error(iProov.IProovError)
   public var isFinished: Swift.Bool {
     get
@@ -122,6 +113,3 @@ extension IProov {
 extension iProov.Filter : Swift.Equatable {}
 extension iProov.Filter : Swift.Hashable {}
 extension iProov.Filter : Swift.RawRepresentable {}
-extension iProov.StreamingTransport : Swift.Equatable {}
-extension iProov.StreamingTransport : Swift.Hashable {}
-extension iProov.StreamingTransport : Swift.RawRepresentable {}
