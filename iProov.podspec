@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '7.2.0'
+  s.version          = '7.2.1'
   s.summary          = 'Right person. Real person. Right now.'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
     'OTHER_SWIFT_FLAGS' => '-DGLES' # Required for GPUImage2
   }
   
-  s.dependency 'KeychainAccess', '~> 3.2.0'
-  s.dependency 'Socket.IO-Client-Swift', '~> 15.1.0'
+  s.dependency 'KeychainAccess', '~> 4.1.0'
+  s.dependency 'Socket.IO-Client-Swift', '~> 15.2.0'
   s.dependency 'SwiftyJSON', '~> 4.0.0'
 
   

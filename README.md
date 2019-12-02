@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.2.0
+# iProov iOS SDK v7.2.1
 
 ## 🤳 Introduction
 
@@ -87,8 +87,8 @@ Full instructions installing and setting up Carthage [are available here](https:
 1. Add the following to your Cartfile:
 
 	```
-	github "socketio/socket.io-client-swift" == 15.1.0
-	github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
+	github "socketio/socket.io-client-swift" == 15.2.0
+	github "kishikawakatsumi/KeychainAccess" ~> 4.1.0
 	github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 	```
