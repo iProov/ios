@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '7.2.1'
+  s.version          = '7.2.2'
   s.summary          = 'Right person. Real person. Right now.'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }

@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.2.1
+# iProov iOS SDK v7.2.2
 
 ## 🤳 Introduction
 
@@ -232,10 +232,6 @@ extension MyViewController: IProovPresentationDelegate {
 > 1. With great power comes great responsibility. The iProov view controller requires full cover of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only takes up part of the screen, or is obscured by other views. Also, you must ensure that the view controller is entirely removed from the user's view once dismissed.
 > 
 > 2. To avoid the risk of retain cycles, `Options` only holds a **weak** reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
-
----
-
-> 📲 **SWIFTUI USERS**: If you're building a SwiftUI-based app (iOS 13+), you will need to produce your own custom presentation delegate, as there is no longer the concept of the app delegate window. We will provide an updated default presentation delegate in due course to support SwiftUI apps.
 
 ## 🌎 String localization & customization
 
