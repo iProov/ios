@@ -1,8 +1,21 @@
-# iProov iOS SDK v7.2.2
+# iProov iOS SDK v7.3.0
+
+## 📖 Table of contents
+
+- [Introduction](#-introduction)
+- [Repository contents](#-repository-contents)
+- [Upgrading from earlier versions](#-upgrading-from-earlier-versions)
+- [Registration](#-registration)
+- [Installation](#-installation)
+- [Get started](#-get-started)
+- [Options](#-options)
+- [Localization](#-localization)
+- [Sample code](#-sample-code)
+- [Help & support](#-help--support)
 
 ## 🤳 Introduction
 
-The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android) and [HTML5 client](https://github.com/iProov/html5).
+The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android), [HTML5 client](https://github.com/iProov/html5), and [Xamarin bindings](https://github.com/iProov/xamarin).
 
 ### Requirements
 
@@ -27,7 +40,7 @@ As of iProov SDK 7.2.0, module stability is supported for Swift 5.1 and above. T
 
 iProov is now built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies should also be built in the same fashion. However, this is not supported directly in either Cocoapods nor Carthage as of October 2019, therefore some workarounds are required (see installation documentation for details).
 
-## 📖 Contents
+## 📦 Repository contents
 
 The framework package is provided via this repository, which contains the following:
 
@@ -35,11 +48,11 @@ The framework package is provided via this repository, which contains the follow
 * **WaterlooBank** - A sample project of iProov for the fictitious _Waterloo Bank_, written in Swift.
 * **iProov.framework** - The framework file itself. You can add this to your project manually, if you aren't using a dependency manager. (Please note this is a "fat" framework for both device & simulator).
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
-* **resources** -- Directory containing additional development resources you may find helpful.
+* **resources** - Directory containing additional development resources you may find helpful.
 
 ## ⬆️ Upgrading from earlier versions
 
-Consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
+If you're already using an older version of the iProov SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
 
 ## ✍️ Registration
 
@@ -95,7 +108,7 @@ Full instructions installing and setting up Carthage [are available here](https:
 
 2. You can now build the dependencies with Carthage (see the note below about the custom build settings for module stability).
 
-	```
+	```bash
 	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES'>/tmp/iproov.xcconfig; XCODE_XCCONFIG_FILE=/tmp/iproov.xcconfig carthage build; rm /tmp/iproov.xcconfig
 	```
 
@@ -115,7 +128,7 @@ In a production app, you normally would want to obtain the token via a server-to
 
 Once you have obtained the token, you can simply call `IProov.launch()`:
 
-```
+```swift
 let token = "{{ your token here }}"
 
 IProov.launch(token: token, callback: { (status) in
@@ -126,8 +139,8 @@ IProov.launch(token: token, callback: { (status) in
 		// the user. This will be called multiple time as the progress updates.
 	    
 	case let .success(token):
-	    // The user was successfully verified/enrolled and the token has been validated.
-	    // The token passed back will be the same as the one passed in to the original call.
+		// The user was successfully verified/enrolled and the token has been validated.
+		// The token passed back will be the same as the one passed in to the original call.
 	    
 	case let .failure(reason, feedbackCode):
 		// The user was not successfully verified/enrolled, as their identity could not be verified,
@@ -213,7 +226,7 @@ This resulted in an easy-to-use zero-config API, however this didn't necessarily
 
 We listened to your feedback! SDK v7 still provides the existing behaviour as a default, however it is now possible to pass a custom `presentationDelegate` to the UI options, which allows you to override the presentation/dismissal behaviour of the iProov view controller:
 
-```
+```swift
 extension MyViewController: IProovPresentationDelegate {
 
     func present(iProovViewController: UIViewController) {
@@ -233,7 +246,7 @@ extension MyViewController: IProovPresentationDelegate {
 > 
 > 2. To avoid the risk of retain cycles, `Options` only holds a **weak** reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
 
-## 🌎 String localization & customization
+## 🌎 Localization
 
 The SDK ships with English strings only. If you wish to customise the strings in the app or localize them into a different language, see our [Localization Guide](https://github.com/iProov/ios/wiki/Localization).
 
@@ -281,7 +294,7 @@ A description of these cases are as follows:
 * `cameraPermissionDenied` - The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
 
-## 🏦 Waterloo Bank sample code
+## 🏦 Sample code
 
 For a simple iProov experience that is ready to run out-of-the-box, check out the [Waterloo Bank sample project](/tree/master/WaterlooBank).
 
