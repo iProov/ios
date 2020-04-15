@@ -56,7 +56,7 @@ If you're already using an older version of the iProov SDK, consult the [Upgrade
 
 ## ✍️ Registration
 
-You can obtain API credentials by registering on the [iProov Partner Portal](https://www.iproov.net).
+You can obtain API credentials by registering on the [iProov Portal](https://portal.iproov.com/).
 
 ## 📲 Installation
 
