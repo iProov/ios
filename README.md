@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.3.0
+# iProov iOS SDK v7.4.0
 
 ## 📖 Table of contents
 
@@ -10,19 +10,20 @@
 - [Get started](#-get-started)
 - [Options](#-options)
 - [Localization](#-localization)
+- [Handling failures & errors](#-handling-failures--errors)
 - [Sample code](#-sample-code)
 - [Help & support](#-help--support)
 
 ## 🤳 Introduction
 
-The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iproov/android), [HTML5 client](https://github.com/iProov/html5), and [Xamarin bindings](https://github.com/iProov/xamarin).
+The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iProov/android), [Xamarin bindings](https://github.com/iProov/xamarin) and [Web SDK](https://github.com/iProov/web).
 
 ### Requirements
 
 - iOS 9.0 and above
 - Xcode 11.0 and above
 
-The framework has been written in Swift 5.1.2, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.2.2, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
 ### Dependencies
 
@@ -36,25 +37,26 @@ The SDK also utilises a [forked version](https://github.com/iproovopensource/GPU
 
 ### Module Stability
 
-As of iProov SDK 7.2.0, module stability is supported for Swift 5.1 and above. The advantage of this is that the iProov SDK no longer needs to be recompiled for every future version of the Swift compiler.
+As of iProov SDK 7.2.0, module stability is supported for Swift 5.1 and above. The advantage of this is that the iProov SDK no longer needs to be recompiled for every new version of the Swift compiler.
 
-iProov is now built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies should also be built in the same fashion. However, this is not supported directly in either Cocoapods nor Carthage as of October 2019, therefore some workarounds are required (see installation documentation for details).
+iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is still not fully supported in either Cocoapods nor Carthage as of April 2020, therefore some workarounds are required (see installation documentation for details).
 
 ## 📦 Repository contents
 
 The framework package is provided via this repository, which contains the following:
 
-* **README.md** - This document
-* **WaterlooBank** - A sample project of iProov for the fictitious _Waterloo Bank_, written in Swift.
-* **iProov.framework** - The framework file itself. You can add this to your project manually, if you aren't using a dependency manager. (Please note this is a "fat" framework for both device & simulator).
+* **README.md** - This document!
+* **WaterlooBank** - A sample project of iProov for the fictitious _"Waterloo Bank"_, written in Swift.
+* **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
+* **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
 * **resources** - Directory containing additional development resources you may find helpful.
 
-## ⬆️ Upgrading from earlier versions
+## ⬆ Upgrading from earlier versions
 
 If you're already using an older version of the iProov SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
 
-## ✍️ Registration
+## ✍ Registration
 
 You can obtain API credentials by registering on the [iProov Portal](https://portal.iproov.com/).
 
@@ -63,6 +65,8 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 Integration with your app is supported via both Cocoapods and Carthage. We recommend Cocoapods for the easiest installation.
 
 ### Cocoapods
+
+As of iProov SDK 7.4.0 the framework is now distributed as an XCFramework, **you are therefore required to use Cocoapods 1.9.0 or newer**.
 
 1. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://guides.cocoapods.org/using/getting-started.html#installation).)
 
@@ -77,7 +81,7 @@ Integration with your app is supported via both Cocoapods and Carthage. We recom
 	```ruby
 	post_install do |installer|
 	    installer.pods_project.targets.each do |target|
-	      if ['KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream' 'SwiftyJSON'].include? target.name
+	      if ['iProov', 'KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream' 'SwiftyJSON'].include? target.name
 	        target.build_configurations.each do |config|
 	            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
 	        end
@@ -86,7 +90,7 @@ Integration with your app is supported via both Cocoapods and Carthage. We recom
 	end
 	```
 	
-	> 🧰 **MODULE STABILITY WORKAROUND:** You must add this code, because whilst iProov (since 7.2.0) supports module stability, it is not directly supported in Cocoapods. This code will manually enable module stability for all of iProov's dependencies. Once Cocoapods supports modular stability, this workaround can be removed. Progress on this feature can be tracked [here](https://github.com/CocoaPods/CocoaPods/issues/9148).
+	> 🧰 **MODULE STABILITY WORKAROUND:** You must add this code, because whilst iProov (since 7.2.0) supports module stability, it is not directly supported in Cocoapods. This code will manually enable module stability for all of iProov's dependencies. [This is due to be fixed in Cocoapods 1.10.0](https://github.com/CocoaPods/CocoaPods/pull/9693).
 
 4. Run `pod install`.
 
@@ -97,12 +101,14 @@ Integration with your app is supported via both Cocoapods and Carthage. We recom
 Cocoapods is recommend for the easiest integration, however we also support Carthage. 
 Full instructions installing and setting up Carthage [are available here](https://github.com/Carthage/Carthage).
 
+At the time of writing, Carthage still does not properly support XCFrameworks, therefore it will install the traditional fat framework instead.
+
 1. Add the following to your Cartfile:
 
 	```
 	github "socketio/socket.io-client-swift" == 15.2.0
-	github "kishikawakatsumi/KeychainAccess" ~> 4.1.0
-	github "SwiftyJSON/SwiftyJSON" ~> 4.0.0
+	github "kishikawakatsumi/KeychainAccess" ~> 4.1
+	github "SwiftyJSON/SwiftyJSON" ~> 4.0
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 	```
 
@@ -118,11 +124,10 @@ Full instructions installing and setting up Carthage [are available here](https:
 
 ## 🚀 Get started
 
-Before being able to launch iProov, you need to get a token to iProov against. There are 3 different token types:
+Before being able to launch iProov, you need to get a token to iProov against. There are 2 different token types:
 
-1. A **verify** token - for logging in an existing user
+1. A **verify** token - for logging-in an existing user
 2. An **enrol** token - for registering a new user
-3. An **ID match** token - for matching a user against a scanned ID document image.
 
 In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift/Alamofire sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
 
@@ -220,11 +225,9 @@ options.capture.maxPitch = 0.03
 
 ### Custom `IProovPresentationDelegate`
 
-In previous versions of the SDK, when presenting the iProov UI the SDK would get a reference to the app delegate's window's `rootViewController`, then iterate through the stack to find the top-most view controller, and then `present()` iProov's view controller as a modal view controller from the top-most view controller on the stack.
+By default, upon launching the SDK, it will get a reference to your app delegate's window's `rootViewController`, then iterate through the view controller stack to find the top-most view controller and then `present()` iProov's view controller as a modal view controller from the top-most view controller on the stack.
 
-This resulted in an easy-to-use zero-config API, however this didn't necessarily work well for all cases, (e.g. modals from modals, or where it would be desirable to push iProov into an existing `UINavigationController` flow).
-
-We listened to your feedback! SDK v7 still provides the existing behaviour as a default, however it is now possible to pass a custom `presentationDelegate` to the UI options, which allows you to override the presentation/dismissal behaviour of the iProov view controller:
+This may not always be the desirable behaviour; for instance, you may wish to present iProov as part of a `UINavigationController`-based flow. Therefore, it is also possible to set the `options.ui.presentationDelegate` property, which allows you to override the presentation/dismissal behaviour of the iProov view controller by conforming to the `IProovPresentationDelegate` protocol:
 
 ```swift
 extension MyViewController: IProovPresentationDelegate {
@@ -242,7 +245,7 @@ extension MyViewController: IProovPresentationDelegate {
 
 > ⚠️ **IMPORTANT:** There are a couple of important rules you **must** follow when using this functionality:
 > 
-> 1. With great power comes great responsibility. The iProov view controller requires full cover of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only takes up part of the screen, or is obscured by other views. Also, you must ensure that the view controller is entirely removed from the user's view once dismissed.
+> 1. With great power comes great responsibility! The iProov view controller requires full cover of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only occupies part of the screen, or is obscured by other views. Also, you must ensure that the view controller is entirely removed from the user's view once dismissed.
 > 
 > 2. To avoid the risk of retain cycles, `Options` only holds a **weak** reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
 
@@ -280,7 +283,7 @@ The list of feedback codes and reasons is subject to change.
 
 ### Errors
 
-Errors occur when the capture could not be completed due to a technical problem or user action which prevents the capture from completing. Errors originate from the device, as opposed to iProov's servers.
+Errors occur when the capture could not be completed due to a technical problem or user action which prevents the capture from completing.
 
 Errors are caught via the `.error(error)` enum case in the callback. The `error` parameter provides the reason the iProov process failed as an `IProovError`.
 
@@ -306,7 +309,7 @@ For a simple iProov experience that is ready to run out-of-the-box, check out th
 
 > **⚠️ SECURITY NOTICE:** The Waterloo Bank sample project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
-## ❓Help & support
+## ❓ Help & support
 
 You may find your question is answered in our [FAQs](https://github.com/iProov/ios/wiki/Frequently-Asked-Questions) or one of our other [Wiki pages](https://github.com/iProov/ios/wiki).
 
