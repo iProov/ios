@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.4.1
+# iProov iOS SDK v7.4.2
 
 ## 📖 Table of contents
 
