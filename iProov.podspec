@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '7.4.2'
+  s.version          = '7.5.0'
   s.summary          = 'Award-winning online biometric authentication'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'commercial', :file => 'LICENSE.md' }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.dependency 'KeychainAccess', '~> 4.1'
   s.dependency 'Socket.IO-Client-Swift', '~> 15.2'
-  s.dependency 'SwiftyJSON', '~> 4.0'
+  s.dependency 'SwiftyJSON', '~> 5.0'
 
   
 end

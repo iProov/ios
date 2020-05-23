@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 import AVFoundation
 import Accelerate
@@ -22,10 +22,6 @@ import VideoToolbox
 import Vision
 import WebKit
 @_exported import iProov
-extension IProov {
-  @discardableResult
-  public static func handle(url: Foundation.URL, from webView: WebKit.WKWebView) -> Swift.Bool
-}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
@@ -44,6 +40,9 @@ public enum IProovError : Foundation.LocalizedError {
 @objc public protocol IProovPresentationDelegate : AnyObject {
   @objc func present(iProovViewController: UIKit.UIViewController)
   @objc func dismiss(iProovViewController: UIKit.UIViewController)
+}
+extension WKWebView {
+  public func installIProovNativeBridge()
 }
 extension IProov {
   @available(swift, obsoleted: 1.0)
@@ -110,10 +109,6 @@ public enum Status {
   }
 }
 extension IProov {
-  public static var deviceID: Swift.String {
-    get
-  }
-  public static func clearKeychain()
   public static func launch(streamingURL: Swift.String = defaultStreamingURL, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
 }
 extension iProov.Filter : Swift.Equatable {}

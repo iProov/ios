@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.4.2
+# iProov iOS SDK v7.5.0
 
 ## 📖 Table of contents
 
@@ -23,7 +23,7 @@ The iProov iOS SDK enables you to integrate iProov into your iOS app. We also ha
 - iOS 9.0 and above
 - Xcode 11.0 and above
 
-The framework has been written in Swift 5.2.2, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.2.4, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
 ### Dependencies
 
@@ -108,7 +108,7 @@ At the time of writing, Carthage still does not properly support XCFrameworks, t
 	```
 	github "socketio/socket.io-client-swift" == 15.2.0
 	github "kishikawakatsumi/KeychainAccess" ~> 4.1
-	github "SwiftyJSON/SwiftyJSON" ~> 4.0
+	github "SwiftyJSON/SwiftyJSON" ~> 5.0
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 	```
 
@@ -305,7 +305,9 @@ For a simple iProov experience that is ready to run out-of-the-box, check out th
 
 1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the WaterlooBank directory to install the required dependencies.
 
-2. You can run the project by opening `WaterlooBank.xcworkspace` in Xcode and building the project. (Please note you can only launch iProov on a real device, it will not work in the simulator).
+2. Open `WaterlooBank.xcworkspace` then navigate to `HomeViewController.swift` and add your API key and Secret on the appropriate lines.
+
+3. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
 
 > **⚠️ SECURITY NOTICE:** The Waterloo Bank sample project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
