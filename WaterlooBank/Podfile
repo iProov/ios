@@ -4,8 +4,7 @@ target 'WaterlooBank' do
   use_frameworks!
 
   pod 'iProov', :path => '../'
-  pod 'Alamofire', '~> 4.0'
-  pod 'Alamofire-SwiftyJSON', '~> 3.0'
+  pod 'iProovAPIClient', :git => 'https://github.com/iProov/ios-api-client.git'
   pod 'MBProgressHUD'
 
 end

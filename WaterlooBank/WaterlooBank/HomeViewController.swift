@@ -8,15 +8,15 @@
 
 import UIKit
 import iProov
+import iProovAPIClient
 import MBProgressHUD
 
 class HomeViewController: UIViewController {
 
     @IBOutlet private var usernameTextField: UITextField!
 
-    private let apiClient = APIClient(baseURL: "https://iproov.cloud/api/v1",
-                                      username: "iproov",   // TODO: Add your username & password
-                                      password: "PQpfp9ve7,au*2UB[c8vP.JD9")
+    private let apiClient = APIClient(apiKey: "<Your API Key>", // TODO: Add your API key here
+                                      secret: "<Your Secret>")  // TODO: Add your Secret here
     
     private var token: String?
 
@@ -58,9 +58,9 @@ class HomeViewController: UIViewController {
         hud.mode = .indeterminate
         hud.label.text = "Getting token..."
         
-        apiClient.getToken(type: claimType, userID: username, success: { (token, streamingURL) in
+        apiClient.getToken(type: claimType, userID: username, success: { (token) in
             
-            IProov.launch(streamingURL: streamingURL, token: token, callback: { (status) in
+            IProov.launch(token: token, callback: { (status) in
                 
                 switch status {
                     

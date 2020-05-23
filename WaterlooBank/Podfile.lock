@@ -1,29 +1,27 @@
 PODS:
   - Alamofire (4.9.1)
-  - Alamofire-SwiftyJSON (3.0.0):
-    - Alamofire (~> 4.5)
-    - SwiftyJSON (~> 4.0.0)
-  - iProov (7.4.2):
+  - iProov (7.5.0):
     - KeychainAccess (~> 4.1)
     - Socket.IO-Client-Swift (~> 15.2)
-    - SwiftyJSON (~> 4.0)
-  - KeychainAccess (4.1.0)
+    - SwiftyJSON (~> 5.0)
+  - iProovAPIClient (0.2.0):
+    - Alamofire (~> 4.9)
+    - SwiftyJSON (~> 5.0)
+  - KeychainAccess (4.2.0)
   - MBProgressHUD (1.2.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
-  - SwiftyJSON (4.0.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - Alamofire-SwiftyJSON (~> 3.0)
   - iProov (from `../`)
+  - iProovAPIClient (from `https://github.com/iProov/ios-api-client.git`)
   - MBProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Alamofire-SwiftyJSON
     - KeychainAccess
     - MBProgressHUD
     - Socket.IO-Client-Swift
@@ -33,17 +31,24 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   iProov:
     :path: "../"
+  iProovAPIClient:
+    :git: https://github.com/iProov/ios-api-client.git
+
+CHECKOUT OPTIONS:
+  iProovAPIClient:
+    :commit: 8565e531410d87fc478cec0ccadf26c994c284f8
+    :git: https://github.com/iProov/ios-api-client.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
-  iProov: 8a9fea61d6a572f5df7435b6c6cfe661908c65af
-  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  iProov: 16de51166c50a08ec0d2a32334687c7d0e5236e3
+  iProovAPIClient: 427554ce0912166020265197255962f85b259338
+  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: b0520a4fe570aa2b5486028b2bff2cfe48a0d7c5
+PODFILE CHECKSUM: 89c5f8f97109dc7b3cdc6be21ea4ea087bd83cf4
 
 COCOAPODS: 1.9.1

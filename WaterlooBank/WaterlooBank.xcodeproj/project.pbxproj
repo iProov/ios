@@ -14,7 +14,6 @@
 		FC4AA0671B38C7D60053C313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4AA0651B38C7D60053C313 /* Main.storyboard */; };
 		FC4AA0691B38C7D60053C313 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4AA0681B38C7D60053C313 /* Images.xcassets */; };
 		FC4AA06C1B38C7D60053C313 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4AA06A1B38C7D60053C313 /* LaunchScreen.xib */; };
-		FC6E0DFC21F618510025064B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E0DFB21F618510025064B /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +41,6 @@
 		FC4AA0661B38C7D60053C313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC4AA0681B38C7D60053C313 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC4AA06B1B38C7D60053C313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FC6E0DFB21F618510025064B /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 				FC4AA0611B38C7D60053C313 /* AppDelegate.swift */,
 				FC4AA0631B38C7D60053C313 /* HomeViewController.swift */,
 				FC31DDBD1B3B3A63006F1A64 /* AccountViewController.swift */,
-				FC6E0DFB21F618510025064B /* APIClient.swift */,
 				FC4AA0651B38C7D60053C313 /* Main.storyboard */,
 				FC4AA0681B38C7D60053C313 /* Images.xcassets */,
 				FC4AA06A1B38C7D60053C313 /* LaunchScreen.xib */,
@@ -123,7 +120,7 @@
 			buildConfigurationList = FC4AA07B1B38C7D60053C313 /* Build configuration list for PBXNativeTarget "WaterlooBank" */;
 			buildPhases = (
 				CB10569726582304353C7EFD /* [CP] Check Pods Manifest.lock */,
-				AF6D03AA15B293465EB9D185 /* [CP] Prepare Artifacts */,
+				4F3A8E6665050095109952D4 /* [CP] Prepare Artifacts */,
 				FC4AA0581B38C7D60053C313 /* Sources */,
 				FC4AA0591B38C7D60053C313 /* Frameworks */,
 				FC4AA05A1B38C7D60053C313 /* Resources */,
@@ -162,6 +159,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -189,7 +187,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AF6D03AA15B293465EB9D185 /* [CP] Prepare Artifacts */ = {
+		4F3A8E6665050095109952D4 /* [CP] Prepare Artifacts */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,22 +214,22 @@
 				"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/iProovAPIClient/iProovAPIClient.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iProovAPIClient.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -270,7 +268,6 @@
 				FC31DDBE1B3B3A63006F1A64 /* AccountViewController.swift in Sources */,
 				FC4AA0641B38C7D60053C313 /* HomeViewController.swift in Sources */,
 				FC4AA0621B38C7D60053C313 /* AppDelegate.swift in Sources */,
-				FC6E0DFC21F618510025064B /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +417,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -449,7 +446,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
