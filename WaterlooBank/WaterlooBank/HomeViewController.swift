@@ -63,6 +63,13 @@ class HomeViewController: UIViewController {
             IProov.launch(token: token, callback: { (status) in
                 
                 switch status {
+
+                case .connecting:
+                    hud.mode = .indeterminate
+                    hud.label.text = "Connecting"
+
+                case .connected:
+                    break
                     
                 case let .processing(progress, message):
                     hud.mode = .determinateHorizontalBar
@@ -104,11 +111,15 @@ class HomeViewController: UIViewController {
                         self.launchIProov(claimType: claimType, username: username)
                     }))
                     self.present(alert, animated: true, completion: nil)
+
+                @unknown default:
+                    break
                     
                 }
                 
             })
             
+
         }, failure: { (error) in
             
             hud.hide(animated: true)
