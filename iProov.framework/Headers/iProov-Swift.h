@@ -190,8 +190,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreGraphics;
 @import CoreImage;
+@import CoreMotion;
 @import Foundation;
 @import ObjectiveC;
+@import QuartzCore;
 @import SocketIO;
 @import UIKit;
 @import WebKit;
@@ -211,6 +213,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="iProov",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+
+
 
 
 
@@ -244,21 +250,21 @@ SWIFT_CLASS_NAMED("IProov")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-
 @class Options;
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
+
+
 
 @class UIViewController;
 
 SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
 @protocol IProovPresentationDelegate
-- (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
-- (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
+- (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
+- (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
 @end
 
 
@@ -308,6 +314,8 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 
 
+
+
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
 @property (nonatomic) BOOL autoStartDisabled;
@@ -315,14 +323,16 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
-@property (nonatomic, strong) UIColor * _Nonnull loadingTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull livenessTintColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL scanLineDisabled;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
+@property (nonatomic) BOOL useLegacyConnectingUI SWIFT_DEPRECATED;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -533,8 +543,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreGraphics;
 @import CoreImage;
+@import CoreMotion;
 @import Foundation;
 @import ObjectiveC;
+@import QuartzCore;
 @import SocketIO;
 @import UIKit;
 @import WebKit;
@@ -554,6 +566,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="iProov",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+
+
 
 
 
@@ -587,21 +603,21 @@ SWIFT_CLASS_NAMED("IProov")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-
 @class Options;
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
+
+
 
 @class UIViewController;
 
 SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
 @protocol IProovPresentationDelegate
-- (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
-- (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController;
+- (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
+- (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
 @end
 
 
@@ -651,6 +667,8 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 
 
+
+
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
 @property (nonatomic) BOOL autoStartDisabled;
@@ -658,14 +676,16 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
-@property (nonatomic, strong) UIColor * _Nonnull loadingTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull livenessTintColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL scanLineDisabled;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
+@property (nonatomic) BOOL useLegacyConnectingUI SWIFT_DEPRECATED;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

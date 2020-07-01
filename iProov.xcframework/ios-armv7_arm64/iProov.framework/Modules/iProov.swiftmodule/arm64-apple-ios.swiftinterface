@@ -6,6 +6,7 @@ import Accelerate
 import AudioToolbox
 import CoreImage
 import CoreMedia
+import CoreMotion
 import CoreVideo
 import Dispatch
 import Foundation
@@ -22,6 +23,7 @@ import VideoToolbox
 import Vision
 import WebKit
 @_exported import iProov
+import simd
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
@@ -38,15 +40,15 @@ public enum IProovError : Foundation.LocalizedError {
   }
 }
 @objc public protocol IProovPresentationDelegate : AnyObject {
-  @objc func present(iProovViewController: UIKit.UIViewController)
-  @objc func dismiss(iProovViewController: UIKit.UIViewController)
+  @objc func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
 extension WKWebView {
   public func installIProovNativeBridge()
 }
 extension IProov {
   @available(swift, obsoleted: 1.0)
-  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String, Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
+  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String, Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
 @_inheritsConvenienceInitializers @objc public class Options : ObjectiveC.NSObject {
   @objc public var ui: iProov.UIOptions
@@ -61,14 +63,18 @@ extension IProov {
   @objc public var stringsBundle: Foundation.Bundle?
   @objc public var lineColor: UIKit.UIColor
   @objc public var backgroundColor: UIKit.UIColor
+  @available(*, deprecated)
   @objc public var loadingTintColor: UIKit.UIColor
   @objc public var notReadyTintColor: UIKit.UIColor
   @objc public var readyTintColor: UIKit.UIColor
+  @objc public var livenessTintColor: UIKit.UIColor
   @objc public var title: Swift.String?
   @objc public var font: Swift.String
   @objc public var logoImage: UIKit.UIImage?
   @objc public var scanLineDisabled: Swift.Bool
   @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
+  @available(*, deprecated)
+  @objc public var useLegacyConnectingUI: Swift.Bool
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class NetworkOptions : ObjectiveC.NSObject {
@@ -99,6 +105,8 @@ infix operator --> : AdditionPrecedence
 public typealias Callback = (iProov.Status) -> Swift.Void
 public let defaultStreamingURL: Swift.String
 public enum Status {
+  case connecting
+  case connected
   case processing(progress: Swift.Double, message: Swift.String)
   case success(token: Swift.String)
   case cancelled

@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.5.0
+# iProov iOS SDK v7.6.0
 
 ## 📖 Table of contents
 
@@ -139,9 +139,18 @@ let token = "{{ your token here }}"
 IProov.launch(token: token, callback: { (status) in
 
 	switch status {
+	case .connecting:
+		// The SDK is connecting to the server. You should provide an indeterminate progress indicator
+		// to let the user know that the connection is taking place.
+		
+	case .connected:
+		// The SDK has connected, and the iProov user interface will now be displayed. You should hide
+		// any progress indication at this point.
+	
 	case let .processing(progress, message):
-		// The SDK will update your app with the progress of streaming to the server and authenticating
-		// the user. This will be called multiple time as the progress updates.
+		// The scan has completed, and the SDK will update your app with the progress of streaming
+		// to the server and authenticating the user.
+		// This will be called multiple times as the progress updates.
 	    
 	case let .success(token):
 		// The user was successfully verified/enrolled and the token has been validated.
