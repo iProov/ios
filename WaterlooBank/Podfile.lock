@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
-  - iProov (7.6.0-beta1):
+  - iProov (7.6.0-beta2):
     - KeychainAccess (~> 4.1)
     - Socket.IO-Client-Swift (~> 15.2)
     - SwiftyJSON (~> 5.0)
@@ -41,7 +41,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  iProov: 424f9823ba0b98e4da3e783a2f0aefece51ff99d
+  iProov: dbe84a19f33b33aaac16b262b22cad29dde06d25
   iProovAPIClient: 427554ce0912166020265197255962f85b259338
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
