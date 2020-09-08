@@ -24,6 +24,8 @@ import Vision
 import WebKit
 @_exported import iProov
 import simd
+extension CGRect : Swift.CustomDebugStringConvertible {
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
@@ -44,7 +46,7 @@ public enum IProovError : Foundation.LocalizedError {
   @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
 extension WKWebView {
-  public func installIProovNativeBridge()
+  @objc dynamic public func installIProovNativeBridge()
 }
 extension IProov {
   @available(swift, obsoleted: 1.0)

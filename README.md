@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.6.0-beta2
+# iProov iOS SDK v7.6.0-beta3
 
 ## 📖 Table of contents
 
@@ -23,7 +23,7 @@ The iProov iOS SDK enables you to integrate iProov into your iOS app. We also ha
 - iOS 9.0 and above
 - Xcode 11.0 and above
 
-The framework has been written in Swift 5.2.4, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.2, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
 ### Dependencies
 
@@ -169,6 +169,10 @@ IProov.launch(token: token, callback: { (status) in
 		// The user was not successfully verified/enrolled due to an error (e.g. lost internet connection)
 		// along with an `iProovError` with more information about the error (NSError in Objective-C).
 		// It will be called once, or never.
+		
+	@unknown default:
+		// Reserved for future usage.
+		break
 		
 	}
 	

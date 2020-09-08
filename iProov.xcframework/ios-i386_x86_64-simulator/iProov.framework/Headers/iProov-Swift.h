@@ -346,6 +346,9 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 
 
 
+@interface WKWebView (SWIFT_EXTENSION(iProov))
+- (void)installIProovNativeBridge;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -699,6 +702,9 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 
 
 
+@interface WKWebView (SWIFT_EXTENSION(iProov))
+- (void)installIProovNativeBridge;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
