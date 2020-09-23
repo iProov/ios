@@ -1,13 +1,10 @@
 PODS:
   - Alamofire (4.9.1)
-  - iProov (7.6.0-beta3):
-    - KeychainAccess (~> 4.1)
+  - iProov (8.0.0-beta1):
     - Socket.IO-Client-Swift (~> 15.2)
-    - SwiftyJSON (~> 5.0)
-  - iProovAPIClient (0.2.0):
+  - iProovAPIClient (0.3.0):
     - Alamofire (~> 4.9)
     - SwiftyJSON (~> 5.0)
-  - KeychainAccess (4.2.0)
   - MBProgressHUD (1.2.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
@@ -22,7 +19,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - KeychainAccess
     - MBProgressHUD
     - Socket.IO-Client-Swift
     - Starscream
@@ -36,14 +32,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   iProovAPIClient:
-    :commit: 8565e531410d87fc478cec0ccadf26c994c284f8
+    :commit: e68985bd783392fa2d52b9151435901a3aa7852f
     :git: https://github.com/iProov/ios-api-client.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  iProov: 7d2cf15fe1e3a91b462bae67f527c268a0606a60
-  iProovAPIClient: 427554ce0912166020265197255962f85b259338
-  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
+  iProov: 54d1f10de028004eae71b5e7ffc26e12c071e5c9
+  iProovAPIClient: 7a104b694d4c9e5cfdd65184a3ef69febde3cf73
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0

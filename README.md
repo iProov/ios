@@ -1,4 +1,4 @@
-# iProov iOS SDK v7.6.0-beta3
+# iProov Biometrics iOS SDK v8.0.0-beta1
 
 ## 📖 Table of contents
 
@@ -16,28 +16,31 @@
 
 ## 🤳 Introduction
 
-The iProov iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iProov/android), [Xamarin bindings](https://github.com/iProov/xamarin) and [Web SDK](https://github.com/iProov/web).
+The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android Biometrics SDK](https://github.com/iProov/android), [Xamarin bindings](https://github.com/iProov/xamarin) and [Web Biometrics SDK](https://github.com/iProov/web).
 
 ### Requirements
 
 - iOS 9.0 and above
 - Xcode 11.0 and above
 
-The framework has been written in Swift 5.2, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.3, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
 ### Dependencies
 
-The iProov SDK has dependencies on the following third-party frameworks:
+The iProov Biometrics SDK has a dependency on [Socket.IO-Client-Swift](https://github.com/socketio/socket.io-client-swift). This dependency will be automatically included if installing via Cocoapods or Swift Package Manager. Carthage users need to ensure that this dependency is added to their Cartfile and this is discussed below.
 
-- [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)
-- [Socket.IO-Client-Swift](https://github.com/socketio/socket.io-client-swift)
+The SDK also includes the following third-party code:
+
+- A [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2)
+- [Expression](https://github.com/nicklockwood/Expression)
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+- [CryptoExportImportManager](https://github.com/DigitalLeaves/CryptoExportImportManager)
 
-The SDK also utilises a [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2) and includes a vendored copy of [Expression](https://github.com/nicklockwood/Expression).
+These dependencies are vendored and compiled into the SDK, this requires no action and is provided for information purposes only.
 
 ### Module Stability
 
-As of iProov SDK 7.2.0, module stability is supported for Swift 5.1 and above. The advantage of this is that the iProov SDK no longer needs to be recompiled for every new version of the Swift compiler.
+As of iProov Biometrics SDK v7.2, module stability is supported for Swift 5.1 and above. The advantage of this is that the SDK no longer needs to be recompiled for every new version of the Swift compiler.
 
 iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is still not fully supported in either Cocoapods nor Carthage as of April 2020, therefore some workarounds are required (see installation documentation for details).
 
@@ -50,11 +53,13 @@ The framework package is provided via this repository, which contains the follow
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
 * **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
+* **Package.swift** - Required by Swift Package Manager. You do not need to do anything with this file.
+* **iProov.xcframework.zip** - Required by Swift Package Manager. You do not need to do anything with this file. It is simply iProov.xcframework contained within a zip file.
 * **resources** - Directory containing additional development resources you may find helpful.
 
 ## ⬆ Upgrading from earlier versions
 
-If you're already using an older version of the iProov SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
+If you're already using an older version of the iProov Biometrics SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
 
 ## ✍ Registration
 
@@ -62,11 +67,25 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 
 ## 📲 Installation
 
-Integration with your app is supported via both Cocoapods and Carthage. We recommend Cocoapods for the easiest installation.
+Integration with your app is supported via Swift Package Manager, Cocoapods and Carthage. We recommend either Swift Package Manager or Cocoapods for the easiest installation.
+
+### Swift Package Manager
+
+> ⚠️ **NOTE:** As of Xcode 12.0, there is a bug with Swift Packages containing binary targets, resulting in a codesigning error ("No code signature found"). We are monitoring [this issue](https://forums.swift.org/t/swiftpm-binarytarget-dependency-and-code-signing/38953) and aim to provide a fix in a future beta release.
+
+iProov Biometrics SDK v8 will support Swift Package Manager in Xcode 12 and above only. Users of earlier versions of Xcode should continue to use either Cocoapods or Carthage.
+
+1. From Xcode, choose _File > Swift Packages > Add Package Dependency..._.
+
+2. Enter the following package repository URL: `git@github.com:iProov/ios.git` and press _Next_.
+
+3. Under the _Rules:_ section, feel free to change the settings, or leave the _Up to Next Major_ rule, which is appropriate for most setups and press _Next_.
+
+4. The iProov Biometrics SDK and any necessary dependencies will be added to your Xcode project.
 
 ### Cocoapods
 
-As of iProov SDK 7.4.0 the framework is now distributed as an XCFramework, **you are therefore required to use Cocoapods 1.9.0 or newer**.
+As of iProov Biometrics SDK v7.4 the framework is now distributed as an XCFramework, **you are therefore required to use Cocoapods 1.9.0 or newer**.
 
 1. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://guides.cocoapods.org/using/getting-started.html#installation).)
 
@@ -81,7 +100,7 @@ As of iProov SDK 7.4.0 the framework is now distributed as an XCFramework, **you
 	```ruby
 	post_install do |installer|
 	    installer.pods_project.targets.each do |target|
-	      if ['iProov', 'KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream' 'SwiftyJSON'].include? target.name
+	      if ['iProov', 'Socket.IO-Client-Swift', 'Starscream'].include? target.name
 	        target.build_configurations.each do |config|
 	            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
 	        end
@@ -90,7 +109,7 @@ As of iProov SDK 7.4.0 the framework is now distributed as an XCFramework, **you
 	end
 	```
 	
-	> 🧰 **MODULE STABILITY WORKAROUND:** You must add this code, because whilst iProov (since 7.2.0) supports module stability, it is not directly supported in Cocoapods. This code will manually enable module stability for all of iProov's dependencies. [This is due to be fixed in Cocoapods 1.10.0](https://github.com/CocoaPods/CocoaPods/pull/9693).
+	> 🧰 **MODULE STABILITY WORKAROUND:** You must add this code, because whilst iProov (since v7.2) supports module stability, it is not directly supported in Cocoapods. This code will manually enable module stability for all of iProov's dependencies. [This is due to be fixed in Cocoapods 1.10.0](https://github.com/CocoaPods/CocoaPods/pull/9693).
 
 4. Run `pod install`.
 
@@ -107,8 +126,6 @@ At the time of writing, Carthage still does not properly support XCFrameworks, t
 
 	```
 	github "socketio/socket.io-client-swift" == 15.2.0
-	github "kishikawakatsumi/KeychainAccess" ~> 4.1
-	github "SwiftyJSON/SwiftyJSON" ~> 5.0
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 	```
 
@@ -118,7 +135,7 @@ At the time of writing, Carthage still does not properly support XCFrameworks, t
 	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES'>/tmp/iproov.xcconfig; XCODE_XCCONFIG_FILE=/tmp/iproov.xcconfig carthage build; rm /tmp/iproov.xcconfig
 	```
 
-	> 🧰 **MODULE STABILITY WORKAROUND:** iProov 7.2.0 supports module stability and therefore all its dependencies must be built in with the "Build Libraries for Distribution" setting enabled, however this is not currently supported in Carthage. Running this custom build command will ensure Xcode builds the dependencies with the correct settings. Once Carthage supports module stability, this workaround can be removed. Progress on this feature can be tracked [here](https://github.com/Carthage/Carthage/pull/2881).
+	> 🧰 **MODULE STABILITY WORKAROUND:** iProov v7.2 supports module stability and therefore all its dependencies must be built in with the "Build Libraries for Distribution" setting enabled, however this is not currently supported in Carthage. Running this custom build command will ensure Xcode builds the dependencies with the correct settings. Once Carthage supports module stability, this workaround can be removed. Progress on this feature can be tracked [here](https://github.com/Carthage/Carthage/pull/2881).
 
 3. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
 
@@ -129,9 +146,15 @@ Before being able to launch iProov, you need to get a token to iProov against. T
 1. A **verify** token - for logging-in an existing user
 2. An **enrol** token - for registering a new user
 
-In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift/Alamofire sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
+In addition, the Biometrics SDK now supports two difference assurance types:
 
-Once you have obtained the token, you can simply call `IProov.launch()`:
+1. A [**Genuine Presence Assurance**](https://www.iproov.com/iproov-system/technology/genuine-presence-assurance) token.
+
+2. A [**Liveness Assurance**](https://www.iproov.com/iproov-system/technology/liveness-assurance) token.
+
+In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
+
+Once you have obtained a Genuine Presence Assurance or Liveness Assurance token, you can simply call `IProov.launch()`:
 
 ```swift
 let token = "{{ your token here }}"
@@ -203,6 +226,7 @@ options.ui.backgroundColor = .black
 options.ui.loadingTintColor = .lightGray
 options.ui.notReadyTintColor = .orange
 options.ui.readyTintColor = .green
+options.ui.livenessTintColor = .blue
 
 options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
 options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).
@@ -283,14 +307,12 @@ The current feedback codes and reasons are as follows:
 | `feedbackCode` | `reason` |
 |-----------------------------------|---------------------------------------------------------------|
 | `ambiguous_outcome` | Sorry, ambiguous outcome |
-| `network_problem` | Sorry, network problem |
 | `motion_too_much_movement` | Please do not move while iProoving |
 | `lighting_flash_reflection_too_low` | Ambient light too strong or screen brightness too low |
 | `lighting_backlit` | Strong light source detected behind you |
 | `lighting_too_dark` | Your environment appears too dark |
 | `lighting_face_too_bright` | Too much light detected on your face |
 | `motion_too_much_mouth_movement` | Please do not talk while iProoving |
-| `user_timeout` | Sorry, your session has timed out |
 
 The list of feedback codes and reasons is subject to change.
 
@@ -303,7 +325,7 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 A description of these cases are as follows:
 
 * `captureAlreadyActive` - An existing iProov capture is already in progress. Wait until the current capture completes before starting a new one.
-* `streamingError(String?)` - An error occurred with the video streaming process. Consult the error associated value for more information.
+* `networkError(String?)` - An error occurred with the video streaming process. Consult the error associated value for more information.
 * `encoderError(code: Int32?)` - An error occurred with the video encoder. Report the error code to iProov for further assistance.
 * `lightingModelError` - An error occurred with the lighting mode. This should be reported to iProov for further assistance.
 * `cameraError(String?)` - An error occurred with the camera.
@@ -328,4 +350,4 @@ For a simple iProov experience that is ready to run out-of-the-box, check out th
 
 You may find your question is answered in our [FAQs](https://github.com/iProov/ios/wiki/Frequently-Asked-Questions) or one of our other [Wiki pages](https://github.com/iProov/ios/wiki).
 
-For further help with integrating the SDK, please contact [support@iproov.com](mailto:support@iproov.com).
+For further help with integrating the iProov Biometrics SDK, please contact [support@iproov.com](mailto:support@iproov.com).
