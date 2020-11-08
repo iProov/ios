@@ -227,6 +227,13 @@ SWIFT_CLASS("_TtC6iProov14CaptureOptions")
 @end
 
 
+
+SWIFT_CLASS("_TtC6iProov13FailureResult")
+@interface FailureResult : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 typedef SWIFT_ENUM(NSInteger, Filter, open) {
   FilterClassic = 0,
   FilterShaded = 1,
@@ -241,10 +248,11 @@ SWIFT_CLASS_NAMED("IProov")
 @end
 
 @class Options;
+@class SuccessResult;
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(SuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(FailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 
@@ -283,6 +291,14 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 
 
+SWIFT_CLASS("_TtC6iProov13SuccessResult")
+@interface SuccessResult : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
 
 
 
@@ -294,8 +310,6 @@ SWIFT_CLASS("_TtC6iProov7Options")
 @class NSBundle;
 @class UIColor;
 @class UIImage;
-
-
 
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
@@ -561,6 +575,13 @@ SWIFT_CLASS("_TtC6iProov14CaptureOptions")
 @end
 
 
+
+SWIFT_CLASS("_TtC6iProov13FailureResult")
+@interface FailureResult : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 typedef SWIFT_ENUM(NSInteger, Filter, open) {
   FilterClassic = 0,
   FilterShaded = 1,
@@ -575,10 +596,11 @@ SWIFT_CLASS_NAMED("IProov")
 @end
 
 @class Options;
+@class SuccessResult;
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(NSString * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(SuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(FailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 
@@ -617,6 +639,14 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 
 
+SWIFT_CLASS("_TtC6iProov13SuccessResult")
+@interface SuccessResult : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
 
 
 
@@ -628,8 +658,6 @@ SWIFT_CLASS("_TtC6iProov7Options")
 @class NSBundle;
 @class UIColor;
 @class UIImage;
-
-
 
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject

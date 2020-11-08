@@ -1,4 +1,4 @@
-# iProov Biometrics iOS SDK v8.0.0-beta1
+# iProov Biometrics iOS SDK v8.0.0-beta2
 
 ## 📖 Table of contents
 
@@ -143,18 +143,19 @@ At the time of writing, Carthage still does not properly support XCFrameworks, t
 
 Before being able to launch iProov, you need to get a token to iProov against. There are 2 different token types:
 
-1. A **verify** token - for logging-in an existing user
-2. An **enrol** token - for registering a new user
+* A **verify** token - for logging-in an existing user
+* An **enrol** token - for registering a new user
 
 In addition, the Biometrics SDK now supports two difference assurance types:
 
-1. A [**Genuine Presence Assurance**](https://www.iproov.com/iproov-system/technology/genuine-presence-assurance) token.
+* A [**Genuine Presence Assurance**](https://www.iproov.com/iproov-system/technology/genuine-presence-assurance) token.
+* A [**Liveness Assurance**](https://www.iproov.com/iproov-system/technology/liveness-assurance) token.
 
-2. A [**Liveness Assurance**](https://www.iproov.com/iproov-system/technology/liveness-assurance) token.
+Please consult our [REST API documentation](https://secure.iproov.me/docs.html) for details on how to generate tokens.
 
-In a production app, you normally would want to obtain the token via a server-to-server back-end call. For the purposes of on-device demos/testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client).
+> 💡 **QUICK START TIP:** In a production app, you should always obtain tokens securely via a server-to-server call. To save you having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to reset your API key & secret!
 
-Once you have obtained a Genuine Presence Assurance or Liveness Assurance token, you can simply call `IProov.launch()`:
+Once you have obtained a token, you can simply call `IProov.launch()`:
 
 ```swift
 let token = "{{ your token here }}"
@@ -175,14 +176,20 @@ IProov.launch(token: token, callback: { (status) in
 		// to the server and authenticating the user.
 		// This will be called multiple times as the progress updates.
 	    
-	case let .success(token):
+	case let .success(result):
 		// The user was successfully verified/enrolled and the token has been validated.
-		// The token passed back will be the same as the one passed in to the original call.
+		// You can access the following properties:
+		let token: String = result.token // The token passed back will be the same as the one passed in to the original call
+		let frameImage: UIImage = result.frameImage // An optional image containing a single frame of the user (see important security info below)
 	    
-	case let .failure(reason, feedbackCode):
+	case let .failure(result):
 		// The user was not successfully verified/enrolled, as their identity could not be verified,
-		// or there was another issue with their verification/enrollment. A reason (as a string)
-		// is provided as to why the claim failed, along with a feedback code from the back-end.
+		// or there was another issue with their verification/enrollment.
+		// You can access the following properties:
+		let token: String = result.token // The token passed back will be the same as the one passed in to the original call
+		let frameImage: UIImage = result.frameImage // An optional image containing a single frame of the user (see important security info below)
+		let reason: String = result.reason // A human-readable reason of why the claim failed
+		let feedbackCode: String = result.feedbackCode // A code referring to the failure reason (see list below)
 		
 	case .cancelled:
 		// The user cancelled iProov, either by pressing the close button at the top right, or sending
@@ -204,7 +211,11 @@ IProov.launch(token: token, callback: { (status) in
 
 By default, iProov will stream to our EU back-end platform. If you wish to stream to a different back-end, you can pass a `streamingURL` as the first parameter to `IProov.launch()` with the base URL of the back-end to stream to.
 
-> **⚠️ SECURITY NOTICE:** You should never use iProov as a local authentication method. You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the validate API call) before performing any authenticated user actions.
+> **⚠️ SECURITY NOTICE:** You should never use iProov as a local authentication method. This means that:
+> 
+> * You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the `/validate` API call) before performing any authenticated user actions.
+> 
+> * The `frameImage` returned in the success & failure results should be used for UI/UX purposes only. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server `/validate` API call.
 
 ## ⚙ Options
 

@@ -120,7 +120,7 @@
 			buildConfigurationList = FC4AA07B1B38C7D60053C313 /* Build configuration list for PBXNativeTarget "WaterlooBank" */;
 			buildPhases = (
 				CB10569726582304353C7EFD /* [CP] Check Pods Manifest.lock */,
-				4F3A8E6665050095109952D4 /* [CP] Prepare Artifacts */,
+				BA8EEDA4E5315DE56DADEF61 /* [CP] Prepare Artifacts */,
 				FC4AA0581B38C7D60053C313 /* Sources */,
 				FC4AA0591B38C7D60053C313 /* Frameworks */,
 				FC4AA05A1B38C7D60053C313 /* Resources */,
@@ -187,7 +187,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F3A8E6665050095109952D4 /* [CP] Prepare Artifacts */ = {
+		BA8EEDA4E5315DE56DADEF61 /* [CP] Prepare Artifacts */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

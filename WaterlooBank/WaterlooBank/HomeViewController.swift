@@ -76,20 +76,20 @@ class HomeViewController: UIViewController {
                     hud.label.text = message
                     hud.progress = Float(progress)
                     
-                case let .success(token):
+                case let .success(result):
                     
                     hud.hide(animated: true)
                     
-                    self.token = token
+                    self.token = result.token
                     
                     self.performSegue(withIdentifier: "ShowMain", sender: self)
                     self.usernameTextField.text = nil
                     
-                case let .failure(reason, feedback):
+                case let .failure(result):
                     
                     hud.hide(animated: true)
                     
-                    let alert = UIAlertController(title: reason, message: feedback, preferredStyle: .alert)
+                    let alert = UIAlertController(title: result.feedbackCode, message: result.reason, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                     alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (action) -> Void in
                         self.launchIProov(claimType: claimType, username: username)

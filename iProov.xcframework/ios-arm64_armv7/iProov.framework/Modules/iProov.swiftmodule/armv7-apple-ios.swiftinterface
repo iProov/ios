@@ -48,7 +48,7 @@ extension WKWebView {
 }
 extension IProov {
   @available(swift, obsoleted: 1.0)
-  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (Swift.String) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (Swift.String, Swift.String) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
+  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
 @_inheritsConvenienceInitializers @objc public class Options : ObjectiveC.NSObject {
   @objc public var ui: iProov.UIOptions
@@ -104,13 +104,27 @@ infix operator ?= : AssignmentPrecedence
 infix operator --> : AdditionPrecedence
 public typealias Callback = (iProov.Status) -> Swift.Void
 public let defaultStreamingURL: Swift.String
+@_hasMissingDesignatedInitializers @objc public class SuccessResult : ObjectiveC.NSObject {
+  final public let token: Swift.String
+  final public let frameImage: UIKit.UIImage?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class FailureResult : ObjectiveC.NSObject {
+  final public let token: Swift.String
+  final public let reason: Swift.String
+  final public let feedbackCode: Swift.String
+  final public let frameImage: UIKit.UIImage?
+  @objc override dynamic public init()
+  @objc deinit
+}
 public enum Status {
   case connecting
   case connected
   case processing(progress: Swift.Double, message: Swift.String)
-  case success(token: Swift.String)
+  case success(iProov.SuccessResult)
   case cancelled
-  case failure(reason: Swift.String, feedbackCode: Swift.String)
+  case failure(iProov.FailureResult)
   case error(iProov.IProovError)
   public var isFinished: Swift.Bool {
     get
@@ -118,6 +132,9 @@ public enum Status {
 }
 extension IProov {
   public static func launch(streamingURL: Swift.String = defaultStreamingURL, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
+}
+extension UIImage {
+  convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
 }
 extension iProov.Filter : Swift.Equatable {}
 extension iProov.Filter : Swift.Hashable {}
