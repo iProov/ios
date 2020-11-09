@@ -1,4 +1,4 @@
-# iProov Biometrics iOS SDK v8.0.0-beta2
+# iProov Biometrics iOS SDK v8.0.0-beta3
 
 ## 📖 Table of contents
 
@@ -180,16 +180,16 @@ IProov.launch(token: token, callback: { (status) in
 		// The user was successfully verified/enrolled and the token has been validated.
 		// You can access the following properties:
 		let token: String = result.token // The token passed back will be the same as the one passed in to the original call
-		let frameImage: UIImage = result.frameImage // An optional image containing a single frame of the user (see important security info below)
+		let frame: UIImage? = result.frame // An optional image containing a single frame of the user, if enabled for your service provider (see important security info below)
 	    
 	case let .failure(result):
 		// The user was not successfully verified/enrolled, as their identity could not be verified,
 		// or there was another issue with their verification/enrollment.
 		// You can access the following properties:
 		let token: String = result.token // The token passed back will be the same as the one passed in to the original call
-		let frameImage: UIImage = result.frameImage // An optional image containing a single frame of the user (see important security info below)
 		let reason: String = result.reason // A human-readable reason of why the claim failed
 		let feedbackCode: String = result.feedbackCode // A code referring to the failure reason (see list below)
+		let frame: UIImage? = result.frame // An optional image containing a single frame of the user, if enabled for your service provider (see important security info below)
 		
 	case .cancelled:
 		// The user cancelled iProov, either by pressing the close button at the top right, or sending

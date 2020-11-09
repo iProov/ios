@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '8.0.0-beta2'
+  s.version          = '8.0.0-beta3'
   s.summary          = 'Award-winning online biometric authentication'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'commercial', :file => 'LICENSE.md' }

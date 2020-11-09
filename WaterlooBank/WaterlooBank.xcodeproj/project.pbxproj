@@ -120,7 +120,6 @@
 			buildConfigurationList = FC4AA07B1B38C7D60053C313 /* Build configuration list for PBXNativeTarget "WaterlooBank" */;
 			buildPhases = (
 				CB10569726582304353C7EFD /* [CP] Check Pods Manifest.lock */,
-				BA8EEDA4E5315DE56DADEF61 /* [CP] Prepare Artifacts */,
 				FC4AA0581B38C7D60053C313 /* Sources */,
 				FC4AA0591B38C7D60053C313 /* Frameworks */,
 				FC4AA05A1B38C7D60053C313 /* Resources */,
@@ -187,24 +186,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BA8EEDA4E5315DE56DADEF61 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-artifacts.sh",
-				"${PODS_ROOT}/../../iProov.xcframework",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-artifacts.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BAE20E055591E3F43CF0BC17 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,13 +193,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WaterlooBank/Pods-WaterlooBank-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/iProovAPIClient/iProovAPIClient.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/iProov/iProov.framework/iProov",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -228,6 +209,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iProovAPIClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iProov.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

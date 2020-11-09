@@ -227,9 +227,14 @@ SWIFT_CLASS("_TtC6iProov14CaptureOptions")
 @end
 
 
+@class UIImage;
 
 SWIFT_CLASS("_TtC6iProov13FailureResult")
 @interface FailureResult : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull token;
+@property (nonatomic, readonly, copy) NSString * _Nonnull reason;
+@property (nonatomic, readonly, copy) NSString * _Nonnull feedbackCode;
+@property (nonatomic, readonly, strong) UIImage * _Nullable frame;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -293,6 +298,8 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 SWIFT_CLASS("_TtC6iProov13SuccessResult")
 @interface SuccessResult : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull token;
+@property (nonatomic, readonly, strong) UIImage * _Nullable frame;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -309,7 +316,6 @@ SWIFT_CLASS("_TtC6iProov13SuccessResult")
 
 @class NSBundle;
 @class UIColor;
-@class UIImage;
 
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
@@ -575,9 +581,14 @@ SWIFT_CLASS("_TtC6iProov14CaptureOptions")
 @end
 
 
+@class UIImage;
 
 SWIFT_CLASS("_TtC6iProov13FailureResult")
 @interface FailureResult : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull token;
+@property (nonatomic, readonly, copy) NSString * _Nonnull reason;
+@property (nonatomic, readonly, copy) NSString * _Nonnull feedbackCode;
+@property (nonatomic, readonly, strong) UIImage * _Nullable frame;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -641,6 +652,8 @@ SWIFT_CLASS("_TtC6iProov7Options")
 
 SWIFT_CLASS("_TtC6iProov13SuccessResult")
 @interface SuccessResult : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull token;
+@property (nonatomic, readonly, strong) UIImage * _Nullable frame;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -657,7 +670,6 @@ SWIFT_CLASS("_TtC6iProov13SuccessResult")
 
 @class NSBundle;
 @class UIColor;
-@class UIImage;
 
 SWIFT_CLASS("_TtC6iProov9UIOptions")
 @interface UIOptions : NSObject
