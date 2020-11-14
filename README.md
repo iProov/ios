@@ -1,4 +1,4 @@
-# iProov Biometrics iOS SDK v8.0.0-beta3
+# iProov Biometrics iOS SDK v8.0.0-beta4
 
 ## 📖 Table of contents
 
