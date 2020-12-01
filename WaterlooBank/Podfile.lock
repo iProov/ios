@@ -37,7 +37,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  iProov: c3df27e2bb646c62a9af6f21530cca5387ffd810
+  iProov: 4b16883e0fea5d49e09f2dd51f36b8092f364fdf
   iProovAPIClient: 7a104b694d4c9e5cfdd65184a3ef69febde3cf73
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c

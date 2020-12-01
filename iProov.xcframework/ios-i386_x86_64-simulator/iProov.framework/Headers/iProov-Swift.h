@@ -322,6 +322,7 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic) BOOL autoStartDisabled;
 @property (nonatomic) enum Filter filter;
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
+@property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
@@ -676,6 +677,7 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic) BOOL autoStartDisabled;
 @property (nonatomic) enum Filter filter;
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
+@property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
