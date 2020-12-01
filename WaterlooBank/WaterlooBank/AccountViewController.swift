@@ -1,27 +1,19 @@
-//
-//  MainViewController.swift
-//  WaterlooBank
-//
-//  Created by Jonathan Ellis on 24/06/2015.
-//  Copyright (c) 2015 iProov Ltd. All rights reserved.
-//
+// Copyright (c) 2020 iProov Ltd. All rights reserved.
 
 import UIKit
 
 class AccountViewController: UIViewController {
+    @IBOutlet private var tokenLabel: UILabel!
 
-    @IBOutlet var tokenLabel: UILabel!
-    
     var token: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Your Account"
-        
+
+        title = "Your Account"
+
         // Do any additional setup after loading the view.
-        
+
         tokenLabel.text = String(format: "Your token is %@", token)
     }
-
 }
