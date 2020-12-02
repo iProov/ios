@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
-  - iProov (8.1.0):
+  - iProov (8.1.1):
     - Socket.IO-Client-Swift (~> 15.2)
   - iProovAPIClient (0.3.0):
     - Alamofire (~> 4.9)
@@ -37,7 +37,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  iProov: ad7a9d8214a877b900ebdeb00f862f3bc3a39b3c
+  iProov: 5cefb12ff4890c260f190d6e2426737ab389eb79
   iProovAPIClient: 7a104b694d4c9e5cfdd65184a3ef69febde3cf73
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c

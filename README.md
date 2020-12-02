@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v8.1.0
+# iProov Biometrics iOS SDK v8.1.1
 
 ## Table of contents
 
@@ -44,7 +44,7 @@ These dependencies are vendored and compiled into the SDK, this requires no acti
 
 Module stability is supported in Swift 5.1 (Xcode 11) and above. The advantage of this is that the SDK no longer needs to be recompiled for every new version of the Swift compiler.
 
-If installing via Cocoapods 1.9.x or Carthage, you will need to implement some workarounds as part of the build process (see below).
+iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is still not fully supported in either Cocoapods nor Carthage as of December 2020, therefore some workarounds are required (see installation documentation for details).
 
 ## Repository contents
 
@@ -73,8 +73,6 @@ Integration with your app is supported via Cocoapods and Carthage. We recommend 
 
 The SDK is distributed as an XCFramework, therefore **you are required to use Cocoapods 1.9.0 or newer**.
 
-You are also strongly recommended to use **Cocoapods 1.10.0 or newer** due to substantial improvements to how binary frameworks are handled. If you are using Cocoapods 1.9.x, you will need to add a workaround to your Podfile (see below).
-
 1. If you are not yet using Cocoapods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing Cocoapods, [click here](https://guides.cocoapods.org/using/getting-started.html#installation).)
 
 2. Add the following to your Podfile (inside the target section):
@@ -83,7 +81,7 @@ You are also strongly recommended to use **Cocoapods 1.10.0 or newer** due to su
 	pod 'iProov'
 	```
 	
-3. **Cocoapods 1.9.x only:** Add the following to the bottom of your Podfile:
+3. Add the following to the bottom of your Podfile:
 
 	```ruby
 	post_install do |installer|
@@ -143,7 +141,7 @@ Please consult our [REST API documentation](https://secure.iproov.me/docs.html) 
 
 > **💡 TIP:** In a production app, you should always obtain tokens securely via a server-to-server call. To save you having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to reset your API key & secret!
 
-### Launch the SDK
+### Launch the SDK
 
 Once you have obtained a token, you can simply call `IProov.launch()`:
 
