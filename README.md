@@ -328,9 +328,9 @@ A description of these cases are as follows:
 * `cameraPermissionDenied` - The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
 
-## Waterloo Bank sample project
+## Sample code
 
-For a simple iProov experience that is ready to run out-of-the-box, check out the [Waterloo Bank sample project](/tree/master/WaterlooBank).
+For a simple iProov experience that is ready to run out-of-the-box, check out the [Waterloo Bank sample project](https://github.com/iProov/ios/tree/master/WaterlooBank).
 
 ### Installation
 
