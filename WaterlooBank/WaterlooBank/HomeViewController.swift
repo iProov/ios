@@ -1,4 +1,4 @@
-// Copyright (c) 2020 iProov Ltd. All rights reserved.
+// Copyright (c) 2021 iProov Ltd. All rights reserved.
 
 import iProov
 import iProovAPIClient
