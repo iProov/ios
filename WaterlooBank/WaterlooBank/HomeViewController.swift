@@ -1,4 +1,4 @@
-// Copyright (c) 2020 iProov Ltd. All rights reserved.
+// Copyright (c) 2021 iProov Ltd. All rights reserved.
 
 import iProov
 import iProovAPIClient
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
 
         apiClient.getToken(type: claimType, userID: username, success: { token in
 
-            IProov.launch(streamingURL: Self.baseURL, token: token, callback: { status in
+            IProov.launch(streamingURL: Self.baseURL, token: token) { status in
 
                 switch status {
                 case .connecting:
@@ -105,8 +105,7 @@ class HomeViewController: UIViewController {
                 @unknown default:
                     break
                 }
-
-            })
+            }
 
         }, failure: { error in
 
