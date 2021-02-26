@@ -110,7 +110,7 @@ You have a choice of two different methods to install iProov using Carthage, dep
 	
 Carthage 0.37.0 now supports building XCFrameworks. Unfortunately, however, pre-built binary XCFrameworks such as iProov [are still not supported properly](https://github.com/Carthage/Carthage/issues/3103).
 
-Therefore, this guide will then explain how to build Socket.IO (and its dependency, Starscream) as XCFrameworks using Carthage, and then you will need to copy the pre-built iProov.xcframework into your project.
+Therefore, this guide will then explain how to build Socket.IO (and its dependency, Starscream) as XCFrameworks using Carthage, and then you will need to copy them, together with the pre-built iProov.xcframework, into your project.
 
 1. Add the following to your Cartfile:
 
@@ -118,19 +118,48 @@ Therefore, this guide will then explain how to build Socket.IO (and its dependen
 	github "socketio/socket.io-client-swift" == 15.2.0
 	```
 
-2. You can now build Socket.IO (and by extension, Starscream) with Carthage as XCFrameworks:
+2. Create the following workaround script in your root Carthage directory:
 
 	```sh
-	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES'>/tmp/config.xcconfig; XCODE_XCCONFIG_FILE=/tmp/config.xcconfig carthage update --use-xcframeworks --platform ios; rm /tmp/config.xcconfig
+	# carthage.sh
+	# Usage example: ./carthage.sh build --use-xcframeworks --platform iOS
+	
+	set -euo pipefail
+	
+	xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
+	trap 'rm -f "$xcconfig"' INT TERM HUP EXIT
+	
+	echo "FRAMEWORK_SEARCH_PATHS=\$(inherited) $(pwd)/Carthage/Build" >> $xcconfig
+	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES' >> $xcconfig
+	
+	export XCODE_XCCONFIG_FILE="$xcconfig"
+	carthage "$@"
 	```
 	
-	> NOTE: You must use this exact build command rather than a normal `carthage update`. It will set `BUILD_LIBRARIES_FOR_DISTRIBUTION` to ensure that iProov's dependencies are built for distribution, build XCFrameworks instead of standard fat frameworks (`--use-xcframeworks`) and avoid a linking issue with SocketIO if you attempt to build for platforms other than iOS (`--platform ios`).
+	This script contains two workarounds:
 	
-3. From the Carthage/Build folder, add SocketIO.xcframework & Starscream.xcframework to your app's *"Frameworks, Libraries, and Embedded Content"* section.
+	1. It sets `FRAMEWORK_SEARCH_PATHS` to include the Carthage Build folder, so that Socket.IO can correctly find Starscream.xcframework when it builds.
+	2. It enables `BUILD_LIBRARY_FOR_DISTRIBUTION` so that iProov's dependencies are built with this option enabled.
 
-4. From this repository, copy iProov.xcframework to your app's *"Frameworks, Libraries, and Embedded Content"* section.
+3. Make the script executable:
 
-5. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
+	```sh
+	chmod +x carthage.sh
+	```
+
+4. You can now build SocketIO.xcframework and Starscream.xcframework with the following command:
+
+	```sh
+	./carthage.sh update --use-xcframeworks --platform ios
+	```
+	
+	> NOTE: Ensure you use `./carthage.sh` instead of `carthage`. All command usages remain the same.
+	
+5. From the Carthage/Build folder, add SocketIO.xcframework & Starscream.xcframework to your app's *"Frameworks, Libraries, and Embedded Content"* section.
+
+6. From this repository, copy iProov.xcframework to your app's *"Frameworks, Libraries, and Embedded Content"* section.
+
+7. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
 
 </details>
 
