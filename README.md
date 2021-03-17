@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v8.2.1
+# iProov Biometrics iOS SDK v8.2.2
 
 ## Table of contents
 
