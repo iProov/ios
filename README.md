@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v8.2.2
+# iProov Biometrics iOS SDK v8.3.0
 
 ## Table of contents
 
@@ -327,6 +327,16 @@ options.ui.loadingTintColor = .lightGray
 options.ui.notReadyTintColor = .orange
 options.ui.readyTintColor = .green
 options.ui.livenessTintColor = .blue
+options.ui.livenessScanningTintColor = .lightGray
+options.ui.progressBarColor = .black
+options.ui.headerTextColor = .white
+options.ui.footerTextColor = .white
+options.ui.headerBackgroundColor = UIColor(white: 0, alpha: 0.67)
+options.ui.footerBackgroundColor = UIColor(white: 0, alpha: 0.67)
+
+// Customise the close button:
+options.ui.closeButtonImage = UIImage(named: "close")!
+options.ui.closeButtonTintColor = .white
 
 options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
 options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).

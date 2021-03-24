@@ -194,6 +194,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import Security;
 @import WebKit;
 #endif
 
@@ -261,6 +262,12 @@ SWIFT_CLASS_NAMED("IProov")
 + (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(SuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(FailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
+@class IPKeyPair;
+
+@interface IProov (SWIFT_EXTENSION(iProov))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IPKeyPair * _Nonnull keyPair SWIFT_AVAILABILITY(ios,introduced=10.0);)
++ (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class UIViewController;
 
@@ -268,6 +275,17 @@ SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
 @protocol IProovPresentationDelegate
 - (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
 - (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
+@end
+
+@class IPPublicKey;
+
+SWIFT_CLASS_NAMED("KeyPair") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPKeyPair : NSObject
+@property (nonatomic, readonly, strong) IPPublicKey * _Nonnull publicKey;
+@property (nonatomic, readonly) BOOL isInSecureEnclave;
+- (NSData * _Nonnull)signWithData:(NSData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -296,6 +314,16 @@ SWIFT_CLASS("_TtC6iProov7Options")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+SWIFT_CLASS_NAMED("PublicKey") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPPublicKey : NSObject
+@property (nonatomic, readonly) SecKeyRef _Nonnull key;
+@property (nonatomic, readonly, copy) NSString * _Nonnull pem;
+@property (nonatomic, readonly, copy) NSData * _Nonnull der;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 
@@ -328,12 +356,20 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull livenessTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull livenessScanningTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
+@property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL scanLineDisabled;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -348,7 +384,8 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 
 
 @interface WKWebView (SWIFT_EXTENSION(iProov))
-- (void)installIProovNativeBridge;
+- (void)installIProovNativeBridgeWithCryptographyEnabled:(BOOL)cryptographyEnabled;
+- (void)uninstallNativeBridge;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -551,6 +588,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import Security;
 @import WebKit;
 #endif
 
@@ -618,6 +656,12 @@ SWIFT_CLASS_NAMED("IProov")
 + (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(SuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(FailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
+@class IPKeyPair;
+
+@interface IProov (SWIFT_EXTENSION(iProov))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IPKeyPair * _Nonnull keyPair SWIFT_AVAILABILITY(ios,introduced=10.0);)
++ (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class UIViewController;
 
@@ -625,6 +669,17 @@ SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
 @protocol IProovPresentationDelegate
 - (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
 - (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
+@end
+
+@class IPPublicKey;
+
+SWIFT_CLASS_NAMED("KeyPair") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPKeyPair : NSObject
+@property (nonatomic, readonly, strong) IPPublicKey * _Nonnull publicKey;
+@property (nonatomic, readonly) BOOL isInSecureEnclave;
+- (NSData * _Nonnull)signWithData:(NSData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -653,6 +708,16 @@ SWIFT_CLASS("_TtC6iProov7Options")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+SWIFT_CLASS_NAMED("PublicKey") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPPublicKey : NSObject
+@property (nonatomic, readonly) SecKeyRef _Nonnull key;
+@property (nonatomic, readonly, copy) NSString * _Nonnull pem;
+@property (nonatomic, readonly, copy) NSData * _Nonnull der;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 
@@ -685,12 +750,20 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull livenessTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull livenessScanningTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
+@property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL scanLineDisabled;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -705,7 +778,8 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 
 
 @interface WKWebView (SWIFT_EXTENSION(iProov))
-- (void)installIProovNativeBridge;
+- (void)installIProovNativeBridgeWithCryptographyEnabled:(BOOL)cryptographyEnabled;
+- (void)uninstallNativeBridge;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -911,6 +985,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import Security;
 @import WebKit;
 #endif
 
@@ -978,6 +1053,12 @@ SWIFT_CLASS_NAMED("IProov")
 + (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(SuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(FailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
+@class IPKeyPair;
+
+@interface IProov (SWIFT_EXTENSION(iProov))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IPKeyPair * _Nonnull keyPair SWIFT_AVAILABILITY(ios,introduced=10.0);)
++ (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class UIViewController;
 
@@ -985,6 +1066,17 @@ SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
 @protocol IProovPresentationDelegate
 - (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
 - (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
+@end
+
+@class IPPublicKey;
+
+SWIFT_CLASS_NAMED("KeyPair") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPKeyPair : NSObject
+@property (nonatomic, readonly, strong) IPPublicKey * _Nonnull publicKey;
+@property (nonatomic, readonly) BOOL isInSecureEnclave;
+- (NSData * _Nonnull)signWithData:(NSData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -1013,6 +1105,16 @@ SWIFT_CLASS("_TtC6iProov7Options")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+SWIFT_CLASS_NAMED("PublicKey") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPPublicKey : NSObject
+@property (nonatomic, readonly) SecKeyRef _Nonnull key;
+@property (nonatomic, readonly, copy) NSString * _Nonnull pem;
+@property (nonatomic, readonly, copy) NSData * _Nonnull der;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 
@@ -1045,12 +1147,20 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull livenessTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull livenessScanningTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
+@property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL scanLineDisabled;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -1065,7 +1175,8 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 
 
 @interface WKWebView (SWIFT_EXTENSION(iProov))
-- (void)installIProovNativeBridge;
+- (void)installIProovNativeBridgeWithCryptographyEnabled:(BOOL)cryptographyEnabled;
+- (void)uninstallNativeBridge;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -1268,6 +1379,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import Security;
 @import WebKit;
 #endif
 
@@ -1335,6 +1447,12 @@ SWIFT_CLASS_NAMED("IProov")
 + (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(Options * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(SuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(void))cancelled failure:(void (^ _Nonnull)(FailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
+@class IPKeyPair;
+
+@interface IProov (SWIFT_EXTENSION(iProov))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IPKeyPair * _Nonnull keyPair SWIFT_AVAILABILITY(ios,introduced=10.0);)
++ (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class UIViewController;
 
@@ -1342,6 +1460,17 @@ SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
 @protocol IProovPresentationDelegate
 - (void)presentWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
 - (void)dismissWithIProovViewController:(UIViewController * _Nonnull)iProovViewController completion:(void (^ _Nullable)(void))completion;
+@end
+
+@class IPPublicKey;
+
+SWIFT_CLASS_NAMED("KeyPair") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPKeyPair : NSObject
+@property (nonatomic, readonly, strong) IPPublicKey * _Nonnull publicKey;
+@property (nonatomic, readonly) BOOL isInSecureEnclave;
+- (NSData * _Nonnull)signWithData:(NSData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -1370,6 +1499,16 @@ SWIFT_CLASS("_TtC6iProov7Options")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+SWIFT_CLASS_NAMED("PublicKey") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface IPPublicKey : NSObject
+@property (nonatomic, readonly) SecKeyRef _Nonnull key;
+@property (nonatomic, readonly, copy) NSString * _Nonnull pem;
+@property (nonatomic, readonly, copy) NSData * _Nonnull der;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 
@@ -1402,12 +1541,20 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull lineColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull footerTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull loadingTintColor SWIFT_DEPRECATED;
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull livenessTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull livenessScanningTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
+@property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL scanLineDisabled;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -1422,7 +1569,8 @@ SWIFT_CLASS("_TtC6iProov9UIOptions")
 
 
 @interface WKWebView (SWIFT_EXTENSION(iProov))
-- (void)installIProovNativeBridge;
+- (void)installIProovNativeBridgeWithCryptographyEnabled:(BOOL)cryptographyEnabled;
+- (void)uninstallNativeBridge;
 @end
 
 #if __has_attribute(external_source_symbol)

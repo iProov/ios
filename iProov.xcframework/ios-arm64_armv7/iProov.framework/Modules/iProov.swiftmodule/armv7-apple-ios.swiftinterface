@@ -44,7 +44,8 @@ public enum IProovError : Foundation.LocalizedError {
   @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
 extension WKWebView {
-  @objc dynamic public func installIProovNativeBridge()
+  @objc dynamic public func installIProovNativeBridge(cryptographyEnabled: Swift.Bool = false)
+  @objc dynamic public func uninstallNativeBridge()
 }
 extension IProov {
   @available(swift, obsoleted: 1.0)
@@ -65,13 +66,21 @@ extension IProov {
   @objc public var stringsTable: Swift.String?
   @objc public var lineColor: UIKit.UIColor
   @objc public var backgroundColor: UIKit.UIColor
+  @objc public var headerBackgroundColor: UIKit.UIColor
+  @objc public var footerBackgroundColor: UIKit.UIColor
+  @objc public var headerTextColor: UIKit.UIColor
+  @objc public var footerTextColor: UIKit.UIColor
   @available(*, deprecated)
   @objc public var loadingTintColor: UIKit.UIColor
   @objc public var notReadyTintColor: UIKit.UIColor
   @objc public var readyTintColor: UIKit.UIColor
   @objc public var livenessTintColor: UIKit.UIColor
+  @objc public var livenessScanningTintColor: UIKit.UIColor
+  @objc public var closeButtonTintColor: UIKit.UIColor
+  @objc public var progressBarColor: UIKit.UIColor
   @objc public var title: Swift.String?
   @objc public var font: Swift.String
+  @objc public var closeButtonImage: UIKit.UIImage
   @objc public var logoImage: UIKit.UIImage?
   @objc public var scanLineDisabled: Swift.Bool
   @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
@@ -104,6 +113,30 @@ extension IProov {
 }
 infix operator ?= : AssignmentPrecedence
 infix operator --> : AdditionPrecedence
+@_hasMissingDesignatedInitializers @available(iOS 10.0, *)
+@objc(IPPublicKey) public class PublicKey : ObjectiveC.NSObject {
+  @objc final public let key: Security.SecKey
+  @objc public var pem: Swift.String {
+    @objc get
+  }
+  @objc public var der: Foundation.Data {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @available(iOS 10.0, *)
+@objc(IPKeyPair) public class KeyPair : ObjectiveC.NSObject {
+  @objc public var publicKey: iProov.PublicKey {
+    @objc get
+  }
+  @objc public var isInSecureEnclave: Swift.Bool {
+    @objc get
+  }
+  @objc public func sign(data: Foundation.Data) -> Foundation.Data
+  @objc deinit
+  @objc override dynamic public init()
+}
 public typealias Callback = (iProov.Status) -> Swift.Void
 @_hasMissingDesignatedInitializers @objc public class SuccessResult : ObjectiveC.NSObject {
   @objc final public let token: Swift.String
@@ -133,6 +166,10 @@ public enum Status {
 }
 extension IProov {
   public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
+  @available(iOS 10.0, *)
+  @objc public static var keyPair: iProov.KeyPair {
+    @objc get
+  }
 }
 extension UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
