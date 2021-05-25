@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '8.3.1'
+  s.version          = '8.4.0'
   s.summary          = 'Flexible authentication for identity assurance'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'commercial', :file => 'LICENSE.md' }
@@ -14,11 +14,6 @@ Pod::Spec.new do |s|
   
   s.pod_target_xcconfig = {
     'OTHER_SWIFT_FLAGS' => '-DGLES', # Required for GPUImage2
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-  }
-
-  s.user_target_xcconfig = {
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
 
   s.dependency 'Socket.IO-Client-Swift', '~> 15.2'

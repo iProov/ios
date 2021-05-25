@@ -27,7 +27,18 @@ extension CGRect : Swift.CustomDebugStringConvertible {
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
-public enum IProovError : Foundation.LocalizedError {
+@_inheritsConvenienceInitializers @objc(IPErrorCode) public class IProovErrorCode : ObjectiveC.NSObject {
+  @objc public static let networkError: Swift.Int
+  @objc public static let encoderError: Swift.Int
+  @objc public static let cameraError: Swift.Int
+  @objc public static let serverError: Swift.Int
+  @objc public static let captureAlreadyActive: Swift.Int
+  @objc public static let lightingModelError: Swift.Int
+  @objc public static let cameraPermissionDenied: Swift.Int
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   case captureAlreadyActive
   case networkError(Swift.String?)
   case encoderError(code: Swift.Int32?)
@@ -35,6 +46,15 @@ public enum IProovError : Foundation.LocalizedError {
   case cameraError(Swift.String?)
   case cameraPermissionDenied
   case serverError(Swift.String?)
+  public var errorCode: Swift.Int {
+    get
+  }
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
   public var errorDescription: Swift.String? {
     get
   }

@@ -268,6 +268,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IPKeyPair * 
 + (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+SWIFT_CLASS_NAMED("IProovErrorCode")
+@interface IPErrorCode : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger networkError;)
++ (NSInteger)networkError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger encoderError;)
++ (NSInteger)encoderError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraError;)
++ (NSInteger)cameraError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger serverError;)
++ (NSInteger)serverError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger captureAlreadyActive;)
++ (NSInteger)captureAlreadyActive SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger lightingModelError;)
++ (NSInteger)lightingModelError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraPermissionDenied;)
++ (NSInteger)cameraPermissionDenied SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIViewController;
 
 SWIFT_PROTOCOL("_TtP6iProov26IProovPresentationDelegate_")
@@ -660,6 +680,26 @@ SWIFT_CLASS_NAMED("IProov")
 @interface IProov (SWIFT_EXTENSION(iProov))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IPKeyPair * _Nonnull keyPair SWIFT_AVAILABILITY(ios,introduced=10.0);)
 + (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS_NAMED("IProovErrorCode")
+@interface IPErrorCode : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger networkError;)
++ (NSInteger)networkError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger encoderError;)
++ (NSInteger)encoderError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraError;)
++ (NSInteger)cameraError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger serverError;)
++ (NSInteger)serverError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger captureAlreadyActive;)
++ (NSInteger)captureAlreadyActive SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger lightingModelError;)
++ (NSInteger)lightingModelError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraPermissionDenied;)
++ (NSInteger)cameraPermissionDenied SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UIViewController;
