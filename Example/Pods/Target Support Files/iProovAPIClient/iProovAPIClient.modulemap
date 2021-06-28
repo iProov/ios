@@ -1,0 +1,6 @@
+framework module iProovAPIClient {
+  umbrella header "iProovAPIClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

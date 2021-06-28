@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v8.4.0
+# iProov Biometrics iOS SDK v9.0.0-beta1
 
 ## Table of contents
 
@@ -22,7 +22,7 @@ The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app.
 
 ### Requirements
 
-- iOS 9.0 and above
+- iOS 10.0 and above
 - Xcode 11.0 and above
 
 The framework has been written in Swift 5.3, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
@@ -51,7 +51,7 @@ iProov is built with the _"Build Libraries for Distribution"_ build setting enab
 The framework package is provided via this repository, which contains the following:
 
 * **README.md** - This document!
-* **WaterlooBank** - A sample project of iProov for the fictitious _"Waterloo Bank"_, written in Swift.
+* **Example** - A basic sample project using iProov, written in Swift and using Cocoapods.
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
 * **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
@@ -323,16 +323,19 @@ options.ui.filter = .shaded // Adjust the filter used for the face preview. Can 
 // Adjust various colors for the camera preview:
 options.ui.lineColor = .white
 options.ui.backgroundColor = .black
-options.ui.loadingTintColor = .lightGray
-options.ui.notReadyTintColor = .orange
-options.ui.readyTintColor = .green
-options.ui.livenessTintColor = .blue
-options.ui.livenessScanningTintColor = .lightGray
-options.ui.progressBarColor = .black
 options.ui.headerTextColor = .white
 options.ui.footerTextColor = .white
 options.ui.headerBackgroundColor = UIColor(white: 0, alpha: 0.67)
 options.ui.footerBackgroundColor = UIColor(white: 0, alpha: 0.67)
+
+// GPA specific colors:
+options.ui.genuinePresenceAssurance.notReadyTintColor = .orange
+options.ui.genuinePresenceAssurance.readyTintColor = .green
+options.ui.genuinePresenceAssurance.progressBarColor = .black
+
+// LA specific colors:
+options.ui.livenessAssurance.primaryTintColor = .blue
+options.ui.livenessAssurance.secondaryTintColor = .lightGray
 
 // Customise the close button:
 options.ui.closeButtonImage = UIImage(named: "close")!
@@ -341,7 +344,6 @@ options.ui.closeButtonTintColor = .white
 options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
 options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).
 options.ui.logoImage = UIImage(named: "AcmeLogo") // A custom logo to be shown at the top-right of the iProov screen.
-options.ui.scanLineDisabled = false // Disables the vertical sweeping scanline whilst flashing.
 options.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving.
 options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
 options.ui.stringsBundle = Bundle(for: Foo.class) // Pass a custom bundle for string localization (see Localization Guide for further information).
@@ -365,9 +367,9 @@ options.network.path = "/socket.io/v2/" // The path to use when streaming, defau
 // You can specify max yaw/roll/pitch deviation of the user's face to ensure a given pose. Values are provided in normalised units.
 // These options should not be set for general use. Please contact iProov for further information if you would like to use this feature.
 
-options.capture.maxYaw = 0.03
-options.capture.maxRoll = 0.03
-options.capture.maxPitch = 0.03
+options.capture.genuinePresenceAssurance.maxYaw = 0.03
+options.capture.genuinePresenceAssurance.maxRoll = 0.03
+options.capture.genuinePresenceAssurance.maxPitch = 0.03
 
 ```
 
@@ -443,19 +445,19 @@ A description of these cases are as follows:
 * `cameraPermissionDenied` - The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
 
-## Sample code
+## Example project
 
-For a simple iProov experience that is ready to run out-of-the-box, check out the [Waterloo Bank sample project](https://github.com/iProov/ios/tree/master/WaterlooBank).
+For a simple iProov experience that is ready to run out-of-the-box, check out the [Example project](https://github.com/iProov/ios/tree/master/Example).
 
 ### Installation
 
-1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the WaterlooBank directory to install the required dependencies.
+1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the Example directory to install the required dependencies.
 
-2. Open `WaterlooBank.xcworkspace` then navigate to `HomeViewController.swift` and add your API key and Secret at the appropriate point.
+2. Open `Example.xcworkspace` then navigate to `ViewController.swift` and add your API key and Secret at the appropriate point.
 
 3. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
 
-> **⚠️ SECURITY NOTICE:** The Waterloo Bank sample project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
+> **⚠️ SECURITY NOTICE:** The Example project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
 ## Help & support
 

@@ -1,4 +1,66 @@
-# CryptoExportImportManager
+## iProov Biometrics SDK Terms
+
+iProov SDK Terms (the "Terms"):
+
+1. The iProov Software Development Kit ("iProov SDK") has been developed by iProov Limited ("iProov", "we" and "us").
+
+2. The iProov SDK is to be accessed, downloaded and/or used only by corporate or natural
+persons that are authorised to do so (each an "Authorised User") under a separate written
+agreement with iProov Limited (an "iProov Contract"). If you are not an Authorised User,
+you are not permitted to – and you agree that you shall not – access, download, distribute,
+copy or otherwise use or exploit the iProov SDK or any part of it or its documentation.
+
+3. The iProov SDK comprises elements that are iProov’s copyright, as well as elements that are
+licensed by third parties under certain open source software licences (each an "OSS
+Agreement"), which may be found below.
+Anyone accessing or downloading the iProov SDK is deemed to agree to the OSS Agreements
+and these Terms.
+
+4. Authorised Users should consult their iProov Contract as to how they are permitted to use
+the iProov SDK. No usage by Authorised Users is allowed except as provided in the relevant
+iProov Contract.
+
+5. Any rights Authorised Users may have to use the iProov SDK are subject to the OSS
+Agreements.
+
+6. The iProov SDK is provided "as is", without warranty of any kind, express or implied,
+including but not limited to the warranties of merchantability, fitness for a particular
+purpose and noninfringement. In no event shall iProov be liable for any claim, damages or
+other liability, whether in contract, tort or otherwise, arising from, out of or in connection
+with the iProov SDK or any use of or other dealings with the iProov SDK.
+
+7. Without limiting the above provisions of these Terms, you agree that you will not and will
+not allow a third party to:
+
+	a. attempt to defeat, circumvent or disable any copy protection mechanism in the
+iProov SDK;
+
+	b. reverse engineer, disassemble or decompile iProov SDK software or apply any other
+process or procedure to derive the human readable form of any software included in
+the iProov SDK (except to the extent that any reduction of such software to human
+readable form is necessary for the purposes of integrating the operation of that
+software with other software or systems used by an Authorised User, if iProov has
+not provided the information necessary to achieve such integration within a
+reasonable period of the Authorised User requesting it);
+
+	c. access all or any part of the iProov SDK in order to build or facilitate the build of a
+product or service which has functions or features similar to or competes with the
+iProov SDK or any of our products or services;
+	
+	d. remove, obscure or alter any intellectual property right or confidentiality notices or
+legends appearing in or on any aspect of any of the iProov SDK;
+
+	e. pass off the iProov SDK as being a work of any person or entity other than iProov
+and the licensors under OSS Agreements; or
+
+	f. modify, distribute, alter, or tamper with the iProov SDK or any of its documentation,
+or otherwise do anything restricted by iProov’s copyright and other rights in the SDK
+and its documentation.
+
+8. We reserve the right to take all steps available to us in enforcing our rights, whether under
+these Terms, our intellectual property rights or otherwise.
+
+## CryptoExportImportManager
 
 The MIT License (MIT)
 
@@ -10,7 +72,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-# Expression
+## Expression
 
 MIT License
 
@@ -34,7 +96,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# GPUImage2
+## GPUImage2
 
 Copyright (c) 2015, Brad Larson.
 All rights reserved.
@@ -47,7 +109,7 @@ Neither the name of the GPUImage framework nor the names of its contributors may
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-# SocketIO-Client-Swift
+## SocketIO-Client-Swift
 
 The MIT License (MIT)
 
@@ -75,8 +137,7 @@ THE SOFTWARE.
 
 This library makes use of the following third party libraries:
 
-Starscream
-----------
+### Starscream
 
 Apache License
                            Version 2.0, January 2004
