@@ -1,0 +1,19 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'Example' do
+  pod 'iProov', :path => '../'
+  pod 'iProovAPIClient', :git => 'https://github.com/iProov/ios-api-client.git'
+  pod 'MBProgressHUD'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if ['iProov', 'Socket.IO-Client-Swift', 'Starscream'].include? target.name
+      target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+    end
+  end
+end

@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v8.4.0
+# iProov Biometrics iOS SDK v9.0.0
 
 ## Table of contents
 
@@ -22,7 +22,7 @@ The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app.
 
 ### Requirements
 
-- iOS 9.0 and above
+- iOS 10.0 and above
 - Xcode 11.0 and above
 
 The framework has been written in Swift 5.3, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
@@ -44,14 +44,14 @@ These dependencies are vendored and compiled into the SDK, this requires no acti
 
 Module stability is supported in Swift 5.1 (Xcode 11) and above. The advantage of this is that the SDK no longer needs to be recompiled for every new version of the Swift compiler.
 
-iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is still not fully supported in either Cocoapods nor Carthage as of January 2021, therefore some workarounds are required (see installation documentation for details).
+iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is still not fully supported in either Cocoapods nor Carthage as of July 2021, therefore some workarounds are required (see installation documentation for details).
 
 ## Repository contents
 
 The framework package is provided via this repository, which contains the following:
 
 * **README.md** - This document!
-* **WaterlooBank** - A sample project of iProov for the fictitious _"Waterloo Bank"_, written in Swift.
+* **Example** - A basic sample project using iProov, written in Swift and using Cocoapods.
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
 * **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
@@ -67,7 +67,7 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 
 ## Installation
 
-Integration with your app is supported via Cocoapods and Carthage. We recommend Cocoapods for the easiest installation. (We do not currently support Swift Package Manager due to substantial limitations with how dependencies for binary targets are handled.)
+Integration with your app is supported via Cocoapods and Carthage. We recommend Cocoapods for the easiest installation. (We do not currently support Swift Package Manager due to limitations with how dependencies for binary targets are handled.)
 
 ### Cocoapods
 
@@ -293,7 +293,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         // along with an `iProovError` with more information about the error (NSError in Objective-C).
         // It will be called once, or never.
 
-        @unknown default:
+    @unknown default:
         // Reserved for future usage.
         break
     }
@@ -308,7 +308,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 
 ## Options
 
-You can customize the iProov session by passing in an `Options` object when launching iProov and setting any of these variables:
+You can customize the iProov session by passing in an `Options` reference when launching iProov and setting any of these values:
 
 ```swift
 let options = Options()
@@ -318,31 +318,33 @@ let options = Options()
 	Configure options relating to the user interface
 */
 
-options.ui.filter = .shaded // Adjust the filter used for the face preview. Can be .classic (as in pre-v7), .shaded (additional detail, the default in v7) or .vibrant (full color).
-
 // Adjust various colors for the camera preview:
 options.ui.lineColor = .white
 options.ui.backgroundColor = .black
-options.ui.loadingTintColor = .lightGray
-options.ui.notReadyTintColor = .orange
-options.ui.readyTintColor = .green
-options.ui.livenessTintColor = .blue
-options.ui.livenessScanningTintColor = .lightGray
-options.ui.progressBarColor = .black
 options.ui.headerTextColor = .white
 options.ui.footerTextColor = .white
 options.ui.headerBackgroundColor = UIColor(white: 0, alpha: 0.67)
 options.ui.footerBackgroundColor = UIColor(white: 0, alpha: 0.67)
 
+// GPA specific options:
+options.ui.genuinePresenceAssurance.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving.
+options.ui.genuinePresenceAssurance.notReadyTintColor = .orange
+options.ui.genuinePresenceAssurance.readyTintColor = .green
+options.ui.genuinePresenceAssurance.progressBarColor = .black
+
+// LA specific colors:
+options.ui.livenessAssurance.primaryTintColor = .blue
+options.ui.livenessAssurance.secondaryTintColor = .lightGray
+
 // Customise the close button:
 options.ui.closeButtonImage = UIImage(named: "close")!
 options.ui.closeButtonTintColor = .white
 
+// Customise other UI settings:
+options.ui.filter = .shaded // Adjust the filter used for the face preview. Can be .classic, .shaded (additional detail, the default) or .vibrant (full color).
 options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
 options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).
 options.ui.logoImage = UIImage(named: "AcmeLogo") // A custom logo to be shown at the top-right of the iProov screen.
-options.ui.scanLineDisabled = false // Disables the vertical sweeping scanline whilst flashing.
-options.ui.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving.
 options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
 options.ui.stringsBundle = Bundle(for: Foo.class) // Pass a custom bundle for string localization (see Localization Guide for further information).
 options.ui.stringsTable = "Localizable-MyApp.strings" // Pass a custom strings filename (table name) for string localization.
@@ -352,8 +354,7 @@ options.ui.stringsTable = "Localizable-MyApp.strings" // Pass a custom strings f
 	Configure options relating to networking & security
 */
 
-options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own proxy server, or for overriding the built-in certificate pinning for some other reason. Certificates should be generated in DER-encoded X.509 certificate format, eg. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
-options.network.certificatePinningDisabled = false	// Disables SSL/TLS certificate pinning to the server. WARNING! Do not enable this in production apps.
+options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own reverse proxy to stream to iProov. Pinning can be disabled by passing an empty array (never do this in production apps!) Certificates should be generated in DER-encoded X.509 certificate format, e.g. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
 options.network.timeout = 10 // The network timeout in seconds.
 options.network.path = "/socket.io/v2/" // The path to use when streaming, defaults to /socket.io/v2/. You should not need to change this unless directed to do so by iProov.
 
@@ -365,9 +366,9 @@ options.network.path = "/socket.io/v2/" // The path to use when streaming, defau
 // You can specify max yaw/roll/pitch deviation of the user's face to ensure a given pose. Values are provided in normalised units.
 // These options should not be set for general use. Please contact iProov for further information if you would like to use this feature.
 
-options.capture.maxYaw = 0.03
-options.capture.maxRoll = 0.03
-options.capture.maxPitch = 0.03
+options.capture.genuinePresenceAssurance.maxYaw = 0.03
+options.capture.genuinePresenceAssurance.maxRoll = 0.03
+options.capture.genuinePresenceAssurance.maxPitch = 0.03
 
 ```
 
@@ -393,7 +394,7 @@ extension MyViewController: IProovPresentationDelegate {
 
 > ⚠️ **IMPORTANT:** There are a couple of important rules you **must** follow when using this functionality:
 > 
-> 1. With great power comes great responsibility! The iProov view controller requires full cover of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only occupies part of the screen, or is obscured by other views. Also, you must ensure that the view controller is entirely removed from the user's view once dismissed.
+> 1. With great power comes great responsibility! The iProov view controller requires full coverage of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only occupies part of the screen, or is obscured by other views. Also, you must ensure that the view controller is entirely removed from the user's view once dismissed.
 > 
 > 2. To avoid the risk of retain cycles, `Options` only holds a **weak** reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
 
@@ -437,25 +438,23 @@ A description of these cases are as follows:
 
 * `captureAlreadyActive` - An existing iProov capture is already in progress. Wait until the current capture completes before starting a new one.
 * `networkError(String?)` - An error occurred with the video streaming process. Consult the error associated value for more information.
-* `encoderError(code: Int32?)` - An error occurred with the video encoder. Report the error code to iProov for further assistance.
-* `lightingModelError` - An error occurred with the lighting mode. This should be reported to iProov for further assistance.
-* `cameraError(String?)` - An error occurred with the camera.
 * `cameraPermissionDenied` - The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings.
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
+* `unexpectedError(String)` - An unexpected and unrecoverable error has occurred. These errors should be reported to iProov for further investigation.
 
-## Sample code
+## Example project
 
-For a simple iProov experience that is ready to run out-of-the-box, check out the [Waterloo Bank sample project](https://github.com/iProov/ios/tree/master/WaterlooBank).
+For a simple iProov experience that is ready to run out-of-the-box, check out the [Example project](https://github.com/iProov/ios/tree/master/Example).
 
 ### Installation
 
-1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the WaterlooBank directory to install the required dependencies.
+1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the Example directory to install the required dependencies.
 
-2. Open `WaterlooBank.xcworkspace` then navigate to `HomeViewController.swift` and add your API key and Secret at the appropriate point.
+2. Open `Example.xcworkspace` then navigate to `ViewController.swift` and add your API key and Secret at the appropriate point.
 
 3. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
 
-> **⚠️ SECURITY NOTICE:** The Waterloo Bank sample project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
+> **⚠️ SECURITY NOTICE:** The Example project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
 ## Help & support
 
