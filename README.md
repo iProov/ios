@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v9.0.0
+# iProov Biometrics iOS SDK v9.0.1
 
 ## Table of contents
 
@@ -115,7 +115,7 @@ Therefore, this guide will then explain how to build Socket.IO (and its dependen
 1. Add the following to your Cartfile:
 
 	```
-	github "socketio/socket.io-client-swift" == 15.2.0
+	github "socketio/socket.io-client-swift" == 16.0.1
 	```
 
 2. Create the following workaround script in your root Carthage directory:
@@ -172,7 +172,7 @@ If you are using Carthage 0.36.0 or earlier, or you wish to remain using traditi
 
 	```
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
-	github "socketio/socket.io-client-swift" == 15.2.0
+	github "socketio/socket.io-client-swift" == 16.0.1
 	```
 	
 2. Create the following workaround script in your root Carthage directory:

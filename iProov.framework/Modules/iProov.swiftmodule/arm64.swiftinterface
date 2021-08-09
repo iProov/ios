@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 import AVFoundation
 import Accelerate
@@ -35,8 +35,8 @@ extension CGRect : Swift.CustomDebugStringConvertible {
   @objc public static let captureAlreadyActive: Swift.Int
   @objc public static let cameraPermissionDenied: Swift.Int
   @objc public static let unexpectedError: Swift.Int
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   case captureAlreadyActive
@@ -57,7 +57,7 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
     get
   }
 }
-@objc public protocol IProovPresentationDelegate {
+@objc public protocol IProovPresentationDelegate : AnyObject {
   @objc func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
@@ -129,8 +129,8 @@ extension IProov {
   }
   @objc(IPFilter) public enum Filter : Swift.Int {
     case classic, shaded, vibrant
-    public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
     public var rawValue: Swift.Int {
       get
     }
@@ -148,8 +148,8 @@ infix operator --> : AdditionPrecedence
   @objc public var der: Foundation.Data {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc(IPKeyPair) public class KeyPair : ObjectiveC.NSObject {
   @objc public var publicKey: iProov.PublicKey {
@@ -159,8 +159,8 @@ infix operator --> : AdditionPrecedence
     @objc get
   }
   @objc public func sign(data: Foundation.Data) -> Foundation.Data
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public typealias Callback = (iProov.Status) -> Swift.Void
 @_hasMissingDesignatedInitializers @objc(IPSuccessResult) public class SuccessResult : ObjectiveC.NSObject {
