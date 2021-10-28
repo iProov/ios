@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v9.0.1
+# iProov Biometrics iOS SDK v9.1.0
 
 ## Table of contents
 
@@ -23,7 +23,9 @@ The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app.
 ### Requirements
 
 - iOS 10.0 and above
-- Xcode 11.0 and above
+- Xcode 12.4 and above*
+
+*(\*You may find that previous versions of Xcode also work fine, but this is not officially supported.)*
 
 The framework has been written in Swift 5.3, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
@@ -44,7 +46,7 @@ These dependencies are vendored and compiled into the SDK, this requires no acti
 
 Module stability is supported in Swift 5.1 (Xcode 11) and above. The advantage of this is that the SDK no longer needs to be recompiled for every new version of the Swift compiler.
 
-iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. However, this is still not fully supported in either Cocoapods nor Carthage as of July 2021, therefore some workarounds are required (see installation documentation for details).
+iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. This must be also be set for both Cocoapods and Carthage (see installation documentation for details).
 
 ## Repository contents
 
@@ -354,7 +356,7 @@ options.ui.stringsTable = "Localizable-MyApp.strings" // Pass a custom strings f
 	Configure options relating to networking & security
 */
 
-options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Supply an array of paths of certificates to be used for pinning. Useful when using your own reverse proxy to stream to iProov. Pinning can be disabled by passing an empty array (never do this in production apps!) Certificates should be generated in DER-encoded X.509 certificate format, e.g. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
+options.network.certificates = [Bundle.main.path(forResource: "custom_cert", ofType: "der")!] // Certificates to be used for SSL pinning. Array elements should be of type String (path to certificate) or Data (the certificate itself).  Useful when using your own reverse proxy to stream to iProov. Pinning can be disabled by passing an empty array (never do this in production apps!) See more info in the FAQs. Certificates should be passed in DER-encoded X.509 certificate format, e.g. with the command: $ openssl x509 -in cert.crt -outform der -out cert.der
 options.network.timeout = 10 // The network timeout in seconds.
 options.network.path = "/socket.io/v2/" // The path to use when streaming, defaults to /socket.io/v2/. You should not need to change this unless directed to do so by iProov.
 

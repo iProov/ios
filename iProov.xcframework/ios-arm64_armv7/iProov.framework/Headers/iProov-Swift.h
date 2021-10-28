@@ -359,7 +359,7 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 
 SWIFT_CLASS_NAMED("Network")
 @interface IPNetworkOptions : NSObject
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
+@property (nonatomic, copy) NSArray * _Nonnull certificates;
 @property (nonatomic) NSTimeInterval timeout;
 @property (nonatomic, copy) NSString * _Nonnull path;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -796,7 +796,7 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 
 SWIFT_CLASS_NAMED("Network")
 @interface IPNetworkOptions : NSObject
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
+@property (nonatomic, copy) NSArray * _Nonnull certificates;
 @property (nonatomic) NSTimeInterval timeout;
 @property (nonatomic, copy) NSString * _Nonnull path;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

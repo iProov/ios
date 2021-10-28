@@ -5,13 +5,11 @@ import AVFoundation
 import Accelerate
 import AudioToolbox
 import CommonCrypto
-import CoreImage
 import CoreMedia
 import CoreMotion
 import CoreVideo
 import Dispatch
 import Foundation
-import ImageIO
 import OpenGLES
 import QuartzCore
 import Security
@@ -54,6 +52,12 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
     get
   }
   public var errorDescription: Swift.String? {
+    get
+  }
+  public var localizedTitle: Swift.String {
+    get
+  }
+  public var localizedMessage: Swift.String? {
     get
   }
 }
@@ -109,7 +113,7 @@ extension IProov {
     @objc deinit
   }
   @_inheritsConvenienceInitializers @objc(IPNetworkOptions) public class Network : ObjectiveC.NSObject {
-    @objc public var certificates: [Swift.String]
+    @objc public var certificates: [Any]
     @objc public var timeout: Swift.Double
     @objc public var path: Swift.String
     @objc override dynamic public init()
@@ -193,9 +197,6 @@ extension IProov {
   public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
   @objc public static var keyPair: iProov.KeyPair
 }
-extension SSLSecurity : Starscream.CertificatePinning {
-  public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: (Starscream.PinningState) -> Swift.Void)
-}
 public protocol SSLTrustValidator {
   func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
 }
@@ -215,6 +216,9 @@ open class SSLSecurity : iProov.SSLTrustValidator {
   public func certificateChain(_ trust: Security.SecTrust) -> [Foundation.Data]
   public func publicKeyChain(_ trust: Security.SecTrust) -> [Security.SecKey]
   @objc deinit
+}
+extension SSLSecurity : Starscream.CertificatePinning {
+  public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: (Starscream.PinningState) -> Swift.Void)
 }
 extension UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
