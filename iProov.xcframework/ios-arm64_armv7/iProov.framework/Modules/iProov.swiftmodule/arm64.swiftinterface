@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 import AVFoundation
 import Accelerate
@@ -20,9 +20,10 @@ import UIKit
 import VideoToolbox
 import Vision
 import WebKit
+import _Concurrency
 @_exported import iProov
 import simd
-extension CGRect : Swift.CustomDebugStringConvertible {
+extension CoreGraphics.CGRect : Swift.CustomDebugStringConvertible {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
@@ -33,8 +34,8 @@ extension CGRect : Swift.CustomDebugStringConvertible {
   @objc public static let captureAlreadyActive: Swift.Int
   @objc public static let cameraPermissionDenied: Swift.Int
   @objc public static let unexpectedError: Swift.Int
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   case captureAlreadyActive
@@ -61,15 +62,15 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
     get
   }
 }
-@objc public protocol IProovPresentationDelegate : AnyObject {
+@objc public protocol IProovPresentationDelegate {
   @objc func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
-extension WKWebView {
-  @objc dynamic public func installIProovNativeBridge(cryptographyEnabled: Swift.Bool = false)
-  @objc dynamic public func uninstallNativeBridge()
+extension WebKit.WKWebView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func installIProovNativeBridge(cryptographyEnabled: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func uninstallNativeBridge()
 }
-extension IProov {
+extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
   @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
@@ -87,12 +88,18 @@ extension IProov {
     @objc public var headerBackgroundColor: UIKit.UIColor
     @objc public var footerBackgroundColor: UIKit.UIColor
     @objc public var headerTextColor: UIKit.UIColor
-    @objc public var footerTextColor: UIKit.UIColor
+    @objc public var promptTextColor: UIKit.UIColor
+    @available(*, deprecated, renamed: "promptTextColor")
+    @objc public var footerTextColor: UIKit.UIColor {
+      @objc get
+      @objc set
+    }
     @objc public var closeButtonTintColor: UIKit.UIColor
     @objc public var title: Swift.String?
     @objc public var font: Swift.String
     @objc public var closeButtonImage: UIKit.UIImage
     @objc public var logoImage: UIKit.UIImage?
+    @objc public var floatingPromptEnabled: Swift.Bool
     @objc public var genuinePresenceAssurance: iProov.Options.UI.GenuinePresenceAssurance
     @objc public var livenessAssurance: iProov.Options.UI.LivenessAssurance
     @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
@@ -114,7 +121,7 @@ extension IProov {
   }
   @_inheritsConvenienceInitializers @objc(IPNetworkOptions) public class Network : ObjectiveC.NSObject {
     @objc public var certificates: [Any]
-    @objc public var timeout: Swift.Double
+    @objc public var timeout: Foundation.TimeInterval
     @objc public var path: Swift.String
     @objc override dynamic public init()
     @objc deinit
@@ -133,8 +140,8 @@ extension IProov {
   }
   @objc(IPFilter) public enum Filter : Swift.Int {
     case classic, shaded, vibrant
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -153,7 +160,6 @@ infix operator --> : AdditionPrecedence
     @objc get
   }
   @objc deinit
-  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc(IPKeyPair) public class KeyPair : ObjectiveC.NSObject {
   @objc public var publicKey: iProov.PublicKey {
@@ -164,13 +170,11 @@ infix operator --> : AdditionPrecedence
   }
   @objc public func sign(data: Foundation.Data) -> Foundation.Data
   @objc deinit
-  @objc override dynamic public init()
 }
 public typealias Callback = (iProov.Status) -> Swift.Void
 @_hasMissingDesignatedInitializers @objc(IPSuccessResult) public class SuccessResult : ObjectiveC.NSObject {
   @objc final public let token: Swift.String
   @objc final public let frame: UIKit.UIImage?
-  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(IPFailureResult) public class FailureResult : ObjectiveC.NSObject {
@@ -178,7 +182,6 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   @objc final public let reason: Swift.String
   @objc final public let feedbackCode: Swift.String
   @objc final public let frame: UIKit.UIImage?
-  @objc override dynamic public init()
   @objc deinit
 }
 public enum Status {
@@ -193,7 +196,7 @@ public enum Status {
     get
   }
 }
-extension IProov {
+extension iProov.IProov {
   public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
   @objc public static var keyPair: iProov.KeyPair
 }
@@ -217,10 +220,10 @@ open class SSLSecurity : iProov.SSLTrustValidator {
   public func publicKeyChain(_ trust: Security.SecTrust) -> [Security.SecKey]
   @objc deinit
 }
-extension SSLSecurity : Starscream.CertificatePinning {
+extension iProov.SSLSecurity : Starscream.CertificatePinning {
   public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: (Starscream.PinningState) -> Swift.Void)
 }
-extension UIImage {
+extension UIKit.UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
 }
 extension iProov.Options.Filter : Swift.Equatable {}

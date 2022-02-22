@@ -47,7 +47,11 @@ class ViewController: UIViewController {
 
             switch result {
             case let .success(token):
-                IProov.launch(streamingURL: Self.baseURL, token: token) { status in
+
+                let options = Options()
+                options.ui.floatingPromptEnabled = true
+
+                IProov.launch(streamingURL: Self.baseURL, token: token, options: options) { status in
 
                     switch status {
                     case .connecting:

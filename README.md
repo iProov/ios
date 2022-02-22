@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v9.2.0
+# iProov Biometrics iOS SDK v9.3.0
 
 ## Table of contents
 
@@ -23,9 +23,7 @@ The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app.
 ### Requirements
 
 - iOS 10.0 and above
-- Xcode 12.4 and above*
-
-*(\*You may find that previous versions of Xcode also work fine, but this is not officially supported.)*
+- Xcode 13.0 and above (for Xcode 12 support, continue using iProov SDK v9.2)
 
 The framework has been written in Swift 5.3, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
@@ -44,9 +42,9 @@ These dependencies are vendored and compiled into the SDK, this requires no acti
 
 ### Module Stability
 
-Module stability is supported in Swift 5.1 (Xcode 11) and above. The advantage of this is that the SDK no longer needs to be recompiled for every new version of the Swift compiler.
+The iProov SDK supports module stability. The advantage of this is that the SDK no longer needs to be recompiled for every new version of the Swift compiler.
 
-iProov is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. This must be also be set for both Cocoapods and Carthage (see installation documentation for details).
+Therefore, the SDK is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built in the same fashion. This must be also be set for both Cocoapods and Carthage (see installation documentation for details).
 
 ## Repository contents
 
@@ -321,20 +319,23 @@ let options = Options()
 */
 
 // Adjust various colors for the camera preview:
+options.ui.filter = .shaded // Adjust the filter used for the face preview. Can be .classic, .shaded (additional detail, the default) or .vibrant (full color).
 options.ui.lineColor = .white
 options.ui.backgroundColor = .black
-options.ui.headerTextColor = .white
-options.ui.footerTextColor = .white
+
+// Adjust colors for the header/footer bars and text labels:
+options.ui.headerTextColor = .white // The header title text color
+options.ui.promptTextColor = .white // The instructions prompt color
 options.ui.headerBackgroundColor = UIColor(white: 0, alpha: 0.67)
 options.ui.footerBackgroundColor = UIColor(white: 0, alpha: 0.67)
 
-// GPA specific options:
+// GPA-specific options:
 options.ui.genuinePresenceAssurance.autoStartDisabled = false // Disable the "auto start" countdown functionality. The user will have to tap the screen to start iProoving.
 options.ui.genuinePresenceAssurance.notReadyTintColor = .orange
 options.ui.genuinePresenceAssurance.readyTintColor = .green
 options.ui.genuinePresenceAssurance.progressBarColor = .black
 
-// LA specific colors:
+// LA-specific colors:
 options.ui.livenessAssurance.primaryTintColor = .blue
 options.ui.livenessAssurance.secondaryTintColor = .lightGray
 
@@ -343,11 +344,13 @@ options.ui.closeButtonImage = UIImage(named: "close")!
 options.ui.closeButtonTintColor = .white
 
 // Customise other UI settings:
-options.ui.filter = .shaded // Adjust the filter used for the face preview. Can be .classic, .shaded (additional detail, the default) or .vibrant (full color).
 options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
 options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).
 options.ui.logoImage = UIImage(named: "AcmeLogo") // A custom logo to be shown at the top-right of the iProov screen.
 options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
+options.ui.floatingPromptEnabled = true // Whether the instructions prompt should "float" over the user's face (true) or be placed in the footer (false - default).
+
+// Localization settings:
 options.ui.stringsBundle = Bundle(for: Foo.class) // Pass a custom bundle for string localization (see Localization Guide for further information).
 options.ui.stringsTable = "Localizable-MyApp.strings" // Pass a custom strings filename (table name) for string localization.
 
