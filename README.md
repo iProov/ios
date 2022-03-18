@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](images/banner.jpg)
 
-# iProov Biometrics iOS SDK v9.3.0
+# iProov Biometrics iOS SDK v9.3.1
 
 ## Table of contents
 
@@ -101,72 +101,9 @@ The SDK is distributed as an XCFramework, therefore **you are required to use Co
 
 ### Carthage
 
-Cocoapods is recommend for the easiest integration, however we also support Carthage. Full instructions installing and setting up Carthage [are available here](https://github.com/Carthage/Carthage).
+We recommend using Cocoapods for dependency management, however we also support Carthage. Full instructions installing and setting up Carthage are available [here](https://github.com/Carthage/Carthage).
 
-You have a choice of two different methods to install iProov using Carthage, depending on your requirements. If you are unsure which to choose, then for most people choosing the XCFrameworks approach is likely to be the simplest and most appropriate.
-
-<details>
-	<summary>Use XCFrameworks (for Carthage 0.37.0 and newer)</summary>
-	
-Carthage 0.37.0 now supports building XCFrameworks. Unfortunately, however, pre-built binary XCFrameworks such as iProov [are still not supported properly](https://github.com/Carthage/Carthage/issues/3103).
-
-Therefore, this guide will then explain how to build Socket.IO (and its dependency, Starscream) as XCFrameworks using Carthage, and then you will need to copy them, together with the pre-built iProov.xcframework, into your project.
-
-1. Add the following to your Cartfile:
-
-	```
-	github "socketio/socket.io-client-swift" == 16.0.1
-	```
-
-2. Create the following workaround script in your root Carthage directory:
-
-	```sh
-	# carthage.sh
-	# Usage example: ./carthage.sh build --use-xcframeworks --platform iOS
-	
-	set -euo pipefail
-	
-	xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
-	trap 'rm -f "$xcconfig"' INT TERM HUP EXIT
-	
-	echo "FRAMEWORK_SEARCH_PATHS=\$(inherited) $(pwd)/Carthage/Build" >> $xcconfig
-	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES' >> $xcconfig
-	
-	export XCODE_XCCONFIG_FILE="$xcconfig"
-	carthage "$@"
-	```
-	
-	This script contains two workarounds:
-	
-	1. It sets `FRAMEWORK_SEARCH_PATHS` to include the Carthage Build folder, so that Socket.IO can correctly find Starscream.xcframework when it builds.
-	2. It enables `BUILD_LIBRARY_FOR_DISTRIBUTION` so that iProov's dependencies are built with this option enabled.
-
-3. Make the script executable:
-
-	```sh
-	chmod +x carthage.sh
-	```
-
-4. You can now build SocketIO.xcframework and Starscream.xcframework with the following command:
-
-	```sh
-	./carthage.sh update --use-xcframeworks --platform ios
-	```
-	
-	> NOTE: Ensure you use `./carthage.sh` instead of `carthage`. All command usages remain the same.
-	
-5. From the Carthage/Build folder, add SocketIO.xcframework & Starscream.xcframework to your app's *"Frameworks, Libraries, and Embedded Content"* section.
-
-6. From this repository, copy iProov.xcframework to your app's *"Frameworks, Libraries, and Embedded Content"* section.
-
-7. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
-
-</details>
-
-<details>
-	<summary>Use universal frameworks (for all Carthage versions)</summary>
-	
-If you are using Carthage 0.36.0 or earlier, or you wish to remain using traditional universal (fat) frameworks, you can follow these steps to install iProov and its dependencies as universal frameworks using Carthage.
+**You are strongly advised to use Carthage v0.38.0 or above**, which has full support for pre-built XCFrameworks, however older versions of Carthage are still supported (but you must use traditional universal/"fat" frameworks instead).
 
 1. Add the following to your Cartfile:
 
@@ -175,27 +112,27 @@ If you are using Carthage 0.36.0 or earlier, or you wish to remain using traditi
 	github "socketio/socket.io-client-swift" == 16.0.1
 	```
 	
-2. Create the following workaround script in your root Carthage directory:
+2. Create the following script named _carthage.sh_ in your root Carthage directory:
 
 	```sh
 	# carthage.sh
 	# Usage example: ./carthage.sh build --platform iOS
 	
 	set -euo pipefail
-	
+	 
 	xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
 	trap 'rm -f "$xcconfig"' INT TERM HUP EXIT
 	
-	# For Xcode 12 make sure EXCLUDED_ARCHS is set to arm architectures otherwise
-	# the build will fail on lipo due to duplicate architectures.
+	if [[ "$@" != *'--use-xcframeworks'* ]]; then
+		# See https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md for further details
 	
-	CURRENT_XCODE_VERSION=$(xcodebuild -version | grep "Build version" | cut -d' ' -f3)
-	echo "EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200__BUILD_$CURRENT_XCODE_VERSION = arm64 arm64e armv7 armv7s armv6 armv8" >> $xcconfig
+		CURRENT_XCODE_VERSION="$(xcodebuild -version | grep "Xcode" | cut -d' ' -f2 | cut -d'.' -f1)00"
+		CURRENT_XCODE_BUILD=$(xcodebuild -version | grep "Build version" | cut -d' ' -f3)
 	
-	echo 'EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200 = $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200__BUILD_$(XCODE_PRODUCT_BUILD_VERSION))' >> $xcconfig
-	echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT)__XCODE_$(XCODE_VERSION_MAJOR))' >> $xcconfig
-	
-	# Enable BUILD_LIBRARY_FOR_DISTRIBUTION for all frameworks.
+		echo "EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_${CURRENT_XCODE_VERSION}__BUILD_${CURRENT_XCODE_BUILD} = arm64 arm64e armv7 armv7s armv6 armv8" >> $xcconfig
+		echo 'EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_'${CURRENT_XCODE_VERSION}' = $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_$(XCODE_VERSION_MAJOR)__BUILD_$(XCODE_PRODUCT_BUILD_VERSION))' >> $xcconfig
+		echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT)__XCODE_$(XCODE_VERSION_MAJOR))' >> $xcconfig
+	fi
 	
 	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES' >> $xcconfig
 	
@@ -203,29 +140,40 @@ If you are using Carthage 0.36.0 or earlier, or you wish to remain using traditi
 	carthage "$@"
 	```
 	
-	This script contains two workarounds:
+	This script contains two important workarounds:
 	
-	1. Universal frameworks cannot support multiple copies of the same architecture. This workaround prevents Xcode 12 for building for the arm64 simulator (Apple Silicon) which will cause `lipo` to fail to produce the fat universal framework. This is taken from [the official Carthage Xcode 12 workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md).
-	2. It enables `BUILD_LIBRARY_FOR_DISTRIBUTION` so that iProov's dependencies are built with this option enabled.
+	1. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13).
 
+	2. It ensures that the SocketIO & Starscream frameworks are built with the `BUILD_LIBRARY_FOR_DISTRIBUTION` setting enabled.
+	
 3. Make the script executable:
-
+	
 	```sh
 	chmod +x carthage.sh
 	```
+	
+4. You must now use `./carthage.sh` instead of `carthage` to build the dependencies.
 
-4. You can now build all the dependencies as follows:
-
+	**Carthage 0.38.0 and above (use XCFrameworks):**
+	
 	```sh
-	./carthage.sh update
+	./carthage.sh update --use-xcframeworks --platform ios
 	```
 	
-	> NOTE: Ensure you use `./carthage.sh` instead of `carthage`. All command usages remain the same.
+	**Carthage 0.37.0 and below (use universal frameworks):**
+	
+	```sh
+	./carthage.sh update --platform ios
+	```
 
-5. Follow the [normal steps](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the frameworks built by Carthage to your project. You need to add iProov.framework, SocketIO.framework & Starscream.framework.
+		
+5. Add the built .framework/.xcframework files from the _Carthage/Build_ folder to your project in the usual way.
+
+	**Carthage 0.37.0 and below only:**
+	
+	You should follow the additional instructions [here](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to remove simulator architectures from your universal binaries prior to running your app/submitting to the App Store.
 
 6. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
-</details>
 
 ## Get started
 
