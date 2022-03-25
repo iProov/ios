@@ -40,5 +40,6 @@
   "9.1.0": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov_9_1_0.zip",
   "9.2.0": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov_9_2_0.zip",
   "9.3.0": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov_9_3_0.zip",
-  "9.3.1": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov-v9.3.1.framework.zip?alt=https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov-v9.3.1.xcframework.zip"
+  "9.3.1": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov-v9.3.1.framework.zip?alt=https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov-v9.3.1.xcframework.zip",
+  "9.3.2": "https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov-v9.3.2.framework.zip?alt=https://raw.githubusercontent.com/iProov/ios/master/carthage/iProov-v9.3.2.xcframework.zip"
 }

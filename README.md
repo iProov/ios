@@ -1,6 +1,6 @@
-![iProov: Flexible authentication for identity assurance](images/banner.jpg)
+![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v9.3.1
+# iProov Biometrics iOS SDK v9.3.2
 
 ## Table of contents
 
