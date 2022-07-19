@@ -205,13 +205,15 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 	
 	You should follow the additional instructions [here](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to remove simulator architectures from your universal binaries prior to running your app/submitting to the App Store.
 
-## Get started
+----
 
 ### Add an `NSCameraUsageDescription`
 
-All iOS apps which require access must request permission from the user, and specify this information in the Info.plist.
+All iOS apps which require camera access must request permission from the user, and specify this information in the Info.plist.
 
 Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+
+## Get started
 
 ### Get a token
 
@@ -220,10 +222,10 @@ Before being able to launch iProov, you need to get a token to iProov against. T
 * A **verify** token - for logging-in an existing user
 * An **enrol** token - for registering a new user
 
-In addition, the Biometrics SDK now supports two difference assurance types:
+iProov offers Genuine Presence Assurance™ technology and Liveness Assurance™ technology:
 
-* [**Genuine Presence Assurance**](https://www.iproov.com/iproov-system/technology/genuine-presence-assurance) - iProov's flagship technology, Genuine Presence Assurance delivers the highest security for online authentication and is the only way to check that an online user is the right person, a real person, and that they are authenticating right now.
-* [**Liveness Assurance**](https://www.iproov.com/iproov-system/technology/liveness-assurance) - Delivering all of the benefits that you will find in other liveness detection solutions, Liveness Assurance provides a simple, passive user experience and can form a unique, integrated package with iProov Genuine Presence Assurance technology to give you extra security when you need it.
+* [**Genuine Presence Assurance**](https://www.iproov.com/iproov-system/technology/genuine-presence-assurance) verifies that an online remote user is the right person, a real person and that they are authenticating right now, for purposes of access control and security.
+* [**Liveness Assurance**](https://www.iproov.com/iproov-system/technology/liveness-assurance) verifies a remote online user is the right person and a real person for access control and security.
 
 Please consult our [REST API documentation](https://secure.iproov.me/docs.html) for details on how to generate tokens.
 
@@ -336,7 +338,7 @@ options.ui.closeButtonImage = UIImage(named: "close")!
 options.ui.closeButtonTintColor = .white
 
 // Customise other UI settings:
-options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will show an iProov-generated message. Set to empty string ("") to hide the message entirely.
+options.ui.title = "Authenticating to ACME Bank" // Specify a custom title to be shown. Defaults to nil which will hide the message entirely.
 options.ui.font = "SomeFont" // You can specify your own font. This can either be a system font or a custom font in your app bundle (in which case don't forget to also add the font file to your Info.plist).
 options.ui.logoImage = UIImage(named: "AcmeLogo") // A custom logo to be shown at the top-right of the iProov screen.
 options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
