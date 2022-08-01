@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '9.3.2'
+  s.version          = '9.4.0'
   s.summary          = 'Flexible authentication for identity assurance'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'commercial', :file => 'LICENSE.md' }
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.3'
 
   s.ios.vendored_frameworks = 'iProov.xcframework'
-  
+
   s.dependency 'Socket.IO-Client-Swift', '~> 16.0'
 
 end

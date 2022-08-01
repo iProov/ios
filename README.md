@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v9.3.2
+# iProov Biometrics iOS SDK v9.4.0
 
 ## Table of contents
 
@@ -13,7 +13,8 @@
 - [Options](#options)
 - [Localization](#localization)
 - [Handling failures & errors](#handling-failures--errors)
-- [Sample code](#sample-code)
+- [API client](#api-client)
+- [Example project](#example-project)
 - [Help & support](#help--support)
 
 ## Introduction
@@ -54,8 +55,11 @@ The framework package is provided via this repository, which contains the follow
 * **Example** - A basic sample project using iProov, written in Swift and using Cocoapods.
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
 * **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
+* **iProovAPIClient** - Directory containing the iOS API client.
 * **iProov.podspec** - Required by Cocoapods. You do not need to do anything with this file.
 * **resources** - Directory containing additional development resources you may find helpful.
+* **iProovTargets** - Directory containing dummy file, required for SPM.
+* **carthage** - Directory containing files required for Carthage support.
 
 ## Upgrading from earlier versions
 
@@ -67,7 +71,7 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 
 ## Installation
 
-Integration with your app is supported via Cocoapods and Carthage. We recommend Cocoapods for the easiest installation. (We do not currently support Swift Package Manager due to limitations with how dependencies for binary targets are handled.)
+Integration with your app is supported via Cocoapods, Swift Package Manager and Carthage. We recommend Cocoapods for the easiest and most flexible installation.
 
 ### Cocoapods
 
@@ -97,13 +101,41 @@ The SDK is distributed as an XCFramework, therefore **you are required to use Co
 
 4. Run `pod install`.
 
-5. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
+### Swift Package Manager
+
+> **NOTE:** If your app has existing dependencies on [Socket.IO-Client-Swift](https://github.com/socketio/socket.io-client-swift) and/or [Starscream](https://github.com/daltoniam/Starscream), you must either remove those existing dependencies and use the iProov-supplied versions, or should avoid installing iProov via SPM and instead use one of the other installation methods.
+
+#### Installing via Xcode
+
+1. Select `File` → `Add Packages…` in the Xcode menu bar.
+
+2. Search for the iProov SDK package using the following URL:
+
+	```
+	https://github.com/iProov/ios
+	```
+	
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 9.4.0 as the lower bound.
+	
+3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
+
+#### Installing via Package.swift
+
+If you prefer, you can add iProov via your Package.swift file as follows:
+
+```swift
+.package(
+	name: "iProov",
+	url: "https://github.com/iProov/ios.git",
+	.upToNextMajor(from: "9.4.0")
+),
+```
+
+Then add `iProov` to the `dependencies` array of any target for which you wish to use iProov.
 
 ### Carthage
 
-We recommend using Cocoapods for dependency management, however we also support Carthage. Full instructions installing and setting up Carthage are available [here](https://github.com/Carthage/Carthage).
-
-**You are strongly advised to use Carthage v0.38.0 or above**, which has full support for pre-built XCFrameworks, however older versions of Carthage are still supported (but you must use traditional universal/"fat" frameworks instead).
+> **NOTE: You are strongly advised to use Carthage v0.38.0 or above**, which has full support for pre-built XCFrameworks, however older versions of Carthage are still supported (but you must use traditional universal/"fat" frameworks instead).
 
 1. Add the following to your Cartfile:
 
@@ -173,9 +205,13 @@ We recommend using Cocoapods for dependency management, however we also support 
 	
 	You should follow the additional instructions [here](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to remove simulator architectures from your universal binaries prior to running your app/submitting to the App Store.
 
-6. Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. "To iProov you in order to verify your identity.")
-
 ## Get started
+
+### Add an `NSCameraUsageDescription`
+
+All iOS apps which require access must request permission from the user, and specify this information in the Info.plist.
+
+Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
 ### Get a token
 
@@ -191,13 +227,15 @@ In addition, the Biometrics SDK now supports two difference assurance types:
 
 Please consult our [REST API documentation](https://secure.iproov.me/docs.html) for details on how to generate tokens.
 
-> **💡 TIP:** In a production app, you should always obtain tokens securely via a server-to-server call. To save you having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to reset your API key & secret!
+> **💡 TIP:** In a production app, you should always obtain tokens securely via a server-to-server call. To save you having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](#api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to use your production API key & secret!
 
 ### Launch the SDK
 
 Once you have obtained a token, you can simply call `IProov.launch()`:
 
 ```swift
+import iProov
+
 let streamingURL = "https://eu.rp.secure.iproov.me" // Substitute as appropriate
 let token = "{{ your token here }}"
 
@@ -282,11 +320,17 @@ options.ui.genuinePresenceAssurance.autoStartDisabled = false // Disable the "au
 options.ui.genuinePresenceAssurance.notReadyTintColor = .orange
 options.ui.genuinePresenceAssurance.readyTintColor = .green
 options.ui.genuinePresenceAssurance.progressBarColor = .black
-
+options.ui.genuinePresenceAssurance.notReadyFloatingPromptBackgroundColor = .blue // Sets the background color of the floating instructions prompt when the user has not aligned their face.
+options.ui.genuinePresenceAssurance.notReadyOverlayStrokeColor = .red // Sets the oval and reticle stroke color when the user has not aligned their face.
+options.ui.genuinePresenceAssurance.readyFloatingPromptBackgroundColor = .yellow // Sets the background color of the floating instructions prompt when the user has aligned their face.
+options.ui.genuinePresenceAssurance.readyOverlayStrokeColor = .green // Sets the oval and reticle stroke color when the user has aligned their face.
+        
 // LA-specific colors:
 options.ui.livenessAssurance.primaryTintColor = .blue
 options.ui.livenessAssurance.secondaryTintColor = .lightGray
-
+options.ui.livenessAssurance.overlayStrokeColor = .black // Sets the oval and reticle stroke color.
+options.ui.livenessAssurance.floatingPromptBackgroundColor = .white // Set the background color of the floating instructions prompt.
+        
 // Customise the close button:
 options.ui.closeButtonImage = UIImage(named: "close")!
 options.ui.closeButtonTintColor = .white
@@ -297,6 +341,7 @@ options.ui.font = "SomeFont" // You can specify your own font. This can either b
 options.ui.logoImage = UIImage(named: "AcmeLogo") // A custom logo to be shown at the top-right of the iProov screen.
 options.ui.presentationDelegate = MyPresentationDelegate() // See the section below entitled "Custom IProovPresentationDelegate".
 options.ui.floatingPromptEnabled = true // Whether the instructions prompt should "float" over the user's face (true) or be placed in the footer (false - default).
+options.ui.floatingPromptRoundedCorners = true // Whether the floating instructions prompt should have rounded corners (default is true).
 
 // Localization settings:
 options.ui.stringsBundle = Bundle(for: Foo.class) // Pass a custom bundle for string localization (see Localization Guide for further information).
@@ -395,17 +440,25 @@ A description of these cases are as follows:
 * `serverError(String?)` - A server-side error/token invalidation occurred. The associated string will contain further information about the error.
 * `unexpectedError(String)` - An unexpected and unrecoverable error has occurred. These errors should be reported to iProov for further investigation.
 
+## API client
+
+The [iProov iOS API Client](https://github.com/iProov/ios/tree/master/iProovAPIClient) is a simple wrapper for the [iProov REST API v2](https://secure.iproov.me/docs.html) written in Swift and using [Alamofire](https://github.com/Alamofire/Alamofire) for use in demo/PoC apps.
+
+For further details, see the [documentation](https://github.com/iProov/ios/blob/master/iProovAPIClient/README.md) in the iProovAPIClient folder.
+
 ## Example project
 
-For a simple iProov experience that is ready to run out-of-the-box, check out the [Example project](https://github.com/iProov/ios/tree/master/Example).
+For a simple iProov experience that is ready to run out-of-the-box and uses the iProov API client, check out the [Example project](https://github.com/iProov/ios/tree/master/Example).
 
 ### Installation
 
 1. Ensure that you have [Cocoapods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the Example directory to install the required dependencies.
 
-2. Open `Example.xcworkspace` then navigate to `ViewController.swift` and add your API key and Secret at the appropriate point.
+2. Rename `Credentials.example.swift` to `Credentials.swift` and update it with your Base URL, API Key and Secret. You can obtain these credentials from the [iProov Portal](https://portal.iproov.com).
 
-3. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
+3. Open `Example.xcworkspace`.
+
+4. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
 
 > **⚠️ SECURITY NOTICE:** The Example project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 

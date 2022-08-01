@@ -338,6 +338,7 @@ SWIFT_CLASS_NAMED("UI")
 @property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL floatingPromptEnabled;
+@property (nonatomic) BOOL floatingPromptRoundedCorners;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceUIOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceUIOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -352,6 +353,10 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
+@property (nonatomic, strong) UIColor * _Nullable readyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyOverlayStrokeColor;
+@property (nonatomic, strong) UIColor * _Nullable readyOverlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -360,6 +365,8 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 @interface IPLivenessAssuranceUIOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull primaryTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull secondaryTintColor;
+@property (nonatomic, strong) UIColor * _Nullable floatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable overlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -784,6 +791,7 @@ SWIFT_CLASS_NAMED("UI")
 @property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL floatingPromptEnabled;
+@property (nonatomic) BOOL floatingPromptRoundedCorners;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceUIOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceUIOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -798,6 +806,10 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
+@property (nonatomic, strong) UIColor * _Nullable readyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyOverlayStrokeColor;
+@property (nonatomic, strong) UIColor * _Nullable readyOverlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -806,6 +818,8 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 @interface IPLivenessAssuranceUIOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull primaryTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull secondaryTintColor;
+@property (nonatomic, strong) UIColor * _Nullable floatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable overlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1230,6 +1244,7 @@ SWIFT_CLASS_NAMED("UI")
 @property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL floatingPromptEnabled;
+@property (nonatomic) BOOL floatingPromptRoundedCorners;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceUIOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceUIOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -1244,6 +1259,10 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
+@property (nonatomic, strong) UIColor * _Nullable readyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyOverlayStrokeColor;
+@property (nonatomic, strong) UIColor * _Nullable readyOverlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1252,6 +1271,8 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 @interface IPLivenessAssuranceUIOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull primaryTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull secondaryTintColor;
+@property (nonatomic, strong) UIColor * _Nullable floatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable overlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1679,6 +1700,7 @@ SWIFT_CLASS_NAMED("UI")
 @property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL floatingPromptEnabled;
+@property (nonatomic) BOOL floatingPromptRoundedCorners;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceUIOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceUIOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -1693,6 +1715,10 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
+@property (nonatomic, strong) UIColor * _Nullable readyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyOverlayStrokeColor;
+@property (nonatomic, strong) UIColor * _Nullable readyOverlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1701,6 +1727,8 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 @interface IPLivenessAssuranceUIOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull primaryTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull secondaryTintColor;
+@property (nonatomic, strong) UIColor * _Nullable floatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable overlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2125,6 +2153,7 @@ SWIFT_CLASS_NAMED("UI")
 @property (nonatomic, strong) UIImage * _Nonnull closeButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable logoImage;
 @property (nonatomic) BOOL floatingPromptEnabled;
+@property (nonatomic) BOOL floatingPromptRoundedCorners;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceUIOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceUIOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
@@ -2139,6 +2168,10 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic, strong) UIColor * _Nonnull notReadyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull progressBarColor;
+@property (nonatomic, strong) UIColor * _Nullable readyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyFloatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable notReadyOverlayStrokeColor;
+@property (nonatomic, strong) UIColor * _Nullable readyOverlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2147,6 +2180,8 @@ SWIFT_CLASS_NAMED("LivenessAssurance")
 @interface IPLivenessAssuranceUIOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull primaryTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull secondaryTintColor;
+@property (nonatomic, strong) UIColor * _Nullable floatingPromptBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable overlayStrokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

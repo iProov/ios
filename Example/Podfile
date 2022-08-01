@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'Example' do
   pod 'iProov', :path => '../'
-  pod 'iProovAPIClient', :git => 'https://github.com/iProov/ios-api-client.git'
+  pod 'iProovAPIClient', :path => '../iProovAPIClient'
   pod 'MBProgressHUD'
 end
 

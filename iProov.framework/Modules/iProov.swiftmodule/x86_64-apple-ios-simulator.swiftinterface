@@ -100,6 +100,7 @@ extension iProov.IProov {
     @objc public var closeButtonImage: UIKit.UIImage
     @objc public var logoImage: UIKit.UIImage?
     @objc public var floatingPromptEnabled: Swift.Bool
+    @objc public var floatingPromptRoundedCorners: Swift.Bool
     @objc public var genuinePresenceAssurance: iProov.Options.UI.GenuinePresenceAssurance
     @objc public var livenessAssurance: iProov.Options.UI.LivenessAssurance
     @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
@@ -108,12 +109,18 @@ extension iProov.IProov {
       @objc public var notReadyTintColor: UIKit.UIColor
       @objc public var readyTintColor: UIKit.UIColor
       @objc public var progressBarColor: UIKit.UIColor
+      @objc public var readyFloatingPromptBackgroundColor: UIKit.UIColor?
+      @objc public var notReadyFloatingPromptBackgroundColor: UIKit.UIColor?
+      @objc public var notReadyOverlayStrokeColor: UIKit.UIColor?
+      @objc public var readyOverlayStrokeColor: UIKit.UIColor?
       @objc override dynamic public init()
       @objc deinit
     }
     @_inheritsConvenienceInitializers @objc(IPLivenessAssuranceUIOptions) public class LivenessAssurance : ObjectiveC.NSObject {
       @objc public var primaryTintColor: UIKit.UIColor
       @objc public var secondaryTintColor: UIKit.UIColor
+      @objc public var floatingPromptBackgroundColor: UIKit.UIColor?
+      @objc public var overlayStrokeColor: UIKit.UIColor?
       @objc override dynamic public init()
       @objc deinit
     }

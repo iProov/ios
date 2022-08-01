@@ -1,4 +1,4 @@
-// Copyright (c) 2021 iProov Ltd. All rights reserved.
+// Copyright (c) 2022 iProov Ltd. All rights reserved.
 
 import iProov
 import iProovAPIClient
@@ -6,12 +6,10 @@ import MBProgressHUD
 import UIKit
 
 class ViewController: UIViewController {
-    private static let baseURL = "https://eu.rp.secure.iproov.me/api/v2"
-
     // NOTE: This is provided for example/demo purposes only. You should never embed your credentials in a public app release!
-    private let apiClient = APIClient(baseURL: baseURL,
-                                      apiKey: <#T##String#>,
-                                      secret: <#T##String#>)
+    private let apiClient = APIClient(baseURL: Credentials.baseURL,
+                                      apiKey: Credentials.apiKey,
+                                      secret: Credentials.secret)
 
     @IBOutlet private var userIDTextField: UITextField!
 
@@ -34,7 +32,7 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        
+
         userIDTextField.resignFirstResponder()
 
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -43,7 +41,8 @@ class ViewController: UIViewController {
 
         apiClient.getToken(assuranceType: assuranceType,
                            type: claimType,
-                           userID: userID) { result in
+                           userID: userID)
+        { result in
 
             switch result {
             case let .success(token):
@@ -51,7 +50,7 @@ class ViewController: UIViewController {
                 let options = Options()
                 options.ui.floatingPromptEnabled = true
 
-                IProov.launch(streamingURL: Self.baseURL, token: token, options: options) { status in
+                IProov.launch(streamingURL: Credentials.baseURL, token: token, options: options) { status in
 
                     switch status {
                     case .connecting:
@@ -78,7 +77,7 @@ class ViewController: UIViewController {
 
                         let alert = UIAlertController(title: "❌ \(result.feedbackCode)", message: result.reason, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) -> Void in
+                        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                             self.launch(claimType: claimType, assuranceType: assuranceType)
                         }))
                         self.present(alert, animated: true, completion: nil)
@@ -91,7 +90,7 @@ class ViewController: UIViewController {
 
                         let alert = UIAlertController(title: "❌ Error", message: error.localizedDescription, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) -> Void in
+                        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                             self.launch(claimType: claimType, assuranceType: assuranceType)
                         }))
                         self.present(alert, animated: true, completion: nil)
@@ -106,7 +105,7 @@ class ViewController: UIViewController {
 
                 let alert = UIAlertController(title: "Failed to get token", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) -> Void in
+                alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                     self.launch(claimType: claimType, assuranceType: assuranceType)
                 }))
                 self.present(alert, animated: true, completion: nil)

@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (5.4.3)
-  - iProov (9.3.2):
+  - Alamofire (5.5.0)
+  - iProov (9.4.0):
     - Socket.IO-Client-Swift (~> 16.0)
-  - iProovAPIClient (1.0.0):
+  - iProovAPIClient (1.1.0):
     - Alamofire (~> 5.0)
   - MBProgressHUD (1.2.0)
   - Socket.IO-Client-Swift (16.0.1):
@@ -11,7 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - iProov (from `../`)
-  - iProovAPIClient (from `https://github.com/iProov/ios-api-client.git`)
+  - iProovAPIClient (from `../iProovAPIClient`)
   - MBProgressHUD
 
 SPEC REPOS:
@@ -25,21 +25,16 @@ EXTERNAL SOURCES:
   iProov:
     :path: "../"
   iProovAPIClient:
-    :git: https://github.com/iProov/ios-api-client.git
-
-CHECKOUT OPTIONS:
-  iProovAPIClient:
-    :commit: 9cf62d6a9655cca4dd7eb8cec4159b4a25133099
-    :git: https://github.com/iProov/ios-api-client.git
+    :path: "../iProovAPIClient"
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  iProov: 54f6115de030513295951b554572f1a91533f6f0
-  iProovAPIClient: d0246a5a46e48c7f0f9f61f6606b92de7faa3959
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  iProov: 09094d809e131cbf59662ffdd788a3c156ca393d
+  iProovAPIClient: cc04cde83fd59680f7df5af90b8332b375611bd5
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 39da1444dfba6fa4a1792b0aceedd179eef46153
+PODFILE CHECKSUM: 66730f4205d27ac7bd63566558a3a747cefbc167
 
 COCOAPODS: 1.11.3
