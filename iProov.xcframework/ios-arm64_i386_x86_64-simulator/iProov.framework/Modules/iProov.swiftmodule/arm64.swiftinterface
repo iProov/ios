@@ -23,8 +23,6 @@ import WebKit
 import _Concurrency
 @_exported import iProov
 import simd
-extension CoreGraphics.CGRect : Swift.CustomDebugStringConvertible {
-}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
