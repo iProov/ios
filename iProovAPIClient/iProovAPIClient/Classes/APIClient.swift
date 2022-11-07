@@ -70,6 +70,7 @@ public class APIClient {
     public func getToken(assuranceType: AssuranceType,
                          type: ClaimType,
                          userID: String,
+                         resource: String? = nil,
                          additionalOptions: [String: Any] = [:],
                          completion: @escaping (Result<String, Swift.Error>) -> Void)
     {
@@ -79,7 +80,7 @@ public class APIClient {
             "assurance_type": assuranceType.rawValue,
             "api_key": apiKey,
             "secret": secret,
-            "resource": appID,
+            "resource": resource ?? appID,
             "client": "ios",
             "user_id": userID,
         ]

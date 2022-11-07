@@ -9,7 +9,7 @@
 import Foundation
 
 enum Credentials {
-    static let baseURL = "https://eu.rp.secure.iproov.me/api/v2"
+    static let hostname = "https://eu.rp.secure.iproov.me"
     static let apiKey = <#T##String#>
     static let secret = <#T##String#>
 }
