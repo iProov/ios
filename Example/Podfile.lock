@@ -1,17 +1,17 @@
 PODS:
-  - Alamofire (5.5.0)
-  - iProov (10.0.0-beta):
+  - Alamofire (5.6.2)
+  - iProov (10.0.0-beta2):
     - Starscream (~> 4.0)
     - SwiftProtobuf (~> 1.0)
-  - iProovAPIClient (1.1.0):
+  - iProovAPIClient (1.2.0):
     - Alamofire (~> 5.0)
   - MBProgressHUD (1.2.0)
   - Starscream (4.0.4)
-  - SwiftProtobuf (1.20.2)
+  - SwiftProtobuf (1.20.3)
 
 DEPENDENCIES:
   - iProov (from `../`)
-  - iProovAPIClient (from `../iProovAPIClient`)
+  - iProovAPIClient (from `../`)
   - MBProgressHUD
 
 SPEC REPOS:
@@ -25,16 +25,16 @@ EXTERNAL SOURCES:
   iProov:
     :path: "../"
   iProovAPIClient:
-    :path: "../iProovAPIClient"
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
-  iProov: 10fd0329a90d82d0920972f4738df858fd8d6e63
-  iProovAPIClient: cc04cde83fd59680f7df5af90b8332b375611bd5
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  iProov: 97ac5a7573279e4f92d0b9af011f5150f3c5da17
+  iProovAPIClient: c7a00f138fa765c23a0cd7bd09f30fbe8710116c
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
-  SwiftProtobuf: 9f458aaa7844a2fc0b910053e66578bc4e2da9c1
+  SwiftProtobuf: b02b5075dcf60c9f5f403000b3b0c202a11b6ae1
 
-PODFILE CHECKSUM: 8cff9817bf5036d1e77ece53df969ae2759e8b6e
+PODFILE CHECKSUM: 9f60c9b0d90d24e7b50824b2ea8b526e4a386d18
 
 COCOAPODS: 1.11.3

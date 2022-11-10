@@ -45,5 +45,6 @@
   "9.4.0": "https://github.com/iProov/ios/releases/download/9.4.0/iProov.framework.zip?alt=https://github.com/iProov/ios/releases/download/9.4.0/iProov.xcframework.zip",
   "9.5.0": "https://github.com/iProov/ios/releases/download/9.5.0/iProov.framework.zip?alt=https://github.com/iProov/ios/releases/download/9.5.0/iProov.xcframework.zip",
   "9.5.1": "https://github.com/iProov/ios/releases/download/9.5.1/iProov.framework.zip?alt=https://github.com/iProov/ios/releases/download/9.5.1/iProov.xcframework.zip",
-  "10.0.0-beta": "https://github.com/iProov/ios/releases/download/10.0.0-beta/iProov.framework.zip?alt=https://github.com/iProov/ios/releases/download/10.0.0-beta/iProov.xcframework.zip"
+  "10.0.0-beta": "https://github.com/iProov/ios/releases/download/10.0.0-beta/iProov.framework.zip?alt=https://github.com/iProov/ios/releases/download/10.0.0-beta/iProov.xcframework.zip",
+  "10.0.0-beta2": "https://github.com/iProov/ios/releases/download/10.0.0-beta2/iProov.framework.zip?alt=https://github.com/iProov/ios/releases/download/10.0.0-beta2/iProov.xcframework.zip"
 }

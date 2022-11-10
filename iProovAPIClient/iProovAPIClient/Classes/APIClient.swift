@@ -137,12 +137,12 @@ public class APIClient {
 
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding(), headers: nil)
             .validate(statusCode: 200 ..< 500)
-            .responseJSON { response in
+            .responseData { response in
 
                 switch response.result {
-                case let .success(json):
+                case let .success(data):
 
-                    guard let json = json as? JSON else {
+                    guard let json = try? JSONSerialization.jsonObject(with: data) as? JSON else {
                         completion(.failure(Error.invalidJSON))
                         return
                     }
@@ -197,11 +197,11 @@ public extension APIClient {
 public extension DataRequest {
     @discardableResult
     func responseToken(completionHandler: @escaping (Result<String, Swift.Error>) -> Void) -> Self {
-        responseJSON { response in
+        responseData { response in
             switch response.result {
-            case let .success(json):
+            case let .success(data):
 
-                guard let json = json as? JSON else {
+                guard let json = try? JSONSerialization.jsonObject(with: data) as? JSON else {
                     completionHandler(.failure(APIClient.Error.invalidJSON))
                     return
                 }

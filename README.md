@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v10.0.0-beta
+# iProov Biometrics iOS SDK v10.0.0-beta2
 
 > **Note**: This is a beta version of the SDK, which means that there may be missing or broken functionality, or features which may vary between this beta and the production release. This version of the SDK is for testing, feedback and evaluation purposes only and should not be deployed to production without prior express approval from iProov.
 
@@ -42,7 +42,7 @@ The framework package is provided via this repository, which contains the follow
 * **Example** - A basic sample project using iProov, written in Swift and using CocoaPods.
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
 * **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
-* **iProovAPIClient** - Directory containing the iOS API client.
+* **iProovAPIClient.podspec & iProovAPIClient** - Files relating to the iOS API client.
 * **iProov.podspec** - Required by CocoaPods. You do not need to do anything with this file.
 * **resources** - Directory containing additional development resources you may find helpful.
 * **iProovTargets** - Directory containing dummy file, required for SPM.
@@ -102,7 +102,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager and 
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.0.0-beta as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.0.0-beta2 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -114,7 +114,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "10.0.0-beta")
+	.upToNextMajor(from: "10.0.0-beta2")
 ),
 ```
 
@@ -202,7 +202,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following 3 files from the [release assets](https://github.com/iProov/ios/releases/tag/10.0.0-beta):
+4. Add the following 3 files from the [release assets](https://github.com/iProov/ios/releases/tag/10.0.0-beta2):
 
 	- `iProov.xcframework`
 	- `SwiftProtobuf.xcframework`
@@ -356,9 +356,9 @@ The `foregroundColor` and `backgroundColor` can also be customized.
 Example:
 
 ```swift
-options.ui.filter = CannyFilter(style: .vibrant,
-                                foregroundColor: UIColor.black,
-                                backgroundColor: UIColor.white)
+options.filter = CannyFilter(style: .vibrant,
+                             foregroundColor: UIColor.black,
+                             backgroundColor: UIColor.white)
 ```
 
 #### `NaturalFilter`
@@ -368,7 +368,7 @@ options.ui.filter = CannyFilter(style: .vibrant,
 Example:
 
 ```swift
-options.ui.filter = NaturalFilter(style: .clear)
+options.filter = NaturalFilter(style: .clear)
 ```
 
 > **Note**: `NaturalFilter` is available for Liveness Assurance claims only. Attempts to use `NaturalFilter` for Genuine Presence Assurance claims will result in an error.
@@ -396,7 +396,7 @@ When multiple certificates are passed, as long as the server matches **any** of 
 You can also disable certificate pinning entirely, by passing an empty array:
 
 ```swift
-options.network.certificates = []
+options.certificates = []
 ```
 
 > **Warning**: Never disable certificate pinning in production apps!
@@ -415,7 +415,7 @@ GPA-specific options can be set under `Options.genuinePresenceAssurance`:
 | `maxRoll` (deprecated) | Maximum acceptable roll of user's face\*. | `-1` (disabled) |
 | `maxPitch` (deprecated) | Maximum acceptable pitch of user's face\*. | `-1` (disabled) |
 
-\* These options are used to implement pose control, which is deprecated and will be removed in a future SDK version. Values are provided in normalised units (0 to 1), where -1 means disabled. These options should not be set for general use; please contact iProov for further information if you would like to use this feature.
+\* These options are used to implement pose control, which is deprecated and will be removed in a future SDK version. Values are provided in normalized units (0 to 1), where -1 means disabled. These options should not be set for general use; please contact iProov for further information if you would like to use this feature.
 
 ### Liveness Assurance Options
 
@@ -430,7 +430,7 @@ LA-specific options can be set under `Options.livenessAssurance`:
 
 By default, upon launching the SDK, it will get a reference to your app delegate's window's `rootViewController`, then iterate through the view controller stack to find the top-most view controller and then `present()` iProov's view controller as a modal view controller from the top-most view controller on the stack.
 
-This may not always be the desirable behaviour; for instance, you may wish to present iProov as part of a `UINavigationController`-based flow. Therefore, it is also possible to set the `options.ui.presentationDelegate` property, which allows you to override the presentation/dismissal behaviour of the iProov view controller by conforming to the `IProovPresentationDelegate` protocol:
+This may not always be the desirable behaviour; for instance, you may wish to present iProov as part of a `UINavigationController`-based flow. Therefore, it is also possible to set the `options.presentationDelegate` property, which allows you to override the presentation/dismissal behaviour of the iProov view controller by conforming to the `IProovPresentationDelegate` protocol:
 
 ```swift
 extension MyViewController: IProovPresentationDelegate {
@@ -458,7 +458,7 @@ extension MyViewController: IProovPresentationDelegate {
 
 The SDK ships with support for the following languages:
 
-- English (United States) - `en-US`
+- English - `en`
 - Dutch - `de`
 - French - `fr`
 - German - `de`

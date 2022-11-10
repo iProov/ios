@@ -280,6 +280,10 @@ SWIFT_CLASS_NAMED("IProov")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IPKeyPair * _Nonnull keyPair;)
 + (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
 + (void)setKeyPair:(IPKeyPair * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull versionStr;)
++ (NSString * _Nonnull)versionStr SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger buildNumber;)
++ (NSInteger)buildNumber SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -740,6 +744,10 @@ SWIFT_CLASS_NAMED("IProov")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IPKeyPair * _Nonnull keyPair;)
 + (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
 + (void)setKeyPair:(IPKeyPair * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull versionStr;)
++ (NSString * _Nonnull)versionStr SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger buildNumber;)
++ (NSInteger)buildNumber SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1201,6 +1209,10 @@ SWIFT_CLASS_NAMED("IProov")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IPKeyPair * _Nonnull keyPair;)
 + (IPKeyPair * _Nonnull)keyPair SWIFT_WARN_UNUSED_RESULT;
 + (void)setKeyPair:(IPKeyPair * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull versionStr;)
++ (NSString * _Nonnull)versionStr SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger buildNumber;)
++ (NSInteger)buildNumber SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

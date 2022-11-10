@@ -226,6 +226,12 @@ extension iProov.IProov {
   @discardableResult
   public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), _ callback: @escaping iProov.Callback) -> iProov.Session
   @objc public static var keyPair: iProov.KeyPair
+  @objc(versionStr) public static var version: Swift.String {
+    @objc get
+  }
+  @objc public static var buildNumber: Swift.Int {
+    @objc get
+  }
 }
 public protocol SSLTrustValidator {
   func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool

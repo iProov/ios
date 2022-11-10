@@ -1,4 +1,7 @@
-"IProov_CloseButtonAccessibilityLabel" = "Close";
+"IProov_AccessibilityLabelCloseButton" = "Close";
+"IProov_AccessibilityLabelSecuredByIproov" = "Secured by iProov";
+"IProov_AccessibilityPromptAlignFace" = "Hold the device in front of your face and look at the screen";
+"IProov_AccessibilityPromptScanning" = "Scanning";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
 "IProov_ErrorCameraPermissionDeniedMessage" = "Please allow camera access for this app in iOS Settings";
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
@@ -17,7 +20,7 @@
 "IProov_FailureTooMuchMovement" = "Keep still";
 "IProov_FailureUnknown" = "Try again";
 "IProov_FailureUserTimeout" = "Try again";
-"IProov_LanguageFile" = "en-US";
+"IProov_LanguageFile" = "en";
 "IProov_ProgressAssessingGenuinePresence" = "Assessing genuine presence…";
 "IProov_ProgressAssessingLiveness" = "Assessing liveness…";
 "IProov_ProgressConfirmingIdentity" = "Confirming identity…";
@@ -27,14 +30,12 @@
 "IProov_ProgressLoading" = "Loading…";
 "IProov_ProgressStreaming" = "Streaming…";
 "IProov_PromptAlignFace" = "Put your face in the oval";
-"IProov_PromptAlignFaceAccessibility" = "Hold the device in front of your face and look at the screen";
 "IProov_PromptGetReady" = "Get ready…";
 "IProov_PromptLivenessScanCompleted" = "Scan completed";
 "IProov_PromptPitchTooHigh" = "Hold the device at eye level";
 "IProov_PromptPitchTooLow" = "Hold the device at eye level";
 "IProov_PromptRollTooHigh" = "Avoid tilting your head";
 "IProov_PromptRollTooLow" = "Avoid tilting your head";
-"IProov_PromptScanning" = "Scanning…";
 "IProov_PromptTooBright" = "Go somewhere shadier";
 "IProov_PromptTooClose" = "Too close";
 "IProov_PromptTooFar" = "Move closer";
