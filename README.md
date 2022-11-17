@@ -1,23 +1,21 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v10.0.0-beta2
-
-> **Note**: This is a beta version of the SDK, which means that there may be missing or broken functionality, or features which may vary between this beta and the production release. This version of the SDK is for testing, feedback and evaluation purposes only and should not be deployed to production without prior express approval from iProov.
+# iProov Biometrics iOS SDK v10.0.0
 
 ## Introduction
 
-The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iProov/android), [Xamarin SDK](https://github.com/iProov/xamarin), [Flutter SDK](https://github.com/iProov/flutter) and [Web SDK](https://github.com/iProov/web).
+The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iProov/android), [Xamarin SDK](https://github.com/iProov/xamarin), [Flutter SDK](https://github.com/iProov/flutter), [React Native SDK](https://github.com/iProov/react-native) and [Web SDK](https://github.com/iProov/web).
 
 ### Requirements
 
 - iOS 11.0 and above
 - Xcode 13.0 and above
 
-The framework has been written in Swift 5.3, and we recommend use of Swift for the simplest and cleanest integration, however it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.5, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
 ### Dependencies
 
-The iProov Biometrics SDK has dependencies on [Swift Protobuf](https://github.com/apple/swift-protobuf) and [Starscream](https://github.com/daltoniam/Starscream). These dependencies will be automatically included if installing via any of the dependency managers listed below.
+The iProov Biometrics SDK has dependencies on [Swift Protobuf](https://github.com/apple/swift-protobuf) and [Starscream](https://github.com/daltoniam/Starscream). These dependencies will be automatically included if installed via any of the dependency managers listed below.
 
 The SDK also includes the following third-party code:
 
@@ -50,7 +48,7 @@ The framework package is provided via this repository, which contains the follow
 
 ## Upgrading from Earlier Versions
 
-If you're already using an older version of the iProov Biometrics SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
+If you're already using an older version of the iProov Biometrics SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrading-to-SDK-v10.x) for detailed information about how to upgrade your app.
 
 ## Registration
 
@@ -58,7 +56,7 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 
 ## Installation
 
-Integration with your app is supported via CocoaPods, Swift Package Manager and Carthage. You can also install the SDK manually in Xcode without the use of any dependency manager (this is not recommended). We recommend CocoaPods for the easiest and most flexible installation.
+Integration with your app is supported via CocoaPods, Swift Package Manager, and Carthage. You can also install the SDK manually in Xcode without the use of any dependency manager (this is not recommended). We recommend CocoaPods for the easiest and most flexible installation.
 
 ### CocoaPods
 
@@ -102,7 +100,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager and 
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.0.0-beta2 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.0.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -114,7 +112,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "10.0.0-beta2")
+	.upToNextMajor(from: "10.0.0")
 ),
 ```
 
@@ -202,7 +200,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following 3 files from the [release assets](https://github.com/iProov/ios/releases/tag/10.0.0-beta2):
+4. Add the following 3 files from the [release assets](https://github.com/iProov/ios/releases/tag/10.0.0):
 
 	- `iProov.xcframework`
 	- `SwiftProtobuf.xcframework`
@@ -237,7 +235,7 @@ iProov offers Genuine Presence Assurance™ technology and Liveness Assurance™
 
 Please consult our [REST API documentation](https://secure.iproov.me/docs.html) for details on how to generate tokens.
 
-> **Warning**: In a production app, you should always obtain tokens securely via a server-to-server call. To save you having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](#api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to use your production API key & secret!
+> **Warning**: In a production app, you should always obtain tokens securely via a server-to-server call. To save you from having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](#api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to use your production API key & secret!
 
 ### Launch the SDK
 
@@ -246,7 +244,7 @@ Once you have obtained a token, you can simply call `IProov.launch()`:
 ```swift
 import iProov
 
-let streamingURL = "wss://beta.rp.secure.iproov.me/ws" // Substitute as appropriate
+let streamingURL = "wss://eu.rp.secure.iproov.me/ws" // Substitute as appropriate
 let token = "{{ your token here }}"
 
 IProov.launch(streamingURL: streamingURL, token: token) { status in
@@ -301,7 +299,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 
 > **Warning**: **You should never use iProov as a local authentication method.** This means that:
 > 
-> * You cannot rely on the fact that the success result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the `/validate` API call) before performing any authenticated user actions.
+> * You cannot rely on the fact a successful result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the `/validate` API call) before performing any authenticated user actions.
 > 
 > * The `frame` returned in the success & failure results should be used for UI/UX purposes only. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server [`/validate`](https://secure.iproov.me/docs.html#operation/userVerifyValidate) API call.
 
@@ -363,7 +361,7 @@ options.filter = CannyFilter(style: .vibrant,
 
 #### `NaturalFilter`
 
-`NaturalFilter` provides a more direct visualization of the user's face, and is available in 2 styles: `.clear` (default) and `.blur`.
+`NaturalFilter` provides a more direct visualization of the user's face and is available in 2 styles: `.clear` (default) and `.blur`.
 
 Example:
 
@@ -430,7 +428,7 @@ LA-specific options can be set under `Options.livenessAssurance`:
 
 By default, upon launching the SDK, it will get a reference to your app delegate's window's `rootViewController`, then iterate through the view controller stack to find the top-most view controller and then `present()` iProov's view controller as a modal view controller from the top-most view controller on the stack.
 
-This may not always be the desirable behaviour; for instance, you may wish to present iProov as part of a `UINavigationController`-based flow. Therefore, it is also possible to set the `options.presentationDelegate` property, which allows you to override the presentation/dismissal behaviour of the iProov view controller by conforming to the `IProovPresentationDelegate` protocol:
+This may not always be the desirable behavior; for instance, you may wish to present iProov as part of a `UINavigationController`-based flow. Therefore, it is also possible to set the `options.presentationDelegate` property, which allows you to override the presentation/dismissal behavior of the iProov view controller by conforming to the `IProovPresentationDelegate` protocol:
 
 ```swift
 extension MyViewController: IProovPresentationDelegate {
@@ -477,7 +475,7 @@ You can customize the strings from your app or localize them into a different la
 
 Failures occur when the user's identity could not be verified. A failure means that the capture was successfully received and processed by the server, which returned a result. Crucially, this differs from an error, where the capture itself failed due to a system failure.
 
-Failures are caught via the `.failure(reason)` enum case in the callback. The `reason` is an enum with the reason that user could not be verified/enrolled, which has the following properties:
+Failures are caught via the `.failure(reason)` enum case in the callback. The `reason` is an enum with the reason that the user could not be verified/enrolled, which has the following properties:
 
 - `feedbackCode` - A string representation of the feedback code.
 
@@ -524,7 +522,7 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 | `cameraPermissionDenied ` | The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings. |
 | `networkError(String?)` | An error occurred with the video streaming process. The associated string (if available) will contain further information about the error. |
 | `serverError(String?)` | A server-side error/token invalidation occurred. The associated string (if available) will contain further information about the error. |
-| `unexpectedError(String)` | An unexpected and unrecoverable error has occurred. The associated string will contain further information about error. These errors should be reported to iProov for further investigation. |
+| `unexpectedError(String)` | An unexpected and unrecoverable error has occurred. The associated string will contain further information about the error. These errors should be reported to iProov for further investigation. |
 
 ## API Client
 
@@ -550,8 +548,8 @@ For a simple iProov experience that is ready to run out-of-the-box and uses the 
 
 ## Help & Support
 
-You may find your question is answered in our [FAQs](https://github.com/iProov/ios/wiki/Frequently-Asked-Questions) or one of our other [Wiki pages](https://github.com/iProov/ios/wiki).
+You may find your question answered in our [FAQs](https://github.com/iProov/ios/wiki/Frequently-Asked-Questions) or one of our other [Wiki pages](https://github.com/iProov/ios/wiki).
 
-Consult the [Documentation Center](https://docs.iproov.com/) for the detailed [implementation guide](https://docs.iproov.com/docs/Content/ImplementationGuide/biometric-sdk/ios/sdk-ios-intro.htm), [glossary](https://docs.iproov.com/docs/Content/Glossary/iproov-glossary.htm) and API reference.
+Consult the [Documentation Center](https://docs.iproov.com/) for the detailed [implementation guide](https://docs.iproov.com/docs/Content/ImplementationGuide/biometric-sdk/ios/sdk-ios-intro.htm), [glossary](https://docs.iproov.com/docs/Content/Glossary/iproov-glossary.htm), and API reference.
 
 For further help with integrating the iProov Biometrics SDK, please contact [support@iproov.com](mailto:support@iproov.com).

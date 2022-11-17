@@ -23,15 +23,15 @@ import WebKit
 import _Concurrency
 @_exported import iProov
 import simd
-@_hasMissingDesignatedInitializers @objc(IPSession) final public class Session : ObjectiveC.NSObject {
-  @discardableResult
-  @objc final public func cancel() -> Swift.Bool
+@_hasMissingDesignatedInitializers @objc(IPSession) @objcMembers final public class Session : ObjectiveC.NSObject {
+  @objc @discardableResult
+  final public func cancel() -> Swift.Bool
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) final public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(IPErrorCode) public class IProovErrorCode : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc(IPErrorCode) @objcMembers public class IProovErrorCode : ObjectiveC.NSObject {
   @objc public static let networkError: Swift.Int
   @objc public static let serverError: Swift.Int
   @objc public static let captureAlreadyActive: Swift.Int
@@ -77,7 +77,7 @@ extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
   @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, cancelled: @escaping (iProov.Canceller) -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
-@_inheritsConvenienceInitializers @objc(IPOptions) public class Options : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
   @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
   @objc public var dictionary: [Swift.String : Any] {
     @objc get
@@ -101,25 +101,25 @@ extension iProov.IProov {
   @objc public var certificates: [Foundation.Data]
   @objc public var timeout: Foundation.TimeInterval
   @objc override dynamic public init()
-  @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) public class GenuinePresenceAssurance : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) @objcMembers public class GenuinePresenceAssurance : ObjectiveC.NSObject {
     @objc public var notReadyOvalStrokeColor: UIKit.UIColor
     @objc public var readyOvalStrokeColor: UIKit.UIColor
-    @available(*, deprecated, message: "This option will be removed in a future SDK version.")
-    @objc public var maxYaw: CoreGraphics.CGFloat
-    @available(*, deprecated, message: "This option will be removed in a future SDK version.")
-    @objc public var maxRoll: CoreGraphics.CGFloat
-    @available(*, deprecated, message: "This option will be removed in a future SDK version.")
-    @objc public var maxPitch: CoreGraphics.CGFloat
+    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
+    public var maxYaw: CoreGraphics.CGFloat
+    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
+    public var maxRoll: CoreGraphics.CGFloat
+    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
+    public var maxPitch: CoreGraphics.CGFloat
     @objc override dynamic public init()
     @objc deinit
   }
-  @_inheritsConvenienceInitializers @objc(IPLivenessAssuranceOptions) public class LivenessAssurance : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(IPLivenessAssuranceOptions) @objcMembers public class LivenessAssurance : ObjectiveC.NSObject {
     @objc public var ovalStrokeColor: UIKit.UIColor
     @objc public var completedOvalStrokeColor: UIKit.UIColor
     @objc override dynamic public init()
     @objc deinit
   }
-  @_inheritsConvenienceInitializers @objc(IPLineDrawingFilter) public class LineDrawingFilter : ObjectiveC.NSObject, iProov.Filter {
+  @_inheritsConvenienceInitializers @objc(IPLineDrawingFilter) @objcMembers public class LineDrawingFilter : ObjectiveC.NSObject, iProov.Filter {
     @objc(IPLineDrawingFilterStyle) public enum Style : Swift.Int {
       case classic, shaded, vibrant
       public init?(rawValue: Swift.Int)
@@ -134,7 +134,7 @@ extension iProov.IProov {
     @objc override dynamic public init()
     @objc deinit
   }
-  @_inheritsConvenienceInitializers @objc(IPNaturalFilter) public class NaturalFilter : ObjectiveC.NSObject, iProov.Filter {
+  @_inheritsConvenienceInitializers @objc(IPNaturalFilter) @objcMembers public class NaturalFilter : ObjectiveC.NSObject, iProov.Filter {
     @objc(IPNaturalFilterStyle) public enum Style : Swift.Int {
       case clear, blur
       public init?(rawValue: Swift.Int)
@@ -153,7 +153,7 @@ extension iProov.IProov {
 }
 infix operator ?= : AssignmentPrecedence
 infix operator --> : AdditionPrecedence
-@_hasMissingDesignatedInitializers @objc(IPPublicKey) public class PublicKey : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPPublicKey) @objcMembers public class PublicKey : ObjectiveC.NSObject {
   @objc final public let key: Security.SecKey
   @objc public var pem: Swift.String {
     @objc get
@@ -163,7 +163,7 @@ infix operator --> : AdditionPrecedence
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc(IPKeyPair) public class KeyPair : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPKeyPair) @objcMembers public class KeyPair : ObjectiveC.NSObject {
   @objc public var publicKey: iProov.PublicKey {
     @objc get
   }
@@ -174,7 +174,7 @@ infix operator --> : AdditionPrecedence
   @objc deinit
 }
 public typealias Callback = (iProov.Status) -> Swift.Void
-@_hasMissingDesignatedInitializers @objc(IPSuccessResult) public class SuccessResult : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPSuccessResult) @objcMembers public class SuccessResult : ObjectiveC.NSObject {
   @objc final public let frame: UIKit.UIImage?
   @objc deinit
 }
@@ -193,7 +193,7 @@ public typealias Callback = (iProov.Status) -> Swift.Void
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc(IPFailureResult) public class FailureResult : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPFailureResult) @objcMembers public class FailureResult : ObjectiveC.NSObject {
   @objc final public let reason: iProov.FailureReason
   @objc final public let frame: UIKit.UIImage?
   @objc public var localizedDescription: Swift.String {

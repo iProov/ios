@@ -1,5 +1,5 @@
 "IProov_AccessibilityLabelCloseButton" = "Close";
-"IProov_AccessibilityLabelSecuredByIproov" = "Secured by iProov";
+"IProov_AccessibilityLabelSecuredByIProov" = "Secured by iProov";
 "IProov_AccessibilityPromptAlignFace" = "Hold the device in front of your face and look at the screen";
 "IProov_AccessibilityPromptScanning" = "Scanning";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
