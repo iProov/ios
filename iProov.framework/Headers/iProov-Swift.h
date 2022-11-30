@@ -385,7 +385,9 @@ SWIFT_CLASS_NAMED("LineDrawingFilter")
 @property (nonatomic) enum IPLineDrawingFilterStyle style;
 @property (nonatomic, strong) UIColor * _Nonnull foregroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithStyle:(enum IPLineDrawingFilterStyle)style foregroundColor:(UIColor * _Nonnull)foregroundColor backgroundColor:(UIColor * _Nonnull)backgroundColor OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPLineDrawingFilterStyle, "Style", open) {
@@ -399,7 +401,9 @@ enum IPNaturalFilterStyle : NSInteger;
 SWIFT_CLASS_NAMED("NaturalFilter")
 @interface IPNaturalFilter : NSObject <IPFilter>
 @property (nonatomic) enum IPNaturalFilterStyle style;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithStyle:(enum IPNaturalFilterStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPNaturalFilterStyle, "Style", open) {
@@ -434,8 +438,6 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
 
 
 
@@ -849,7 +851,9 @@ SWIFT_CLASS_NAMED("LineDrawingFilter")
 @property (nonatomic) enum IPLineDrawingFilterStyle style;
 @property (nonatomic, strong) UIColor * _Nonnull foregroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithStyle:(enum IPLineDrawingFilterStyle)style foregroundColor:(UIColor * _Nonnull)foregroundColor backgroundColor:(UIColor * _Nonnull)backgroundColor OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPLineDrawingFilterStyle, "Style", open) {
@@ -863,7 +867,9 @@ enum IPNaturalFilterStyle : NSInteger;
 SWIFT_CLASS_NAMED("NaturalFilter")
 @interface IPNaturalFilter : NSObject <IPFilter>
 @property (nonatomic) enum IPNaturalFilterStyle style;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithStyle:(enum IPNaturalFilterStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPNaturalFilterStyle, "Style", open) {
@@ -898,8 +904,6 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
 
 
 
@@ -1314,7 +1318,9 @@ SWIFT_CLASS_NAMED("LineDrawingFilter")
 @property (nonatomic) enum IPLineDrawingFilterStyle style;
 @property (nonatomic, strong) UIColor * _Nonnull foregroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithStyle:(enum IPLineDrawingFilterStyle)style foregroundColor:(UIColor * _Nonnull)foregroundColor backgroundColor:(UIColor * _Nonnull)backgroundColor OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPLineDrawingFilterStyle, "Style", open) {
@@ -1328,7 +1334,9 @@ enum IPNaturalFilterStyle : NSInteger;
 SWIFT_CLASS_NAMED("NaturalFilter")
 @interface IPNaturalFilter : NSObject <IPFilter>
 @property (nonatomic) enum IPNaturalFilterStyle style;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithStyle:(enum IPNaturalFilterStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPNaturalFilterStyle, "Style", open) {
@@ -1363,8 +1371,6 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
 
 
 

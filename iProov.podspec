@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '10.0.0'
-  s.summary          = 'Flexible authentication for identity assurance'
+  s.version          = '10.0.1'
+  s.summary          = 'Biometric Face Verification for Remote Identity Assurance'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'commercial', :file => 'LICENSE.md' }
   s.author           = { 'iProov' => 'support@iproov.com' }

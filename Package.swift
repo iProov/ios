@@ -16,18 +16,18 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "iProov",
-            url: "https://github.com/iProov/ios/releases/download/10.0.0/iProov.xcframework.zip",
-            checksum: "2dfd539cca4612b1db666d19eaac355fb750953dc60ffb75fd4005ab2a82e939"
+            url: "https://github.com/iProov/ios/releases/download/10.0.1/iProov.xcframework.zip",
+            checksum: "555b38fe48404b4b9a98ef7d02fdf4702ca6ee5537a088260213000d82d85356"
         ),
         .binaryTarget(
             name: "SwiftProtobuf",
-            url: "https://github.com/iProov/ios/releases/download/10.0.0/SwiftProtobuf.xcframework.zip",
-            checksum: "cc5983f843f4d85c4db89ec9fb393b01ebc92ebce8b0705c32ecd3e6c4b95284"
+            url: "https://github.com/iProov/ios/releases/download/10.0.1/SwiftProtobuf.xcframework.zip",
+            checksum: "68ad8c6d7f7e132d4f6cd8d634dd3c5a9e4dd4335ad8e946cc9462fda1f219de"
         ),
         .binaryTarget(
             name: "Starscream",
-            url: "https://github.com/iProov/ios/releases/download/10.0.0/Starscream.xcframework.zip",
-            checksum: "058c0d9826e77145596f2e12695532725a657703d8cff595313de7ae3def2f71"
+            url: "https://github.com/iProov/ios/releases/download/10.0.1/Starscream.xcframework.zip",
+            checksum: "a9d29c3fe0f00a6abc64dea417f5a223d87caedfc22cebad85024645ae976a00"
         ),
         .target(
             name: "iProovTargets",
