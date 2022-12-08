@@ -30,12 +30,15 @@
 "IProov_ProgressLoading" = "Loading…";
 "IProov_ProgressStreaming" = "Streaming…";
 "IProov_PromptAlignFace" = "Put your face in the oval";
+"IProov_PromptCloseMultitasking" = "Close multitasking to continue";
 "IProov_PromptGetReady" = "Get ready…";
 "IProov_PromptLivenessScanCompleted" = "Scan completed";
 "IProov_PromptPitchTooHigh" = "Hold the device at eye level";
 "IProov_PromptPitchTooLow" = "Hold the device at eye level";
 "IProov_PromptRollTooHigh" = "Avoid tilting your head";
 "IProov_PromptRollTooLow" = "Avoid tilting your head";
+"IProov_PromptRotateDeviceToPortrait" = "Rotate device to portrait to continue";
+"IProov_PromptRotateDeviceUpsideDown" = "Rotate device upside-down to continue";
 "IProov_PromptTooBright" = "Go somewhere shadier";
 "IProov_PromptTooClose" = "Too close";
 "IProov_PromptTooFar" = "Move closer";

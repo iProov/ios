@@ -259,6 +259,11 @@ extension iProov.SSLSecurity : Starscream.CertificatePinning {
 extension UIKit.UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
 }
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public var keyWindow: UIKit.UIWindow? {
+    get
+  }
+}
 extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.Hashable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.RawRepresentable {}

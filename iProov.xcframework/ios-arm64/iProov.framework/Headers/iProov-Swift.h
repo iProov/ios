@@ -284,6 +284,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger buildNumbe
 @end
 
 
+
 SWIFT_CLASS_NAMED("IProovErrorCode")
 @interface IPErrorCode : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger networkError;)
@@ -435,6 +436,8 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
