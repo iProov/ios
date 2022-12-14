@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.6.2)
-  - iProov (10.1.0):
+  - iProov (10.1.1):
     - Starscream (~> 4.0)
     - SwiftProtobuf (~> 1.0)
   - iProovAPIClient (1.2.0):
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
-  iProov: 1baef733a065659d8f2b70f5d447a1d73f55d8d2
+  iProov: 8f3a51f93b8fe8b12a061fe77ad5e2ce39180014
   iProovAPIClient: c7a00f138fa765c23a0cd7bd09f30fbe8710116c
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
