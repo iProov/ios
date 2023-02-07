@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iProov'
-  s.version          = '10.1.1'
+  s.version          = '10.1.2'
   s.summary          = 'Biometric Face Verification for Remote Identity Assurance'
   s.homepage         = 'https://www.iproov.com/'
   s.license          = { :type => 'commercial', :file => 'LICENSE.md' }
@@ -13,6 +13,5 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'iProov.xcframework'
 
   s.dependency 'Starscream', '~> 4.0'
-  s.dependency 'SwiftProtobuf', '~> 1.0'
   
 end

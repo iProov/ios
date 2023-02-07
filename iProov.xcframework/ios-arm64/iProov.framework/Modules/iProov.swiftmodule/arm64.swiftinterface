@@ -15,7 +15,6 @@ import QuartzCore
 import Security
 import Starscream
 import Swift
-import SwiftProtobuf
 import UIKit
 import VideoToolbox
 import Vision

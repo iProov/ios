@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v10.1.1
+# iProov Biometrics iOS SDK v10.1.2
 
 ## Introduction
 
@@ -15,7 +15,7 @@ The framework has been written in Swift 5.5, and we recommend the use of Swift f
 
 ### Dependencies
 
-The iProov Biometrics SDK has dependencies on [Swift Protobuf](https://github.com/apple/swift-protobuf) and [Starscream](https://github.com/daltoniam/Starscream). These dependencies will be automatically included if installed via any of the dependency managers listed below.
+The iProov Biometrics SDK has a dependency on [Starscream](https://github.com/daltoniam/Starscream). This dependency will be automatically included if installed via any of the dependency managers listed below.
 
 The SDK also includes the following third-party code:
 
@@ -23,6 +23,7 @@ The SDK also includes the following third-party code:
 - [Expression](https://github.com/nicklockwood/Expression)
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 - [CryptoExportImportManager](https://github.com/DigitalLeaves/CryptoExportImportManager)
+- [SwiftProtobuf](https://github.com/apple/swift-protobuf)
 
 These dependencies are vendored and compiled into the SDK, this requires no action and is provided for information and licensing purposes only.
 
@@ -75,7 +76,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	```ruby
 	post_install do |installer|
 	  installer.pods_project.targets.each do |target|
-	    if ['iProov', 'SwiftProtobuf', 'Starscream'].include? target.name
+	    if ['iProov', 'Starscream'].include? target.name
 	      target.build_configurations.each do |config|
 	          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
 	      end
@@ -88,7 +89,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 
 ### Swift Package Manager
 
-> **Note**: If your app has existing dependencies on [Swift Protobuf](https://github.com/apple/swift-protobuf) and/or [Starscream](https://github.com/daltoniam/Starscream), you must either remove those existing dependencies and use the iProov-supplied versions, or should avoid installing iProov via SPM and instead use one of the other installation methods.
+> **Note**: If your app has an existing dependency on [Starscream](https://github.com/daltoniam/Starscream), you must either remove that existing dependency and use the iProov-supplied versions, or should avoid installing iProov via SPM and instead use one of the other installation methods.
 
 #### Installing via Xcode
 
@@ -100,7 +101,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.1.1 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.1.2 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -112,7 +113,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "10.1.1")
+	.upToNextMajor(from: "10.1.2")
 ),
 ```
 
@@ -127,7 +128,6 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 	```
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
 	github "daltoniam/Starscream" >= 4.0.0
-	github "apple/swift-protobuf" >= 1.20.2
 	```
 	
 2. Create the following script named _carthage.sh_ in your root Carthage directory:
@@ -162,7 +162,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 	
 	1. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13).
 
-	2. It ensures that the SwiftProtobuf & Starscream frameworks are built with the `BUILD_LIBRARY_FOR_DISTRIBUTION` setting enabled.
+	2. It ensures that the Starscream framework is built with the `BUILD_LIBRARY_FOR_DISTRIBUTION` setting enabled.
 	
 3. Make the script executable:
 	
@@ -200,16 +200,14 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following 3 files from the [release assets](https://github.com/iProov/ios/releases/tag/10.1.1):
+4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.1.2):
 
 	- `iProov.xcframework`
-	- `SwiftProtobuf.xcframework`
 	- `Starscream.xcframework`
-
 
 	> **Note**: Ensure you add the .xcframework files, rather than the .framework files.
 
-5. Under the **Embed** column, ensure **Embed & Sign** is set for all 3 frameworks.
+5. Under the **Embed** column, ensure **Embed & Sign** is set for all frameworks.
 
 ----
 
@@ -354,9 +352,9 @@ The `foregroundColor` and `backgroundColor` can also be customized.
 Example:
 
 ```swift
-options.filter = CannyFilter(style: .vibrant,
-                             foregroundColor: UIColor.black,
-                             backgroundColor: UIColor.white)
+options.filter = LineDrawingFilter(style: .vibrant,
+                                   foregroundColor: UIColor.black,
+                                   backgroundColor: UIColor.white)
 ```
 
 #### `NaturalFilter`
