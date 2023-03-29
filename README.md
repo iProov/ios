@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v10.1.2
+# iProov Biometrics iOS SDK v10.1.3
 
 ## Introduction
 
@@ -101,7 +101,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.1.2 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.1.3 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -113,7 +113,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "10.1.2")
+	.upToNextMajor(from: "10.1.3")
 ),
 ```
 
@@ -200,7 +200,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.1.2):
+4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.1.3):
 
 	- `iProov.xcframework`
 	- `Starscream.xcframework`
@@ -336,7 +336,7 @@ You can customize the iProov session by passing in an `Options` reference when l
 | `promptRoundedCorners` | Whether the prompt has rounded (`true`) or straight (`false`) corners. | `true` |
 | `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. See below for further details. | `DefaultPresentationDelegate()` |
 | `surroundColor` | Color applied the area outside the oval. | `.black.withAlphaComponent(0.4)` |
-| `certificates` | Certificates to be used for SSL pinning. [See below for further details](#certificates). | AlphaSSL intermediate certificate |
+| `certificates` | Certificates to be used for SSL pinning. [See below for further details](#certificates). | iProov Server Certificates |
 | `timeout` | Network timeout to be applied to the WebSocket connection. | `10` (seconds) |
 
 ### Filter Options
@@ -352,9 +352,9 @@ The `foregroundColor` and `backgroundColor` can also be customized.
 Example:
 
 ```swift
-options.filter = LineDrawingFilter(style: .vibrant,
-                                   foregroundColor: UIColor.black,
-                                   backgroundColor: UIColor.white)
+options.filter = CannyFilter(style: .vibrant,
+                             foregroundColor: UIColor.black,
+                             backgroundColor: UIColor.white)
 ```
 
 #### `NaturalFilter`
@@ -371,7 +371,7 @@ options.filter = NaturalFilter(style: .clear)
 
 ### Certificate Pinning
 
-By default, the iProov SDK pins to the iProov AlphaSSL intermediate certificate, which is used by `*.rp.secure.iproov.me`.
+By default, the iProov SDK pins to the iProov server certificates, which are used by `*.rp.secure.iproov.me`.
 
 If you are using your own reverse-proxy, you will need to update the pinning configuration to pin to your own certificate(s) instead.
 
