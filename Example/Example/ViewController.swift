@@ -1,4 +1,4 @@
-// Copyright (c) 2023 iProov Ltd. All rights reserved.
+// Copyright (c) 2021 iProov Ltd. All rights reserved.
 
 import iProov
 import iProovAPIClient
@@ -6,10 +6,12 @@ import MBProgressHUD
 import UIKit
 
 class ViewController: UIViewController {
+    private static let baseURL = "https://eu.rp.secure.iproov.me/api/v2"
+
     // NOTE: This is provided for example/demo purposes only. You should never embed your credentials in a public app release!
-    private let apiClient = APIClient(baseURL: "https://\(Credentials.hostname)/api/v2",
-                                      apiKey: Credentials.apiKey,
-                                      secret: Credentials.secret)
+    private let apiClient = APIClient(baseURL: baseURL,
+                                      apiKey: <#T##String#>,
+                                      secret: <#T##String#>)
 
     @IBOutlet private var userIDTextField: UITextField!
 
@@ -32,83 +34,76 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-
+        
         userIDTextField.resignFirstResponder()
 
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .indeterminate
         hud.label.text = "Getting token..."
 
-        apiClient.getToken(assuranceType: assuranceType,
-                           type: claimType,
-                           userID: userID)
-        { result in
+        apiClient.getToken(assuranceType: assuranceType, type: claimType, userID: userID, success: { token in
 
-            switch result {
-            case let .success(token):
+            IProov.launch(streamingURL: Self.baseURL, token: token) { status in
 
-                let options = Options()
+                switch status {
+                case .connecting:
+                    hud.mode = .indeterminate
+                    hud.label.text = "Connecting..."
 
-                IProov.launch(streamingURL: "wss://\(Credentials.hostname)/ws", token: token, options: options) { status in
+                case .connected:
+                    break
 
-                    switch status {
-                    case .connecting:
-                        hud.mode = .indeterminate
-                        hud.label.text = "Connecting..."
+                case let .processing(progress, message):
+                    hud.mode = .determinateHorizontalBar
+                    hud.label.text = message
+                    hud.progress = Float(progress)
 
-                    case .connected:
-                        break
+                case let .success(result):
+                    hud.hide(animated: true)
 
-                    case let .processing(progress, message):
-                        hud.mode = .determinateHorizontalBar
-                        hud.label.text = message
-                        hud.progress = Float(progress)
+                    let alert = UIAlertController(title: "✅ Success", message: "Token: \(result.token)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
 
-                    case .success:
-                        hud.hide(animated: true)
+                case let .failure(result):
+                    hud.hide(animated: true)
 
-                        let alert = UIAlertController(title: "✅ Success", message: "Token: \(token)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+                    let alert = UIAlertController(title: "❌ \(result.feedbackCode)", message: result.reason, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) -> Void in
+                        self.launch(claimType: claimType, assuranceType: assuranceType)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
 
-                    case let .failure(result):
-                        hud.hide(animated: true)
+                case .cancelled:
+                    hud.hide(animated: true)
 
-                        let alert = UIAlertController(title: "❌ \(result.reason)", message: result.localizedDescription, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
-                            self.launch(claimType: claimType, assuranceType: assuranceType)
-                        }))
-                        self.present(alert, animated: true, completion: nil)
+                case let .error(error):
+                    hud.hide(animated: true)
 
-                    case .cancelled:
-                        hud.hide(animated: true)
+                    let alert = UIAlertController(title: "❌ Error", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) -> Void in
+                        self.launch(claimType: claimType, assuranceType: assuranceType)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
 
-                    case let .error(error):
-                        hud.hide(animated: true)
-
-                        let alert = UIAlertController(title: "❌ Error", message: error.localizedDescription, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
-                            self.launch(claimType: claimType, assuranceType: assuranceType)
-                        }))
-                        self.present(alert, animated: true, completion: nil)
-
-                    @unknown default:
-                        break
-                    }
+                @unknown default:
+                    break
                 }
-
-            case let .failure(error):
-                hud.hide(animated: true)
-
-                let alert = UIAlertController(title: "Failed to get token", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
-                    self.launch(claimType: claimType, assuranceType: assuranceType)
-                }))
-                self.present(alert, animated: true, completion: nil)
             }
-        }
+
+        }, failure: { error in
+
+            hud.hide(animated: true)
+
+            let alert = UIAlertController(title: "Failed to get token", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) -> Void in
+                self.launch(claimType: claimType, assuranceType: assuranceType)
+            }))
+            self.present(alert, animated: true, completion: nil)
+
+        })
     }
 }
