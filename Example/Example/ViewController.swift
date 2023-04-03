@@ -1,4 +1,4 @@
-// Copyright (c) 2023 iProov Ltd. All rights reserved.
+// Copyright (c) 2022 iProov Ltd. All rights reserved.
 
 import iProov
 import iProovAPIClient
@@ -7,7 +7,7 @@ import UIKit
 
 class ViewController: UIViewController {
     // NOTE: This is provided for example/demo purposes only. You should never embed your credentials in a public app release!
-    private let apiClient = APIClient(baseURL: "https://\(Credentials.hostname)/api/v2",
+    private let apiClient = APIClient(baseURL: Credentials.baseURL,
                                       apiKey: Credentials.apiKey,
                                       secret: Credentials.secret)
 
@@ -48,8 +48,9 @@ class ViewController: UIViewController {
             case let .success(token):
 
                 let options = Options()
+                options.ui.floatingPromptEnabled = true
 
-                IProov.launch(streamingURL: "wss://\(Credentials.hostname)/ws", token: token, options: options) { status in
+                IProov.launch(streamingURL: Credentials.baseURL, token: token, options: options) { status in
 
                     switch status {
                     case .connecting:
@@ -64,17 +65,17 @@ class ViewController: UIViewController {
                         hud.label.text = message
                         hud.progress = Float(progress)
 
-                    case .success:
+                    case let .success(result):
                         hud.hide(animated: true)
 
-                        let alert = UIAlertController(title: "✅ Success", message: "Token: \(token)", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "✅ Success", message: "Token: \(result.token)", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
 
                     case let .failure(result):
                         hud.hide(animated: true)
 
-                        let alert = UIAlertController(title: "❌ \(result.reason)", message: result.localizedDescription, preferredStyle: .alert)
+                        let alert = UIAlertController(title: "❌ \(result.feedbackCode)", message: result.reason, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                         alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                             self.launch(claimType: claimType, assuranceType: assuranceType)

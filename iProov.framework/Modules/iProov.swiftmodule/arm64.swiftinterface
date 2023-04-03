@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
-// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 import AVFoundation
 import Accelerate
 import AudioToolbox
@@ -13,6 +13,7 @@ import Foundation
 import OpenGLES
 import QuartzCore
 import Security
+import SocketIO
 import Starscream
 import Swift
 import UIKit
@@ -22,15 +23,10 @@ import WebKit
 import _Concurrency
 @_exported import iProov
 import simd
-@_hasMissingDesignatedInitializers @objc(IPSession) @objcMembers final public class Session : ObjectiveC.NSObject {
-  @objc @discardableResult
-  final public func cancel() -> Swift.Bool
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) public class IProov : ObjectiveC.NSObject {
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IProov) final public class IProov : ObjectiveC.NSObject {
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(IPErrorCode) @objcMembers public class IProovErrorCode : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc(IPErrorCode) public class IProovErrorCode : ObjectiveC.NSObject {
   @objc public static let networkError: Swift.Int
   @objc public static let serverError: Swift.Int
   @objc public static let captureAlreadyActive: Swift.Int
@@ -74,85 +70,93 @@ extension WebKit.WKWebView {
 }
 extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
-  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, cancelled: @escaping (iProov.Canceller) -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
+  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, cancelled: @escaping () -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
-@_inheritsConvenienceInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
-  @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
-  @objc public var dictionary: [Swift.String : Any] {
-    @objc get
-  }
-  @objc public var filter: iProov.Filter
-  @objc public var stringsBundle: Foundation.Bundle?
-  @objc public var stringsTable: Swift.String?
-  @objc public var titleTextColor: UIKit.UIColor
-  @objc public var closeButtonTintColor: UIKit.UIColor
-  @objc public var title: Swift.String?
-  @objc public var font: Swift.String
-  @objc public var closeButtonImage: UIKit.UIImage
-  @objc public var logoImage: UIKit.UIImage?
-  @objc public var promptTextColor: UIKit.UIColor
-  @objc public var promptBackgroundColor: UIKit.UIColor
-  @objc public var promptRoundedCorners: Swift.Bool
-  @objc public var surroundColor: UIKit.UIColor
-  @objc public var genuinePresenceAssurance: iProov.Options.GenuinePresenceAssurance
-  @objc public var livenessAssurance: iProov.Options.LivenessAssurance
-  @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
-  @objc public var certificates: [Foundation.Data]
-  @objc public var timeout: Foundation.TimeInterval
-  @objc override dynamic public init()
-  @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) @objcMembers public class GenuinePresenceAssurance : ObjectiveC.NSObject {
-    @objc public var notReadyOvalStrokeColor: UIKit.UIColor
-    @objc public var readyOvalStrokeColor: UIKit.UIColor
-    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
-    public var maxYaw: CoreGraphics.CGFloat
-    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
-    public var maxRoll: CoreGraphics.CGFloat
-    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
-    public var maxPitch: CoreGraphics.CGFloat
-    @objc override dynamic public init()
-    @objc deinit
-  }
-  @_inheritsConvenienceInitializers @objc(IPLivenessAssuranceOptions) @objcMembers public class LivenessAssurance : ObjectiveC.NSObject {
-    @objc public var ovalStrokeColor: UIKit.UIColor
-    @objc public var completedOvalStrokeColor: UIKit.UIColor
-    @objc override dynamic public init()
-    @objc deinit
-  }
-  @objc(IPLineDrawingFilter) @objcMembers public class LineDrawingFilter : ObjectiveC.NSObject, iProov.Filter {
-    @objc(IPLineDrawingFilterStyle) public enum Style : Swift.Int {
-      case classic, shaded, vibrant
-      public init?(rawValue: Swift.Int)
-      public typealias RawValue = Swift.Int
-      public var rawValue: Swift.Int {
-        get
-      }
-    }
-    @objc public var style: iProov.Options.LineDrawingFilter.Style
-    @objc public var foregroundColor: UIKit.UIColor
+@_inheritsConvenienceInitializers @objc(IPOptions) public class Options : ObjectiveC.NSObject {
+  @objc public var ui: iProov.Options.UI
+  @objc public var network: iProov.Options.Network
+  @objc public var capture: iProov.Options.Capture
+  @objc public static func from(json: [Swift.String : Any]) -> iProov.Options
+  @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IPUIOptions) public class UI : ObjectiveC.NSObject {
+    @objc public var filter: iProov.Options.Filter
+    @objc public var stringsBundle: Foundation.Bundle?
+    @objc public var stringsTable: Swift.String?
+    @objc public var lineColor: UIKit.UIColor
     @objc public var backgroundColor: UIKit.UIColor
-    @objc public init(style: iProov.Options.LineDrawingFilter.Style = .shaded, foregroundColor: UIKit.UIColor = UIColor(red: 64.0 / 255.0, green: 64.0 / 255.0, blue: 64.0 / 255.0, alpha: 1.0), backgroundColor: UIKit.UIColor = UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0))
-    @objc deinit
-  }
-  @objc(IPNaturalFilter) @objcMembers public class NaturalFilter : ObjectiveC.NSObject, iProov.Filter {
-    @objc(IPNaturalFilterStyle) public enum Style : Swift.Int {
-      case clear, blur
-      public init?(rawValue: Swift.Int)
-      public typealias RawValue = Swift.Int
-      public var rawValue: Swift.Int {
-        get
-      }
+    @objc public var headerBackgroundColor: UIKit.UIColor
+    @objc public var footerBackgroundColor: UIKit.UIColor
+    @objc public var headerTextColor: UIKit.UIColor
+    @objc public var promptTextColor: UIKit.UIColor
+    @available(*, deprecated, renamed: "promptTextColor")
+    @objc public var footerTextColor: UIKit.UIColor {
+      @objc get
+      @objc set
     }
-    @objc public var style: iProov.Options.NaturalFilter.Style
-    @objc public init(style: iProov.Options.NaturalFilter.Style = .clear)
+    @objc public var closeButtonTintColor: UIKit.UIColor
+    @objc public var title: Swift.String?
+    @objc public var font: Swift.String
+    @objc public var closeButtonImage: UIKit.UIImage
+    @objc public var logoImage: UIKit.UIImage?
+    @objc public var floatingPromptEnabled: Swift.Bool
+    @objc public var floatingPromptRoundedCorners: Swift.Bool
+    @objc public var genuinePresenceAssurance: iProov.Options.UI.GenuinePresenceAssurance
+    @objc public var livenessAssurance: iProov.Options.UI.LivenessAssurance
+    @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
+    @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceUIOptions) public class GenuinePresenceAssurance : ObjectiveC.NSObject {
+      @objc public var autoStartDisabled: Swift.Bool
+      @objc public var notReadyTintColor: UIKit.UIColor
+      @objc public var readyTintColor: UIKit.UIColor
+      @objc public var progressBarColor: UIKit.UIColor
+      @objc public var readyFloatingPromptBackgroundColor: UIKit.UIColor?
+      @objc public var notReadyFloatingPromptBackgroundColor: UIKit.UIColor?
+      @objc public var notReadyOverlayStrokeColor: UIKit.UIColor?
+      @objc public var readyOverlayStrokeColor: UIKit.UIColor?
+      @objc override dynamic public init()
+      @objc deinit
+    }
+    @_inheritsConvenienceInitializers @objc(IPLivenessAssuranceUIOptions) public class LivenessAssurance : ObjectiveC.NSObject {
+      @objc public var primaryTintColor: UIKit.UIColor
+      @objc public var secondaryTintColor: UIKit.UIColor
+      @objc public var floatingPromptBackgroundColor: UIKit.UIColor?
+      @objc public var overlayStrokeColor: UIKit.UIColor?
+      @objc override dynamic public init()
+      @objc deinit
+    }
     @objc deinit
   }
+  @_inheritsConvenienceInitializers @objc(IPNetworkOptions) public class Network : ObjectiveC.NSObject {
+    @objc public var certificates: [Any]
+    @objc public var timeout: Foundation.TimeInterval
+    @objc public var path: Swift.String
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers @objc(IPCaptureOptions) public class Capture : ObjectiveC.NSObject {
+    @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceCaptureOptions) public class GenuinePresenceAssurance : ObjectiveC.NSObject {
+      @objc public var maxYaw: CoreGraphics.CGFloat
+      @objc public var maxRoll: CoreGraphics.CGFloat
+      @objc public var maxPitch: CoreGraphics.CGFloat
+      @objc override dynamic public init()
+      @objc deinit
+    }
+    @objc public var genuinePresenceAssurance: iProov.Options.Capture.GenuinePresenceAssurance
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc(IPFilter) public enum Filter : Swift.Int {
+    case classic, shaded, vibrant
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc override dynamic public init()
   @objc deinit
-}
-@objc(IPFilter) public protocol Filter {
 }
 infix operator ?= : AssignmentPrecedence
 infix operator --> : AdditionPrecedence
-@_hasMissingDesignatedInitializers @objc(IPPublicKey) @objcMembers public class PublicKey : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPPublicKey) public class PublicKey : ObjectiveC.NSObject {
   @objc final public let key: Security.SecKey
   @objc public var pem: Swift.String {
     @objc get
@@ -162,7 +166,7 @@ infix operator --> : AdditionPrecedence
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc(IPKeyPair) @objcMembers public class KeyPair : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPKeyPair) public class KeyPair : ObjectiveC.NSObject {
   @objc public var publicKey: iProov.PublicKey {
     @objc get
   }
@@ -173,64 +177,33 @@ infix operator --> : AdditionPrecedence
   @objc deinit
 }
 public typealias Callback = (iProov.Status) -> Swift.Void
-@_hasMissingDesignatedInitializers @objc(IPSuccessResult) @objcMembers public class SuccessResult : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc(IPSuccessResult) public class SuccessResult : ObjectiveC.NSObject {
+  @objc final public let token: Swift.String
   @objc final public let frame: UIKit.UIImage?
   @objc deinit
 }
-@objc(IPFailureReason) public enum FailureReason : Swift.Int, Swift.CaseIterable {
-  case unknown, tooMuchMovement, tooBright, tooDark, misalignedFace, eyesClosed, faceTooFar, faceTooClose, sunglasses, obscuredFace, userTimeout, notSupported
-  public var feedbackCode: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias AllCases = [iProov.FailureReason]
-  public typealias RawValue = Swift.Int
-  public static var allCases: [iProov.FailureReason] {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc(IPFailureResult) @objcMembers public class FailureResult : ObjectiveC.NSObject {
-  @objc final public let reason: iProov.FailureReason
+@_hasMissingDesignatedInitializers @objc(IPFailureResult) public class FailureResult : ObjectiveC.NSObject {
+  @objc final public let token: Swift.String
+  @objc final public let reason: Swift.String
+  @objc final public let feedbackCode: Swift.String
   @objc final public let frame: UIKit.UIImage?
-  @objc public var localizedDescription: Swift.String {
-    @objc get
-  }
   @objc deinit
-}
-@objc(IPCanceller) public enum Canceller : Swift.Int {
-  case user
-  case app
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
 }
 public enum Status {
   case connecting
   case connected
   case processing(progress: Swift.Double, message: Swift.String)
   case success(iProov.SuccessResult)
+  case cancelled
   case failure(iProov.FailureResult)
-  case cancelled(iProov.Canceller)
   case error(iProov.IProovError)
   public var isFinished: Swift.Bool {
     get
   }
 }
 extension iProov.IProov {
-  @discardableResult
-  public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), _ callback: @escaping iProov.Callback) -> iProov.Session
+  public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), callback: @escaping iProov.Callback)
   @objc public static var keyPair: iProov.KeyPair
-  @objc(versionStr) public static var version: Swift.String {
-    @objc get
-  }
-  @objc public static var buildNumber: Swift.Int {
-    @objc get
-  }
 }
 public protocol SSLTrustValidator {
   func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
@@ -258,20 +231,6 @@ extension iProov.SSLSecurity : Starscream.CertificatePinning {
 extension UIKit.UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
 }
-extension UIKit.UIApplication {
-  @_Concurrency.MainActor(unsafe) public var keyWindow: UIKit.UIWindow? {
-    get
-  }
-}
-extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}
-extension iProov.Options.LineDrawingFilter.Style : Swift.Hashable {}
-extension iProov.Options.LineDrawingFilter.Style : Swift.RawRepresentable {}
-extension iProov.Canceller : Swift.Equatable {}
-extension iProov.Canceller : Swift.Hashable {}
-extension iProov.Canceller : Swift.RawRepresentable {}
-extension iProov.Options.NaturalFilter.Style : Swift.Equatable {}
-extension iProov.Options.NaturalFilter.Style : Swift.Hashable {}
-extension iProov.Options.NaturalFilter.Style : Swift.RawRepresentable {}
-extension iProov.FailureReason : Swift.Equatable {}
-extension iProov.FailureReason : Swift.Hashable {}
-extension iProov.FailureReason : Swift.RawRepresentable {}
+extension iProov.Options.Filter : Swift.Equatable {}
+extension iProov.Options.Filter : Swift.Hashable {}
+extension iProov.Options.Filter : Swift.RawRepresentable {}

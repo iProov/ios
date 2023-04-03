@@ -1,4 +1,4 @@
-// Copyright (c) 2023 iProov Ltd. All rights reserved.
+// Copyright (c) 2022 iProov Ltd. All rights reserved.
 
 // ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 //    THIS CODE IS PROVIDED FOR DEMO PURPOSES ONLY AND SHOULD NOT BE USED IN
@@ -70,7 +70,6 @@ public class APIClient {
     public func getToken(assuranceType: AssuranceType,
                          type: ClaimType,
                          userID: String,
-                         resource: String? = nil,
                          additionalOptions: [String: Any] = [:],
                          completion: @escaping (Result<String, Swift.Error>) -> Void)
     {
@@ -80,7 +79,7 @@ public class APIClient {
             "assurance_type": assuranceType.rawValue,
             "api_key": apiKey,
             "secret": secret,
-            "resource": resource ?? appID,
+            "resource": appID,
             "client": "ios",
             "user_id": userID,
         ]
@@ -137,12 +136,12 @@ public class APIClient {
 
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding(), headers: nil)
             .validate(statusCode: 200 ..< 500)
-            .responseData { response in
+            .responseJSON { response in
 
                 switch response.result {
-                case let .success(data):
+                case let .success(json):
 
-                    guard let json = try? JSONSerialization.jsonObject(with: data) as? JSON else {
+                    guard let json = json as? JSON else {
                         completion(.failure(Error.invalidJSON))
                         return
                     }
@@ -197,11 +196,11 @@ public extension APIClient {
 public extension DataRequest {
     @discardableResult
     func responseToken(completionHandler: @escaping (Result<String, Swift.Error>) -> Void) -> Self {
-        responseData { response in
+        responseJSON { response in
             switch response.result {
-            case let .success(data):
+            case let .success(json):
 
-                guard let json = try? JSONSerialization.jsonObject(with: data) as? JSON else {
+                guard let json = json as? JSON else {
                     completionHandler(.failure(APIClient.Error.invalidJSON))
                     return
                 }

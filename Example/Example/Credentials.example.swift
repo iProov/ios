@@ -1,4 +1,4 @@
-// Copyright (c) 2023 iProov Ltd. All rights reserved.
+// Copyright (c) 2022 iProov Ltd. All rights reserved.
 
 // TODO: Rename this file to Credentials.swift and update accordingly.
 // You can obtain credentials from https://portal.iproov.com
@@ -9,7 +9,7 @@
 import Foundation
 
 enum Credentials {
-    static let hostname = "eu.rp.secure.iproov.me"
+    static let baseURL = "https://eu.rp.secure.iproov.me/api/v2"
     static let apiKey = <#T##String#>
     static let secret = <#T##String#>
 }
