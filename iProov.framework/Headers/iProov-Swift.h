@@ -218,7 +218,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
   IPCancellerUser = 0,
   IPCancellerApp = 1,
@@ -343,6 +342,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull titleTextColor;
+@property (nonatomic, strong) UIColor * _Nullable headerBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
@@ -351,6 +351,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) UIColor * _Nonnull promptTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull promptBackgroundColor;
 @property (nonatomic) BOOL promptRoundedCorners;
+@property (nonatomic) BOOL disableExteriorEffects;
 @property (nonatomic, strong) UIColor * _Nonnull surroundColor;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceOptions * _Nonnull livenessAssurance;
@@ -687,7 +688,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
   IPCancellerUser = 0,
   IPCancellerApp = 1,
@@ -812,6 +812,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull titleTextColor;
+@property (nonatomic, strong) UIColor * _Nullable headerBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
@@ -820,6 +821,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) UIColor * _Nonnull promptTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull promptBackgroundColor;
 @property (nonatomic) BOOL promptRoundedCorners;
+@property (nonatomic) BOOL disableExteriorEffects;
 @property (nonatomic, strong) UIColor * _Nonnull surroundColor;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceOptions * _Nonnull livenessAssurance;
@@ -1157,7 +1159,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
   IPCancellerUser = 0,
   IPCancellerApp = 1,
@@ -1282,6 +1283,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) NSBundle * _Nullable stringsBundle;
 @property (nonatomic, copy) NSString * _Nullable stringsTable;
 @property (nonatomic, strong) UIColor * _Nonnull titleTextColor;
+@property (nonatomic, strong) UIColor * _Nullable headerBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull closeButtonTintColor;
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSString * _Nonnull font;
@@ -1290,6 +1292,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) UIColor * _Nonnull promptTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull promptBackgroundColor;
 @property (nonatomic) BOOL promptRoundedCorners;
+@property (nonatomic) BOOL disableExteriorEffects;
 @property (nonatomic, strong) UIColor * _Nonnull surroundColor;
 @property (nonatomic, strong) IPGenuinePresenceAssuranceOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceOptions * _Nonnull livenessAssurance;

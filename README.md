@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v10.1.3
+# iProov Biometrics iOS SDK v10.3.0
 
 ## Introduction
 
@@ -101,7 +101,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.1.3 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.3.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -113,7 +113,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "10.1.3")
+	.upToNextMajor(from: "10.3.0")
 ),
 ```
 
@@ -160,7 +160,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 	
 	This script contains two important workarounds:
 	
-	1. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13).
+	1. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13 and 14).
 
 	2. It ensures that the Starscream framework is built with the `BUILD_LIBRARY_FOR_DISTRIBUTION` setting enabled.
 	
@@ -200,7 +200,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.1.3):
+4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.3.0):
 
 	- `iProov.xcframework`
 	- `Starscream.xcframework`
@@ -334,8 +334,10 @@ You can customize the iProov session by passing in an `Options` reference when l
 | `promptTextColor`  | Color for prompt text. | `.white` |
 | `promptBackgroundColor` | Color for background of prompt. | `.black.withAlphaComponent(0.8)` |
 | `promptRoundedCorners` | Whether the prompt has rounded (`true`) or straight (`false`) corners. | `true` |
-| `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. See below for further details. | `DefaultPresentationDelegate()` |
+| `disableExteriorEffects` | Whether the blur and vignette effect outside the oval should be disabled. | `false` |
+| `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. [See below for further details](#custom-iproovpresentationdelegate). | `DefaultPresentationDelegate()` |
 | `surroundColor` | Color applied the area outside the oval. | `.black.withAlphaComponent(0.4)` |
+| `headerBackgroundColor ` | The color of the header bar. | `nil` |
 | `certificates` | Certificates to be used for SSL pinning. [See below for further details](#certificates). | iProov Server Certificates |
 | `timeout` | Network timeout to be applied to the WebSocket connection. | `10` (seconds) |
 
@@ -352,9 +354,9 @@ The `foregroundColor` and `backgroundColor` can also be customized.
 Example:
 
 ```swift
-options.filter = CannyFilter(style: .vibrant,
-                             foregroundColor: UIColor.black,
-                             backgroundColor: UIColor.white)
+options.filter = Options.LineDrawingFilter(style: .vibrant,
+                                           foregroundColor: UIColor.black,
+                                           backgroundColor: UIColor.white)
 ```
 
 #### `NaturalFilter`
@@ -364,10 +366,12 @@ options.filter = CannyFilter(style: .vibrant,
 Example:
 
 ```swift
-options.filter = NaturalFilter(style: .clear)
+options.filter = Options.NaturalFilter(style: .clear)
 ```
 
 > **Note**: `NaturalFilter` is available for Liveness Assurance claims only. Attempts to use `NaturalFilter` for Genuine Presence Assurance claims will result in an error.
+> 
+> If `disableExteriorEffects` is set to true, `filter` can not be set to `NaturalFilter.Style.blur`. This combination of options will result in an error.
 
 ### Certificate Pinning
 
@@ -429,11 +433,11 @@ This may not always be the desirable behavior; for instance, you may wish to pre
 ```swift
 extension MyViewController: IProovPresentationDelegate {
 
-    func present(iProovViewController: UIViewController) {
+    func present(iProovViewController: UIViewController, completion: (() -> Void)?) {
         // How should we present the iProov view controller?
     }
 
-    func dismiss(iProovViewController: UIViewController) {
+    func dismiss(iProovViewController: UIViewController, completion: (() -> Void)?) {
         // How should we dismiss the iProov view controller once it's done?
     }
 

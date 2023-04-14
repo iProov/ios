@@ -85,6 +85,7 @@ extension iProov.IProov {
   @objc public var stringsBundle: Foundation.Bundle?
   @objc public var stringsTable: Swift.String?
   @objc public var titleTextColor: UIKit.UIColor
+  @objc public var headerBackgroundColor: UIKit.UIColor?
   @objc public var closeButtonTintColor: UIKit.UIColor
   @objc public var title: Swift.String?
   @objc public var font: Swift.String
@@ -93,6 +94,7 @@ extension iProov.IProov {
   @objc public var promptTextColor: UIKit.UIColor
   @objc public var promptBackgroundColor: UIKit.UIColor
   @objc public var promptRoundedCorners: Swift.Bool
+  @objc public var disableExteriorEffects: Swift.Bool
   @objc public var surroundColor: UIKit.UIColor
   @objc public var genuinePresenceAssurance: iProov.Options.GenuinePresenceAssurance
   @objc public var livenessAssurance: iProov.Options.LivenessAssurance
