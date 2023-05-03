@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v10.3.0
+# iProov Biometrics iOS SDK v0.0.0
 
 ## Introduction
 
@@ -101,7 +101,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.3.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 0.0.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -113,7 +113,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "10.3.0")
+	.upToNextMajor(from: "0.0.0")
 ),
 ```
 
@@ -200,7 +200,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.3.0):
+4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/0.0.0):
 
 	- `iProov.xcframework`
 	- `Starscream.xcframework`
@@ -457,7 +457,7 @@ extension MyViewController: IProovPresentationDelegate {
 The SDK ships with support for the following languages:
 
 - English - `en`
-- Dutch - `de`
+- Dutch - `nl`
 - French - `fr`
 - German - `de`
 - Italian - `it`
