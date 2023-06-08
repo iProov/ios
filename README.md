@@ -219,6 +219,8 @@ Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reaso
 
 ## Get Started
 
+iProov uses Genuine Presence™ technology to assure the identity of a user remotely; ensuring the user is the right person, a real person, and they are authenticating right now. Using our patented Flashmark™ solution, iProov ensures accurate online identity verification.
+
 ### Get a Token
 
 Before being able to launch iProov, you need to get a token to iProov against. There are 2 different token types:
