@@ -17,7 +17,7 @@ Use of the iOS API Client requires providing it with your API secret. **You shou
 The iOS API Client is distributed as a Cocoapods dependency. Simply add the following line to your Podfile:
 
 ```
-pod 'iProovAPIClient', :podspec => 'https://raw.githubusercontent.com/iProov/ios/master/iProovAPIClient/iProovAPIClient.podspec'
+pod 'iProovAPIClient', :git => 'https://github.com/iProov/ios.git'
 ```
 
 And then run `pod install`.

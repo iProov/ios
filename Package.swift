@@ -16,13 +16,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "iProov",
-            url: "https://github.com/iProov/ios/releases/download/10.3.0/iProov.xcframework.zip",
-            checksum: "64df00c30b3d30008119d4968e1e9620b8cd930bad7dfe4ae0a6470f4e551acd"
+            url: "https://github.com/iProov/ios/releases/download/11.0.0-beta/iProov.xcframework.zip",
+            checksum: "c6f882089ebf354bb0a65deed3add6a5857aff3f38cca95be8e39b236734c00c"
         ),
         .binaryTarget(
             name: "Starscream",
-            url: "https://github.com/iProov/ios/releases/download/10.3.0/Starscream.xcframework.zip",
-            checksum: "a0d08245b789de471abd3543eec1a5a7119b092336a776d7b1b19f5c6253c13f"
+            url: "https://github.com/iProov/ios/releases/download/11.0.0-beta/Starscream.xcframework.zip",
+            checksum: "0da4a5aaf5f13f5a279ab28c30c00844676c216787db5326f5228d1bc15fecfd"
         ),
         .target(
             name: "iProovTargets",

@@ -220,7 +220,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
   IPCancellerUser = 0,
-  IPCancellerApp = 1,
+  IPCancellerIntegration = 1,
 };
 
 
@@ -235,8 +235,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, IPFailureReason, "FailureReason", open) {
   IPFailureReasonFaceTooClose = 7,
   IPFailureReasonSunglasses = 8,
   IPFailureReasonObscuredFace = 9,
-  IPFailureReasonUserTimeout = 10,
-  IPFailureReasonNotSupported = 11,
+  IPFailureReasonMultipleFaces = 10,
 };
 
 @class UIImage;
@@ -299,6 +298,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraPerm
 + (NSInteger)cameraPermissionDenied SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger unexpectedError;)
 + (NSInteger)unexpectedError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger userTimeout;)
++ (NSInteger)userTimeout SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger notSupported;)
++ (NSInteger)notSupported SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -356,7 +359,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) IPGenuinePresenceAssuranceOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
-@property (nonatomic, copy) NSArray<NSData *> * _Nonnull certificates;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
 @property (nonatomic) NSTimeInterval timeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -366,9 +369,6 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @interface IPGenuinePresenceAssuranceOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyOvalStrokeColor;
-@property (nonatomic) CGFloat maxYaw SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
-@property (nonatomic) CGFloat maxRoll SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
-@property (nonatomic) CGFloat maxPitch SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -440,6 +440,7 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -690,7 +691,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
   IPCancellerUser = 0,
-  IPCancellerApp = 1,
+  IPCancellerIntegration = 1,
 };
 
 
@@ -705,8 +706,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, IPFailureReason, "FailureReason", open) {
   IPFailureReasonFaceTooClose = 7,
   IPFailureReasonSunglasses = 8,
   IPFailureReasonObscuredFace = 9,
-  IPFailureReasonUserTimeout = 10,
-  IPFailureReasonNotSupported = 11,
+  IPFailureReasonMultipleFaces = 10,
 };
 
 @class UIImage;
@@ -769,6 +769,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraPerm
 + (NSInteger)cameraPermissionDenied SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger unexpectedError;)
 + (NSInteger)unexpectedError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger userTimeout;)
++ (NSInteger)userTimeout SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger notSupported;)
++ (NSInteger)notSupported SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -826,7 +830,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) IPGenuinePresenceAssuranceOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
-@property (nonatomic, copy) NSArray<NSData *> * _Nonnull certificates;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
 @property (nonatomic) NSTimeInterval timeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -836,9 +840,6 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @interface IPGenuinePresenceAssuranceOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyOvalStrokeColor;
-@property (nonatomic) CGFloat maxYaw SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
-@property (nonatomic) CGFloat maxRoll SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
-@property (nonatomic) CGFloat maxPitch SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -910,6 +911,7 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -1161,7 +1163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
   IPCancellerUser = 0,
-  IPCancellerApp = 1,
+  IPCancellerIntegration = 1,
 };
 
 
@@ -1176,8 +1178,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, IPFailureReason, "FailureReason", open) {
   IPFailureReasonFaceTooClose = 7,
   IPFailureReasonSunglasses = 8,
   IPFailureReasonObscuredFace = 9,
-  IPFailureReasonUserTimeout = 10,
-  IPFailureReasonNotSupported = 11,
+  IPFailureReasonMultipleFaces = 10,
 };
 
 @class UIImage;
@@ -1240,6 +1241,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger cameraPerm
 + (NSInteger)cameraPermissionDenied SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger unexpectedError;)
 + (NSInteger)unexpectedError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger userTimeout;)
++ (NSInteger)userTimeout SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger notSupported;)
++ (NSInteger)notSupported SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1297,7 +1302,7 @@ SWIFT_CLASS_NAMED("Options")
 @property (nonatomic, strong) IPGenuinePresenceAssuranceOptions * _Nonnull genuinePresenceAssurance;
 @property (nonatomic, strong) IPLivenessAssuranceOptions * _Nonnull livenessAssurance;
 @property (nonatomic, weak) id <IProovPresentationDelegate> _Nullable presentationDelegate;
-@property (nonatomic, copy) NSArray<NSData *> * _Nonnull certificates;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull certificates;
 @property (nonatomic) NSTimeInterval timeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1307,9 +1312,6 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @interface IPGenuinePresenceAssuranceOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyOvalStrokeColor;
-@property (nonatomic) CGFloat maxYaw SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
-@property (nonatomic) CGFloat maxRoll SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
-@property (nonatomic) CGFloat maxPitch SWIFT_DEPRECATED_MSG("This option will be removed in a future SDK version.");
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1381,6 +1383,7 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
