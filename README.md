@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v11.0.0-beta2
+# iProov Biometrics iOS SDK v10.3.1
 
 ## Introduction
 
@@ -8,8 +8,8 @@ The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app.
 
 ### Requirements
 
-- iOS 12.0 and above
-- Xcode 14.1 and above
+- iOS 11.0 and above
+- Xcode 13.0 and above
 
 The framework has been written in Swift 5.5, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
@@ -24,7 +24,6 @@ The SDK also includes the following third-party code:
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 - [CryptoExportImportManager](https://github.com/DigitalLeaves/CryptoExportImportManager)
 - [SwiftProtobuf](https://github.com/apple/swift-protobuf)
-- [TrustKit](https://github.com/datatheorem/TrustKit)
 
 These dependencies are vendored and compiled into the SDK, this requires no action and is provided for information and licensing purposes only.
 
@@ -102,7 +101,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.0.0-beta2 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 10.3.1 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -114,7 +113,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "11.0.0-beta2")
+	.upToNextMajor(from: "10.3.1")
 ),
 ```
 
@@ -201,7 +200,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/11.0.0-beta2):
+4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/10.3.1):
 
 	- `iProov.xcframework`
 	- `Starscream.xcframework`
@@ -219,8 +218,6 @@ All iOS apps which require camera access must request permission from the user, 
 Add an `NSCameraUsageDescription` entry to your app's Info.plist, with the reason why your app requires camera access (e.g. “To iProov you in order to verify your identity.”)
 
 ## Get Started
-
-iProov uses Genuine Presence™ technology to assure the identity of a user remotely; ensuring the user is the right person, a real person, and they are authenticating right now. Using our patented Flashmark™ solution, iProov ensures accurate online identity verification.
 
 ### Get a Token
 
@@ -274,11 +271,11 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         // or there was another issue with their verification/enrollment.
         // You can access the following properties:
         let reason: FailureReason = result.reason // A reason of why the claim failed
-        let feedbackCode: String = reason.feedbackCode // A code referring to the failure reason (see list below)
+        let failureCode: String = reason.failureCode // A code referring to the failure reason (see list below)
         let localizedDescription: String = result.localizedDescription // A human-readable suggestion about what to do to get to a successful claim
         let frame: UIImage? = result.frame // An optional image containing a single frame of the user, if enabled for your service provider (see important security info below)
 
-    case let .cancelled(canceller):
+    case .cancelled(canceller):
         // Either:
         //
         // (a) The user cancelled iProov by pressing the close button, or sending the
@@ -341,7 +338,7 @@ You can customize the iProov session by passing in an `Options` reference when l
 | `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. [See below for further details](#custom-iproovpresentationdelegate). | `DefaultPresentationDelegate()` |
 | `surroundColor` | Color applied the area outside the oval. | `.black.withAlphaComponent(0.4)` |
 | `headerBackgroundColor ` | The color of the header bar. | `nil` |
-| `certificates` | Certificates to be passed as a string (the certificate's Subject Public Key Info as SHA-256 hash). [See below for further details](#certificates). | iProov Server Certificates |
+| `certificates` | Certificates to be used for SSL pinning. [See below for further details](#certificates). | iProov Server Certificates |
 | `timeout` | Network timeout to be applied to the WebSocket connection. | `10` (seconds) |
 
 ### Filter Options
@@ -382,22 +379,16 @@ By default, the iProov SDK pins to the iProov server certificates, which are use
 
 If you are using your own reverse-proxy, you will need to update the pinning configuration to pin to your own certificate(s) instead.
 
-Certificates should be passed as an array of `String`, where the `String` is the base64-encoded SHA-256 hash of a certificate's Subject Public Key Info. You can load a certificate as follows:
+Certificates should be passed as an array of `Data`, which are DER-encoded X.509 certificates. You can load a DER-encoded certificate from your app bundle as follows:
 
 ```swift
-options.certificates = ["O8qZKEXWWkMPISIpvB7DUow++JzIW2g+k9z3U/l5V94="]
+options.certificates = [try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "certificate", ofType: "der")!))]
 ```
 
-To get Subject Public Key Info from a `.crt` file, use the following command:
+To convert from a `.crt` file to `.der`, use the following command:
 
 ```sh
-$ openssl x509  -in cert.crt -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
-```
-
-To get Subject Public Key Info from a `.der` file, use the following command:
-
-```sh
-$ openssl x509 -inform der -in cert.der -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
+$ openssl x509 -in cert.crt -outform der -out cert.der
 ```
 
 When multiple certificates are passed, as long as the server matches **any** of the certificates, the connection will be allowed. Pinning is performed against the **public key** of the certificate.
@@ -418,6 +409,11 @@ GPA-specific options can be set under `Options.genuinePresenceAssurance`:
 | --- | --- | --- |
 | `notReadyOvalStrokeColor` | Color for oval stroke when in a GPA "not ready" state. | `.white` |
 | `readyOvalStrokeColor`| Color for oval stroke when in the GPA "ready" state. | #01AC41 |
+| `maxYaw` (deprecated) | Maximum acceptable yaw of user's face\*. | `-1` (disabled) |
+| `maxRoll` (deprecated) | Maximum acceptable roll of user's face\*. | `-1` (disabled) |
+| `maxPitch` (deprecated) | Maximum acceptable pitch of user's face\*. | `-1` (disabled) |
+
+\* These options are used to implement pose control, which is deprecated and will be removed in a future SDK version. Values are provided in normalized units (0 to 1), where -1 means disabled. These options should not be set for general use; please contact iProov for further information if you would like to use this feature.
 
 ### Liveness Assurance Options
 
@@ -461,14 +457,14 @@ extension MyViewController: IProovPresentationDelegate {
 The SDK ships with support for the following languages:
 
 - English - `en`
-- Dutch - `nl`
+- Dutch - `de`
 - French - `fr`
 - German - `de`
 - Italian - `it`
 - Portuguese - `pt`
 - Portuguese (Brazil) - `pt-BR`
 - Spanish - `es`
-- Spanish (Colombia) - `es-CO`
+- Spanish (Columbia) - `es-CO`
 - Welsh - `cy-GB`
 
 You can customize the strings from your app or localize them into a different language. For further details, see our [Localization Guide](https://github.com/iProov/ios/wiki/Localization).
@@ -485,7 +481,9 @@ Failures are caught via the `.failure(reason)` enum case in the callback. The `r
 
 - `localizedDescription` - You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time.
 
-The available feedback codes are as follows:
+#### Genuine Presence Assurance
+
+The available failure reasons for Genuine Presence Assurance claims are as follows:
 
 | Enum value | `localizedDescription` (English) |
 |---|---|
@@ -499,7 +497,18 @@ The available feedback codes are as follows:
 | `faceTooClose` | Move your face farther from the screen |
 | `sunglasses` | Remove sunglasses |
 | `obscuredFace` | Remove any face coverings |
-| `multipleFaces` | Ensure only one person is visible |
+| `userTimeout` | Try again |
+| `notSupported` | Device is not supported |
+
+#### Liveness Assurance
+
+The available failure reasons for Liveness Assurance claims are as follows:
+
+| Enum value | `localizedDescription` (English) |
+|---|---|
+| `unknown` | Try again |
+| `userTimeout` | Try again |
+| `notSupported` | Device is not supported |
 
 ### Errors
 
@@ -514,8 +523,6 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 | `networkError(String?)` | An error occurred with the video streaming process. The associated string (if available) will contain further information about the error. |
 | `serverError(String?)` | A server-side error/token invalidation occurred. The associated string (if available) will contain further information about the error. |
 | `unexpectedError(String)` | An unexpected and unrecoverable error has occurred. The associated string will contain further information about the error. These errors should be reported to iProov for further investigation. |
-| `userTimeout` | The user has taken too long to complete the claim. |
-| `notSupported` | The device is not supported. |
 
 ## API Client
 

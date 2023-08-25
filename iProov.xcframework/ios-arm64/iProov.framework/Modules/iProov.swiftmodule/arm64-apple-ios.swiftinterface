@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 import AVFoundation
 import Accelerate
 import AudioToolbox
@@ -21,7 +20,6 @@ import VideoToolbox
 import Vision
 import WebKit
 import _Concurrency
-import _StringProcessing
 @_exported import iProov
 import simd
 @_hasMissingDesignatedInitializers @objc(IPSession) @objcMembers final public class Session : ObjectiveC.NSObject {
@@ -38,8 +36,6 @@ import simd
   @objc public static let captureAlreadyActive: Swift.Int
   @objc public static let cameraPermissionDenied: Swift.Int
   @objc public static let unexpectedError: Swift.Int
-  @objc public static let userTimeout: Swift.Int
-  @objc public static let notSupported: Swift.Int
   @objc override dynamic public init()
   @objc deinit
 }
@@ -49,8 +45,6 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   case cameraPermissionDenied
   case serverError(Swift.String?)
   case unexpectedError(Swift.String)
-  case userTimeout
-  case notSupported
   public var errorCode: Swift.Int {
     get
   }
@@ -105,12 +99,18 @@ extension iProov.IProov {
   @objc public var genuinePresenceAssurance: iProov.Options.GenuinePresenceAssurance
   @objc public var livenessAssurance: iProov.Options.LivenessAssurance
   @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
-  @objc public var certificates: [Swift.String]
+  @objc public var certificates: [Foundation.Data]
   @objc public var timeout: Foundation.TimeInterval
   @objc override dynamic public init()
   @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) @objcMembers public class GenuinePresenceAssurance : ObjectiveC.NSObject {
     @objc public var notReadyOvalStrokeColor: UIKit.UIColor
     @objc public var readyOvalStrokeColor: UIKit.UIColor
+    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
+    public var maxYaw: CoreGraphics.CGFloat
+    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
+    public var maxRoll: CoreGraphics.CGFloat
+    @objc @available(*, deprecated, message: "This option will be removed in a future SDK version.")
+    public var maxPitch: CoreGraphics.CGFloat
     @objc override dynamic public init()
     @objc deinit
   }
@@ -180,7 +180,7 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   @objc deinit
 }
 @objc(IPFailureReason) public enum FailureReason : Swift.Int, Swift.CaseIterable {
-  case unknown, tooMuchMovement, tooBright, tooDark, misalignedFace, eyesClosed, faceTooFar, faceTooClose, sunglasses, obscuredFace, multipleFaces
+  case unknown, tooMuchMovement, tooBright, tooDark, misalignedFace, eyesClosed, faceTooFar, faceTooClose, sunglasses, obscuredFace, userTimeout, notSupported
   public var feedbackCode: Swift.String {
     get
   }
@@ -204,7 +204,7 @@ public typealias Callback = (iProov.Status) -> Swift.Void
 }
 @objc(IPCanceller) public enum Canceller : Swift.Int {
   case user
-  case integration
+  case app
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -254,6 +254,9 @@ open class SSLSecurity : iProov.SSLTrustValidator {
   public func publicKeyChain(_ trust: Security.SecTrust) -> [Security.SecKey]
   @objc deinit
 }
+extension iProov.SSLSecurity : Starscream.CertificatePinning {
+  public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: (Starscream.PinningState) -> Swift.Void)
+}
 extension UIKit.UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
 }
@@ -265,12 +268,12 @@ extension UIKit.UIApplication {
 extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.Hashable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.RawRepresentable {}
+extension iProov.Canceller : Swift.Equatable {}
+extension iProov.Canceller : Swift.Hashable {}
+extension iProov.Canceller : Swift.RawRepresentable {}
 extension iProov.Options.NaturalFilter.Style : Swift.Equatable {}
 extension iProov.Options.NaturalFilter.Style : Swift.Hashable {}
 extension iProov.Options.NaturalFilter.Style : Swift.RawRepresentable {}
 extension iProov.FailureReason : Swift.Equatable {}
 extension iProov.FailureReason : Swift.Hashable {}
 extension iProov.FailureReason : Swift.RawRepresentable {}
-extension iProov.Canceller : Swift.Equatable {}
-extension iProov.Canceller : Swift.Hashable {}
-extension iProov.Canceller : Swift.RawRepresentable {}
