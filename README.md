@@ -75,15 +75,22 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 3. Add the following to the bottom of your Podfile:
 
 	```ruby
-	post_install do |installer|
-	  installer.pods_project.targets.each do |target|
-	    if ['iProov', 'Starscream'].include? target.name
-	      target.build_configurations.each do |config|
-	          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-	      end
-	    end
-	  end
-	end
+    post_install do |installer|
+      installer.pods_project.targets.each do |target|
+        if ['iProov', 'Starscream'].include? target.name
+          target.build_configurations.each do |config|
+            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+          end
+        end
+	    
+        # Xcode 14.3+ workaround for dependencies with deployment target <iOS11
+        if ['Starscream'].include? target.name
+          target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+          end
+        end
+      end
+    end
 	```
 
 4. Run `pod install`.
