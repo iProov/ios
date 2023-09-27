@@ -49,7 +49,8 @@ class ViewController: UIViewController {
 
                 let options = Options()
 
-                IProov.launch(streamingURL: "wss://\(Credentials.hostname)/ws", token: token, options: options) { status in
+                let streamingURL = URL(string: "wss://\(Credentials.hostname)/ws")!
+                IProov.launch(streamingURL: streamingURL, token: token, options: options) { status in
 
                     switch status {
                     case .connecting:
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
                         }))
                         self.present(alert, animated: true, completion: nil)
 
-                    case .cancelled:
+                    case .canceled:
                         hud.hide(animated: true)
 
                     case let .error(error):

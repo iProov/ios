@@ -260,9 +260,9 @@ using UInt = size_t;
 
 
 
-typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
-  IPCancellerUser = 0,
-  IPCancellerIntegration = 1,
+typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceler, "Canceler", open) {
+  IPCancelerUser = 0,
+  IPCancelerIntegration = 1,
 };
 
 
@@ -305,12 +305,13 @@ SWIFT_CLASS_NAMED("IProov")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSURL;
 @class IPOptions;
 @class IPSuccessResult;
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(enum IPCanceller))cancelled failure:(void (^ _Nonnull)(IPFailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(IPFailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 @class IPKeyPair;
@@ -776,9 +777,9 @@ using UInt = size_t;
 
 
 
-typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceller, "Canceller", open) {
-  IPCancellerUser = 0,
-  IPCancellerIntegration = 1,
+typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceler, "Canceler", open) {
+  IPCancelerUser = 0,
+  IPCancelerIntegration = 1,
 };
 
 
@@ -821,12 +822,13 @@ SWIFT_CLASS_NAMED("IProov")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSURL;
 @class IPOptions;
 @class IPSuccessResult;
 @class NSError;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (void)launchWithStreamingURL:(NSString * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success cancelled:(void (^ _Nonnull)(enum IPCanceller))cancelled failure:(void (^ _Nonnull)(IPFailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
++ (void)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(IPFailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error;
 @end
 
 @class IPKeyPair;

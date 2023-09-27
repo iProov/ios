@@ -10,9 +10,10 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    if ['iProov', 'Starscream'].include? target.name
+    # Xcode 14.3+ workaround for dependencies with deployment target <iOS11
+    if ['MBProgressHUD'].include? target.name
       target.build_configurations.each do |config|
-        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
       end
     end
   end

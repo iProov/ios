@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v11.0.0-beta2
+# iProov Biometrics iOS SDK v11.0.0
 
 ## Introduction
 
@@ -15,9 +15,7 @@ The framework has been written in Swift 5.5, and we recommend the use of Swift f
 
 ### Dependencies
 
-The iProov Biometrics SDK has a dependency on [Starscream](https://github.com/daltoniam/Starscream). This dependency will be automatically included if installed via any of the dependency managers listed below.
-
-The SDK also includes the following third-party code:
+The iProov Biometrics SDK includes the following third-party code:
 
 - A [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2)
 - [Expression](https://github.com/nicklockwood/Expression)
@@ -25,14 +23,13 @@ The SDK also includes the following third-party code:
 - [CryptoExportImportManager](https://github.com/DigitalLeaves/CryptoExportImportManager)
 - [SwiftProtobuf](https://github.com/apple/swift-protobuf)
 - [TrustKit](https://github.com/datatheorem/TrustKit)
+- [Starscream](https://github.com/daltoniam/Starscream)
 
 These dependencies are vendored and compiled into the SDK, this requires no action and is provided for information and licensing purposes only.
 
 ### Module Stability
 
 The iProov SDK supports module stability. The advantage of this is that the SDK does not need to be recompiled for every new version of the Swift compiler.
-
-Therefore, the SDK is built with the _"Build Libraries for Distribution"_ build setting enabled, which means that its dependencies must also be built with this enabled. Therefore, you must ensure that this is set for both CocoaPods and Carthage (see installation documentation for details).
 
 ## Repository Contents
 
@@ -71,26 +68,10 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	```ruby
 	pod 'iProov'
 	```
-	
-3. Add the following to the bottom of your Podfile:
 
-	```ruby
-	post_install do |installer|
-	  installer.pods_project.targets.each do |target|
-	    if ['iProov', 'Starscream'].include? target.name
-	      target.build_configurations.each do |config|
-	          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-	      end
-	    end
-	  end
-	end
-	```
-
-4. Run `pod install`.
+3. Run `pod install`.
 
 ### Swift Package Manager
-
-> **Note**: If your app has an existing dependency on [Starscream](https://github.com/daltoniam/Starscream), you must either remove that existing dependency and use the iProov-supplied versions, or should avoid installing iProov via SPM and instead use one of the other installation methods.
 
 #### Installing via Xcode
 
@@ -102,7 +83,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.0.0-beta2 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.0.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -114,7 +95,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "11.0.0-beta2")
+	.upToNextMajor(from: "11.0.0")
 ),
 ```
 
@@ -128,7 +109,6 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 	```
 	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
-	github "daltoniam/Starscream" >= 4.0.0
 	```
 	
 2. Create the following script named _carthage.sh_ in your root Carthage directory:
@@ -159,11 +139,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 	carthage "$@"
 	```
 	
-	This script contains two important workarounds:
-	
-	1. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13 and 14).
-
-	2. It ensures that the Starscream framework is built with the `BUILD_LIBRARY_FOR_DISTRIBUTION` setting enabled.
+	This script contains an important workaround. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13 and 14).
 	
 3. Make the script executable:
 	
@@ -185,7 +161,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 	./carthage.sh update --platform ios
 	```
 
-5. Add the built .framework/.xcframework files from the _Carthage/Build_ folder to your project in the usual way.
+5. Add the built .framework/.xcframework file from the _Carthage/Build_ folder to your project in the usual way.
 
 	**Carthage 0.37.0 and below only:**
 	
@@ -201,14 +177,11 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add the following files from the [release assets](https://github.com/iProov/ios/releases/tag/11.0.0-beta2):
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/11.0.0).
 
-	- `iProov.xcframework`
-	- `Starscream.xcframework`
+	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
-	> **Note**: Ensure you add the .xcframework files, rather than the .framework files.
-
-5. Under the **Embed** column, ensure **Embed & Sign** is set for all frameworks.
+5. Under the **Embed** column, ensure **Embed & Sign** is set.
 
 ----
 
@@ -278,13 +251,13 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         let localizedDescription: String = result.localizedDescription // A human-readable suggestion about what to do to get to a successful claim
         let frame: UIImage? = result.frame // An optional image containing a single frame of the user, if enabled for your service provider (see important security info below)
 
-    case let .cancelled(canceller):
+    case let .canceled(canceler):
         // Either:
         //
-        // (a) The user cancelled iProov by pressing the close button, or sending the
-        // app to the background (canceller will be .user), or
+        // (a) The user canceled iProov by pressing the close button, or sending the
+        // app to the background (canceler will be .user), or
         //
-        // (b) You cancelled iProov by calling cancel() on the SDK (canceller will be .app) - see cancellation below.
+        // (b) You canceled iProov by calling cancel() on the SDK (canceler will be .app) - see cancelation below.
 
     case let .error(error):
         // The user was not successfully verified/enrolled due to an error (e.g. lost internet connection)
@@ -305,7 +278,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 > * The `frame` returned in the success & failure results should be used for UI/UX purposes only. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server [`/validate`](https://secure.iproov.me/docs.html#operation/userVerifyValidate) API call.
 
 
-### Cancelling the SDK
+### Canceling the SDK
 
 Under normal circumstances, the user will be in control of the completion of the iProov scan, i.e. they will either complete the scan, or use the close button to cancel. In some cases, you (the integrator) may wish to cancel the iProov scan programmatically, for example in response to a timeout or change of conditions in your app.
 
@@ -315,7 +288,7 @@ To cancel the iProov SDK, you first need to hold a reference to the iProov sessi
 let session = IProov.launch(...)
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 10) { // Example - cancel the session after 10 sec
-    session.cancel() // Will return true if the session was successfully cancelled
+    session.cancel() // Will return true if the session was successfully canceled
 }
 ```
 

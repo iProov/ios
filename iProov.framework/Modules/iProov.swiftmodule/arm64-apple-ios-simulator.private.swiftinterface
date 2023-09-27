@@ -11,10 +11,10 @@ import CoreMotion
 import CoreVideo
 import Dispatch
 import Foundation
+import Network
 import OpenGLES
 import QuartzCore
 import Security
-import Starscream
 import Swift
 import UIKit
 import VideoToolbox
@@ -24,6 +24,7 @@ import _Concurrency
 import _StringProcessing
 @_exported import iProov
 import simd
+import zlib
 @_hasMissingDesignatedInitializers @objc(IPSession) @objcMembers final public class Session : ObjectiveC.NSObject {
   @objc @discardableResult
   final public func cancel() -> Swift.Bool
@@ -80,7 +81,7 @@ extension WebKit.WKWebView {
 }
 extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
-  @objc public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, cancelled: @escaping (iProov.Canceller) -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
+  @objc public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, canceled: @escaping (iProov.Canceler) -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
 @_inheritsConvenienceInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
   @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
@@ -202,7 +203,7 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   }
   @objc deinit
 }
-@objc(IPCanceller) public enum Canceller : Swift.Int {
+@objc(IPCanceler) public enum Canceler : Swift.Int {
   case user
   case integration
   public init?(rawValue: Swift.Int)
@@ -217,7 +218,7 @@ public enum Status {
   case processing(progress: Swift.Double, message: Swift.String)
   case success(iProov.SuccessResult)
   case failure(iProov.FailureResult)
-  case cancelled(iProov.Canceller)
+  case canceled(iProov.Canceler)
   case error(iProov.IProovError)
   public var isFinished: Swift.Bool {
     get
@@ -225,7 +226,7 @@ public enum Status {
 }
 extension iProov.IProov {
   @discardableResult
-  public static func launch(streamingURL: Swift.String, token: Swift.String, options: iProov.Options = Options(), _ callback: @escaping iProov.Callback) -> iProov.Session
+  public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options = Options(), _ callback: @escaping iProov.Callback) -> iProov.Session
   @objc public static var keyPair: iProov.KeyPair
   @objc(versionStr) public static var version: Swift.String {
     @objc get
@@ -271,6 +272,6 @@ extension iProov.Options.NaturalFilter.Style : Swift.RawRepresentable {}
 extension iProov.FailureReason : Swift.Equatable {}
 extension iProov.FailureReason : Swift.Hashable {}
 extension iProov.FailureReason : Swift.RawRepresentable {}
-extension iProov.Canceller : Swift.Equatable {}
-extension iProov.Canceller : Swift.Hashable {}
-extension iProov.Canceller : Swift.RawRepresentable {}
+extension iProov.Canceler : Swift.Equatable {}
+extension iProov.Canceler : Swift.Hashable {}
+extension iProov.Canceler : Swift.RawRepresentable {}
