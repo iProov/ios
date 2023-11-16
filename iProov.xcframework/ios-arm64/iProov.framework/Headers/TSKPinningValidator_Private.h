@@ -12,10 +12,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /* Methods that are internal to TrustKit */
-@interface TSKPinningValidator (Internal)
+@interface IPTSKPinningValidator (Internal)
 
 /**
- Initialize an instance of TSKPinningValidator.
+ Initialize an instance of IPTSKPinningValidator.
  
  @param domainPinningPolicies A dictionnary of domains and the corresponding pinning policy.
  @param hashCache The hash cache to use. If nil, no caching is performed, performance may suffer.
@@ -25,20 +25,20 @@ NS_ASSUME_NONNULL_BEGIN
  @return Initialized instance
  */
 - (instancetype _Nullable)initWithDomainPinningPolicies:(NSDictionary<NSString *, TKSDomainPinningPolicy *> *)domainPinningPolicies
-                                              hashCache:(TSKSPKIHashCache *)hashCache
+                                              hashCache:(IPTSKSPKIHashCache *)hashCache
                           ignorePinsForUserTrustAnchors:(BOOL)ignorePinsForUserTrustAnchors
                                 validationCallbackQueue:(dispatch_queue_t)validationCallbackQueue
-                                     validationCallback:(TSKPinningValidatorCallback)validationCallback;
+                                     validationCallback:(IPTSKPinningValidatorCallback)validationCallback;
 
 @end
 
 
-@interface TSKPinningValidatorResult (Internal)
+@interface IPTSKPinningValidatorResult (Internal)
 
 - (instancetype _Nullable)initWithServerHostname:(NSString *)serverHostname
                                      serverTrust:(SecTrustRef)serverTrust
                                 validationResult:(TSKTrustEvaluationResult)validationResult
-                              finalTrustDecision:(TSKTrustDecision)finalTrustDecision
+                              finalTrustDecision:(IPTSKTrustDecision)finalTrustDecision
                               validationDuration:(NSTimeInterval)validationDuration;
 
 @end

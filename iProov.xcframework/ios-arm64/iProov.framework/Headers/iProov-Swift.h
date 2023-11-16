@@ -299,6 +299,7 @@ SWIFT_PROTOCOL_NAMED("Filter")
 
 
 
+
 SWIFT_CLASS_NAMED("IProov")
 @interface IProov : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -366,7 +367,6 @@ SWIFT_CLASS_NAMED("KeyPair")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 
@@ -482,7 +482,6 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 

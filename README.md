@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v11.0.0
+# iProov Biometrics iOS SDK v11.0.1
 
 ## Introduction
 
@@ -19,7 +19,6 @@ The iProov Biometrics SDK includes the following third-party code:
 
 - A [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2)
 - [Expression](https://github.com/nicklockwood/Expression)
-- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 - [CryptoExportImportManager](https://github.com/DigitalLeaves/CryptoExportImportManager)
 - [SwiftProtobuf](https://github.com/apple/swift-protobuf)
 - [TrustKit](https://github.com/datatheorem/TrustKit)
@@ -83,7 +82,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.0.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.0.1 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -95,7 +94,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "11.0.0")
+	.upToNextMajor(from: "11.0.1")
 ),
 ```
 
@@ -177,7 +176,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/11.0.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/11.0.1).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
@@ -218,8 +217,12 @@ Once you have obtained a token, you can simply call `IProov.launch()`:
 ```swift
 import iProov
 
-let streamingURL = "wss://eu.rp.secure.iproov.me/ws" // Substitute as appropriate
 let token = "{{ your token here }}"
+let streamingURLString = "wss://eu.rp.secure.iproov.me/ws" // Substitute as appropriate
+
+guard let streamingURL = URL(string: streamingURLString) else {
+    // handle your URL error
+}
 
 IProov.launch(streamingURL: streamingURL, token: token) { status in
 
@@ -257,7 +260,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         // (a) The user canceled iProov by pressing the close button, or sending the
         // app to the background (canceler will be .user), or
         //
-        // (b) You canceled iProov by calling cancel() on the SDK (canceler will be .app) - see cancelation below.
+        // (b) You canceled iProov by calling cancel() on the SDK (canceler will be .integration) - see cancelation below.
 
     case let .error(error):
         // The user was not successfully verified/enrolled due to an error (e.g. lost internet connection)
