@@ -11,7 +11,7 @@ extension UIImage {
             return jpegData(compressionQuality: compressionQuality)
         }
 
-        guard let ciImage = ciImage,
+        guard let ciImage,
               let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent)
         else { return nil }
 
