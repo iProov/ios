@@ -7094,7 +7094,6 @@
           "RawDocComment"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
-        "hasMissingDesignatedInitializers": true,
         "inheritsConvenienceInitializers": true,
         "superclassNames": [
           "ObjectiveC.NSObject"
@@ -9731,6 +9730,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "iProov",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "CommonCrypto",
         "printedName": "CommonCrypto",
         "declKind": "Import",
@@ -10509,6 +10518,33 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "iProov",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "simd",
+        "printedName": "simd",
+        "declKind": "Import",
+        "moduleName": "iProov"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "iProov",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "simd",
         "printedName": "simd",
         "declKind": "Import",
@@ -11017,6 +11053,540 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "String",
+        "printedName": "String",
+        "declKind": "Struct",
+        "usr": "s:SS",
+        "mangledName": "$sSS",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CodingKeyRepresentable",
+            "printedName": "CodingKeyRepresentable",
+            "usr": "s:s22CodingKeyRepresentableP",
+            "mangledName": "$ss22CodingKeyRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasContiguousBytes",
+            "printedName": "_HasContiguousBytes",
+            "usr": "s:s19_HasContiguousBytesP",
+            "mangledName": "$ss19_HasContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStream",
+            "printedName": "TextOutputStream",
+            "usr": "s:s16TextOutputStreamP",
+            "mangledName": "$ss16TextOutputStreamP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStreamable",
+            "printedName": "TextOutputStreamable",
+            "usr": "s:s20TextOutputStreamableP",
+            "mangledName": "$ss20TextOutputStreamableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "printedName": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "usr": "s:s41_ExpressibleByBuiltinUnicodeScalarLiteralP",
+            "mangledName": "$ss41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinStringLiteral",
+            "printedName": "_ExpressibleByBuiltinStringLiteral",
+            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringLiteral",
+            "printedName": "ExpressibleByStringLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringLiteralType",
+                "printedName": "StringLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s26ExpressibleByStringLiteralP",
+            "mangledName": "$ss26ExpressibleByStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ExtendedGraphemeClusterLiteralType",
+                "printedName": "ExtendedGraphemeClusterLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByUnicodeScalarLiteral",
+            "printedName": "ExpressibleByUnicodeScalarLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarLiteralType",
+                "printedName": "UnicodeScalarLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+            "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "StringProtocol",
+            "printedName": "StringProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UTF8View",
+                "printedName": "UTF8View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF8View",
+                    "printedName": "Swift.String.UTF8View",
+                    "usr": "s:SS8UTF8ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UTF16View",
+                "printedName": "UTF16View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF16View",
+                    "printedName": "Swift.String.UTF16View",
+                    "usr": "s:SS9UTF16ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarView",
+                "printedName": "UnicodeScalarView",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnicodeScalarView",
+                    "printedName": "Swift.String.UnicodeScalarView",
+                    "usr": "s:SS17UnicodeScalarViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sy",
+            "mangledName": "$sSy"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringInterpolation",
+            "printedName": "ExpressibleByStringInterpolation",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringInterpolation",
+                "printedName": "StringInterpolation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultStringInterpolation",
+                    "printedName": "Swift.DefaultStringInterpolation",
+                    "usr": "s:s26DefaultStringInterpolationV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s32ExpressibleByStringInterpolationP",
+            "mangledName": "$ss32ExpressibleByStringInterpolationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MirrorPath",
+            "printedName": "MirrorPath",
+            "usr": "s:s10MirrorPathP",
+            "mangledName": "$ss10MirrorPathP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
           }
         ]
       },
@@ -11821,6 +12391,386 @@
             "printedName": "_ExpressibleByImageLiteral",
             "usr": "s:s26_ExpressibleByImageLiteralP",
             "mangledName": "$ss26_ExpressibleByImageLiteralP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Int",
+        "printedName": "Int",
+        "declKind": "Struct",
+        "usr": "s:Si",
+        "mangledName": "$sSi",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "FixedWidthInteger",
+            "printedName": "FixedWidthInteger",
+            "usr": "s:s17FixedWidthIntegerP",
+            "mangledName": "$ss17FixedWidthIntegerP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SignedInteger",
+            "printedName": "SignedInteger",
+            "usr": "s:SZ",
+            "mangledName": "$sSZ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinIntegerLiteral",
+            "printedName": "_ExpressibleByBuiltinIntegerLiteral",
+            "usr": "s:s35_ExpressibleByBuiltinIntegerLiteralP",
+            "mangledName": "$ss35_ExpressibleByBuiltinIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BinaryInteger",
+            "printedName": "BinaryInteger",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Words",
+                "printedName": "Words",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Words",
+                    "printedName": "Swift.Int.Words",
+                    "usr": "s:Si5WordsV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sz",
+            "mangledName": "$sSz"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SignedNumeric",
+            "printedName": "SignedNumeric",
+            "usr": "s:s13SignedNumericP",
+            "mangledName": "$ss13SignedNumericP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Numeric",
+            "printedName": "Numeric",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Magnitude",
+                "printedName": "Magnitude",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt",
+                    "printedName": "Swift.UInt",
+                    "usr": "s:Su"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sj",
+            "mangledName": "$sSj"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Strideable",
+            "printedName": "Strideable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Stride",
+                "printedName": "Stride",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sx",
+            "mangledName": "$sSx"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AdditiveArithmetic",
+            "printedName": "AdditiveArithmetic",
+            "usr": "s:s18AdditiveArithmeticP",
+            "mangledName": "$ss18AdditiveArithmeticP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByIntegerLiteral",
+            "printedName": "ExpressibleByIntegerLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "IntegerLiteralType",
+                "printedName": "IntegerLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s27ExpressibleByIntegerLiteralP",
+            "mangledName": "$ss27ExpressibleByIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CodingKeyRepresentable",
+            "printedName": "CodingKeyRepresentable",
+            "usr": "s:s22CodingKeyRepresentableP",
+            "mangledName": "$ss22CodingKeyRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MirrorPath",
+            "printedName": "MirrorPath",
+            "usr": "s:s10MirrorPathP",
+            "mangledName": "$ss10MirrorPathP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasCustomAnyHashableRepresentation",
+            "printedName": "_HasCustomAnyHashableRepresentation",
+            "usr": "s:s35_HasCustomAnyHashableRepresentationP",
+            "mangledName": "$ss35_HasCustomAnyHashableRepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SIMDScalar",
+            "printedName": "SIMDScalar",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SIMDMaskScalar",
+                "printedName": "SIMDMaskScalar",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD2Storage",
+                "printedName": "SIMD2Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD2Storage",
+                    "printedName": "Swift.Int.SIMD2Storage",
+                    "usr": "s:Si12SIMD2StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD4Storage",
+                "printedName": "SIMD4Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD4Storage",
+                    "printedName": "Swift.Int.SIMD4Storage",
+                    "usr": "s:Si12SIMD4StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD8Storage",
+                "printedName": "SIMD8Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD8Storage",
+                    "printedName": "Swift.Int.SIMD8Storage",
+                    "usr": "s:Si12SIMD8StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD16Storage",
+                "printedName": "SIMD16Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD16Storage",
+                    "printedName": "Swift.Int.SIMD16Storage",
+                    "usr": "s:Si13SIMD16StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD32Storage",
+                "printedName": "SIMD32Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD32Storage",
+                    "printedName": "Swift.Int.SIMD32Storage",
+                    "usr": "s:Si13SIMD32StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD64Storage",
+                "printedName": "SIMD64Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD64Storage",
+                    "printedName": "Swift.Int.SIMD64Storage",
+                    "usr": "s:Si13SIMD64StorageV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s10SIMDScalarP",
+            "mangledName": "$ss10SIMDScalarP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_FormatSpecifiable",
+            "printedName": "_FormatSpecifiable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_Arg",
+                "printedName": "_Arg",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation18_FormatSpecifiableP",
+            "mangledName": "$s10Foundation18_FormatSpecifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
           }
         ]
       },
@@ -13159,268 +14109,30 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
       "kind": "StringLiteral",
-      "offset": 161,
+      "offset": 150,
       "length": 10,
       "value": "\"id_match\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
       "kind": "StringLiteral",
-      "offset": 161,
+      "offset": 150,
       "length": 10,
       "value": "\"id_match\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
       "kind": "StringLiteral",
-      "offset": 256,
+      "offset": 234,
       "length": 18,
       "value": "\"genuine_presence\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
       "kind": "StringLiteral",
-      "offset": 256,
+      "offset": 234,
       "length": 18,
       "value": "\"genuine_presence\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 527,
-      "length": 15,
-      "value": "\"video_profile\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 571,
-      "length": 15,
-      "value": "\"video_bitrate\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 615,
-      "length": 15,
-      "value": "\"video_quality\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 664,
-      "length": 21,
-      "value": "\"video_quality_alpha\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 527,
-      "length": 15,
-      "value": "\"video_profile\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 571,
-      "length": 15,
-      "value": "\"video_bitrate\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 615,
-      "length": 15,
-      "value": "\"video_quality\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 664,
-      "length": 21,
-      "value": "\"video_quality_alpha\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2259,
-      "length": 16,
-      "value": "\"assurance_type\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2318,
-      "length": 11,
-      "value": "\"user_name\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2365,
-      "length": 9,
-      "value": "\"sp_name\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2433,
-      "length": 17,
-      "value": "\"clux_parameters\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2525,
-      "length": 21,
-      "value": "\"deprecation_warning\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2581,
-      "length": 16,
-      "value": "\"lvn_parameters\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2627,
-      "length": 16,
-      "value": "\"gpa_parameters\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2680,
-      "length": 5,
-      "value": "\"rtf\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2731,
-      "length": 5,
-      "value": "\"sim\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2772,
-      "length": 5,
-      "value": "\"dpt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2822,
-      "length": 5,
-      "value": "\"slg\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2854,
-      "length": 15,
-      "value": "\"flash_pattern\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2895,
-      "length": 12,
-      "value": "\"flash_code\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2259,
-      "length": 16,
-      "value": "\"assurance_type\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2318,
-      "length": 11,
-      "value": "\"user_name\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2365,
-      "length": 9,
-      "value": "\"sp_name\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2433,
-      "length": 17,
-      "value": "\"clux_parameters\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2525,
-      "length": 21,
-      "value": "\"deprecation_warning\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2581,
-      "length": 16,
-      "value": "\"lvn_parameters\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2627,
-      "length": 16,
-      "value": "\"gpa_parameters\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2680,
-      "length": 5,
-      "value": "\"rtf\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2731,
-      "length": 5,
-      "value": "\"sim\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2772,
-      "length": 5,
-      "value": "\"dpt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2822,
-      "length": 5,
-      "value": "\"slg\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2854,
-      "length": 15,
-      "value": "\"flash_pattern\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClaimResponse.swift",
-      "kind": "StringLiteral",
-      "offset": 2895,
-      "length": 12,
-      "value": "\"flash_code\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/Protobuf\/ClientAbort.pb.swift",
@@ -13677,98 +14389,98 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1602,
+      "offset": 1587,
       "length": 5,
       "value": "\"dpt\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1640,
+      "offset": 1625,
       "length": 5,
       "value": "\"avs\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1674,
+      "offset": 1659,
       "length": 5,
       "value": "\"xcv\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1703,
+      "offset": 1688,
       "length": 5,
       "value": "\"opt\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1740,
+      "offset": 1725,
       "length": 5,
       "value": "\"dal\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1771,
+      "offset": 1756,
       "length": 5,
       "value": "\"pky\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1804,
+      "offset": 1789,
       "length": 5,
       "value": "\"tsg\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1602,
+      "offset": 1587,
       "length": 5,
       "value": "\"dpt\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1640,
+      "offset": 1625,
       "length": 5,
       "value": "\"avs\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1674,
+      "offset": 1659,
       "length": 5,
       "value": "\"xcv\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1703,
+      "offset": 1688,
       "length": 5,
       "value": "\"opt\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1740,
+      "offset": 1725,
       "length": 5,
       "value": "\"dal\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1771,
+      "offset": 1756,
       "length": 5,
       "value": "\"pky\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientStart.swift",
       "kind": "StringLiteral",
-      "offset": 1804,
+      "offset": 1789,
       "length": 5,
       "value": "\"tsg\""
     },
@@ -13803,196 +14515,196 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 794,
+      "offset": 790,
       "length": 12,
       "value": "\"event_type\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 858,
+      "offset": 854,
       "length": 15,
       "value": "\"battery_level\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 912,
+      "offset": 908,
       "length": 14,
       "value": "\"fd_timestamp\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 966,
+      "offset": 962,
       "length": 16,
       "value": "\"fd_initialized\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1024,
+      "offset": 1020,
       "length": 30,
       "value": "\"video_stream_ready_timestamp\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1095,
+      "offset": 1091,
       "length": 17,
       "value": "\"fd_success_rate\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1147,
+      "offset": 1143,
       "length": 21,
       "value": "\"encoder_initialized\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1206,
+      "offset": 1202,
       "length": 27,
       "value": "\"face_align_to_stream_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1275,
+      "offset": 1271,
       "length": 29,
       "value": "\"authentication_capture_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1340,
+      "offset": 1336,
       "length": 24,
       "value": "\"frame_mean_encode_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1431,
+      "offset": 1427,
       "length": 22,
       "value": "\"camera_supported_res\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1497,
+      "offset": 1493,
       "length": 21,
       "value": "\"fd_mean_detect_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1549,
+      "offset": 1545,
       "length": 18,
       "value": "\"total_sent_bytes\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1616,
+      "offset": 1612,
       "length": 19,
       "value": "\"total_frame_count\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 794,
+      "offset": 790,
       "length": 12,
       "value": "\"event_type\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 858,
+      "offset": 854,
       "length": 15,
       "value": "\"battery_level\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 912,
+      "offset": 908,
       "length": 14,
       "value": "\"fd_timestamp\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 966,
+      "offset": 962,
       "length": 16,
       "value": "\"fd_initialized\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1024,
+      "offset": 1020,
       "length": 30,
       "value": "\"video_stream_ready_timestamp\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1095,
+      "offset": 1091,
       "length": 17,
       "value": "\"fd_success_rate\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1147,
+      "offset": 1143,
       "length": 21,
       "value": "\"encoder_initialized\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1206,
+      "offset": 1202,
       "length": 27,
       "value": "\"face_align_to_stream_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1275,
+      "offset": 1271,
       "length": 29,
       "value": "\"authentication_capture_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1340,
+      "offset": 1336,
       "length": 24,
       "value": "\"frame_mean_encode_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1431,
+      "offset": 1427,
       "length": 22,
       "value": "\"camera_supported_res\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1497,
+      "offset": 1493,
       "length": 21,
       "value": "\"fd_mean_detect_time\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1549,
+      "offset": 1545,
       "length": 18,
       "value": "\"total_sent_bytes\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ClientTelemetry.swift",
       "kind": "StringLiteral",
-      "offset": 1616,
+      "offset": 1612,
       "length": 19,
       "value": "\"total_frame_count\""
     },
@@ -14737,20 +15449,6 @@
       "offset": 158,
       "length": 14,
       "value": "\"iProov.DebugRectLayer\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Video\/Encoder\/DepthDataProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 259,
-      "length": 5,
-      "value": "\"flt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Video\/Encoder\/DepthDataProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 259,
-      "length": 5,
-      "value": "\"flt\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftProtobuf\/descriptor.pb.swift",
@@ -21837,20 +22535,6 @@
       "value": "0"
     },
     {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/GPA\/GPAParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 208,
-      "length": 5,
-      "value": "\"fls\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/GPA\/GPAParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 208,
-      "length": 5,
-      "value": "\"fls\""
-    },
-    {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftProtobuf\/HashVisitor.swift",
       "kind": "IntegerLiteral",
       "offset": 660,
@@ -22224,14 +22908,14 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftProtobuf\/JSONDecoder.swift",
       "kind": "IntegerLiteral",
-      "offset": 709,
+      "offset": 696,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftProtobuf\/JSONDecoder.swift",
       "kind": "BooleanLiteral",
-      "offset": 736,
+      "offset": 723,
       "length": 5,
       "value": "false"
     },
@@ -22867,71 +23551,15 @@
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1257,
-      "length": 4,
-      "value": "\"tc\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1294,
-      "length": 4,
-      "value": "\"tf\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1334,
-      "length": 4,
-      "value": "\"tb\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1381,
-      "length": 4,
-      "value": "\"sd\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1257,
-      "length": 4,
-      "value": "\"tc\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1294,
-      "length": 4,
-      "value": "\"tf\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1334,
-      "length": 4,
-      "value": "\"tb\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1381,
-      "length": 4,
-      "value": "\"sd\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
       "kind": "FloatLiteral",
-      "offset": 3287,
+      "offset": 1277,
       "length": 3,
       "value": "0.4"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/LightingModel\/LightingModel.swift",
       "kind": "FloatLiteral",
-      "offset": 3334,
+      "offset": 1324,
       "length": 3,
       "value": "0.4"
     },
@@ -22987,296 +23615,100 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2186,
+      "offset": 2175,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "IntegerLiteral",
-      "offset": 2228,
+      "offset": 2217,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2282,
+      "offset": 2271,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "Array",
-      "offset": 2330,
+      "offset": 2319,
       "length": 11,
       "value": "[1, 1, 1.3]"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2392,
+      "offset": 2381,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2448,
+      "offset": 2437,
       "length": 4,
       "value": "0.15"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2505,
+      "offset": 2494,
       "length": 4,
       "value": "1.25"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2551,
+      "offset": 2540,
       "length": 3,
       "value": "0.2"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2604,
+      "offset": 2593,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2655,
+      "offset": 2644,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2706,
+      "offset": 2695,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "IntegerLiteral",
-      "offset": 2757,
+      "offset": 2746,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "IntegerLiteral",
-      "offset": 2819,
+      "offset": 2808,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
       "kind": "FloatLiteral",
-      "offset": 2866,
+      "offset": 2855,
       "length": 4,
       "value": "0.95"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 2955,
-      "length": 5,
-      "value": "\"lui\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 2987,
-      "length": 5,
-      "value": "\"frc\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3029,
-      "length": 5,
-      "value": "\"fdt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3064,
-      "length": 5,
-      "value": "\"wgv\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3105,
-      "length": 5,
-      "value": "\"vps\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3148,
-      "length": 5,
-      "value": "\"set\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3191,
-      "length": 5,
-      "value": "\"fsr\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3223,
-      "length": 5,
-      "value": "\"fof\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3263,
-      "length": 5,
-      "value": "\"lft\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3300,
-      "length": 5,
-      "value": "\"mlt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3338,
-      "length": 5,
-      "value": "\"mst\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3380,
-      "length": 5,
-      "value": "\"frw\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3435,
-      "length": 5,
-      "value": "\"mmx\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3470,
-      "length": 5,
-      "value": "\"crs\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 2955,
-      "length": 5,
-      "value": "\"lui\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 2987,
-      "length": 5,
-      "value": "\"frc\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3029,
-      "length": 5,
-      "value": "\"fdt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3064,
-      "length": 5,
-      "value": "\"wgv\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3105,
-      "length": 5,
-      "value": "\"vps\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3148,
-      "length": 5,
-      "value": "\"set\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3191,
-      "length": 5,
-      "value": "\"fsr\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3223,
-      "length": 5,
-      "value": "\"fof\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3263,
-      "length": 5,
-      "value": "\"lft\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3300,
-      "length": 5,
-      "value": "\"mlt\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3338,
-      "length": 5,
-      "value": "\"mst\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3380,
-      "length": 5,
-      "value": "\"frw\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3435,
-      "length": 5,
-      "value": "\"mmx\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/LivenessParameters.swift",
-      "kind": "StringLiteral",
-      "offset": 3470,
-      "length": 5,
-      "value": "\"crs\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Localization\/Localization.swift",
@@ -23407,14 +23839,14 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/NativeBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2046,
+      "offset": 1771,
       "length": 20,
       "value": "\"iProov.ScriptMessageHandler\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/NativeBridge.swift",
       "kind": "BooleanLiteral",
-      "offset": 4658,
+      "offset": 4383,
       "length": 5,
       "value": "false"
     },
@@ -23477,828 +23909,338 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 1163,
+      "offset": 912,
       "length": 22,
       "value": "\"HelveticaNeue-Medium\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 1239,
+      "offset": 988,
       "length": 7,
       "value": "\"Close\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 1461,
+      "offset": 1210,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "BooleanLiteral",
-      "offset": 1508,
+      "offset": 1257,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "BooleanLiteral",
-      "offset": 1557,
+      "offset": 1306,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 1631,
+      "offset": 1380,
       "length": 3,
       "value": "0.4"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "Array",
-      "offset": 1781,
+      "offset": 1530,
       "length": 191,
       "value": "[\"amMeV6gb9QNx0Zf7FtJ19Wa\/t2B7KpCF\/1n2Js3UuSU=\", \"BbrVIhEYvvBL6FiyC7nzVKLLDU3GPYdqHWAfk0ev\/80=\"]"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 2017,
+      "offset": 1766,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 4933,
+      "offset": 3442,
       "length": 9,
       "value": "\"#01AC41\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 5353,
+      "offset": 3862,
       "length": 9,
       "value": "\"#01AC41\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 5742,
+      "offset": 4251,
       "length": 6,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 5750,
+      "offset": 4259,
       "length": 7,
       "value": "2"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 5742,
+      "offset": 4251,
       "length": 6,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 5750,
+      "offset": 4259,
       "length": 7,
       "value": "2"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5923,
+      "offset": 4432,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5930,
+      "offset": 4439,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5944,
+      "offset": 4453,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5951,
+      "offset": 4460,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5964,
+      "offset": 4473,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5971,
+      "offset": 4480,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5985,
+      "offset": 4494,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6044,
+      "offset": 4553,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6052,
+      "offset": 4561,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6066,
+      "offset": 4575,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6074,
+      "offset": 4583,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6087,
+      "offset": 4596,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6095,
+      "offset": 4604,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6109,
+      "offset": 4618,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6467,
+      "offset": 4976,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6474,
+      "offset": 4983,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6488,
+      "offset": 4997,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6495,
+      "offset": 5004,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6508,
+      "offset": 5017,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6515,
+      "offset": 5024,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6529,
+      "offset": 5038,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6595,
+      "offset": 5104,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6603,
+      "offset": 5112,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6617,
+      "offset": 5126,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6625,
+      "offset": 5134,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6638,
+      "offset": 5147,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6646,
+      "offset": 5155,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 6660,
+      "offset": 5169,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 5605,
+      "offset": 4114,
       "length": 17,
       "value": "\"iProov.LineDrawingFilter\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 7014,
+      "offset": 5523,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 7014,
+      "offset": 5523,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 6887,
+      "offset": 5396,
       "length": 13,
       "value": "\"iProov.NaturalFilter\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 7321,
+      "offset": 5830,
       "length": 15,
       "value": "\"native_bridge\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 7321,
+      "offset": 5830,
       "length": 15,
       "value": "\"native_bridge\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 331,
-      "length": 18,
-      "value": "\"foreground_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 381,
-      "length": 18,
-      "value": "\"background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 331,
-      "length": 18,
-      "value": "\"foreground_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 381,
-      "length": 18,
-      "value": "\"background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 619,
-      "length": 25,
-      "value": "\"ready_oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 684,
-      "length": 29,
-      "value": "\"not_ready_oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 619,
-      "length": 25,
-      "value": "\"ready_oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 684,
-      "length": 29,
-      "value": "\"not_ready_oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 917,
-      "length": 19,
-      "value": "\"oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 977,
-      "length": 29,
-      "value": "\"completed_oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 917,
-      "length": 19,
-      "value": "\"oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 977,
-      "length": 29,
-      "value": "\"completed_oval_stroke_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1772,
-      "length": 8,
-      "value": "\"filter\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1831,
-      "length": 28,
-      "value": "\"genuine_presence_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1903,
-      "length": 20,
-      "value": "\"liveness_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1954,
-      "length": 18,
-      "value": "\"title_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2010,
-      "length": 25,
-      "value": "\"header_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2072,
-      "length": 25,
-      "value": "\"close_button_tint_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2167,
-      "length": 20,
-      "value": "\"close_button_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2213,
-      "length": 12,
-      "value": "\"logo_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2257,
-      "length": 19,
-      "value": "\"prompt_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2314,
-      "length": 25,
-      "value": "\"prompt_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2376,
-      "length": 24,
-      "value": "\"prompt_rounded_corners\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2439,
-      "length": 26,
-      "value": "\"disable_exterior_effects\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2495,
-      "length": 16,
-      "value": "\"surround_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1772,
-      "length": 8,
-      "value": "\"filter\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1831,
-      "length": 28,
-      "value": "\"genuine_presence_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1903,
-      "length": 20,
-      "value": "\"liveness_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 1954,
-      "length": 18,
-      "value": "\"title_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2010,
-      "length": 25,
-      "value": "\"header_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2072,
-      "length": 25,
-      "value": "\"close_button_tint_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2167,
-      "length": 20,
-      "value": "\"close_button_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2213,
-      "length": 12,
-      "value": "\"logo_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2257,
-      "length": 19,
-      "value": "\"prompt_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2314,
-      "length": 25,
-      "value": "\"prompt_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2376,
-      "length": 24,
-      "value": "\"prompt_rounded_corners\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2439,
-      "length": 26,
-      "value": "\"disable_exterior_effects\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 2495,
-      "length": 16,
-      "value": "\"surround_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 6865,
-      "length": 8,
-      "value": "\"filter\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 6924,
-      "length": 28,
-      "value": "\"genuine_presence_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 6996,
-      "length": 20,
-      "value": "\"liveness_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7047,
-      "length": 18,
-      "value": "\"title_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7103,
-      "length": 25,
-      "value": "\"header_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7165,
-      "length": 25,
-      "value": "\"close_button_tint_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7260,
-      "length": 20,
-      "value": "\"close_button_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7306,
-      "length": 12,
-      "value": "\"logo_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7350,
-      "length": 19,
-      "value": "\"prompt_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7407,
-      "length": 25,
-      "value": "\"prompt_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7469,
-      "length": 24,
-      "value": "\"prompt_rounded_corners\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7532,
-      "length": 26,
-      "value": "\"disable_exterior_effects\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7588,
-      "length": 16,
-      "value": "\"surround_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7681,
-      "length": 16,
-      "value": "\"strings_bundle\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7726,
-      "length": 15,
-      "value": "\"strings_table\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7778,
-      "length": 23,
-      "value": "\"presentation_delegate\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 6865,
-      "length": 8,
-      "value": "\"filter\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 6924,
-      "length": 28,
-      "value": "\"genuine_presence_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 6996,
-      "length": 20,
-      "value": "\"liveness_assurance\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7047,
-      "length": 18,
-      "value": "\"title_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7103,
-      "length": 25,
-      "value": "\"header_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7165,
-      "length": 25,
-      "value": "\"close_button_tint_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7260,
-      "length": 20,
-      "value": "\"close_button_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7306,
-      "length": 12,
-      "value": "\"logo_image\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7350,
-      "length": 19,
-      "value": "\"prompt_text_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7407,
-      "length": 25,
-      "value": "\"prompt_background_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7469,
-      "length": 24,
-      "value": "\"prompt_rounded_corners\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7532,
-      "length": 26,
-      "value": "\"disable_exterior_effects\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7588,
-      "length": 16,
-      "value": "\"surround_color\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7681,
-      "length": 16,
-      "value": "\"strings_bundle\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7726,
-      "length": 15,
-      "value": "\"strings_table\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/JavaScript Bridge\/OptionsBridge.swift",
-      "kind": "StringLiteral",
-      "offset": 7778,
-      "length": 23,
-      "value": "\"presentation_delegate\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/View\/OverlayView.swift",
@@ -24961,44 +24903,30 @@
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Security\/SecurityReport.swift",
       "kind": "IntegerLiteral",
-      "offset": 3228,
+      "offset": 3215,
       "length": 2,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Security\/SecurityReport.swift",
       "kind": "IntegerLiteral",
-      "offset": 3244,
+      "offset": 3231,
       "length": 2,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Security\/SecurityReport.swift",
       "kind": "IntegerLiteral",
-      "offset": 3260,
+      "offset": 3247,
       "length": 2,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Security\/SecurityReport.swift",
       "kind": "IntegerLiteral",
-      "offset": 3293,
+      "offset": 3280,
       "length": 2,
       "value": "1"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ServerError.swift",
-      "kind": "StringLiteral",
-      "offset": 344,
-      "length": 19,
-      "value": "\"error_description\""
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Model\/ServerError.swift",
-      "kind": "StringLiteral",
-      "offset": 344,
-      "length": 19,
-      "value": "\"error_description\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Video\/Camera\/ShaderPipeline.swift",
@@ -25426,6 +25354,328 @@
       "offset": 347,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1305,
+      "length": 3,
+      "value": "999"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1337,
+      "length": 3,
+      "value": "900"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1367,
+      "length": 3,
+      "value": "902"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1392,
+      "length": 3,
+      "value": "901"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1416,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1443,
+      "length": 3,
+      "value": "490"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1305,
+      "length": 3,
+      "value": "999"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1337,
+      "length": 3,
+      "value": "900"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1367,
+      "length": 3,
+      "value": "902"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1392,
+      "length": 3,
+      "value": "901"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1416,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1443,
+      "length": 3,
+      "value": "490"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1305,
+      "length": 3,
+      "value": "999"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1337,
+      "length": 3,
+      "value": "900"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1367,
+      "length": 3,
+      "value": "902"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1392,
+      "length": 3,
+      "value": "901"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1416,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1443,
+      "length": 3,
+      "value": "490"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2681,
+      "length": 6,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2694,
+      "length": 4,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2705,
+      "length": 5,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2717,
+      "length": 10,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2734,
+      "length": 4,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2745,
+      "length": 7,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2681,
+      "length": 6,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2694,
+      "length": 4,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2705,
+      "length": 5,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2717,
+      "length": 10,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2734,
+      "length": 4,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2745,
+      "length": 7,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2681,
+      "length": 6,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2694,
+      "length": 4,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2705,
+      "length": 5,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2717,
+      "length": 10,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2734,
+      "length": 4,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2745,
+      "length": 7,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "Array",
+      "offset": 3125,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "Array",
+      "offset": 6432,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "Dictionary",
+      "offset": 6486,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "StringLiteral",
+      "offset": 6530,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6575,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6660,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16427,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "IntegerLiteral",
+      "offset": 17523,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "BooleanLiteral",
+      "offset": 33613,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Vendored\/SwiftyJSON.swift",
+      "kind": "BooleanLiteral",
+      "offset": 33661,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Liveness\/Target.swift",
