@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '12.0'
+platform :ios, '11.0'
 
 target 'Example' do
   pod 'iProov', :path => '../'
@@ -13,7 +13,7 @@ post_install do |installer|
     # Xcode 14.3+ workaround for dependencies with deployment target <iOS11
     if ['MBProgressHUD'].include? target.name
       target.build_configurations.each do |config|
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
       end
     end
   end
