@@ -23952,118 +23952,83 @@
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "Array",
       "offset": 1530,
-      "length": 191,
-      "value": "[\"amMeV6gb9QNx0Zf7FtJ19Wa\/t2B7KpCF\/1n2Js3UuSU=\", \"BbrVIhEYvvBL6FiyC7nzVKLLDU3GPYdqHWAfk0ev\/80=\"]"
+      "length": 293,
+      "value": "[\"BbrVIhEYvvBL6FiyC7nzVKLLDU3GPYdqHWAfk0ev\/80=\", \"Sc7wL4FfOw8ued5w3JOSzu5MzB471PfqdyN4hnMYbX4=\", \"JdFERRONSeokpPRwHKoZgZPPGO+7YwoMHGHoe1BAq3c=\"]"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 1766,
+      "offset": 1868,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 3442,
+      "offset": 3544,
       "length": 9,
       "value": "\"#01AC41\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 3862,
+      "offset": 3964,
       "length": 9,
       "value": "\"#01AC41\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 4251,
+      "offset": 4353,
       "length": 6,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 4259,
+      "offset": 4361,
       "length": 7,
       "value": "2"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 4251,
+      "offset": 4353,
       "length": 6,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 4259,
+      "offset": 4361,
       "length": 7,
       "value": "2"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 4432,
+      "offset": 4534,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 4439,
+      "offset": 4541,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 4453,
+      "offset": 4555,
       "length": 4,
       "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 4460,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4473,
-      "length": 4,
-      "value": "64.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4480,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4494,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4553,
-      "length": 5,
-      "value": "250.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4561,
+      "offset": 4562,
       "length": 5,
       "value": "255.0"
     },
@@ -24071,13 +24036,13 @@
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
       "offset": 4575,
-      "length": 5,
-      "value": "250.0"
+      "length": 4,
+      "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 4583,
+      "offset": 4582,
       "length": 5,
       "value": "255.0"
     },
@@ -24085,160 +24050,195 @@
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
       "offset": 4596,
-      "length": 5,
-      "value": "250.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4604,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4618,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 4976,
-      "length": 4,
-      "value": "64.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4983,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 4997,
-      "length": 4,
-      "value": "64.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 5004,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 5017,
-      "length": 4,
-      "value": "64.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 5024,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 5038,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
-      "kind": "FloatLiteral",
-      "offset": 5104,
+      "offset": 4655,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5112,
+      "offset": 4663,
       "length": 5,
       "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 4677,
+      "length": 5,
+      "value": "250.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 4685,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 4698,
+      "length": 5,
+      "value": "250.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 4706,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 4720,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5078,
+      "length": 4,
+      "value": "64.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5085,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5099,
+      "length": 4,
+      "value": "64.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5106,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5119,
+      "length": 4,
+      "value": "64.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
       "offset": 5126,
       "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5140,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5206,
+      "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5134,
+      "offset": 5214,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5147,
+      "offset": 5228,
       "length": 5,
       "value": "250.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5155,
+      "offset": 5236,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "FloatLiteral",
-      "offset": 5169,
+      "offset": 5249,
+      "length": 5,
+      "value": "250.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5257,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
+      "kind": "FloatLiteral",
+      "offset": 5271,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 4114,
+      "offset": 4216,
       "length": 17,
       "value": "\"iProov.LineDrawingFilter\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 5523,
+      "offset": 5625,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "IntegerLiteral",
-      "offset": 5523,
+      "offset": 5625,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 5396,
+      "offset": 5498,
       "length": 13,
       "value": "\"iProov.NaturalFilter\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 5830,
+      "offset": 5932,
       "length": 15,
       "value": "\"native_bridge\""
     },
     {
       "filePath": "\/Users\/vagrant\/git\/iProov\/Classes\/Public API\/Options.swift",
       "kind": "StringLiteral",
-      "offset": 5830,
+      "offset": 5932,
       "length": 15,
       "value": "\"native_bridge\""
     },
