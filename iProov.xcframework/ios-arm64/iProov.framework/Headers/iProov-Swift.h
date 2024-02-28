@@ -373,7 +373,6 @@ SWIFT_CLASS_NAMED("KeyPair")
 
 
 
-
 @class NSBundle;
 @class UIColor;
 @class IPGenuinePresenceAssuranceOptions;

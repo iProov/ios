@@ -373,7 +373,6 @@ SWIFT_CLASS_NAMED("KeyPair")
 
 
 
-
 @class NSBundle;
 @class UIColor;
 @class IPGenuinePresenceAssuranceOptions;
@@ -884,7 +883,6 @@ SWIFT_CLASS_NAMED("KeyPair")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 

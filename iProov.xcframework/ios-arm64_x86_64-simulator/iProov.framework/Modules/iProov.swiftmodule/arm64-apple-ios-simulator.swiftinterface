@@ -83,7 +83,7 @@ extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
   @objc public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, canceled: @escaping (iProov.Canceler) -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
-@_inheritsConvenienceInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
   @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
   @objc public var dictionary: [Swift.String : Any] {
     @objc get
