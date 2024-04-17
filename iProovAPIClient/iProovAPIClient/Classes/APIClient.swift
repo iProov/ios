@@ -1,4 +1,4 @@
-// Copyright (c) 2023 iProov Ltd. All rights reserved.
+// Copyright (c) 2024 iProov Ltd. All rights reserved.
 
 // ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 //    THIS CODE IS PROVIDED FOR DEMO PURPOSES ONLY AND SHOULD NOT BE USED IN
@@ -133,6 +133,7 @@ public class APIClient {
             "token": token,
             "ip": "127.0.0.1",
             "client": appID,
+            "risk_profile": "",
         ]
 
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding(), headers: nil)
