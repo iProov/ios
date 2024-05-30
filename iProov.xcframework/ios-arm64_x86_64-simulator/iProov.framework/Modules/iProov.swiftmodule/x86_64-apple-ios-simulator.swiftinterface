@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -9,6 +9,7 @@ import CommonCrypto
 import CoreMedia
 import CoreMotion
 import CoreVideo
+import DeveloperToolsSupport
 import Dispatch
 import Foundation
 import Network
@@ -16,12 +17,14 @@ import OpenGLES
 import QuartzCore
 import Security
 import Swift
+import SwiftUI
 import UIKit
 import VideoToolbox
 import Vision
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @_exported import iProov
 import simd
 import zlib
@@ -75,6 +78,11 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   @objc func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
+@objc public protocol IProovViewDelegate {
+  @objc func willPresentIProovView()
+  @objc func didPresentIProovView()
+  @objc func didDismissIProovView()
+}
 extension WebKit.WKWebView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public func installIProovNativeBridge(cryptographyEnabled: Swift.Bool = false)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func uninstallNativeBridge()
@@ -83,12 +91,12 @@ extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
   @objc public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, canceled: @escaping (iProov.Canceler) -> Swift.Void, failure: @escaping (iProov.FailureResult) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void)
 }
-@_inheritsConvenienceInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
   @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
   @objc public var dictionary: [Swift.String : Any] {
     @objc get
   }
-  @objc public var filter: iProov.Filter
+  @objc public var filter: any iProov.Filter
   @objc public var stringsBundle: Foundation.Bundle?
   @objc public var stringsTable: Swift.String?
   @objc public var titleTextColor: UIKit.UIColor
@@ -105,9 +113,10 @@ extension iProov.IProov {
   @objc public var surroundColor: UIKit.UIColor
   @objc public var genuinePresenceAssurance: iProov.Options.GenuinePresenceAssurance
   @objc public var livenessAssurance: iProov.Options.LivenessAssurance
-  @objc weak public var presentationDelegate: iProov.IProovPresentationDelegate?
+  @objc weak public var presentationDelegate: (any iProov.IProovPresentationDelegate)?
   @objc public var certificates: [Swift.String]
   @objc public var timeout: Foundation.TimeInterval
+  @objc public var viewDelegate: (any iProov.IProovViewDelegate)?
   @objc override dynamic public init()
   @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) @objcMembers public class GenuinePresenceAssurance : ObjectiveC.NSObject {
     @objc public var notReadyOvalStrokeColor: UIKit.UIColor

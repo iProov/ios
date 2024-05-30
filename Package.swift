@@ -16,8 +16,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "iProov",
-            url: "https://github.com/iProov/ios/releases/download/11.0.3/iProov.xcframework.zip",
-            checksum: "6da33ee7eb224083a0565d4d6a1663025e51d9677d536db93fe6ab8b39d783cf"
+            url: "https://github.com/iProov/ios/releases/download/11.1.0/iProov.xcframework.zip",
+            checksum: "2237b89bb58ab33b3584d9ad518bc23f4b381fd2585ab04d047ae5e5f19288fe"
         ),
         .target(
             name: "iProovTargets",

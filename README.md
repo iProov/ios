@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v11.0.3
+# iProov Biometrics iOS SDK v11.1.0
 
 ## Introduction
 
@@ -19,7 +19,6 @@ The iProov Biometrics SDK includes the following third-party code:
 
 - A [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2)
 - [Expression](https://github.com/nicklockwood/Expression)
-- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 - [CryptoExportImportManager](https://github.com/DigitalLeaves/CryptoExportImportManager)
 - [SwiftProtobuf](https://github.com/apple/swift-protobuf)
 - [TrustKit](https://github.com/datatheorem/TrustKit)
@@ -83,7 +82,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.0.3 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.1.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -95,7 +94,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "11.0.3")
+	.upToNextMajor(from: "11.1.0")
 ),
 ```
 
@@ -177,7 +176,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/11.0.3).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/11.1.0).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
@@ -318,8 +317,9 @@ You can customize the iProov session by passing in an `Options` reference when l
 | `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. [See below for further details](#custom-iproovpresentationdelegate). | `DefaultPresentationDelegate()` |
 | `surroundColor` | Color applied the area outside the oval. | `.black.withAlphaComponent(0.4)` |
 | `headerBackgroundColor ` | The color of the header bar. | `nil` |
-| `certificates` | Certificates to be passed as a string (the certificate's Subject Public Key Info as SHA-256 hash). [See below for further details](#certificates). | iProov Server Certificates |
+| `certificates` | Certificates to be passed as a string (the certificate's Subject Public Key Info as SHA-256 hash). [See below for further details](#certificate-pinning). | iProov Server Certificates |
 | `timeout` | Network timeout to be applied to the WebSocket connection. | `10` (seconds) |
+| `viewDelegate` | Optional delegate to receive UI state updates. [See below for further details](#optional-iproovviewdelegate). | nil |
 
 ### Filter Options
 
@@ -432,6 +432,31 @@ extension MyViewController: IProovPresentationDelegate {
 > 2. To avoid the risk of retain cycles, `Options` only holds a `weak` reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
 
 > **Note**: The default UI options defined above have been verified to comply with the [WCAG 2.1 AA accessibility standard](https://www.iproov.com/blog/biometric-authentication-liveness-accessibility-inclusivity-wcag-regulations). Changing these values could result in non-compliance with the guidelines.
+
+### Optional `IProovViewDelegate`
+
+If you want to receive UI state updates from iProov SDK, you can set an object of a type conforming to `IProovViewDelegate` protocol to `options.viewDelegate`.
+
+Example:
+
+```swift
+extension MyViewController: IProovViewDelegate {
+    func willPresentIProovView() {
+    	// Called before the iProov user interface is presented.
+    }
+
+    func didPresentIProovView() {
+    	// Called when the iProov user interface is presented.
+    }
+
+    func didDismissIProovView() {
+    	// Called when the iProov user interface is dismissed.
+    }
+}
+
+let myViewController = MyViewController()
+options.viewDelegate = myViewController
+```
 
 ## Localization
 
