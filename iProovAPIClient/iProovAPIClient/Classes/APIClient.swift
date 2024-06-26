@@ -38,13 +38,13 @@ public class APIClient {
         public var errorDescription: String? {
             switch self {
             case .invalidImage:
-                return "Invalid image"
+                "Invalid image"
             case .noToken:
-                return "No token"
+                "No token"
             case .invalidJSON:
-                return "Invalid JSON"
+                "Invalid JSON"
             case let .serverError(errorDescription):
-                return errorDescription
+                errorDescription
             }
         }
     }

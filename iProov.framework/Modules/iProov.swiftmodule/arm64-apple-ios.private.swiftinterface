@@ -15,7 +15,6 @@ import Foundation
 import Network
 import OpenGLES
 import QuartzCore
-import Security
 import Swift
 import SwiftUI
 import UIKit
@@ -243,26 +242,6 @@ extension iProov.IProov {
   @objc public static var buildNumber: Swift.Int {
     @objc get
   }
-}
-public protocol SSLTrustValidator {
-  func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
-}
-open class SSLCert {
-  public init(data: Foundation.Data)
-  public init(key: Security.SecKey)
-  @objc deinit
-}
-open class SSLSecurity : iProov.SSLTrustValidator {
-  public var validatedDN: Swift.Bool
-  public var validateEntireChain: Swift.Bool
-  convenience public init(usePublicKeys: Swift.Bool = false)
-  public init(certs: [iProov.SSLCert], usePublicKeys: Swift.Bool)
-  open func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
-  public func extractPublicKey(_ data: Foundation.Data) -> Security.SecKey?
-  public func extractPublicKey(_ cert: Security.SecCertificate, policy: Security.SecPolicy) -> Security.SecKey?
-  public func certificateChain(_ trust: Security.SecTrust) -> [Foundation.Data]
-  public func publicKeyChain(_ trust: Security.SecTrust) -> [Security.SecKey]
-  @objc deinit
 }
 extension UIKit.UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
