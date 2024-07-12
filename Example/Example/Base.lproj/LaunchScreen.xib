@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,19 +14,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="q19-ri-rtx">
-                    <rect key="frame" x="123.66666666666669" y="394" width="167" height="108"/>
+                    <rect key="frame" x="40" y="380" width="334" height="136"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="q19-ri-rtx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="exJ-cn-QWC"/>
+                <constraint firstItem="q19-ri-rtx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="6gE-UB-ugo"/>
+                <constraint firstAttribute="trailing" secondItem="q19-ri-rtx" secondAttribute="trailing" constant="40" id="Qsa-Fq-oPP"/>
                 <constraint firstItem="q19-ri-rtx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="why-sP-oYU"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="283" y="349"/>
+            <point key="canvasLocation" x="282.60869565217394" y="348.88392857142856"/>
         </view>
     </objects>
     <resources>
-        <image name="Logo" width="166.66667175292969" height="107.66666412353516"/>
+        <image name="Logo" width="618.33331298828125" height="136"/>
     </resources>
 </document>

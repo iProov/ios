@@ -21,6 +21,7 @@
 "IProov_FailureTooDark" = "Move somewhere brighter";
 "IProov_FailureTooMuchMovement" = "Keep still";
 "IProov_FailureUnknown" = "Try again";
+"IProov_HoldStill" = "Hold still";
 "IProov_LanguageFile" = "en";
 "IProov_ProgressAssessingGenuinePresence" = "Assessing genuine presence…";
 "IProov_ProgressAssessingLiveness" = "Assessing liveness…";
