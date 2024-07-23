@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v11.1.1
+# iProov Biometrics iOS SDK v12.0.0-rc-2
 
 ## Introduction
 
@@ -8,7 +8,7 @@ The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app.
 
 ### Requirements
 
-- iOS 12.0 and above
+- iOS 13.0 and above
 - Xcode 14.1 and above
 
 The framework has been written in Swift 5.5, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
@@ -82,7 +82,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 11.1.1 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.0.0-rc-2 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -94,7 +94,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "11.1.1")
+	.upToNextMajor(from: "12.0.0-rc-2")
 ),
 ```
 
@@ -176,7 +176,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/11.1.1).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.0.0-rc-2).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
@@ -201,7 +201,7 @@ Before being able to launch iProov, you need to get a token to iProov against. T
 * A **verify** token - for logging-in an existing user
 * An **enrol** token - for registering a new user
 
-iProov offers Genuine Presence Assurance™ technology and Liveness Assurance™ technology:
+iProov offers Genuine Presence Assurance™ technology (also known as "Dynamic Liveness") and Liveness Assurance™ technology (also known as "Express Liveness"):
 
 * [**Genuine Presence Assurance**](https://www.iproov.com/iproov-system/technology/genuine-presence-assurance) verifies that an online remote user is the right person, a real person and that they are authenticating right now, for purposes of access control and security.
 * [**Liveness Assurance**](https://www.iproov.com/iproov-system/technology/liveness-assurance) verifies a remote online user is the right person and a real person for access control and security.
