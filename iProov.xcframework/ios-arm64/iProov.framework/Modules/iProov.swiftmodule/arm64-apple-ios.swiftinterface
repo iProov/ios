@@ -5,14 +5,18 @@
 import AVFoundation
 import Accelerate
 import AudioToolbox
+import CFNetwork
 import CommonCrypto
 import CoreMedia
 import CoreMotion
 import CoreVideo
+import Darwin
 import DeveloperToolsSupport
 import Dispatch
 import Foundation
+import MachO
 import Network
+import ObjectiveC
 import OpenGLES
 import QuartzCore
 import Swift
@@ -25,6 +29,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_exported import iProov
+import ObjectiveC.runtime
 import simd
 import zlib
 @_hasMissingDesignatedInitializers @objc(IPSession) @objcMembers final public class Session : ObjectiveC.NSObject {
@@ -43,6 +48,7 @@ import zlib
   @objc public static let unexpectedError: Swift.Int
   @objc public static let userTimeout: Swift.Int
   @objc public static let notSupported: Swift.Int
+  @objc public static let consentRequired: Swift.Int
   @objc override dynamic public init()
   @objc deinit
 }
@@ -54,6 +60,7 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   case unexpectedError(Swift.String)
   case userTimeout
   case notSupported
+  case consentRequired
   public var errorCode: Swift.Int {
     get
   }
@@ -251,6 +258,10 @@ extension UIKit.UIApplication {
     get
   }
 }
+@_cdecl("a1")
+public func gK() -> Swift.UnsafePointer<Swift.UInt8>
+@_cdecl("a2")
+public func gKL() -> Swift.Int
 extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.Hashable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.RawRepresentable {}
