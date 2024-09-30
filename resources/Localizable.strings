@@ -5,6 +5,7 @@
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
 "IProov_ErrorCameraPermissionDeniedMessage" = "Please allow camera access for this app in iOS Settings";
 "IProov_ErrorCaptureAlreadyActive" = "An existing capture is already in progress";
+"IProov_ErrorConsentRequired" = "You cannot use iProov unless you grant consent";
 "IProov_ErrorNetwork" = "Network error";
 "IProov_ErrorNotSupported" = "Device is not supported";
 "IProov_ErrorServer" = "Server error";

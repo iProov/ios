@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "iproovcalcifer.h"
 #import "IP_domain_registry.h"
 #import "IP_registry_types.h"
 #import "IP_string_util.h"

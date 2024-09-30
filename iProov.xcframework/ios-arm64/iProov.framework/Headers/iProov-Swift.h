@@ -307,10 +307,15 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+
+
+
 typedef SWIFT_ENUM_NAMED(NSInteger, IPCanceler, "Canceler", open) {
   IPCancelerUser = 0,
   IPCancelerIntegration = 1,
 };
+
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, IPFailureReason, "FailureReason", open) {
@@ -338,6 +343,7 @@ SWIFT_CLASS_NAMED("FailureResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_PROTOCOL_NAMED("Filter")
@@ -393,6 +399,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger userTimeou
 + (NSInteger)userTimeout SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger notSupported;)
 + (NSInteger)notSupported SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger consentRequired;)
++ (NSInteger)consentRequired SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -515,6 +523,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, IPNaturalFilterStyle, "Style", open) {
 
 
 
+
 SWIFT_CLASS_NAMED("PublicKey")
 @interface IPPublicKey : NSObject
 @property (nonatomic, readonly) SecKeyRef _Nonnull key;
@@ -560,10 +569,17 @@ SWIFT_CLASS_NAMED("SuccessResult")
 
 
 
+
 @interface WKWebView (SWIFT_EXTENSION(iProov))
 - (void)installIProovNativeBridgeWithCryptographyEnabled:(BOOL)cryptographyEnabled;
 - (void)uninstallNativeBridge;
 @end
+
+
+SWIFT_EXTERN uint8_t const * _Nonnull a1(void) SWIFT_WARN_UNUSED_RESULT;
+
+
+SWIFT_EXTERN NSInteger a2(void) SWIFT_WARN_UNUSED_RESULT;
 
 #endif
 #if __has_attribute(external_source_symbol)
