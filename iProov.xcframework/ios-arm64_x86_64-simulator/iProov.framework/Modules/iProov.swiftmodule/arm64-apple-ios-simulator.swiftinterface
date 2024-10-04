@@ -127,6 +127,7 @@ extension iProov.IProov {
   @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) @objcMembers public class GenuinePresenceAssurance : ObjectiveC.NSObject {
     @objc public var notReadyOvalStrokeColor: UIKit.UIColor
     @objc public var readyOvalStrokeColor: UIKit.UIColor
+    @objc public var controlYPosition: Swift.Bool
     @objc override dynamic public init()
     @objc deinit
   }

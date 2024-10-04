@@ -36,6 +36,8 @@
 "IProov_PromptCloseMultitasking" = "Close multitasking to continue";
 "IProov_PromptGetReady" = "Get ready…";
 "IProov_PromptLivenessScanCompleted" = "Scan completed";
+"IProov_PromptMoveDown" = "Move down";
+"IProov_PromptMoveUp" = "Move up";
 "IProov_PromptRotateDeviceToPortrait" = "Rotate device to portrait to continue";
 "IProov_PromptRotateDeviceUpsideDown" = "Rotate device upside-down to continue";
 "IProov_PromptTooBright" = "Go somewhere shadier";
