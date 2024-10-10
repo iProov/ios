@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v12.1.0
+# iProov Biometrics iOS SDK v12.2.0
 
 ## Introduction
 
@@ -82,7 +82,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.1.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.2.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -94,7 +94,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "12.1.0")
+	.upToNextMajor(from: "12.2.0")
 ),
 ```
 
@@ -176,7 +176,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.1.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.2.0).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
@@ -395,6 +395,7 @@ GPA-specific options can be set under `Options.genuinePresenceAssurance`:
 | --- | --- | --- |
 | `notReadyOvalStrokeColor` | Color for oval stroke when in a GPA "not ready" state. | `.white` |
 | `readyOvalStrokeColor`| Color for oval stroke when in the GPA "ready" state. | #01AC41 |
+| `controlYPosition` | Whether to control y position of the face through showing prompts when using GPA. | false 
 
 ### Liveness Assurance Options
 
@@ -517,7 +518,7 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 |---|---|
 | `captureAlreadyActive` | An existing iProov capture is already in progress. Wait until the current capture completes before starting a new one. |
 | `cameraPermissionDenied ` | The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings. |
-| `consentRequired ` | The user has not granted consent. |
+| `consentRequired ` | The user has not granted consent. For iProov internal use only. You can safely ignore. |
 | `networkError(String?)` | An error occurred with the video streaming process. The associated string (if available) will contain further information about the error. |
 | `serverError(String?)` | A server-side error/token invalidation occurred. The associated string (if available) will contain further information about the error. |
 | `unexpectedError(String)` | An unexpected and unrecoverable error has occurred. The associated string will contain further information about the error. These errors should be reported to iProov for further investigation. |

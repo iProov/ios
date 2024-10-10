@@ -476,6 +476,7 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @interface IPGenuinePresenceAssuranceOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyOvalStrokeColor;
+@property (nonatomic) BOOL controlYPosition;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
