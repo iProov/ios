@@ -576,12 +576,6 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (void)uninstallNativeBridge;
 @end
 
-
-SWIFT_EXTERN uint8_t const * _Nonnull a1(void) SWIFT_WARN_UNUSED_RESULT;
-
-
-SWIFT_EXTERN NSInteger a2(void) SWIFT_WARN_UNUSED_RESULT;
-
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

@@ -259,10 +259,6 @@ extension UIKit.UIApplication {
     get
   }
 }
-@_cdecl("a1")
-public func gK() -> Swift.UnsafePointer<Swift.UInt8>
-@_cdecl("a2")
-public func gKL() -> Swift.Int
 extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.Hashable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.RawRepresentable {}

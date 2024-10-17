@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v12.2.0
+# iProov Biometrics iOS SDK v12.2.1
 
 ## Introduction
 
@@ -82,7 +82,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.2.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.2.1 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -94,7 +94,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "12.2.0")
+	.upToNextMajor(from: "12.2.1")
 ),
 ```
 
@@ -176,7 +176,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.2.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.2.1).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
