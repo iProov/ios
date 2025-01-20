@@ -52,7 +52,7 @@ import zlib
   @objc override dynamic public init()
   @objc deinit
 }
-public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
+public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError, Swift.Equatable {
   case captureAlreadyActive
   case networkError(Swift.String?)
   case cameraPermissionDenied
@@ -79,6 +79,7 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError {
   public var localizedMessage: Swift.String? {
     get
   }
+  public static func == (lhs: iProov.IProovError, rhs: iProov.IProovError) -> Swift.Bool
 }
 @objc public protocol IProovPresentationDelegate {
   @objc func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
@@ -259,10 +260,6 @@ extension UIKit.UIApplication {
     get
   }
 }
-@_cdecl("a1")
-public func gK() -> Swift.UnsafePointer<Swift.UInt8>
-@_cdecl("a2")
-public func gKL() -> Swift.Int
 extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.Hashable {}
 extension iProov.Options.LineDrawingFilter.Style : Swift.RawRepresentable {}

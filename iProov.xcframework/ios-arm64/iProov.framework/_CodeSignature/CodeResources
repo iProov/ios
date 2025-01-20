@@ -150,7 +150,7 @@
 		</data>
 		<key>Headers/iProov-Swift.h</key>
 		<data>
-		PDIr1NumqbmextgOnJuSvDq/u2k=
+		0THEvmYViY4OVa1B2plrsOUYtwQ=
 		</data>
 		<key>Headers/iProov-umbrella.h</key>
 		<data>
@@ -162,11 +162,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		T355oAS+xnD3hLsfgATs7n5CIj8=
+		uTgceL4TpkpF5BRstzZZqfSPGkg=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		gho/isK4TbVv/dz15QwegMgT280=
+		SVT32+VE52XBsYEwgz6q11KibNc=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -174,11 +174,11 @@
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		gho/isK4TbVv/dz15QwegMgT280=
+		SVT32+VE52XBsYEwgz6q11KibNc=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		XZftUm71QXxzhVKa7gPfb1w88Fo=
+		TTxY8+DUH6xdpok6aZi9HcISwEA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -244,7 +244,7 @@
 		</dict>
 		<key>iProov.plist</key>
 		<data>
-		1TFW9l1t+6cmw/vrzPUjXL0qIXg=
+		SSKNdmLH7Nr622GmMXh5NGIKCCY=
 		</data>
 		<key>it.lproj/Localizable.strings</key>
 		<dict>
@@ -541,7 +541,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ch3mwnHYxl1ycXM0K9m4qY78x/JhHT394gcuSiZ+NO4=
+			p2lxR/gJiEcHUBZfXz6/9f+pBiDYlPUPocHTe+iBVlg=
 			</data>
 		</dict>
 		<key>Headers/iProov-umbrella.h</key>
@@ -562,7 +562,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/7XApINSSza8SOLfgeVkO4/S1Ep98W9NhTRedIrJOKg=
+			mMqON8TnK5ioyAkP5itStzzRNrJDp7qoj1m8pgfxXwI=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -576,14 +576,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/7XApINSSza8SOLfgeVkO4/S1Ep98W9NhTRedIrJOKg=
+			mMqON8TnK5ioyAkP5itStzzRNrJDp7qoj1m8pgfxXwI=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gAiFhoubNrg/xktAGj2QgGq98YrmQ3jVjK/pt3R/AwQ=
+			ii9lCdfeBA6ntYQ2CKQNVyj4gqGaNnOcCc/nXk6kwDQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -658,7 +658,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HtKLIacfX13Mr34ZLGkH/CfL//RjXz+7C2zCK/vIZt4=
+			fuaQmhKy8Pef0G86H8BfHeBGp1/O+HkJbQazWtxv+eI=
 			</data>
 		</dict>
 		<key>it.lproj/Localizable.strings</key>

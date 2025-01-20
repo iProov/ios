@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v12.2.0
+# iProov Biometrics iOS SDK v12.2.2
 
 ## Introduction
 
@@ -82,7 +82,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.2.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.2.2 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -94,7 +94,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "12.2.0")
+	.upToNextMajor(from: "12.2.2")
 ),
 ```
 
@@ -176,7 +176,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.2.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.2.2).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
@@ -243,7 +243,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
     case let .success(result):
         // The user was successfully verified/enrolled and the token has been validated.
         // You can access the following properties:
-        let frame: UIImage? = result.frame // An optional image containing a single frame of the user, if enabled for your service provider (see important security info below)
+        let frame: UIImage? = result.frame // This is a deprecated feature and will be nil.
 
     case let .failure(result):
         // The user was not successfully verified/enrolled, as their identity could not be verified,
@@ -252,7 +252,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         let reason: FailureReason = result.reason // A reason of why the claim failed
         let feedbackCode: String = reason.feedbackCode // A code referring to the failure reason (see list below)
         let localizedDescription: String = result.localizedDescription // A human-readable suggestion about what to do to get to a successful claim
-        let frame: UIImage? = result.frame // An optional image containing a single frame of the user, if enabled for your service provider (see important security info below)
+        let frame: UIImage? = result.frame // This is a deprecated feature and will be nil.
 
     case let .canceled(canceler):
         // Either:
@@ -278,7 +278,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 > 
 > * You cannot rely on the fact a successful result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the `/validate` API call) before performing any authenticated user actions.
 > 
-> * The `frame` returned in the success & failure results should be used for UI/UX purposes only. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server [`/validate`](https://secure.iproov.me/docs.html#operation/userVerifyValidate) API call.
+> * The `frame` returned in the success & failure results is a deprecated feature and will be nil. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server [`/validate`](https://secure.iproov.me/docs.html#operation/userVerifyValidate) API call.
 
 
 ### Canceling the SDK
@@ -527,9 +527,9 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 
 ## API Client
 
-The [iProov iOS API Client](https://github.com/iProov/ios/tree/master/iProovAPIClient) is a simple wrapper for the [iProov REST API v2](https://secure.iproov.me/docs.html) written in Swift and using [Alamofire](https://github.com/Alamofire/Alamofire) for use in demo/PoC apps.
+The [iProov iOS API Client](https://github.com/iProov/ios-api-client) is a simple wrapper for the [iProov REST API v2](https://secure.iproov.me/docs.html) written in Swift and using [Alamofire](https://github.com/Alamofire/Alamofire) for use in demo/PoC apps.
 
-For further details, see the [documentation](https://github.com/iProov/ios/blob/master/iProovAPIClient/README.md) in the iProovAPIClient folder.
+For further details, see the [installation documentation](https://github.com/iProov/ios-api-client#installation). The APIClient can also be integrated using the [iProovAPIClient folder](https://github.com/iProov/ios/blob/master/iProovAPIClient/README.md) in this repo, but this will be removed in the next major release.
 
 ## Example Project
 

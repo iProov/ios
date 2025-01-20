@@ -1,4 +1,4 @@
-// Copyright (c) 2024 iProov Ltd. All rights reserved.
+// Copyright (c) 2025 iProov Ltd. All rights reserved.
 
 // TODO: Rename this file to Credentials.swift and update accordingly.
 // You can obtain credentials from https://portal.iproov.com
