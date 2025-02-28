@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v12.2.2
+# iProov Biometrics iOS SDK v12.3.0
 
 ## Introduction
 
@@ -79,10 +79,10 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 2. Search for the iProov SDK package using the following URL:
 
 	```
-	https://github.com/iProov/ios
+	https://github.com/iProov/ios-spm
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.2.2 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.3.0 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -93,12 +93,14 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 ```swift
 .package(
 	name: "iProov",
-	url: "https://github.com/iProov/ios.git",
-	.upToNextMajor(from: "12.2.2")
+	url: "https://github.com/iProov/ios-spm.git",
+	.upToNextMajor(from: "12.3.0")
 ),
 ```
 
 Then add `iProov` to the `dependencies` array of any target for which you wish to use iProov.
+
+As Swift Package Manager downloads the full repository for a package, installing this main iProov iOS SDK package [iProov/ios](https://github.com/iProov/ios) can take a long time (over 2 minutes in some environments). The smaller repository [iProov/ios-spm](https://github.com/iProov/ios-spm) significantly reduces the iProov iOS SDK installation time by providing only a reference to the precompiled xcframework, which is published with [the latest iProov SDK release](https://github.com/iProov/ios/releases).
 
 ### Carthage
 
@@ -176,7 +178,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.2.2).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.3.0).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 

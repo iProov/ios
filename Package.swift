@@ -16,15 +16,18 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "iProov",
-            url: "https://github.com/iProov/ios/releases/download/12.2.2/iProov.xcframework.zip",
-            checksum: "8592a75818be86975f66bdc2a27759ccfb6a8740be1cbff20468626d306229ae"
+            url: "https://github.com/iProov/ios/releases/download/12.3.0/iProov.xcframework.zip",
+            checksum: "f157fcae5c9f8027acc2e035a5bbca7492eb23c4f8e0157d2dd6655c29ff5250"
         ),
         .target(
             name: "iProovTargets",
             dependencies: [
                 .target(name: "iProov", condition: .when(platforms: .some([.iOS]))),
             ],
-            path: "iProovTargets"
+            path: "iProovTargets",
+            resources: [
+                .copy("Resources/PrivacyInfo.xcprivacy"),
+            ]
         ),
     ]
 )
