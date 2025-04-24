@@ -129,6 +129,7 @@ extension iProov.IProov {
     @objc public var notReadyOvalStrokeColor: UIKit.UIColor
     @objc public var readyOvalStrokeColor: UIKit.UIColor
     @objc public var controlYPosition: Swift.Bool
+    @objc public var scanningPrompts: Swift.Bool
     @objc override dynamic public init()
     @objc deinit
   }

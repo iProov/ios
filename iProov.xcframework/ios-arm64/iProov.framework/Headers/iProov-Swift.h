@@ -477,6 +477,7 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyOvalStrokeColor;
 @property (nonatomic) BOOL controlYPosition;
+@property (nonatomic) BOOL scanningPrompts;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

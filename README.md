@@ -1,10 +1,30 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v12.3.0
+# iProov Biometrics iOS SDK v12.3.1
 
 ## Introduction
 
-The iProov Biometrics iOS SDK enables you to integrate iProov into your iOS app. We also have an [Android SDK](https://github.com/iProov/android), [Xamarin SDK](https://github.com/iProov/xamarin), [Flutter SDK](https://github.com/iProov/flutter), [React Native SDK](https://github.com/iProov/react-native) and [Web SDK](https://github.com/iProov/web).
+This guide describes how to integrate iProov biometric assurance technologies into your iOS app, or SDK.
+
+iProov offers two powerful authentication solutions:
+
+* **Dynamic Liveness™** technology (our **Genuine Presence Assurance™** solution) verifies that an online remote user is the right person, a real person, and that they are authenticating right now, for purposes of access control and security.
+* **Express Liveness™** technology (our **Liveness Assurance™** solution) verifies that a remote online user is the right person and a real person for access control and security.
+
+### Software Download & Installation
+
+The iProov SDK can be downloaded and installed directly into your iOS application, or incorporated into your own SDK.
+
+Our downloadable software components implementing **Dynamic Liveness™** and **Express Liveness™** technologies integrate seamlessly with your existing user journeys.
+
+### Web Services & API Access
+
+In addition to our downloadable software components, iProov provides identity authentication services through our secure API and web-based administration portal.
+These services enable organizations to implement **Dynamic Liveness™** and **Express Liveness™** verification capabilities across their digital platforms.
+
+Find out more about how to use iProov in your user journeys in the [Implementation Guide](https://docs.iproov.com/implementation_A-Z/architecutre_overview).
+
+iProov also supports [Android](https://github.com/iproov/android), [Flutter](https://github.com/iproov/flutter), [MAUI](https://github.com/iProov/dotnet-maui), [React Native](https://github.com/iproov/react-native), and [Web](https://github.com/iProov/web).
 
 ### Requirements
 
@@ -82,7 +102,7 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 	https://github.com/iProov/ios-spm
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.3.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.3.1 as the lower bound.
 	
 3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
 
@@ -94,7 +114,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios-spm.git",
-	.upToNextMajor(from: "12.3.0")
+	.upToNextMajor(from: "12.3.1")
 ),
 ```
 
@@ -178,7 +198,7 @@ As Swift Package Manager downloads the full repository for a package, installing
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.3.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.3.1).
 
 	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
 
@@ -397,7 +417,8 @@ GPA-specific options can be set under `Options.genuinePresenceAssurance`:
 | --- | --- | --- |
 | `notReadyOvalStrokeColor` | Color for oval stroke when in a GPA "not ready" state. | `.white` |
 | `readyOvalStrokeColor`| Color for oval stroke when in the GPA "ready" state. | #01AC41 |
-| `controlYPosition` | Whether to control y position of the face through showing prompts when using GPA. | false 
+| `controlYPosition` | Whether to control y position of the face through showing prompts when using GPA. | `false` |
+| `scanningPrompts` | Show a prompt 'Scanning' during GPA scan.<br/>Show a prompt 'Scan Completed' after GPA scan completes. | `false` |
 
 ### Liveness Assurance Options
 

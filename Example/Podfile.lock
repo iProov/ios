@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.8.0)
-  - iProov (12.3.0)
+  - iProov (12.3.1)
   - iProovAPIClient (2.0.0):
     - Alamofire (~> 5.0)
   - MBProgressHUD (1.2.0)
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
-  iProov: 15d820ec17fe833a1d5d4c9a046f68a0aea7fe4c
+  iProov: 66056edf9be1ff5e16b61b9a067c8c8351796469
   iProovAPIClient: a4a2013ea8429cf94c39ed1d4398fee0af8dd584
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
