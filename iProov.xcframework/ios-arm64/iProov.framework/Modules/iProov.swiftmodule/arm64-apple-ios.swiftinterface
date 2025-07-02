@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name iProov
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name iProov
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import Accelerate
 import AudioToolbox
@@ -29,9 +29,9 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_exported import iProov
+import os
 import ObjectiveC.runtime
 import simd
-import zlib
 @_hasMissingDesignatedInitializers @objc(IPSession) @objcMembers final public class Session : ObjectiveC.NSObject {
   @objc @discardableResult
   final public func cancel() -> Swift.Bool
@@ -91,8 +91,8 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError, S
   @objc func didDismissIProovView()
 }
 extension WebKit.WKWebView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func installIProovNativeBridge(cryptographyEnabled: Swift.Bool = false)
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func uninstallNativeBridge()
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func installIProovNativeBridge(cryptographyEnabled: Swift.Bool = false)
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func uninstallNativeBridge()
 }
 extension iProov.IProov {
   @available(swift, obsoleted: 1.0)
@@ -206,7 +206,7 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [iProov.FailureReason]
   public typealias RawValue = Swift.Int
-  public static var allCases: [iProov.FailureReason] {
+  nonisolated public static var allCases: [iProov.FailureReason] {
     get
   }
   public var rawValue: Swift.Int {
@@ -257,7 +257,7 @@ extension UIKit.UIImage {
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
 }
 extension UIKit.UIApplication {
-  @_Concurrency.MainActor(unsafe) public var keyWindow: UIKit.UIWindow? {
+  @_Concurrency.MainActor @preconcurrency public var keyWindow: UIKit.UIWindow? {
     get
   }
 }
