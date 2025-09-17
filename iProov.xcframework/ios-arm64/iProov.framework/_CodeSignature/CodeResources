@@ -150,7 +150,7 @@
 		</data>
 		<key>Headers/iProov-Swift.h</key>
 		<data>
-		8oObC9y3cUoSBAfWS1CmLBKlMjk=
+		+4Dog1hKbNpfQ7fCATjCXW84iWc=
 		</data>
 		<key>Headers/iProov-umbrella.h</key>
 		<data>
@@ -162,15 +162,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		24rsKy+zf7qskqvS3yAGuTjvHHw=
+		iL0iDkUsTL2qSN1vb4CPk7Yl/7Y=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		Ev5nwgv45yPzDCOAA2HDLaA8GyQ=
+		UQpnvj2XssK3fMQOF9a6O8bviTQ=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		qVx0wRo8md/litjRZeMCJw+hAXs=
+		qpD0Pgde5FgNWhIumXTq/SqLs4U=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -178,11 +178,11 @@
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		qVx0wRo8md/litjRZeMCJw+hAXs=
+		qpD0Pgde5FgNWhIumXTq/SqLs4U=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		Bev/d1OZMUojhghbmcVJWscM7xY=
+		EU37iVkCj7Ts2Pu0c1ipbeg8cfg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -190,13 +190,13 @@
 		</data>
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
-		QjwxbSjHFkcr/6+myMP9Wkq5zl4=
+		MSRYl5ge4hlOwKz6AmUmsRwNUiQ=
 		</data>
 		<key>cy-GB.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			r/UrsrfMjEyjCXInEYE27WyNcvI=
+			0mc4MEhTwtAMVgtL87CcZ92STdU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -205,7 +205,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uU9O/dZ8C2zF9NQpbH85QmaXGe0=
+			559BPmQFEiDcirZ+hS1qSK1obn8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -214,7 +214,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y/2RvcatDFk/VoXYbgrLQzoW6yI=
+			MqQzuM0fHNBEQhPBoX6vd3ciZGY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -223,7 +223,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/+4KrCha8nvvbLHgVINi2yhA/Mk=
+			i5+heuoDh2SHuuad+4VTZg155S4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -232,7 +232,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9OGwfZoP9+YV9HyDbNHDCwZkEWc=
+			KV6AwMJXhyYv9lifh1Cb8Jxi5YM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -241,20 +241,20 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hd9iGhYYsZ5X9L10IKFsAt1mhnA=
+			llnjH97zneKuGUuMRF4s5IvEwPY=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>iProov.plist</key>
 		<data>
-		d+PbZ1+gfSZaPtsi70ntGk58XRY=
+		IC3KL1mOuc3OTT0M2Zx/L0oBoLk=
 		</data>
 		<key>it.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XcdXMoKIKX2qAwL9zCzXm57IY+M=
+			npvLdSY5Say73KtazEOl781JpZM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -263,7 +263,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bSyOU2fF76dnDSdfrcmXqhnLQ4k=
+			Qak1G72DpJcK9vskm4+EMoHHtYA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -272,7 +272,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zLidrBMHoiV5/n6GqUR76IyBFQo=
+			hO1yb6sLvnHsNMLuon/cABTgf7U=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -281,7 +281,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			flvhUabOPB52IKAvAH+cA5ku584=
+			eLnZPTmKLoN+u/asTYGMO9ALr78=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -545,7 +545,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pMl2vAv/WwgHA1sNVtaL6Az7FAAdl/ToTKz/bjv9E/k=
+			lgwBjrzmhafQ2nfeEjEcQQG2B+ZsEv74/L0IRz0WltY=
 			</data>
 		</dict>
 		<key>Headers/iProov-umbrella.h</key>
@@ -566,14 +566,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NcrHUGqcV0Auvk7vxZS7FTYDBlu1ok4bKCqerjWOOjs=
+			/2CmvXtn+ckrpkHeZg6/kIFENRRivP8takba38ixizk=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rYzNwYiUTUG2d2pifFPFcoWLxkPRxbrDGFzraOKq5gI=
+			w0XXH9emJLs42JQAch9kigM5/h3OrysMeui5NT6/rbc=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -587,14 +587,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rYzNwYiUTUG2d2pifFPFcoWLxkPRxbrDGFzraOKq5gI=
+			w0XXH9emJLs42JQAch9kigM5/h3OrysMeui5NT6/rbc=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZQgJSZXopfFWf8xv+KeBKmMF7XPTsPmRN54iarg+Hgw=
+			H6p1NNLIvt6oMDGAgrhOP3uDCkuask/edRQXXuKLI1o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -608,14 +608,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VF2gZ8Ix/MCEqBSdckDQWxJslHts0ei3AgH+hkRoYGU=
+			2bnSKge8fOrT7PtxmnZNoFKjgGfO9GWWfbT4IAt4U9U=
 			</data>
 		</dict>
 		<key>cy-GB.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ma2lFzt6jTFDAcqC66R+yO67xxTyBHgnIqrOGdFOBws=
+			HL+2HOtqF8LI/EzSqLGcmp9m+FxVIdNAZsfMsOsB0yU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -624,7 +624,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6zUwYJZIYeC83vJ9iEe2d5s2bYSUV8Pi4/SoxSYveDk=
+			iKahaNT2zzZ2b6XVpmu2vi4FlEl0889g2BPhx3LLkxY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -633,7 +633,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9w4LI4ORzgOV1oABL2jKCGefjYa0ZUemhM3VB37nE/I=
+			PXmrEdyA0yygVsB0dheOozQWNUSiwNdrRLLwvgGAQQA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -642,7 +642,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S1ZvwQp+wER1Psz0QS/mAaoTPPNoRSamqCbjGaJGFNA=
+			+lMhUASZ/ts+2zDN3SCa6koTKrA9Z9vYupi49ScUrzo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -651,7 +651,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yrd9sL74ZpbRi+hMbwqExePDc/aDSEVuG1zPJmCDeFQ=
+			Epd82gvVWcnHQERpcPoXQzUSWoUv9052rlWXndazdvc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -660,7 +660,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FNqlMTrLIL+pggTy4W2l1ezLcVVd9uuf10Jm3NwUH+4=
+			/RBR8Z63UQsH8dThD5p6kx60I3o4nK/IDtgM1J+cxVc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -669,14 +669,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YAIqQZkwEsELzqc3ix3sio9iypHotX7NX+FGDhTvfA4=
+			G/WnhQ+jDk2Pnfpit0VHTyVQYQ4eKDcy7YP34Onvdac=
 			</data>
 		</dict>
 		<key>it.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ItBC6MuWOX1CMvl0AqOKPnMyXn6nta9xfGGaD0b6Kd0=
+			92AnmqG04w2/D1OHa+kV/c8pSTuQAxhm0W5Q6V4ezBM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -685,7 +685,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3ut4aFai6FUob7yTCD5Pk5l8hoCnWwy2U2l7zW+mTmg=
+			5QINJv1hZh9g/Iqk7i9G63QU2EzQaonhNt0pS4gPyKc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -694,7 +694,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FFNgBLesNRopvYUM/FMECIZn6FTmAnELYbnXRTn/nrs=
+			4y47S9DyWBDu40KLKny7q/aCzGSEmyYpPMpwvfdJ8CI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -703,7 +703,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xCOESp0PCOTw5PpeIn9NEUlS/NN0iKvXqRvDg9AQcCQ=
+			d4G/VEYFfnpbCVedjuZzQcJZj/jSOGJUBC//gD5FhIA=
 			</data>
 			<key>optional</key>
 			<true/>

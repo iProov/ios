@@ -33,11 +33,13 @@
 "IProov_ProgressLoading" = "Loading…";
 "IProov_ProgressStreaming" = "Streaming…";
 "IProov_PromptAlignFace" = "Put your face in the oval";
-"IProov_PromptCloseMultitasking" = "Close multitasking to continue";
+"IProov_PromptReturnToFullscreen" = "Return to Full Screen";
 "IProov_PromptGetReady" = "Get ready…";
 "IProov_PromptLivenessScanCompleted" = "Scan completed";
 "IProov_PromptMoveDown" = "Move down";
 "IProov_PromptMoveUp" = "Move up";
+"IProov_PromptMoveLeft" = "Move left";
+"IProov_PromptMoveRight" = "Move right";
 "IProov_PromptRotateDeviceToPortrait" = "Rotate device to portrait to continue";
 "IProov_PromptRotateDeviceUpsideDown" = "Rotate device upside-down to continue";
 "IProov_PromptTooBright" = "Go somewhere shadier";

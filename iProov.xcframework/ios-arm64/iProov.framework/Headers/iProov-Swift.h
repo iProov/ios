@@ -480,6 +480,7 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @interface IPGenuinePresenceAssuranceOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull readyOvalStrokeColor;
+@property (nonatomic) BOOL controlXPosition;
 @property (nonatomic) BOOL controlYPosition;
 @property (nonatomic) BOOL scanningPrompts;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -554,6 +555,8 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 

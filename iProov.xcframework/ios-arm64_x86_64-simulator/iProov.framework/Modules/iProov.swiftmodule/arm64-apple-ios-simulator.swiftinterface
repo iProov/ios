@@ -6,6 +6,7 @@ import AVFoundation
 import Accelerate
 import AudioToolbox
 import CFNetwork
+import Combine
 import CommonCrypto
 import CoreMedia
 import CoreMotion
@@ -128,6 +129,7 @@ extension iProov.IProov {
   @_inheritsConvenienceInitializers @objc(IPGenuinePresenceAssuranceOptions) @objcMembers public class GenuinePresenceAssurance : ObjectiveC.NSObject {
     @objc public var notReadyOvalStrokeColor: UIKit.UIColor
     @objc public var readyOvalStrokeColor: UIKit.UIColor
+    @objc public var controlXPosition: Swift.Bool
     @objc public var controlYPosition: Swift.Bool
     @objc public var scanningPrompts: Swift.Bool
     @objc override dynamic public init()
