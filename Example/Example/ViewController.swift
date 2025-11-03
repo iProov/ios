@@ -75,7 +75,9 @@ class ViewController: UIViewController {
                     case let .failure(result):
                         hud.hide(animated: true)
 
-                        let alert = UIAlertController(title: "❌ \(result.reason)", message: result.localizedDescription, preferredStyle: .alert)
+                        let feedbackCodes = result.reasons.map(\.feedbackCode).joined(separator: ", ")
+                        let failureDescription = result.reasons.map(\.localizedDescription).joined(separator: "\n\n")
+                        let alert = UIAlertController(title: "❌ \(feedbackCodes)", message: failureDescription, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                         alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                             self.launch(claimType: claimType, assuranceType: assuranceType)

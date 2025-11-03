@@ -1,32 +1,23 @@
 PODS:
-  - Alamofire (5.8.0)
-  - iProov (12.5.0)
-  - iProovAPIClient (2.0.0):
-    - Alamofire (~> 5.0)
+  - iProov (13.0.0)
   - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
   - iProov (from `../`)
-  - iProovAPIClient (from `../`)
   - MBProgressHUD
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - MBProgressHUD
 
 EXTERNAL SOURCES:
   iProov:
     :path: "../"
-  iProovAPIClient:
-    :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
-  iProov: 17b75b5b2ceb6615cf6f7e835f30a773f28b1644
-  iProovAPIClient: a4a2013ea8429cf94c39ed1d4398fee0af8dd584
+  iProov: 9bbaae27fa00ac86df695b5e6d80b280f9464178
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: 1ba4b178dc5a1adc3c43f23e59c503d19ec4933e
+PODFILE CHECKSUM: 05ef135f4ced80891a520ac86998fc28e2cec830
 
 COCOAPODS: 1.16.2

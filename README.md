@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Biometrics iOS SDK v12.5.0
+# iProov Face SDK v13.0.0
 
 ## Introduction
 
@@ -13,7 +13,7 @@ iProov offers two powerful authentication solutions:
 
 ### Software Download & Installation
 
-The iProov SDK can be downloaded and installed directly into your iOS application, or incorporated into your own SDK.
+The SDK can be downloaded and installed directly into your iOS application, or incorporated into your own SDK.
 
 Our downloadable software components implementing **Dynamic Liveness™** and **Express Liveness™** technologies integrate seamlessly with your existing user journeys.
 
@@ -28,14 +28,14 @@ iProov also supports [Android](https://github.com/iproov/android), [Flutter](htt
 
 ### Requirements
 
-- iOS 13.0 and above
-- Xcode 15.0.1 and above
+- iOS 15.0 and above
+- Xcode 16.0 and above
 
-The framework has been written in Swift 5.5, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
+The framework has been written in Swift 5.10, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
 ### Dependencies
 
-The iProov Biometrics SDK includes the following third-party code:
+The SDK includes the following third-party code:
 
 - A [forked version](https://github.com/iproovopensource/GPUImage2) of [GPUImage2](https://github.com/BradLarson/GPUImage2)
 - [Expression](https://github.com/nicklockwood/Expression)
@@ -47,7 +47,7 @@ These dependencies are vendored and compiled into the SDK, this requires no acti
 
 ### Module Stability
 
-The iProov SDK supports module stability. The advantage of this is that the SDK does not need to be recompiled for every new version of the Swift compiler.
+The SDK supports module stability. The advantage of this is that the SDK does not need to be recompiled for every new version of the Swift compiler.
 
 ## Repository Contents
 
@@ -56,16 +56,13 @@ The framework package is provided via this repository, which contains the follow
 * **README.md** - This document!
 * **Example** - A basic sample project using iProov, written in Swift and using CocoaPods.
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
-* **iProov.framework** - The iProov framework as a "fat" dynamic framework for both device & simulator. (You can use this if you are unable to use the XCFramework version for whatever reason.)
-* **iProovAPIClient.podspec & iProovAPIClient** - Files relating to the iOS API client.
 * **iProov.podspec** - Required by CocoaPods. You do not need to do anything with this file.
 * **resources** - Directory containing additional development resources you may find helpful.
 * **iProovTargets** - Directory containing dummy file, required for SPM.
-* **carthage** - Directory containing files required for Carthage support.
 
 ## Upgrading from Earlier Versions
 
-If you're already using an older version of the iProov Biometrics SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrading-to-SDK-v10.x) for detailed information about how to upgrade your app.
+If you're already using an older version of the SDK, consult the [Upgrade Guide](https://github.com/iProov/ios/wiki/Upgrade-Guide) for detailed information about how to upgrade your app.
 
 ## Registration
 
@@ -73,7 +70,43 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 
 ## Installation
 
-Integration with your app is supported via CocoaPods, Swift Package Manager, and Carthage. You can also install the SDK manually in Xcode without the use of any dependency manager (this is not recommended). We recommend CocoaPods for the easiest and most flexible installation.
+We recommend using Swift Package Manager for integrating our SDK with your app or SDK.
+
+> **Warning**: CocoaPods is no longer a recommended integration method as it's being put into read-only mode in December 2026. After that date, we won't be able to publish new releases to CocoaPods, which could leave you using an outdated version of the SDK.
+
+> You can still install the SDK manually in Xcode, but we don't recommend this method.
+
+### Swift Package Manager
+
+#### Installing via Xcode
+
+1. Select `File` → `Add Packages…` in the Xcode menu bar.
+
+2. Search for the SDK package using the following URL:
+
+	```
+	https://github.com/iProov/ios-spm
+	```
+	
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 13.0.0 as the lower bound.
+	
+3. Click _Add Package_ to add the SDK to your Xcode project and then click again to confirm.
+
+#### Installing via Package.swift
+
+If you prefer, you can add iProov via your Package.swift file as follows:
+
+```swift
+.package(
+	name: "iProov",
+	url: "https://github.com/iProov/ios-spm.git",
+	.upToNextMajor(from: "13.0.0")
+),
+```
+
+Then add `iProov` to the `dependencies` array of any target for which you wish to use iProov.
+
+As Swift Package Manager downloads the full repository for a package, installing this main SDK package [iProov/ios](https://github.com/iProov/ios) can take a long time (over 2 minutes in some environments). The smaller repository [iProov/ios-spm](https://github.com/iProov/ios-spm) significantly reduces the SDK installation time by providing only a reference to the precompiled xcframework, which is published with [the latest SDK release](https://github.com/iProov/ios/releases).
 
 ### CocoaPods
 
@@ -89,104 +122,6 @@ Integration with your app is supported via CocoaPods, Swift Package Manager, and
 
 3. Run `pod install`.
 
-### Swift Package Manager
-
-#### Installing via Xcode
-
-1. Select `File` → `Add Packages…` in the Xcode menu bar.
-
-2. Search for the iProov SDK package using the following URL:
-
-	```
-	https://github.com/iProov/ios-spm
-	```
-	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 12.5.0 as the lower bound.
-	
-3. Click _Add Package_ to add the iProov SDK to your Xcode project and then click again to confirm.
-
-#### Installing via Package.swift
-
-If you prefer, you can add iProov via your Package.swift file as follows:
-
-```swift
-.package(
-	name: "iProov",
-	url: "https://github.com/iProov/ios-spm.git",
-	.upToNextMajor(from: "12.5.0")
-),
-```
-
-Then add `iProov` to the `dependencies` array of any target for which you wish to use iProov.
-
-As Swift Package Manager downloads the full repository for a package, installing this main iProov iOS SDK package [iProov/ios](https://github.com/iProov/ios) can take a long time (over 2 minutes in some environments). The smaller repository [iProov/ios-spm](https://github.com/iProov/ios-spm) significantly reduces the iProov iOS SDK installation time by providing only a reference to the precompiled xcframework, which is published with [the latest iProov SDK release](https://github.com/iProov/ios/releases).
-
-### Carthage
-
-> **Note**: **You are strongly advised to use Carthage v0.38.0 or above**, which has full support for pre-built XCFrameworks, however older versions of Carthage are still supported (but you must use traditional universal/"fat" frameworks instead).
-
-1. Add the following to your Cartfile:
-
-	```
-	binary "https://raw.githubusercontent.com/iProov/ios/master/carthage/IProov.json"
-	```
-	
-2. Create the following script named _carthage.sh_ in your root Carthage directory:
-
-	```sh
-	# carthage.sh
-	# Usage example: ./carthage.sh build --platform iOS
-	
-	set -euo pipefail
-	 
-	xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
-	trap 'rm -f "$xcconfig"' INT TERM HUP EXIT
-	
-	if [[ "$@" != *'--use-xcframeworks'* ]]; then
-		# See https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md for further details
-	
-		CURRENT_XCODE_VERSION="$(xcodebuild -version | grep "Xcode" | cut -d' ' -f2 | cut -d'.' -f1)00"
-		CURRENT_XCODE_BUILD=$(xcodebuild -version | grep "Build version" | cut -d' ' -f3)
-	
-		echo "EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_${CURRENT_XCODE_VERSION}__BUILD_${CURRENT_XCODE_BUILD} = arm64 arm64e armv7 armv7s armv6 armv8" >> $xcconfig
-		echo 'EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_'${CURRENT_XCODE_VERSION}' = $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_$(XCODE_VERSION_MAJOR)__BUILD_$(XCODE_PRODUCT_BUILD_VERSION))' >> $xcconfig
-		echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT)__XCODE_$(XCODE_VERSION_MAJOR))' >> $xcconfig
-	fi
-	
-	echo 'BUILD_LIBRARY_FOR_DISTRIBUTION=YES' >> $xcconfig
-	
-	export XCODE_XCCONFIG_FILE="$xcconfig"
-	carthage "$@"
-	```
-	
-	This script contains an important workaround. When building universal ("fat") frameworks, it ensures that duplicate architectures are not lipo'd into the same framework when building on Apple Silicon Macs, in accordance with [the official Carthage workaround](https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md) (note that the document refers to Xcode 12 but it also applies to Xcode 13 and 14).
-	
-3. Make the script executable:
-	
-	```sh
-	chmod +x carthage.sh
-	```
-	
-4. You must now use `./carthage.sh` instead of `carthage` to build the dependencies.
-
-	**Carthage 0.38.0 and above (use XCFrameworks):**
-	
-	```sh
-	./carthage.sh update --use-xcframeworks --platform ios
-	```
-	
-	**Carthage 0.37.0 and below (use universal frameworks):**
-	
-	```sh
-	./carthage.sh update --platform ios
-	```
-
-5. Add the built .framework/.xcframework file from the _Carthage/Build_ folder to your project in the usual way.
-
-	**Carthage 0.37.0 and below only:**
-	
-	You should follow the additional instructions [here](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to remove simulator architectures from your universal binaries prior to running your app/submitting to the App Store.
-
 ### Manual Installation
 
 ![Xcode manual installation steps](https://github.com/iProov/ios/raw/master/images/xcode_manual_install.png)
@@ -197,9 +132,7 @@ As Swift Package Manager downloads the full repository for a package, installing
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/12.5.0).
-
-	> **Note**: Ensure you add the .xcframework file, rather than the .framework file.
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/13.0.0).
 
 5. Under the **Embed** column, ensure **Embed & Sign** is set.
 
@@ -229,7 +162,7 @@ iProov offers Genuine Presence Assurance™ technology (also known as "Dynamic L
 
 Please consult our [REST API documentation](https://secure.iproov.me/docs.html) for details on how to generate tokens.
 
-> **Warning**: In a production app, you should always obtain tokens securely via a server-to-server call. To save you from having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](#api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to use your production API key & secret!
+> **Warning**: In a production app, you should always obtain tokens securely via a server-to-server call. To save you from having to setup a server for demo/PoC apps for testing, we provide Swift sample code for obtaining tokens via [iProov API v2](https://secure.iproov.me/docs.html) with our open-source [iOS API Client](https://github.com/iProov/ios-api-client). You should ensure you migrate to server-to-server calls before going into production, and don't forget to use your production API key & secret!
 
 ### Launch the SDK
 
@@ -270,9 +203,9 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         // The user was not successfully verified/enrolled, as their identity could not be verified,
         // or there was another issue with their verification/enrollment.
         // You can access the following properties:
-        let reason: FailureReason = result.reason // A reason of why the claim failed
-        let feedbackCode: String = reason.feedbackCode // A code referring to the failure reason (see list below)
-        let localizedDescription: String = result.localizedDescription // A human-readable suggestion about what to do to get to a successful claim
+        let reasons: [FailureReason] = result.reasons // Reasons why the claim failed
+        let feedbackCodes: String = result.reasons.map(\.feedbackCode).joined(separator: ",") // Codes referring to the failure reasons (see list below)
+        let localizedDescriptions: String = result.reasons.map(\.localizedDescription).joined(separator: " ") // Human-readable suggestions about what to do to get to a successful claim
         let frame: UIImage? = result.frame // This is a deprecated feature and will be nil.
 
     case let .canceled(canceler):
@@ -306,7 +239,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 
 Under normal circumstances, the user will be in control of the completion of the iProov scan, i.e. they will either complete the scan, or use the close button to cancel. In some cases, you (the integrator) may wish to cancel the iProov scan programmatically, for example in response to a timeout or change of conditions in your app.
 
-To cancel the iProov SDK, you first need to hold a reference to the iProov session (returned from `IProov.launch()`) and you can then call `cancel()` on it.
+To cancel the SDK, you first need to hold a reference to the iProov session (returned from `IProov.launch()`) and you can then call `cancel()` on it.
 
 ```swift
 let session = IProov.launch(...)
@@ -338,9 +271,9 @@ You can customize the iProov session by passing in an `Options` reference when l
 | `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. [See below for further details](#custom-iproovpresentationdelegate). | `DefaultPresentationDelegate()` |
 | `surroundColor` | Color applied the area outside the oval. | `.black.withAlphaComponent(0.4)` |
 | `headerBackgroundColor ` | The color of the header bar. | `nil` |
-| `certificates` | Certificates to be passed as a string (the certificate's Subject Public Key Info as SHA-256 hash). [See below for further details](#certificate-pinning). | iProov Server Certificates |
+| `certificates` | Certificates to be passed as a string (the certificate's Subject Public Key Info as SHA-256 hash). [See below for further details](#certificate-pinning). | `[]` |
 | `timeout` | Network timeout to be applied to the WebSocket connection. | `10` (seconds) |
-| `viewDelegate` | Optional delegate to receive UI state updates. [See below for further details](#optional-iproovviewdelegate). | nil |
+| `viewDelegate` | Optional delegate to receive UI state updates. [See below for further details](#optional-iproovviewdelegate). | `nil` |
 
 ### Filter Options
 
@@ -376,14 +309,15 @@ options.filter = Options.NaturalFilter(style: .clear)
 
 ### Certificate Pinning
 
-By default, the iProov SDK pins to the iProov server certificates, which are used by `*.rp.secure.iproov.me`.
+If you are using your own reverse-proxy, you will need to use this option to pin to your own certificates.
 
-If you are using your own reverse-proxy, you will need to update the pinning configuration to pin to your own certificate(s) instead.
-
-Certificates should be passed as an array of `String`, where the `String` is the base64-encoded SHA-256 hash of a certificate's Subject Public Key Info. You can load a certificate as follows:
+Certificates should be passed as an array of `String`, where the `String` is the base64-encoded SHA-256 hash of a certificate's Subject Public Key Info. You can load certificates as follows:
 
 ```swift
-options.certificates = ["O8qZKEXWWkMPISIpvB7DUow++JzIW2g+k9z3U/l5V94="]
+options.certificates = [
+	"O8qZKEXWWkMPISIpvB7DUow++JzIW2g+k9z3U/l5V94=",
+	"Sc7wL4FfOw8ued5w3JOSzu5MzB471PfqdyN4hnMYbX4="
+]
 ```
 
 To get Subject Public Key Info from a `.crt` file, use the following command:
@@ -400,14 +334,6 @@ $ openssl x509 -inform der -in cert.der -pubkey -noout | openssl pkey -pubin -ou
 
 When multiple certificates are passed, as long as the server matches **any** of the certificates, the connection will be allowed. Pinning is performed against the **public key** of the certificate.
 
-You can also disable certificate pinning entirely, by passing an empty array:
-
-```swift
-options.certificates = []
-```
-
-> **Warning**: Never disable certificate pinning in production apps!
-
 ### Genuine Presence Assurance Options
 
 GPA-specific options can be set under `Options.genuinePresenceAssurance`:
@@ -415,7 +341,7 @@ GPA-specific options can be set under `Options.genuinePresenceAssurance`:
 | Option Name | Description | Default Value |
 | --- | --- | --- |
 | `notReadyOvalStrokeColor` | Color for oval stroke when in a GPA "not ready" state. | `.white` |
-| `readyOvalStrokeColor`| Color for oval stroke when in the GPA "ready" state. | #01AC41 |
+| `readyOvalStrokeColor`| Color for oval stroke when in the GPA "ready" state. | `#01AC41` |
 | `controlXPosition` | Whether to control x position of the face through showing prompts when using GPA. | `false` |
 | `controlYPosition` | Whether to control y position of the face through showing prompts when using GPA. | `false` |
 | `scanningPrompts` | Show a prompt 'Scanning' during GPA scan.<br/>Show a prompt 'Scan Completed' after GPA scan completes. | `false` |
@@ -427,7 +353,7 @@ LA-specific options can be set under `Options.livenessAssurance`:
 | Option Name | Description | Default Value |
 | --- | --- | --- |
 | `ovalStrokeColor` | Color for oval stroke during LA scan. | `.white` |
-| `completedOvalStrokeColor`| Color for oval stroke after LA scan completes. | #01AC41 |
+| `completedOvalStrokeColor`| Color for oval stroke after LA scan completes. | `#01AC41` |
 
 ### Custom `IProovPresentationDelegate`
 
@@ -459,7 +385,7 @@ extension MyViewController: IProovPresentationDelegate {
 
 ### Optional `IProovViewDelegate`
 
-If you want to receive UI state updates from iProov SDK, you can set an object of a type conforming to `IProovViewDelegate` protocol to `options.viewDelegate`.
+If you want to receive UI state updates from the SDK, you can set an object of a type conforming to `IProovViewDelegate` protocol to `options.viewDelegate`.
 
 Example:
 
@@ -505,7 +431,7 @@ You can customize the strings from your app or localize them into a different la
 
 Failures occur when the user's identity could not be verified. A failure means that the capture was successfully received and processed by the server, which returned a result. Crucially, this differs from an error, where the capture itself failed due to a system failure.
 
-Failures are caught via the `.failure(reason)` enum case in the callback. The `reason` is an enum with the reason that the user could not be verified/enrolled, which has the following properties:
+Failures are caught via the `.failure(result)` enum case in the callback. The `result` contains `reasons` that the user could not be verified/enrolled, where each `reason` having the following properties:
 
 - `feedbackCode` - A string representation of the feedback code.
 
@@ -513,19 +439,32 @@ Failures are caught via the `.failure(reason)` enum case in the callback. The `r
 
 The available feedback codes are as follows:
 
-| Enum value         | `localizedDescription` (English)       | GPA | LA |
-|--------------------|----------------------------------------|----|----|
-| `unknown`          | Try again                              | ✅ | ✅  |
-| `tooMuchMovement`  | Keep still                             | ✅ | ⚠️ |
-| `tooBright`        | Move somewhere darker                  | ✅ | ⚠️ |
-| `tooDark`          | Move somewhere brighter                | ✅ | ⚠️ |
-| `misalignedFace`   | Keep your face in the oval             | ✅ | ❌  |
-| `eyesClosed`       | Keep your eyes open                    | ✅ | ⚠️ |
-| `faceTooFar`       | Move your face closer to the screen    | ✅ | ❌  |
-| `faceTooClose`     | Move your face farther from the screen | ✅ | ❌  |
-| `sunglasses`       | Remove sunglasses                      | ✅ | ⚠️ |
-| `obscuredFace`     | Remove any face coverings              | ✅ | ❌  |
-| `multipleFaces`    | Ensure only one person is visible      | ⚠️ | ⚠️ |
+| Enum value         | `localizedDescription` (English)                        | GPA | LA |
+|--------------------|---------------------------------------------------------|-----|----|
+| `unknown`          | Try again                                               | ✅  | ❌ |
+| `tooMuchMovement`  | Keep still                                              | ✅  | ❌ |
+| `tooBright`        | Move somewhere darker                                   | ✅  | ❌ |
+| `tooDark`          | Move somewhere brighter                                 | ✅  | ❌ |
+| `misalignedFace`   | Keep your face in the oval                              | ✅  | ❌ |
+| `faceTooFar`       | Move your face closer to the screen                     | ✅  | ❌ |
+| `faceTooClose`     | Move your face farther from the screen                  | ✅  | ❌ |
+| `sunglasses`       | Remove sunglasses                                       | ✅  | ❌ |
+| `systemError`      | System Error                                            | ⚠️  | ✅ |
+| `rejected`         | Transaction could not be completed                      | ⚠️  | ✅ |
+| `faceNotFound`     | Align your face in the oval and then try to keep still  | ⚠️  | ✅ |
+| `obscuredFace`     | Make sure your whole face is visible and remove any accessories that might cover your face                                                                | ✅  | ✅ |
+| `timeout`          | System timeout                                          | ⚠️  | ✅ |
+| `eyewear`          | Remove your eyewear                                     | ⚠️  | ✅ |
+| `multipleFaces`    | Ensure only one person is visible                       | ✅  | ✅ |
+| `eyesClosed`       | Make sure your eyes are open                            | ✅  | ✅ |
+| `userNotFound`     | Transaction could not be completed                      | ⚠️  | ✅ |
+| `lightingIssues`   | Make sure your face is well lit and free from glare     | ⚠️  | ✅ |
+| `framesBlurry`     | Align your face in the oval and then try to keep still  | ⚠️  | ✅ |
+| `deviceIssue`      | Try a different device                                  | ⚠️  | ✅ |
+| `motionIssue`      | Align your face in the oval and then try to keep still  | ⚠️  | ✅ |
+| `backgroundIssue`  | Move to a different location with a neutral background  | ⚠️  | ✅ |
+| `deviceRestart`    | Please restart your device and try again                | ⚠️  | ✅ |
+| `processingFault`  | Please try again                                        | ⚠️  | ✅ |
 
 Key: ✅ = will be returned, ❌ = will not be returned, ⚠️ = may be returned in the future
 
@@ -550,9 +489,7 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 
 ## API Client
 
-The [iProov iOS API Client](https://github.com/iProov/ios-api-client) is a simple wrapper for the [iProov REST API v2](https://secure.iproov.me/docs.html) written in Swift and using [Alamofire](https://github.com/Alamofire/Alamofire) for use in demo/PoC apps.
-
-For further details, see the [installation documentation](https://github.com/iProov/ios-api-client#installation). The APIClient can also be integrated using the [iProovAPIClient folder](https://github.com/iProov/ios/blob/master/iProovAPIClient/README.md) in this repo, but this will be removed in the next major release.
+The [iProov iOS API Client](https://github.com/iProov/ios-api-client) is a simple wrapper for the [iProov REST API v2](https://secure.iproov.me/docs.html) written in Swift and using [Alamofire](https://github.com/Alamofire/Alamofire) for use in demo/PoC apps. For further details, see the [installation documentation](https://github.com/iProov/ios-api-client#installation).
 
 ## Example Project
 
@@ -574,6 +511,6 @@ For a simple iProov experience that is ready to run out-of-the-box and uses the 
 
 You may find your question answered in our [FAQs](https://github.com/iProov/ios/wiki/Frequently-Asked-Questions) or one of our other [Wiki pages](https://github.com/iProov/ios/wiki).
 
-Consult the [Documentation Center](https://docs.iproov.com/) for the detailed [implementation guide](https://docs.iproov.com/docs/Content/ImplementationGuide/biometric-sdk/ios/sdk-ios-intro.htm), [glossary](https://docs.iproov.com/docs/Content/Glossary/iproov-glossary.htm), and API reference.
+Consult the [Documentation Center](https://docs.iproov.com/) for the detailed implementation guide, glossary, and API reference.
 
-For further help with integrating the iProov Biometrics SDK, please contact [support@iproov.com](mailto:support@iproov.com).
+For further help with integrating the SDK, please contact [support@iproov.com](mailto:support@iproov.com).

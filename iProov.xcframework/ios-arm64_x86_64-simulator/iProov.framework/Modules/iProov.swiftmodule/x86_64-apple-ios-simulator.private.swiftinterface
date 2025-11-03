@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name iProov
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name iProov
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import Accelerate
@@ -11,6 +11,7 @@ import CommonCrypto
 import CoreMedia
 import CoreMotion
 import CoreVideo
+import CryptoKit
 import Darwin
 import DeveloperToolsSupport
 import Dispatch
@@ -173,7 +174,6 @@ extension iProov.IProov {
 }
 @objc(IPFilter) public protocol Filter {
 }
-infix operator ?= : AssignmentPrecedence
 infix operator --> : AdditionPrecedence
 @_hasMissingDesignatedInitializers @objc(IPPublicKey) @objcMembers public class PublicKey : ObjectiveC.NSObject {
   @objc final public let key: Security.SecKey
@@ -201,8 +201,11 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   @objc deinit
 }
 @objc(IPFailureReason) public enum FailureReason : Swift.Int, Swift.CaseIterable {
-  case unknown, tooMuchMovement, tooBright, tooDark, misalignedFace, eyesClosed, faceTooFar, faceTooClose, sunglasses, obscuredFace, multipleFaces
+  case unknown, tooMuchMovement, tooBright, tooDark, misalignedFace, faceTooFar, faceTooClose, sunglasses, systemError, lightingIssues, faceNotFound, timeout, eyewear, deviceIssue, rejected, backgroundIssue, motionIssue, deviceRestart, framesBlurry, userNotFound, processingFault, eyesClosed, multipleFaces, obscuredFace
   public var feedbackCode: Swift.String {
+    get
+  }
+  public var localizedDescription: Swift.String {
     get
   }
   public init?(rawValue: Swift.Int)
@@ -216,11 +219,8 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   }
 }
 @_hasMissingDesignatedInitializers @objc(IPFailureResult) @objcMembers public class FailureResult : ObjectiveC.NSObject {
-  @objc final public let reason: iProov.FailureReason
+  final public let reasons: [iProov.FailureReason]
   @objc final public let frame: UIKit.UIImage?
-  @objc public var localizedDescription: Swift.String {
-    @objc get
-  }
   @objc deinit
 }
 @objc(IPCanceler) public enum Canceler : Swift.Int {
@@ -253,14 +253,6 @@ extension iProov.IProov {
   }
   @objc public static var buildNumber: Swift.Int {
     @objc get
-  }
-}
-extension UIKit.UIImage {
-  convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
-}
-extension UIKit.UIApplication {
-  @_Concurrency.MainActor @preconcurrency public var keyWindow: UIKit.UIWindow? {
-    get
   }
 }
 extension iProov.Options.LineDrawingFilter.Style : Swift.Equatable {}

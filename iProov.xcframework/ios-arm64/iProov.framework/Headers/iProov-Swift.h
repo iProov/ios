@@ -328,22 +328,32 @@ typedef SWIFT_ENUM_NAMED(NSInteger, IPFailureReason, "FailureReason", open) {
   IPFailureReasonTooBright = 2,
   IPFailureReasonTooDark = 3,
   IPFailureReasonMisalignedFace = 4,
-  IPFailureReasonEyesClosed = 5,
-  IPFailureReasonFaceTooFar = 6,
-  IPFailureReasonFaceTooClose = 7,
-  IPFailureReasonSunglasses = 8,
-  IPFailureReasonObscuredFace = 9,
-  IPFailureReasonMultipleFaces = 10,
+  IPFailureReasonFaceTooFar = 5,
+  IPFailureReasonFaceTooClose = 6,
+  IPFailureReasonSunglasses = 7,
+  IPFailureReasonSystemError = 8,
+  IPFailureReasonLightingIssues = 9,
+  IPFailureReasonFaceNotFound = 10,
+  IPFailureReasonTimeout = 11,
+  IPFailureReasonEyewear = 12,
+  IPFailureReasonDeviceIssue = 13,
+  IPFailureReasonRejected = 14,
+  IPFailureReasonBackgroundIssue = 15,
+  IPFailureReasonMotionIssue = 16,
+  IPFailureReasonDeviceRestart = 17,
+  IPFailureReasonFramesBlurry = 18,
+  IPFailureReasonUserNotFound = 19,
+  IPFailureReasonProcessingFault = 20,
+  IPFailureReasonEyesClosed = 21,
+  IPFailureReasonMultipleFaces = 22,
+  IPFailureReasonObscuredFace = 23,
 };
 
 @class UIImage;
-@class NSString;
 
 SWIFT_CLASS_NAMED("FailureResult")
 @interface IPFailureResult : NSObject
-@property (nonatomic, readonly) enum IPFailureReason reason;
 @property (nonatomic, readonly, strong) UIImage * _Nullable frame;
-@property (nonatomic, readonly, copy) NSString * _Nonnull localizedDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -364,6 +374,7 @@ SWIFT_CLASS_NAMED("IProov")
 @end
 
 @class NSURL;
+@class NSString;
 @class IPOptions;
 @class IPSuccessResult;
 @class NSError;
@@ -555,7 +566,6 @@ SWIFT_CLASS_NAMED("SuccessResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 
