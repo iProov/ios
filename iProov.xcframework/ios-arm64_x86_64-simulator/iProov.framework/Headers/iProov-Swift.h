@@ -381,7 +381,7 @@ SWIFT_CLASS_NAMED("IProov")
 @class IPSession;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (IPSession * _Nonnull)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(IPFailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error SWIFT_WARN_UNUSED_RESULT;
++ (IPSession * _Nonnull)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, NSArray<NSString *> * _Nonnull, UIImage * _Nullable))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class IPKeyPair;
@@ -983,7 +983,7 @@ SWIFT_CLASS_NAMED("IProov")
 @class IPSession;
 
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (IPSession * _Nonnull)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(IPFailureResult * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error SWIFT_WARN_UNUSED_RESULT;
++ (IPSession * _Nonnull)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, NSArray<NSString *> * _Nonnull, UIImage * _Nullable))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class IPKeyPair;

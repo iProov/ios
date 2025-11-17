@@ -1,5 +1,5 @@
 PODS:
-  - iProov (13.0.0)
+  - iProov (13.1.0)
   - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  iProov: 9bbaae27fa00ac86df695b5e6d80b280f9464178
+  iProov: 66e7b060aac7843c6961ea5d9295781963574462
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
 PODFILE CHECKSUM: 05ef135f4ced80891a520ac86998fc28e2cec830
