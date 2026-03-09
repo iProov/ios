@@ -1,23 +1,16 @@
 PODS:
-  - iProov (13.1.0)
-  - MBProgressHUD (1.2.0)
+  - iProov (13.1.1)
 
 DEPENDENCIES:
   - iProov (from `../`)
-  - MBProgressHUD
-
-SPEC REPOS:
-  trunk:
-    - MBProgressHUD
 
 EXTERNAL SOURCES:
   iProov:
     :path: "../"
 
 SPEC CHECKSUMS:
-  iProov: 66e7b060aac7843c6961ea5d9295781963574462
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  iProov: eceb3ba1ef20b03a5ebd30394a5a1044e0c41f91
 
-PODFILE CHECKSUM: 05ef135f4ced80891a520ac86998fc28e2cec830
+PODFILE CHECKSUM: 71a43a6382992fa2aacd3734942aae8a6e7227b0
 
 COCOAPODS: 1.16.2

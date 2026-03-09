@@ -1,4 +1,4 @@
-// Copyright (c) 2025 iProov Ltd. All rights reserved.
+// Copyright (c) 2026 iProov Ltd. All rights reserved.
 
 import iProov
 import iProovAPIClient
@@ -43,15 +43,12 @@ class ViewController: UIViewController {
                            type: claimType,
                            userID: userID)
         { result in
-
             switch result {
             case let .success(token):
-
                 let options = Options()
 
                 let streamingURL = URL(string: "wss://\(Credentials.hostname)/ws")!
                 IProov.launch(streamingURL: streamingURL, token: token, options: options) { status in
-
                     switch status {
                     case .connecting:
                         hud.mode = .indeterminate

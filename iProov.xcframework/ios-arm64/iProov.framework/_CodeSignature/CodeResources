@@ -162,11 +162,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		v79e/5KA0fiuTG7af2kbJSry5dU=
+		16WRv1p9sb9iy5+jy5mafjqsxWc=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		BqNYM12S0wmoXDe++R8v2EW6qKo=
+		SPskKjahSCPNgXS5uVwAJ0+3uE4=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		OBPUf5JBAEp/p3/Oy236mjAapEM=
+		ZZEXRqQPrQKevMCGpLcrjDZyuOc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -248,7 +248,7 @@
 		</dict>
 		<key>iProov.plist</key>
 		<data>
-		GCynuxWiUbF+LSKvDKwr38VKyy4=
+		x/wy5Dd7a6Rc6HQ2GoR14KsGz+8=
 		</data>
 		<key>it.lproj/Localizable.strings</key>
 		<dict>
@@ -566,7 +566,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HluFueiVdCHS+EQJh3qX+Qdv2SmfSuAA/TCrmioRPMs=
+			sAPdVetgrLCAAQPnzd3wA8m1fRQk6MDwNWN6e3jnURg=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -594,7 +594,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KiqlKg2G21x99LfcL83YsR4yFDcRv8eBX9iBTAzJBJI=
+			hMN/Q56RooEcCJhnxjKgXpQWkge2EX7VwpRGXp31eqk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -669,7 +669,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			07cf72w1OlUjPh0HAybW2OhowBYLJJZLe/oalKK4UYc=
+			4HNnCXsBB7K/cHqxTtygCTCgJUXwTV/TEywySgpAXfY=
 			</data>
 		</dict>
 		<key>it.lproj/Localizable.strings</key>

@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Face SDK v13.1.0
+# iProov Face SDK v13.1.1
 
 ## Introduction
 
@@ -88,7 +88,7 @@ We recommend using Swift Package Manager for integrating our SDK with your app o
 	https://github.com/iProov/ios-spm
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 13.1.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 13.1.1 as the lower bound.
 	
 3. Click _Add Package_ to add the SDK to your Xcode project and then click again to confirm.
 
@@ -100,7 +100,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios-spm.git",
-	.upToNextMajor(from: "13.1.0")
+	.upToNextMajor(from: "13.1.1")
 ),
 ```
 
@@ -132,7 +132,7 @@ As Swift Package Manager downloads the full repository for a package, installing
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/13.1.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/13.1.1).
 
 5. Under the **Embed** column, ensure **Embed & Sign** is set.
 
@@ -375,11 +375,13 @@ extension MyViewController: IProovPresentationDelegate {
 }
 ```
 
-> **Warning**: There are a couple of important rules you **must** follow when using this functionality:
-> 
+> **Warning**: There are a few important rules you **must** follow when using this functionality:
+>
 > 1. With great power comes great responsibility! The iProov view controller requires full coverage of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only occupies part of the screen, or is obscured by other views. You must also ensure that the view controller is entirely removed from the user's view once dismissed.
-> 
-> 2. To avoid the risk of retain cycles, `Options` only holds a `weak` reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
+>
+> 2. **On iPad**, the iProov view controller must be presented fullscreen (using `.fullScreen` or `.overFullScreen` `modalPresentationStyle`, or `.fullScreenCover` in SwiftUI). If presented using a non-fullscreen style (e.g. `.pageSheet`, `.formSheet`, or SwiftUI `.sheet`), the SDK will display an overlay prompting the user to return to fullscreen.
+>
+> 3. To avoid the risk of retain cycles, `Options` only holds a `weak` reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
 
 > **Note**: The default UI options defined above have been verified to comply with the [WCAG 2.1 AA accessibility standard](https://www.iproov.com/blog/biometric-authentication-liveness-accessibility-inclusivity-wcag-regulations). Changing these values could result in non-compliance with the guidelines.
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 iProov Ltd. All rights reserved.
+// Copyright (c) 2026 iProov Ltd. All rights reserved.
 
 import UIKit
 

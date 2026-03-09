@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		68ED41922AB463380055B423 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ED41912AB463380055B423 /* Credentials.swift */; };
+		ADC21AB12EE06BF4003711C4 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = ADC21AB02EE06BF4003711C4 /* MBProgressHUD */; };
 		DB5B793997242BD6FE471CE9 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5587D7F5F98A01AC0B90A8 /* Pods_Example.framework */; };
 		E6B955112E81860300C0EE19 /* iProovAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = E6B955102E81860300C0EE19 /* iProovAPIClient */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC21AB12EE06BF4003711C4 /* MBProgressHUD in Frameworks */,
 				DB5B793997242BD6FE471CE9 /* Pods_Example.framework in Frameworks */,
 				E6B955112E81860300C0EE19 /* iProovAPIClient in Frameworks */,
 			);
@@ -166,6 +168,7 @@
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
 				E6B9550F2E81860300C0EE19 /* XCRemoteSwiftPackageReference "ios-api-client" */,
+				ADE97F562EE06A9000BD0E68 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -197,12 +200,10 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/iProov/iProov.framework/iProov",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iProov.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +434,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		ADE97F562EE06A9000BD0E68 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matej/MBProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		E6B9550F2E81860300C0EE19 /* XCRemoteSwiftPackageReference "ios-api-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iProov/ios-api-client";
@@ -444,6 +453,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		ADC21AB02EE06BF4003711C4 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADE97F562EE06A9000BD0E68 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
 		E6B955102E81860300C0EE19 /* iProovAPIClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E6B9550F2E81860300C0EE19 /* XCRemoteSwiftPackageReference "ios-api-client" */;
