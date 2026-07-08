@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Face SDK v13.1.1
+# iProov Face SDK v13.2.0
 
 ## Introduction
 
@@ -29,7 +29,7 @@ iProov also supports [Android](https://github.com/iproov/android), [Flutter](htt
 ### Requirements
 
 - iOS 15.0 and above
-- Xcode 16.0 and above
+- Xcode 26.0 and above
 
 The framework has been written in Swift 5.10, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
 
@@ -88,7 +88,7 @@ We recommend using Swift Package Manager for integrating our SDK with your app o
 	https://github.com/iProov/ios-spm
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 13.1.1 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 13.2.0 as the lower bound.
 	
 3. Click _Add Package_ to add the SDK to your Xcode project and then click again to confirm.
 
@@ -100,7 +100,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios-spm.git",
-	.upToNextMajor(from: "13.1.1")
+	.upToNextMajor(from: "13.2.0")
 ),
 ```
 
@@ -132,7 +132,7 @@ As Swift Package Manager downloads the full repository for a package, installing
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/13.1.1).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/13.2.0).
 
 5. Under the **Embed** column, ensure **Embed & Sign** is set.
 

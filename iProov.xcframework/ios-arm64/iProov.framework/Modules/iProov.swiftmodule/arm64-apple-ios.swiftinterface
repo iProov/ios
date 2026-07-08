@@ -1,13 +1,15 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name iProov
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name iProov
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AVFoundation
 import Accelerate
 import AudioToolbox
 import CFNetwork
 import Combine
 import CommonCrypto
+import CoreGraphics
+import CoreImage
 import CoreMedia
 import CoreMotion
 import CoreVideo
@@ -16,10 +18,12 @@ import Darwin
 import DeveloperToolsSupport
 import Dispatch
 import Foundation
+import ImageIO
 import MachO
+import Metal
+import MetalKit
 import Network
 import ObjectiveC
-import OpenGLES
 import QuartzCore
 import Swift
 import SwiftUI
@@ -30,7 +34,6 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_exported import iProov
 import os
 import ObjectiveC.runtime
 import simd
@@ -72,20 +75,28 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError, S
   public var errorUserInfo: [Swift.String : Any] {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
   public var localizedTitle: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var localizedMessage: Swift.String? {
     get
   }
+  #endif
   public static func == (lhs: iProov.IProovError, rhs: iProov.IProovError) -> Swift.Bool
 }
 @objc public protocol IProovPresentationDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  #endif
 }
 @objc public protocol IProovViewDelegate {
   @objc func willPresentIProovView()
@@ -97,8 +108,10 @@ extension WebKit.WKWebView {
   @objc @_Concurrency.MainActor @preconcurrency dynamic public func uninstallNativeBridge()
 }
 extension iProov.IProov {
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(swift, obsoleted: 1.0)
   @objc public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, canceled: @escaping (iProov.Canceler) -> Swift.Void, failure: @escaping (_ feedbackCodes: [Swift.String], _ localizedDescriptions: [Swift.String], _ frame: UIKit.UIImage?) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void) -> iProov.Session
+  #endif
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
   @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
@@ -145,7 +158,9 @@ extension iProov.IProov {
   @objc(IPLineDrawingFilter) @objcMembers public class LineDrawingFilter : ObjectiveC.NSObject, iProov.Filter {
     @objc(IPLineDrawingFilterStyle) public enum Style : Swift.Int {
       case classic, shaded, vibrant
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.Int)
+      #endif
       public typealias RawValue = Swift.Int
       public var rawValue: Swift.Int {
         get
@@ -160,7 +175,9 @@ extension iProov.IProov {
   @objc(IPNaturalFilter) @objcMembers public class NaturalFilter : ObjectiveC.NSObject, iProov.Filter {
     @objc(IPNaturalFilterStyle) public enum Style : Swift.Int {
       case clear, blur
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.Int)
+      #endif
       public typealias RawValue = Swift.Int
       public var rawValue: Swift.Int {
         get
@@ -174,7 +191,6 @@ extension iProov.IProov {
 }
 @objc(IPFilter) public protocol Filter {
 }
-infix operator --> : AdditionPrecedence
 @_hasMissingDesignatedInitializers @objc(IPPublicKey) @objcMembers public class PublicKey : ObjectiveC.NSObject {
   @objc final public let key: Security.SecKey
   @objc public var pem: Swift.String {
@@ -208,7 +224,9 @@ public typealias Callback = (iProov.Status) -> Swift.Void
   public var localizedDescription: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [iProov.FailureReason]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [iProov.FailureReason] {
@@ -226,7 +244,9 @@ public typealias Callback = (iProov.Status) -> Swift.Void
 @objc(IPCanceler) public enum Canceler : Swift.Int {
   case user
   case integration
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get

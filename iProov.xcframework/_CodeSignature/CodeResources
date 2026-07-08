@@ -6,13 +6,13 @@
 	<dict>
 		<key>ios-arm64/iProov.framework/Assets.car</key>
 		<data>
-		bnOMZbKEnHKVVh3sMY2BCxan2DI=
+		OaVnZgmtt0ICm626DutvBADR5eQ=
 		</data>
 		<key>ios-arm64/iProov.framework/Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Dbh1n5xijXsCjy+3c/bhWjL4cyI=
+			7vCI0cXZJBRnRXAChqe5JjKDQv8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -53,157 +53,29 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPRSSwizzle.h</key>
-		<data>
-		To/GZIzRJx1mFMM80nKTGYnEK78=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKBackgroundReporter.h</key>
-		<data>
-		JvVJJNJM1mIdKt8rF9mxxjNpYD0=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKLog.h</key>
-		<data>
-		j5JAbAID7ndxiLG1G610Bxzjoas=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKNSURLConnectionDelegateProxy.h</key>
-		<data>
-		4J7KoJmwHjI7qGc/a8AboeKArJE=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKNSURLSessionDelegateProxy.h</key>
-		<data>
-		MVJ9xltzAzX4xEXV/PEduGjeJZA=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinFailureReport.h</key>
-		<data>
-		2HrrNenr1qT1SDZ6fMvFxyxcnvk=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinningValidator.h</key>
-		<data>
-		1vlA96M0ll1JyBo1F0S72xUy/dQ=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinningValidatorCallback.h</key>
-		<data>
-		7BZOt5HEH6xujqNYojrnrrbhjoc=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinningValidatorResult.h</key>
-		<data>
-		gQXfDtKL+9WOyTEVmo+5dHXtOjQ=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPublicKeyAlgorithm.h</key>
-		<data>
-		HTllBNNwnDeT8UxGtb67jQsEhto=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKReportsRateLimiter.h</key>
-		<data>
-		KFnbpwW4c+vXJN3qwesDeNnfIH0=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKSPKIHashCache.h</key>
-		<data>
-		0lEyKAok2YwN84RqesDZvWcGGnA=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKTrustDecision.h</key>
-		<data>
-		KdiewISJ5NkjrUsi1zJHHqkmqWk=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKTrustKitConfig.h</key>
-		<data>
-		lHlT7alOonvD5cy011y4Jn2U+Q4=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IPTrustKit.h</key>
-		<data>
-		AbAtk/XYgLK/lsO5mRUJvr5Oiss=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_TrustKit-Bridging-Header.h</key>
-		<data>
-		7xFnNhAD5rNvPXYb4uzsxxN1AlM=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_configuration_utils.h</key>
-		<data>
-		rhXpGmBnKDMLpTjlyF0ZoiHPqZc=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_domain_registry.h</key>
-		<data>
-		xtGE4bUfTZjiTvMzWwjarMRYdvM=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_parse_configuration.h</key>
-		<data>
-		axDkpe0esX4k4G8GCPKMJ7R+fPQ=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_pinning_utils.h</key>
-		<data>
-		ui/N3prWurVIOrGgOYp9WgxoIJM=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_registry_tables.h</key>
-		<data>
-		MS0RWfj8OJyZmKb6o/66jgH7Wag=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_registry_types.h</key>
-		<data>
-		ZBDE61AYBrE6XFFbRktEGidX+yk=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_reporting_utils.h</key>
-		<data>
-		o/xGEWiQI1CY12G/DFMpJVvmzFw=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_ssl_pin_verifier.h</key>
-		<data>
-		6XyeI9P3wLBEdh6RE+JZIZqeR2o=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_string_util.h</key>
-		<data>
-		fDIjqr3hT0ux9HoOmyMs8q58vqU=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_trie_node.h</key>
-		<data>
-		Qi0yLQORcLsiy2aBS2jdSjQPPqc=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_trie_search.h</key>
-		<data>
-		ImvdB9/LPzeHm5gq6GbGoTnw/R0=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_tsk_assert.h</key>
-		<data>
-		FIMaHTh0GlU4xBvJeufdl43ciTM=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/IP_vendor_identifier.h</key>
-		<data>
-		oIFSakX4mKk7oo9XOOGamGnzOEc=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/TSKPinningValidator_Private.h</key>
-		<data>
-		bD80g3CrggbI/5zxAvWBomnt69M=
-		</data>
 		<key>ios-arm64/iProov.framework/Headers/iProov-Swift.h</key>
 		<data>
-		xJTJqYJVd5AeIBMf1AHytcstqQs=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/iProov-umbrella.h</key>
-		<data>
-		w9PN6QmUNCHQSRBD2Xf+ElIZeBA=
-		</data>
-		<key>ios-arm64/iProov.framework/Headers/iproovcalcifer.h</key>
-		<data>
-		gGdvUqqxhlTWIuztrtdpt+iP9yE=
+		MeTYwDx9OsjMxrTiPrt3bBShWmE=
 		</data>
 		<key>ios-arm64/iProov.framework/Info.plist</key>
 		<data>
-		16WRv1p9sb9iy5+jy5mafjqsxWc=
+		mSuq4h04nMryqJW6J6iRuXAp2Yw=
 		</data>
 		<key>ios-arm64/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		36PUvtm+xHnM879FrZO8WfKuIwk=
+		Lvq+qo2eP1YAKFkXi7DQq4nHX4Y=
 		</data>
 		<key>ios-arm64/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		pLF+VUrhfXMG4iT8UEDY91BLh3Q=
+		iOsGTVXpURWRvOf3MohJGpLWj2I=
 		</data>
 		<key>ios-arm64/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		36PUvtm+xHnM879FrZO8WfKuIwk=
+		0N+7xGEFwkHOf7UxbIWNSX82yFg=
 		</data>
 		<key>ios-arm64/iProov.framework/Modules/module.modulemap</key>
 		<data>
-		HQftVmVnWtF28qrl0w3W18ctVes=
+		hPdRoFaKZ46ubZ3c0Wrgeih3Iw4=
 		</data>
 		<key>ios-arm64/iProov.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -211,7 +83,7 @@
 		</data>
 		<key>ios-arm64/iProov.framework/_CodeSignature/CodeResources</key>
 		<data>
-		LqZ4cujGRWJ6vJoLA+Cyrfy1ZjM=
+		9kwSKamZy2AsH/ZNuC1s7XexEX4=
 		</data>
 		<key>ios-arm64/iProov.framework/cy-GB.lproj/Localizable.strings</key>
 		<dict>
@@ -231,6 +103,10 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>ios-arm64/iProov.framework/default.metallib</key>
+		<data>
+		XaowtPZKJ91aIOr74BxtXF4gr7Y=
+		</data>
 		<key>ios-arm64/iProov.framework/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -269,11 +145,11 @@
 		</dict>
 		<key>ios-arm64/iProov.framework/iProov</key>
 		<data>
-		fzLM8kinWh74HWPRsqY9y5P1gVI=
+		433OBu7/wM3Jg9Vsm4MWLWuvxwc=
 		</data>
 		<key>ios-arm64/iProov.framework/iProov.plist</key>
 		<data>
-		x/wy5Dd7a6Rc6HQ2GoR14KsGz+8=
+		HE3jqa2QlUZdfy35fM+GiCbGb68=
 		</data>
 		<key>ios-arm64/iProov.framework/it.lproj/Localizable.strings</key>
 		<dict>
@@ -313,13 +189,13 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Assets.car</key>
 		<data>
-		bnOMZbKEnHKVVh3sMY2BCxan2DI=
+		OaVnZgmtt0ICm626DutvBADR5eQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Dbh1n5xijXsCjy+3c/bhWjL4cyI=
+			7vCI0cXZJBRnRXAChqe5JjKDQv8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -360,169 +236,41 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPRSSwizzle.h</key>
-		<data>
-		To/GZIzRJx1mFMM80nKTGYnEK78=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKBackgroundReporter.h</key>
-		<data>
-		JvVJJNJM1mIdKt8rF9mxxjNpYD0=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKLog.h</key>
-		<data>
-		j5JAbAID7ndxiLG1G610Bxzjoas=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKNSURLConnectionDelegateProxy.h</key>
-		<data>
-		4J7KoJmwHjI7qGc/a8AboeKArJE=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKNSURLSessionDelegateProxy.h</key>
-		<data>
-		MVJ9xltzAzX4xEXV/PEduGjeJZA=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinFailureReport.h</key>
-		<data>
-		2HrrNenr1qT1SDZ6fMvFxyxcnvk=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinningValidator.h</key>
-		<data>
-		1vlA96M0ll1JyBo1F0S72xUy/dQ=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinningValidatorCallback.h</key>
-		<data>
-		7BZOt5HEH6xujqNYojrnrrbhjoc=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinningValidatorResult.h</key>
-		<data>
-		gQXfDtKL+9WOyTEVmo+5dHXtOjQ=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPublicKeyAlgorithm.h</key>
-		<data>
-		HTllBNNwnDeT8UxGtb67jQsEhto=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKReportsRateLimiter.h</key>
-		<data>
-		KFnbpwW4c+vXJN3qwesDeNnfIH0=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKSPKIHashCache.h</key>
-		<data>
-		0lEyKAok2YwN84RqesDZvWcGGnA=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKTrustDecision.h</key>
-		<data>
-		KdiewISJ5NkjrUsi1zJHHqkmqWk=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKTrustKitConfig.h</key>
-		<data>
-		lHlT7alOonvD5cy011y4Jn2U+Q4=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTrustKit.h</key>
-		<data>
-		AbAtk/XYgLK/lsO5mRUJvr5Oiss=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_TrustKit-Bridging-Header.h</key>
-		<data>
-		7xFnNhAD5rNvPXYb4uzsxxN1AlM=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_configuration_utils.h</key>
-		<data>
-		rhXpGmBnKDMLpTjlyF0ZoiHPqZc=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_domain_registry.h</key>
-		<data>
-		xtGE4bUfTZjiTvMzWwjarMRYdvM=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_parse_configuration.h</key>
-		<data>
-		axDkpe0esX4k4G8GCPKMJ7R+fPQ=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_pinning_utils.h</key>
-		<data>
-		ui/N3prWurVIOrGgOYp9WgxoIJM=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_registry_tables.h</key>
-		<data>
-		MS0RWfj8OJyZmKb6o/66jgH7Wag=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_registry_types.h</key>
-		<data>
-		ZBDE61AYBrE6XFFbRktEGidX+yk=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_reporting_utils.h</key>
-		<data>
-		o/xGEWiQI1CY12G/DFMpJVvmzFw=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_ssl_pin_verifier.h</key>
-		<data>
-		6XyeI9P3wLBEdh6RE+JZIZqeR2o=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_string_util.h</key>
-		<data>
-		fDIjqr3hT0ux9HoOmyMs8q58vqU=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_trie_node.h</key>
-		<data>
-		Qi0yLQORcLsiy2aBS2jdSjQPPqc=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_trie_search.h</key>
-		<data>
-		ImvdB9/LPzeHm5gq6GbGoTnw/R0=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_tsk_assert.h</key>
-		<data>
-		FIMaHTh0GlU4xBvJeufdl43ciTM=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_vendor_identifier.h</key>
-		<data>
-		oIFSakX4mKk7oo9XOOGamGnzOEc=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/TSKPinningValidator_Private.h</key>
-		<data>
-		bD80g3CrggbI/5zxAvWBomnt69M=
-		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/iProov-Swift.h</key>
 		<data>
-		afjI9WKqtNaENDKCDuPr7Yc1pQE=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/iProov-umbrella.h</key>
-		<data>
-		w9PN6QmUNCHQSRBD2Xf+ElIZeBA=
-		</data>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/iproovcalcifer.h</key>
-		<data>
-		gGdvUqqxhlTWIuztrtdpt+iP9yE=
+		dr6aJWba1or7PY4BVNMCj20n8b0=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Info.plist</key>
 		<data>
-		RhJMOARFFTjTOmHfx+ZeqeCYi6E=
+		Yyik9c7tB9u2h8JLdHmSla9B41U=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		z0TFaGSf3XJQqnnHtk0BwmNmkgA=
+		ZkVGnU+/iHRKE1juAWqXL5oWswA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		qJKw6xki0mOPV3B0n5s9fqK4uP0=
+		H9DHoJDT3MEjsSJXz9dEE9rLCv8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		z0TFaGSf3XJQqnnHtk0BwmNmkgA=
+		JZllFGqCP/CO7pyyu7AmJPb1zeo=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Jeel8fNQrSG+3055Qfmn38k7Rkc=
+		yvBwE1xC/gK+TZX29s0pQ0CGa9w=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HwvV0ekX2SfcSJCZ9OxfeyB6Avw=
+		3flCevv4euqomg79VlIisVM88Fo=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Jeel8fNQrSG+3055Qfmn38k7Rkc=
+		HBGJ35L9nbi8V3LoeFFNSjWxS6k=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/module.modulemap</key>
 		<data>
-		HQftVmVnWtF28qrl0w3W18ctVes=
+		hPdRoFaKZ46ubZ3c0Wrgeih3Iw4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -546,6 +294,10 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>ios-arm64_x86_64-simulator/iProov.framework/default.metallib</key>
+		<data>
+		gIedAK/cCk19XbVcLHyhJ/xisLI=
+		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -584,11 +336,11 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/iProov</key>
 		<data>
-		WKZtyNmCHR00qOn0BZgj/s8nuiI=
+		wDgR6gqvjqqbSAI2BRU4OJxlfEY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/iProov.plist</key>
 		<data>
-		x/wy5Dd7a6Rc6HQ2GoR14KsGz+8=
+		HE3jqa2QlUZdfy35fM+GiCbGb68=
 		</data>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/it.lproj/Localizable.strings</key>
 		<dict>
@@ -633,22 +385,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bnOMZbKEnHKVVh3sMY2BCxan2DI=
+			OaVnZgmtt0ICm626DutvBADR5eQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			yNucHDHmDcAyre85sVM3DCyuwQ/D+aQsvWeL9KOLJu0=
+			wXl3gxlZWPvtm6WbKtBc3AHF6Ms/ZRpIXzPKzbJt6rY=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Dbh1n5xijXsCjy+3c/bhWjL4cyI=
+			7vCI0cXZJBRnRXAChqe5JjKDQv8=
 			</data>
 			<key>hash2</key>
 			<data>
-			7EqsCnIwNrSl9MgGAbWsshX/4QYjFjKz+k4rzcYV9C8=
+			6z1KHsvUs1VHYv1eqlhdAlYnOPTOu+Gor3yljC3S2lY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -705,422 +457,70 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPRSSwizzle.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			To/GZIzRJx1mFMM80nKTGYnEK78=
-			</data>
-			<key>hash2</key>
-			<data>
-			2RpJC3Yz3LOKG4aMrVfWSipUrTkKFs2SAJgbdmVVm38=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKBackgroundReporter.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JvVJJNJM1mIdKt8rF9mxxjNpYD0=
-			</data>
-			<key>hash2</key>
-			<data>
-			NA1YO3bDB3Exkm2BdV+7odNkQnYyyk1pCnbb23cnj8Y=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKLog.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			j5JAbAID7ndxiLG1G610Bxzjoas=
-			</data>
-			<key>hash2</key>
-			<data>
-			LgZkxnSS4jC1moR0PZzh/E1H/h8mFhLGz/2S/Ntotvs=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKNSURLConnectionDelegateProxy.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4J7KoJmwHjI7qGc/a8AboeKArJE=
-			</data>
-			<key>hash2</key>
-			<data>
-			YasRSJ8AqfyU6Inl6pJwKA5lYfhpz4EGh1t7tcwLvcY=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKNSURLSessionDelegateProxy.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MVJ9xltzAzX4xEXV/PEduGjeJZA=
-			</data>
-			<key>hash2</key>
-			<data>
-			7TSul7TvRD77mNmIC7SVsK0yfvWiq+vL/5O5e/43ARU=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinFailureReport.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2HrrNenr1qT1SDZ6fMvFxyxcnvk=
-			</data>
-			<key>hash2</key>
-			<data>
-			8I/aB+PYmcvcg+JpQD466WAhF0oL8++idnKoVqFYahs=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinningValidator.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1vlA96M0ll1JyBo1F0S72xUy/dQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			EeoU4QeZNIQCSiffD87S+OXNJDhtfuBsVbBXpr4dDMw=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinningValidatorCallback.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7BZOt5HEH6xujqNYojrnrrbhjoc=
-			</data>
-			<key>hash2</key>
-			<data>
-			Op3/rsl6zP187vhlxazUxDyDixJct3dV3cDlwDHuiPc=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPinningValidatorResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gQXfDtKL+9WOyTEVmo+5dHXtOjQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			eBeMBj6Yeeh1fpAmXrZpnoifJHOOx4oUpgPiMluKGNc=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKPublicKeyAlgorithm.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HTllBNNwnDeT8UxGtb67jQsEhto=
-			</data>
-			<key>hash2</key>
-			<data>
-			/AdqSrrij6t+XuuWbQq6qOk+douU/OpplkjO1UjKgeQ=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKReportsRateLimiter.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			KFnbpwW4c+vXJN3qwesDeNnfIH0=
-			</data>
-			<key>hash2</key>
-			<data>
-			ullKT7fjzNZfOdmTQuEEJ2Ehv6HMpRAfKnAMoPAuVnw=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKSPKIHashCache.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0lEyKAok2YwN84RqesDZvWcGGnA=
-			</data>
-			<key>hash2</key>
-			<data>
-			ejg7yK7el2jbW3z4pUDZjl6KMEHXZyKabKhHxMpsEOs=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKTrustDecision.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			KdiewISJ5NkjrUsi1zJHHqkmqWk=
-			</data>
-			<key>hash2</key>
-			<data>
-			K55lmg+q9KArBm2/E8qIn4Zz1YccLa03h9+8/lhetqs=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTSKTrustKitConfig.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lHlT7alOonvD5cy011y4Jn2U+Q4=
-			</data>
-			<key>hash2</key>
-			<data>
-			mB6DG6pi8cK8t3uMNPwFvwa4AsW/pjVX4dvlTircVNk=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IPTrustKit.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			AbAtk/XYgLK/lsO5mRUJvr5Oiss=
-			</data>
-			<key>hash2</key>
-			<data>
-			ai17/go4DgyEWhTBf29BhvxMao0wH2gVulO4ymQaz4A=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_TrustKit-Bridging-Header.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7xFnNhAD5rNvPXYb4uzsxxN1AlM=
-			</data>
-			<key>hash2</key>
-			<data>
-			bFoZruRxSSiAkKK51XGPwEwlbWhteHqzhTPodBExeg4=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_configuration_utils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rhXpGmBnKDMLpTjlyF0ZoiHPqZc=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ksf3Khn4BTrgKCmEZup46VTb4WC+7kX9YD0mwaYTI7s=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_domain_registry.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xtGE4bUfTZjiTvMzWwjarMRYdvM=
-			</data>
-			<key>hash2</key>
-			<data>
-			PLkcq/mXlq0z6S7EM2uKLS8fdYZu9x9uSRf4SCU6eDQ=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_parse_configuration.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			axDkpe0esX4k4G8GCPKMJ7R+fPQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			Uj8VO1hOgyQWTi0ufnzkfvJDTiPw88Z9F13JkMDHF/o=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_pinning_utils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ui/N3prWurVIOrGgOYp9WgxoIJM=
-			</data>
-			<key>hash2</key>
-			<data>
-			BuAsSUc+fcUKS8z7hC3LVNKiKFzkf9NTiPt3gLpuisk=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_registry_tables.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MS0RWfj8OJyZmKb6o/66jgH7Wag=
-			</data>
-			<key>hash2</key>
-			<data>
-			W5vSIC8LQIRrFTOGU161pK4b/FO/SO+dr8XMc+fjIEU=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_registry_types.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZBDE61AYBrE6XFFbRktEGidX+yk=
-			</data>
-			<key>hash2</key>
-			<data>
-			KROJjUovY2x8okaNXGWm3BT74sXmGvy0Aw1PYuUIzWo=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_reporting_utils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			o/xGEWiQI1CY12G/DFMpJVvmzFw=
-			</data>
-			<key>hash2</key>
-			<data>
-			J2CErd+OdiIonDX2qlFol2bQqHuBo31I2wQ6/U94PfA=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_ssl_pin_verifier.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6XyeI9P3wLBEdh6RE+JZIZqeR2o=
-			</data>
-			<key>hash2</key>
-			<data>
-			m4ee4DVkfiqi49Nis2rZ+Fo+WfpPOjTH4vYigzPNOh8=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_string_util.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fDIjqr3hT0ux9HoOmyMs8q58vqU=
-			</data>
-			<key>hash2</key>
-			<data>
-			r+qcmmYq/tAUtNNj0Fbydky6Dt10XSf01KaOVae3x+c=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_trie_node.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Qi0yLQORcLsiy2aBS2jdSjQPPqc=
-			</data>
-			<key>hash2</key>
-			<data>
-			OviKqZKdxwhiRhzjo1akYI6ak9J4WAHM7QIFQaTivuY=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_trie_search.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ImvdB9/LPzeHm5gq6GbGoTnw/R0=
-			</data>
-			<key>hash2</key>
-			<data>
-			An+SbOULGBeXZMPNV+dkY6O02l10mUODukVSDPwQjCM=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_tsk_assert.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FIMaHTh0GlU4xBvJeufdl43ciTM=
-			</data>
-			<key>hash2</key>
-			<data>
-			bEDaVS7ttQ6BDD24Y6fGOKTlExpFgg76ljzaOWJYFGI=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/IP_vendor_identifier.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			oIFSakX4mKk7oo9XOOGamGnzOEc=
-			</data>
-			<key>hash2</key>
-			<data>
-			RBatFPElvO9IvIiAO5nWPmCdyeJ3svFAy3u+0bRhIJA=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/TSKPinningValidator_Private.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bD80g3CrggbI/5zxAvWBomnt69M=
-			</data>
-			<key>hash2</key>
-			<data>
-			WB1gATe6Pg60bpvkdQXckH29740Z30bV4A+qkrm34RA=
-			</data>
-		</dict>
 		<key>ios-arm64/iProov.framework/Headers/iProov-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xJTJqYJVd5AeIBMf1AHytcstqQs=
+			MeTYwDx9OsjMxrTiPrt3bBShWmE=
 			</data>
 			<key>hash2</key>
 			<data>
-			JpsWyVrFHA1N1tBblBdTsJK/CXmmYBysdjBCu2YCRXw=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/iProov-umbrella.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			w9PN6QmUNCHQSRBD2Xf+ElIZeBA=
-			</data>
-			<key>hash2</key>
-			<data>
-			mGxS6wQX0x+wZfZgl3ddVo+hwsSzdQRcez5kF84bG7A=
-			</data>
-		</dict>
-		<key>ios-arm64/iProov.framework/Headers/iproovcalcifer.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gGdvUqqxhlTWIuztrtdpt+iP9yE=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ycbr3yEJ2S+IlwEiSzqTZfd1mMCEasdNly9+Vyg/i90=
+			udQkAjwEOen1awRdTPt52azxaEwGFRd6mwo/uqM0rdg=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			16WRv1p9sb9iy5+jy5mafjqsxWc=
+			mSuq4h04nMryqJW6J6iRuXAp2Yw=
 			</data>
 			<key>hash2</key>
 			<data>
-			NGbr+AMm/PH3Q+PxJ/9fu/9J3tnSb2EmQrVSrSI0WmU=
+			VmGxW/GDNS8GpG/5JEUlkJKgsQMpngH6PuEeaJApRcE=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			36PUvtm+xHnM879FrZO8WfKuIwk=
+			Lvq+qo2eP1YAKFkXi7DQq4nHX4Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			v8m/5oCydkKx4Id5cOpd3Ra0Z8iGUdZvzstX2QRCGMw=
+			cAdYIB6f7INre+aNVs2uqF0pxcVvxRSUaFfT+ixpZjo=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pLF+VUrhfXMG4iT8UEDY91BLh3Q=
+			iOsGTVXpURWRvOf3MohJGpLWj2I=
 			</data>
 			<key>hash2</key>
 			<data>
-			3r0lWXoyIF3fF7PxoPVcaCohQyyW5/ftfFnC5/6k9GA=
+			eAU8M2bLAAisuWqBMd5ifLWp5m9Dd7ba1WWtZbkLTZY=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			36PUvtm+xHnM879FrZO8WfKuIwk=
+			0N+7xGEFwkHOf7UxbIWNSX82yFg=
 			</data>
 			<key>hash2</key>
 			<data>
-			v8m/5oCydkKx4Id5cOpd3Ra0Z8iGUdZvzstX2QRCGMw=
+			r2GFKAyGfITaFY9UJlT//QVkcCP7VxqhnhOneauu+b4=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HQftVmVnWtF28qrl0w3W18ctVes=
+			hPdRoFaKZ46ubZ3c0Wrgeih3Iw4=
 			</data>
 			<key>hash2</key>
 			<data>
-			7FB1Cgb7H1aBG+ApHisuUBk2j8kw+maWVYI/6UfL9zw=
+			HvjQK2D1WBJAPllmA7V6FMxQOQfOBf2vFrkInOD5YMc=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/PrivacyInfo.xcprivacy</key>
@@ -1138,11 +538,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LqZ4cujGRWJ6vJoLA+Cyrfy1ZjM=
+			9kwSKamZy2AsH/ZNuC1s7XexEX4=
 			</data>
 			<key>hash2</key>
 			<data>
-			uu3vlp+jBUpDAP0xMYaXs2iUfi6jnIe5lZmlAvOFkIg=
+			tIkmByfKf9yL/Rc1e8l/TmKp3Pnkb5gzgyrUiCr29Gs=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/cy-GB.lproj/Localizable.strings</key>
@@ -1170,6 +570,17 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>ios-arm64/iProov.framework/default.metallib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XaowtPZKJ91aIOr74BxtXF4gr7Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			QUgRDLfMqIr/UhAck9zryAg2zUjRQJgcLuWAdxvO/Gc=
+			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/en.lproj/Localizable.strings</key>
 		<dict>
@@ -1227,22 +638,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fzLM8kinWh74HWPRsqY9y5P1gVI=
+			433OBu7/wM3Jg9Vsm4MWLWuvxwc=
 			</data>
 			<key>hash2</key>
 			<data>
-			E9FGzVG4mm9W0vdcVGF9zZtilJvcbPZ7E8FKXLLqrr0=
+			sKKdml89VZ78GzeEiUUBp3FihxYQaDF9LxDuRIViEdo=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/iProov.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x/wy5Dd7a6Rc6HQ2GoR14KsGz+8=
+			HE3jqa2QlUZdfy35fM+GiCbGb68=
 			</data>
 			<key>hash2</key>
 			<data>
-			4HNnCXsBB7K/cHqxTtygCTCgJUXwTV/TEywySgpAXfY=
+			F9aL6ykLIaSdgyILeFRMw74DGIUb53ltzyArEtxAvq8=
 			</data>
 		</dict>
 		<key>ios-arm64/iProov.framework/it.lproj/Localizable.strings</key>
@@ -1301,22 +712,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bnOMZbKEnHKVVh3sMY2BCxan2DI=
+			OaVnZgmtt0ICm626DutvBADR5eQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			yNucHDHmDcAyre85sVM3DCyuwQ/D+aQsvWeL9KOLJu0=
+			wXl3gxlZWPvtm6WbKtBc3AHF6Ms/ZRpIXzPKzbJt6rY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Dbh1n5xijXsCjy+3c/bhWjL4cyI=
+			7vCI0cXZJBRnRXAChqe5JjKDQv8=
 			</data>
 			<key>hash2</key>
 			<data>
-			7EqsCnIwNrSl9MgGAbWsshX/4QYjFjKz+k4rzcYV9C8=
+			6z1KHsvUs1VHYv1eqlhdAlYnOPTOu+Gor3yljC3S2lY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1373,455 +784,103 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPRSSwizzle.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			To/GZIzRJx1mFMM80nKTGYnEK78=
-			</data>
-			<key>hash2</key>
-			<data>
-			2RpJC3Yz3LOKG4aMrVfWSipUrTkKFs2SAJgbdmVVm38=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKBackgroundReporter.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JvVJJNJM1mIdKt8rF9mxxjNpYD0=
-			</data>
-			<key>hash2</key>
-			<data>
-			NA1YO3bDB3Exkm2BdV+7odNkQnYyyk1pCnbb23cnj8Y=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKLog.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			j5JAbAID7ndxiLG1G610Bxzjoas=
-			</data>
-			<key>hash2</key>
-			<data>
-			LgZkxnSS4jC1moR0PZzh/E1H/h8mFhLGz/2S/Ntotvs=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKNSURLConnectionDelegateProxy.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4J7KoJmwHjI7qGc/a8AboeKArJE=
-			</data>
-			<key>hash2</key>
-			<data>
-			YasRSJ8AqfyU6Inl6pJwKA5lYfhpz4EGh1t7tcwLvcY=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKNSURLSessionDelegateProxy.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MVJ9xltzAzX4xEXV/PEduGjeJZA=
-			</data>
-			<key>hash2</key>
-			<data>
-			7TSul7TvRD77mNmIC7SVsK0yfvWiq+vL/5O5e/43ARU=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinFailureReport.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2HrrNenr1qT1SDZ6fMvFxyxcnvk=
-			</data>
-			<key>hash2</key>
-			<data>
-			8I/aB+PYmcvcg+JpQD466WAhF0oL8++idnKoVqFYahs=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinningValidator.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1vlA96M0ll1JyBo1F0S72xUy/dQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			EeoU4QeZNIQCSiffD87S+OXNJDhtfuBsVbBXpr4dDMw=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinningValidatorCallback.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7BZOt5HEH6xujqNYojrnrrbhjoc=
-			</data>
-			<key>hash2</key>
-			<data>
-			Op3/rsl6zP187vhlxazUxDyDixJct3dV3cDlwDHuiPc=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPinningValidatorResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gQXfDtKL+9WOyTEVmo+5dHXtOjQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			eBeMBj6Yeeh1fpAmXrZpnoifJHOOx4oUpgPiMluKGNc=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKPublicKeyAlgorithm.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HTllBNNwnDeT8UxGtb67jQsEhto=
-			</data>
-			<key>hash2</key>
-			<data>
-			/AdqSrrij6t+XuuWbQq6qOk+douU/OpplkjO1UjKgeQ=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKReportsRateLimiter.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			KFnbpwW4c+vXJN3qwesDeNnfIH0=
-			</data>
-			<key>hash2</key>
-			<data>
-			ullKT7fjzNZfOdmTQuEEJ2Ehv6HMpRAfKnAMoPAuVnw=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKSPKIHashCache.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0lEyKAok2YwN84RqesDZvWcGGnA=
-			</data>
-			<key>hash2</key>
-			<data>
-			ejg7yK7el2jbW3z4pUDZjl6KMEHXZyKabKhHxMpsEOs=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKTrustDecision.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			KdiewISJ5NkjrUsi1zJHHqkmqWk=
-			</data>
-			<key>hash2</key>
-			<data>
-			K55lmg+q9KArBm2/E8qIn4Zz1YccLa03h9+8/lhetqs=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTSKTrustKitConfig.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lHlT7alOonvD5cy011y4Jn2U+Q4=
-			</data>
-			<key>hash2</key>
-			<data>
-			mB6DG6pi8cK8t3uMNPwFvwa4AsW/pjVX4dvlTircVNk=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IPTrustKit.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			AbAtk/XYgLK/lsO5mRUJvr5Oiss=
-			</data>
-			<key>hash2</key>
-			<data>
-			ai17/go4DgyEWhTBf29BhvxMao0wH2gVulO4ymQaz4A=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_TrustKit-Bridging-Header.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7xFnNhAD5rNvPXYb4uzsxxN1AlM=
-			</data>
-			<key>hash2</key>
-			<data>
-			bFoZruRxSSiAkKK51XGPwEwlbWhteHqzhTPodBExeg4=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_configuration_utils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rhXpGmBnKDMLpTjlyF0ZoiHPqZc=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ksf3Khn4BTrgKCmEZup46VTb4WC+7kX9YD0mwaYTI7s=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_domain_registry.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xtGE4bUfTZjiTvMzWwjarMRYdvM=
-			</data>
-			<key>hash2</key>
-			<data>
-			PLkcq/mXlq0z6S7EM2uKLS8fdYZu9x9uSRf4SCU6eDQ=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_parse_configuration.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			axDkpe0esX4k4G8GCPKMJ7R+fPQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			Uj8VO1hOgyQWTi0ufnzkfvJDTiPw88Z9F13JkMDHF/o=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_pinning_utils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ui/N3prWurVIOrGgOYp9WgxoIJM=
-			</data>
-			<key>hash2</key>
-			<data>
-			BuAsSUc+fcUKS8z7hC3LVNKiKFzkf9NTiPt3gLpuisk=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_registry_tables.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MS0RWfj8OJyZmKb6o/66jgH7Wag=
-			</data>
-			<key>hash2</key>
-			<data>
-			W5vSIC8LQIRrFTOGU161pK4b/FO/SO+dr8XMc+fjIEU=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_registry_types.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZBDE61AYBrE6XFFbRktEGidX+yk=
-			</data>
-			<key>hash2</key>
-			<data>
-			KROJjUovY2x8okaNXGWm3BT74sXmGvy0Aw1PYuUIzWo=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_reporting_utils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			o/xGEWiQI1CY12G/DFMpJVvmzFw=
-			</data>
-			<key>hash2</key>
-			<data>
-			J2CErd+OdiIonDX2qlFol2bQqHuBo31I2wQ6/U94PfA=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_ssl_pin_verifier.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6XyeI9P3wLBEdh6RE+JZIZqeR2o=
-			</data>
-			<key>hash2</key>
-			<data>
-			m4ee4DVkfiqi49Nis2rZ+Fo+WfpPOjTH4vYigzPNOh8=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_string_util.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fDIjqr3hT0ux9HoOmyMs8q58vqU=
-			</data>
-			<key>hash2</key>
-			<data>
-			r+qcmmYq/tAUtNNj0Fbydky6Dt10XSf01KaOVae3x+c=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_trie_node.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Qi0yLQORcLsiy2aBS2jdSjQPPqc=
-			</data>
-			<key>hash2</key>
-			<data>
-			OviKqZKdxwhiRhzjo1akYI6ak9J4WAHM7QIFQaTivuY=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_trie_search.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ImvdB9/LPzeHm5gq6GbGoTnw/R0=
-			</data>
-			<key>hash2</key>
-			<data>
-			An+SbOULGBeXZMPNV+dkY6O02l10mUODukVSDPwQjCM=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_tsk_assert.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FIMaHTh0GlU4xBvJeufdl43ciTM=
-			</data>
-			<key>hash2</key>
-			<data>
-			bEDaVS7ttQ6BDD24Y6fGOKTlExpFgg76ljzaOWJYFGI=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/IP_vendor_identifier.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			oIFSakX4mKk7oo9XOOGamGnzOEc=
-			</data>
-			<key>hash2</key>
-			<data>
-			RBatFPElvO9IvIiAO5nWPmCdyeJ3svFAy3u+0bRhIJA=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/TSKPinningValidator_Private.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bD80g3CrggbI/5zxAvWBomnt69M=
-			</data>
-			<key>hash2</key>
-			<data>
-			WB1gATe6Pg60bpvkdQXckH29740Z30bV4A+qkrm34RA=
-			</data>
-		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/iProov-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			afjI9WKqtNaENDKCDuPr7Yc1pQE=
+			dr6aJWba1or7PY4BVNMCj20n8b0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ENyNHpMs6d25zy/QKrhhxsQQcGXpbYfqb1nvS0OjAJ4=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/iProov-umbrella.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			w9PN6QmUNCHQSRBD2Xf+ElIZeBA=
-			</data>
-			<key>hash2</key>
-			<data>
-			mGxS6wQX0x+wZfZgl3ddVo+hwsSzdQRcez5kF84bG7A=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/iProov.framework/Headers/iproovcalcifer.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gGdvUqqxhlTWIuztrtdpt+iP9yE=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ycbr3yEJ2S+IlwEiSzqTZfd1mMCEasdNly9+Vyg/i90=
+			qMO/nNLo5ruU5KfJXzvITy8EsAlF98XMdiLSkhr5eZE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RhJMOARFFTjTOmHfx+ZeqeCYi6E=
+			Yyik9c7tB9u2h8JLdHmSla9B41U=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZOPZ5gpIvQj7A6C3FxzuHuCZ/yVk9daWR25RENC1M2c=
+			7E8sfmu2ClKECmjdJQTWWCl0Zp1yoPapO+VHXFjrm3k=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			z0TFaGSf3XJQqnnHtk0BwmNmkgA=
+			ZkVGnU+/iHRKE1juAWqXL5oWswA=
 			</data>
 			<key>hash2</key>
 			<data>
-			3M+F5FU18MdbBkJsHqZuhSFfecnUMHVgsoIMMlZEi30=
+			l5bQnYKGse7DVutO1YUZGgiy5xJndhd/L1vjooeGIsY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qJKw6xki0mOPV3B0n5s9fqK4uP0=
+			H9DHoJDT3MEjsSJXz9dEE9rLCv8=
 			</data>
 			<key>hash2</key>
 			<data>
-			6dJ4qGQTIZt/mBtHioqXfiw1EPfuzBFpeCORsYZ1+cM=
+			VvOXNCNDLoHO9d2hGb2tSlODNyAhMZbgnEE+z/p53zI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			z0TFaGSf3XJQqnnHtk0BwmNmkgA=
+			JZllFGqCP/CO7pyyu7AmJPb1zeo=
 			</data>
 			<key>hash2</key>
 			<data>
-			3M+F5FU18MdbBkJsHqZuhSFfecnUMHVgsoIMMlZEi30=
+			zYdBW01k0J9V6hTcdDcVU8tOhxPnMGYOjkYRww4sa8c=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jeel8fNQrSG+3055Qfmn38k7Rkc=
+			yvBwE1xC/gK+TZX29s0pQ0CGa9w=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q2YKH5W7jY3bbXh/hqWHs7f7V33EKoriC85mwrSCPlU=
+			eQKGE6TzoWZSNVl0JHgUZMRWIDDh2A4W0fOqJPKmK/M=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HwvV0ekX2SfcSJCZ9OxfeyB6Avw=
+			3flCevv4euqomg79VlIisVM88Fo=
 			</data>
 			<key>hash2</key>
 			<data>
-			IPZK9vJKBGZoau7X0qajLCxnZwiNdeqre7YmPcbZcnE=
+			1hI6dBBr9lzvZ3Xb6tQCa8CgUGi0trBSUeYKjRmnAoA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/iProov.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jeel8fNQrSG+3055Qfmn38k7Rkc=
+			HBGJ35L9nbi8V3LoeFFNSjWxS6k=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q2YKH5W7jY3bbXh/hqWHs7f7V33EKoriC85mwrSCPlU=
+			ydxKRtdm/kk+x4ABnMq0+/mBGzMW6g3Lh/QD1ncXnfM=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HQftVmVnWtF28qrl0w3W18ctVes=
+			hPdRoFaKZ46ubZ3c0Wrgeih3Iw4=
 			</data>
 			<key>hash2</key>
 			<data>
-			7FB1Cgb7H1aBG+ApHisuUBk2j8kw+maWVYI/6UfL9zw=
+			HvjQK2D1WBJAPllmA7V6FMxQOQfOBf2vFrkInOD5YMc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/PrivacyInfo.xcprivacy</key>
@@ -1860,6 +919,17 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>ios-arm64_x86_64-simulator/iProov.framework/default.metallib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gIedAK/cCk19XbVcLHyhJ/xisLI=
+			</data>
+			<key>hash2</key>
+			<data>
+			71yOQXDVFmdiqJDrvX1+4n30MQ7bF7X1n6YGq+dB0bY=
+			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/en.lproj/Localizable.strings</key>
 		<dict>
@@ -1917,22 +987,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WKZtyNmCHR00qOn0BZgj/s8nuiI=
+			wDgR6gqvjqqbSAI2BRU4OJxlfEY=
 			</data>
 			<key>hash2</key>
 			<data>
-			uWr1FYMySPz0SJv6dp/kqoLSa866j+QqMhHjcoiuM6k=
+			BmtXqL2helaWUPIDjocV3rN7XCSYJvVsJC0QV6awYM8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/iProov.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x/wy5Dd7a6Rc6HQ2GoR14KsGz+8=
+			HE3jqa2QlUZdfy35fM+GiCbGb68=
 			</data>
 			<key>hash2</key>
 			<data>
-			4HNnCXsBB7K/cHqxTtygCTCgJUXwTV/TEywySgpAXfY=
+			F9aL6ykLIaSdgyILeFRMw74DGIUb53ltzyArEtxAvq8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/iProov.framework/it.lproj/Localizable.strings</key>

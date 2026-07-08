@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		68ED41922AB463380055B423 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ED41912AB463380055B423 /* Credentials.swift */; };
+		AD1974042EFACE0000000001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1974032EFACE0000000001 /* SceneDelegate.swift */; };
 		ADC21AB12EE06BF4003711C4 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = ADC21AB02EE06BF4003711C4 /* MBProgressHUD */; };
 		DB5B793997242BD6FE471CE9 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5587D7F5F98A01AC0B90A8 /* Pods_Example.framework */; };
 		E6B955112E81860300C0EE19 /* iProovAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = E6B955102E81860300C0EE19 /* iProovAPIClient */; };
@@ -31,6 +32,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		68ED41912AB463380055B423 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		AD1974032EFACE0000000001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AF5587D7F5F98A01AC0B90A8 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B797750A1970F16C7D4803F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				AD1974032EFACE0000000001 /* SceneDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				68ED41912AB463380055B423 /* Credentials.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -243,6 +246,7 @@
 				68ED41922AB463380055B423 /* Credentials.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				AD1974042EFACE0000000001 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
