@@ -1,5 +1,5 @@
 PODS:
-  - iProov (13.2.0)
+  - iProov (13.2.1)
 
 DEPENDENCIES:
   - iProov (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  iProov: 6c81f25c3ed94376b12ef0b500d0f3b47be585fa
+  iProov: 5ce2b4537fce113a5adfda0eaaf4b1323eb40e6a
 
 PODFILE CHECKSUM: 71a43a6382992fa2aacd3734942aae8a6e7227b0
 
