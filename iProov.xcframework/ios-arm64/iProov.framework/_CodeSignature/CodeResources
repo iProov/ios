@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		OaVnZgmtt0ICm626DutvBADR5eQ=
+		hxyO43Tv5nHv65BJv8nDItBA2tM=
 		</data>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		53h5UPVoQ9KooaTw4uXfuICjc70=
+		pGgZXa2n16HbSfq4s1HnDwNvZJU=
 		</data>
 		<key>Base.lproj/Main.storyboardc/IProovViewController.nib</key>
 		<data>
@@ -26,35 +26,35 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/dyV-2X-wmS-view-kYa-1S-rr9.nib</key>
 		<data>
-		RTclx/3+UA/XM+H4sufUv/wwut0=
+		vymD3sXf5MaLdnxd+xz2CqOgJNI=
 		</data>
 		<key>Headers/iProov-Swift.h</key>
 		<data>
-		MeTYwDx9OsjMxrTiPrt3bBShWmE=
+		W8aWW3WwL/gmcibHi+S9Y8wQhos=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ClPX3gyynh5TqzplIjfOXKKWUYU=
+		Iz48UVk5UPzn1Q8/QJSNevk/tMc=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		Eu3rpYvZBKqoN4xiWy41kZOX1cU=
+		flfSFZt+dnBFUj6Zr7VqpZDbsA4=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Lvq+qo2eP1YAKFkXi7DQq4nHX4Y=
+		CnARAGalr58X4vbg8eWcaZt3Fc4=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		iOsGTVXpURWRvOf3MohJGpLWj2I=
+		CtU+tTKU6Ce2P8x2rUb6wJzKPD4=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		0N+7xGEFwkHOf7UxbIWNSX82yFg=
+		rgq2oL6h3PkZXgWgdiJqU0UaNwo=
 		</data>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		dQDeSm/sX2r6pIsNk0WpFwEDlgQ=
+		V5KxzFN7tsPT78haf3vduJuUd2E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -68,7 +68,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gGWzNso+SphxyY/39JlE+RX5vKg=
+			SkF14/+VkEkMkhdtaUu1Vm9yp8M=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -77,20 +77,20 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6sg7UksImrS2hftV0l/OGuVk3gE=
+			mCSaR1FWIGIId8EY16loiFCft1U=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>default.metallib</key>
 		<data>
-		XaowtPZKJ91aIOr74BxtXF4gr7Y=
+		p6VYXoiR9JV5P7keOM6qNk9fXA0=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+xIVqte7KJXLBqv6GhAGIQq1bfE=
+			ZZ/MH8SDXNGsIY1VcNbrZ0LNZIw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -99,7 +99,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kbbR9vELY5gAcrWjqhbj4eR6S08=
+			Qpful+WkGbvcSMO9AEMfZPUJ320=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -108,7 +108,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6c4pRP58yrtd9pYTtAxclz8yVfQ=
+			GMmRpcZxoBs4uErHoJD9VGwD69s=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -117,20 +117,24 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1aG3XrnEFERdgQRcSzvUCaRO020=
+			mwbwI/VxlQ2S4jirZLuwJm2uR68=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>holding.wav</key>
+		<data>
+		JTkVHKwWXjP2vLWA7vT8Qbaxgqw=
+		</data>
 		<key>iProov.plist</key>
 		<data>
-		qtvtWTPmOFTto5ApAWjBpr03fN0=
+		s76/xtQQ+eUmuq7L7XvwfKfbjlw=
 		</data>
 		<key>it.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5ZWzO+zRraWg3CwmLk6o+JbJX8c=
+			v5Djj+DW1Ct5L6ncnmcXS0SUNTI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -139,16 +143,20 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z/fOpHk0im6q5g6hVqD/U2d8BPQ=
+			Bg9lENHnb1MY430pQBx7sy6pEAM=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>ping.wav</key>
+		<data>
+		srHhBxyQx7HvuI77JPyGldwg4Aw=
+		</data>
 		<key>pt-BR.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YRlnpR5xAsP8mzdvPpAGYba02yk=
+			cVia7SJfKmdbZT8SXP2o7MzEewI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -157,7 +165,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZVtace2w5VP6qzUY10iOhPqc8Is=
+			sKZ373Y+Rpv8AAFDGXShB3keqCc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -169,14 +177,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wXl3gxlZWPvtm6WbKtBc3AHF6Ms/ZRpIXzPKzbJt6rY=
+			FQDFAdfOWeaXdKyumnE4S2lDZIs3JfKLp9e0k9xSkqI=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P4EYk07AjgUy/ROpJ1Ak+IE1HyoqQTaTtSd5cGSFBhE=
+			LPxzr0W1d9WfjO1A3uHR3gOp/Al8GhskY1RLZhpz9U8=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/IProovViewController.nib</key>
@@ -204,49 +212,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RALQP2MF9EsP3Y/CxVb+8Ufib1/WshXlKMXs5y7Rxrw=
+			QHzGvifwoPDuKPr5rNbWfi5qXT+TsKYZwm6WoKVBcrQ=
 			</data>
 		</dict>
 		<key>Headers/iProov-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			udQkAjwEOen1awRdTPt52azxaEwGFRd6mwo/uqM0rdg=
+			FqfKF9jdfGlNOKUp0BDEPZPuwJem9vSGodQQhZmawkw=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2T7OzvINQVATP1BTpyCMBlFPFwr79HFum4QGXgMN83c=
+			AJenFlwiAnXF9qcgY8q8ku09TzZemqKOCJF7X85SR0k=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cAdYIB6f7INre+aNVs2uqF0pxcVvxRSUaFfT+ixpZjo=
+			wMWjEhDeyiXbqg0zCsBzedf2BVBmSIr2w/PiGDgEe0Y=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eAU8M2bLAAisuWqBMd5ifLWp5m9Dd7ba1WWtZbkLTZY=
+			8PCNm3BXfiQa8KKmgOPVsHQNCM8D7dHDQlEfFLqMg2c=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r2GFKAyGfITaFY9UJlT//QVkcCP7VxqhnhOneauu+b4=
+			th0tq00Z73So1Vi/jeQGukoKYoUEdlEpmcX82Yn+npE=
 			</data>
 		</dict>
 		<key>Modules/iProov.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jZ9fQg30GFGkJa1Qjx99gUL1i+97WmsVgAWAQQDPTl8=
+			MtBAXQmtB7k3ETgbNPN7qP79TkqRZnDWDwxMk8uDxj0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -267,7 +275,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7t1sEXyMZJv3uGXxC49rI3IkLocardrEevA7tCcrm28=
+			rabh802zUa402yjkVUl6XeVk6ZJWOrzZ9LCKmAArmt0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -276,7 +284,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			E95/cPpOwz3d3rSSe8oQ2sa4GNqFnOljaADz+rwVS6A=
+			8Hhw7WzgEt3qdYaOZz2ZtR5Qnsx+sKZL6hMfgcK/pN0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -285,14 +293,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QUgRDLfMqIr/UhAck9zryAg2zUjRQJgcLuWAdxvO/Gc=
+			oQTxTjBGRodr9De33TqruehzpnMt1ovZA4R/7KaUxdo=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			058mPet/sc4F261rxJ4rhhCVqrf6AHwUyavVnTPcLh4=
+			jBNwoYlaRTlO36lVyF1tNmu+HdNCZLaMmXIidXx4lMg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -301,7 +309,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xHi1K87YNglb3cCLRzGvegRMegrGKFpwa3kvevolu4s=
+			x58HiAmLyLId1AKtIqG0/kc33HFHvW9vOMvFt1wWtW8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -310,7 +318,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ajf7z2bWhsrbtdpsSHeONoMvByfPDzkXGnAnUhuukTk=
+			eXMHGPJFMEGSDpUk5ifBFyJYxDP8ItOP4E0GQppg/HU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -319,23 +327,30 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2w0fmQYOgQKbcwgeXvxuUsAnMG9E6rTgibmXj4WfijI=
+			VDFRRd6CCi/HhmrIgceU02TwYTCneuCqatC/rZX+1mc=
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>holding.wav</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dTqAwqeHhVpCiyFXqPa9jWt7u5KEnxZ1NsQ5ncFD4ZE=
+			</data>
 		</dict>
 		<key>iProov.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LkRP/Gkbzh3DLiWbwj3UB3j3s1sthEM7ZfxovLARrE0=
+			uJ8d2N+BtfW7rE0bZ6BhX5mcapREKyShjXT3v7E7blc=
 			</data>
 		</dict>
 		<key>it.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S2nxpSX1vZ2VqzYlaNFeiZgke5ao5j+N7GGs3yPUyE0=
+			cWh7bMlgigcVZsYW5ylNBH3TwJ5ylFe+c07lr19IeMU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -344,16 +359,23 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8aYD2eWQMslr90F325E8aobZbHUCLb4lMKieMCgpXSQ=
+			bIpoqSEFQ60JG2yM3kpf48ljkyU0IZVXSvklzs5F8DM=
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>ping.wav</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AtSdmeprkl34yfuftazkJlFA0gmrEXXKvQ6KAwo/xR4=
+			</data>
 		</dict>
 		<key>pt-BR.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7ZqDf7Eeogd45mxikVlzlGpXTiDoj3qcfdV0Uo9BS3k=
+			/YvpWJRBMFUgsbgfqn1FYa8DphsukqTCPRWyG7dVEPo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -362,7 +384,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4vHiVaOX9b1G5xkDR8DkjI0fFBeLM/8VPsFtIgXFlRc=
+			ingsHlmddTUhlM4djT0n2rYQkxwF7O46Am/XWlqQrtI=
 			</data>
 			<key>optional</key>
 			<true/>

@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
-// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name iProov
+// swift-module-flags: -target x86_64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name iProov
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AVFoundation
 import Accelerate
@@ -9,6 +9,7 @@ import CFNetwork
 import Combine
 import CommonCrypto
 import CoreGraphics
+import CoreHaptics
 import CoreImage
 import CoreMedia
 import CoreMotion
@@ -54,6 +55,9 @@ import simd
   @objc public static let userTimeout: Swift.Int
   @objc public static let notSupported: Swift.Int
   @objc public static let consentRequired: Swift.Int
+  @objc public static let unsupportedDevice: Swift.Int
+  @objc public static let unsupportedOSVersion: Swift.Int
+  @objc public static let unsupportedSDKVersion: Swift.Int
   @objc override dynamic public init()
   @objc deinit
 }
@@ -66,6 +70,9 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError, S
   case userTimeout
   case notSupported
   case consentRequired
+  case unsupportedDevice(Swift.String?)
+  case unsupportedOSVersion(Swift.String?)
+  case unsupportedSDKVersion(Swift.String?)
   public var errorCode: Swift.Int {
     get
   }
@@ -88,7 +95,7 @@ public enum IProovError : Foundation.LocalizedError, Foundation.CustomNSError, S
     get
   }
   #endif
-  public static func == (lhs: iProov.IProovError, rhs: iProov.IProovError) -> Swift.Bool
+  public static func == (a: iProov.IProovError, b: iProov.IProovError) -> Swift.Bool
 }
 @objc public protocol IProovPresentationDelegate {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -108,10 +115,8 @@ extension WebKit.WKWebView {
   @objc @_Concurrency.MainActor @preconcurrency dynamic public func uninstallNativeBridge()
 }
 extension iProov.IProov {
-  #if compiler(>=5.3) && $NonescapableTypes
   @available(swift, obsoleted: 1.0)
-  @objc public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping (iProov.SuccessResult) -> Swift.Void, canceled: @escaping (iProov.Canceler) -> Swift.Void, failure: @escaping (_ feedbackCodes: [Swift.String], _ localizedDescriptions: [Swift.String], _ frame: UIKit.UIImage?) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void) -> iProov.Session
-  #endif
+  @objc public static func launch(streamingURL: Foundation.URL, token: Swift.String, options: iProov.Options, connecting: @escaping () -> Swift.Void, connected: @escaping () -> Swift.Void, processing: @escaping (Swift.Double, Swift.String) -> Swift.Void, success: @escaping () -> Swift.Void, canceled: @escaping (iProov.Canceler) -> Swift.Void, failure: @escaping (_ feedbackCodes: [Swift.String], _ localizedDescriptions: [Swift.String]) -> Swift.Void, error: @escaping (Foundation.NSError) -> Swift.Void) -> iProov.Session
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IPOptions) @objcMembers public class Options : ObjectiveC.NSObject {
   @objc public static func from(dictionary: [Swift.String : Any]) -> iProov.Options
@@ -146,6 +151,14 @@ extension iProov.IProov {
     @objc public var controlXPosition: Swift.Bool
     @objc public var controlYPosition: Swift.Bool
     @objc public var scanningPrompts: Swift.Bool
+    @objc public var accessibility: iProov.Options.GenuinePresenceAssurance.Accessibility
+    @_inheritsConvenienceInitializers @objc(IPAccessibilityOptions) @objcMembers public class Accessibility : ObjectiveC.NSObject {
+      @objc public var isColorEnabled: Swift.Bool
+      @objc public var isSoundEnabled: Swift.Bool
+      @objc public var isVibrationEnabled: Swift.Bool
+      @objc override dynamic public init()
+      @objc deinit
+    }
     @objc override dynamic public init()
     @objc deinit
   }
@@ -212,10 +225,6 @@ extension iProov.IProov {
   @objc deinit
 }
 public typealias Callback = (iProov.Status) -> Swift.Void
-@_hasMissingDesignatedInitializers @objc(IPSuccessResult) @objcMembers public class SuccessResult : ObjectiveC.NSObject {
-  @objc final public let frame: UIKit.UIImage?
-  @objc deinit
-}
 @objc(IPFailureReason) public enum FailureReason : Swift.Int, Swift.CaseIterable {
   case unknown, tooMuchMovement, tooBright, tooDark, misalignedFace, faceTooFar, faceTooClose, sunglasses, systemError, lightingIssues, faceNotFound, timeout, eyewear, deviceIssue, rejected, backgroundIssue, motionIssue, deviceRestart, framesBlurry, userNotFound, processingFault, eyesClosed, multipleFaces, obscuredFace
   public var feedbackCode: Swift.String {
@@ -236,11 +245,6 @@ public typealias Callback = (iProov.Status) -> Swift.Void
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc(IPFailureResult) @objcMembers public class FailureResult : ObjectiveC.NSObject {
-  final public let reasons: [iProov.FailureReason]
-  @objc final public let frame: UIKit.UIImage?
-  @objc deinit
-}
 @objc(IPCanceler) public enum Canceler : Swift.Int {
   case user
   case integration
@@ -256,8 +260,8 @@ public enum Status {
   case connecting
   case connected
   case processing(progress: Swift.Double, message: Swift.String)
-  case success(iProov.SuccessResult)
-  case failure(iProov.FailureResult)
+  case success
+  case failure(reasons: [iProov.FailureReason])
   case canceled(iProov.Canceler)
   case error(iProov.IProovError)
   public var isFinished: Swift.Bool {

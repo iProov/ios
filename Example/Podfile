@@ -1,7 +1,0 @@
-use_frameworks!
-
-platform :ios, '15.0'
-
-target 'Example' do
-  pod 'iProov', :path => '../'
-end

@@ -1,5 +1,4 @@
 "IProov_AccessibilityLabelCloseButton" = "Close";
-"IProov_AccessibilityLabelSecuredByIProov" = "Secured by iProov";
 "IProov_AccessibilityPromptAlignFace" = "Hold the device in front of your face and look at the screen";
 "IProov_AccessibilityPromptScanning" = "Scanning";
 "IProov_ErrorCameraPermissionDenied" = "Camera permission denied";
@@ -10,6 +9,9 @@
 "IProov_ErrorNotSupported" = "Device is not supported";
 "IProov_ErrorServer" = "Server error";
 "IProov_ErrorUnexpected" = "Unexpected error";
+"IProov_ErrorUnsupportedDevice" = "Device is not supported";
+"IProov_ErrorUnsupportedOSVersion" = "Operating system version is not supported";
+"IProov_ErrorUnsupportedSDKVersion" = "SDK version is not supported";
 "IProov_ErrorUserTimeout" = "Try again";
 "IProov_FailureEyesClosed" = "Keep your eyes open";
 "IProov_FailureFaceTooClose" = "Move your face farther from the screen";

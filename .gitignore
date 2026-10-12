@@ -59,4 +59,4 @@ fastlane/test_output
 
 .DS_Store
 
-Example/Pods/
+Example/Example.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved

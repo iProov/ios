@@ -339,14 +339,6 @@ typedef SWIFT_ENUM_NAMED(NSInteger, IPFailureReason, "FailureReason", open) {
   IPFailureReasonObscuredFace = 23,
 };
 
-@class UIImage;
-SWIFT_CLASS_NAMED("FailureResult")
-@interface IPFailureResult : NSObject
-@property (nonatomic, readonly, strong) UIImage * _Nullable frame;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 SWIFT_PROTOCOL_NAMED("Filter")
 @protocol IPFilter
 @end
@@ -360,11 +352,10 @@ SWIFT_CLASS_NAMED("IProov")
 @class NSURL;
 @class NSString;
 @class IPOptions;
-@class IPSuccessResult;
 @class NSError;
 @class IPSession;
 @interface IProov (SWIFT_EXTENSION(iProov))
-+ (IPSession * _Nonnull)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(IPSuccessResult * _Nonnull))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, NSArray<NSString *> * _Nonnull, UIImage * _Nullable))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error SWIFT_WARN_UNUSED_RESULT;
++ (IPSession * _Nonnull)launchWithStreamingURL:(NSURL * _Nonnull)streamingURL token:(NSString * _Nonnull)token options:(IPOptions * _Nonnull)options connecting:(void (^ _Nonnull)(void))connecting connected:(void (^ _Nonnull)(void))connected processing:(void (^ _Nonnull)(double, NSString * _Nonnull))processing success:(void (^ _Nonnull)(void))success canceled:(void (^ _Nonnull)(enum IPCanceler))canceled failure:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, NSArray<NSString *> * _Nonnull))failure error:(void (^ _Nonnull)(NSError * _Nonnull))error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class IPKeyPair;
@@ -396,6 +387,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger notSupport
 + (NSInteger)notSupported SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger consentRequired;)
 + (NSInteger)consentRequired SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger unsupportedDevice;)
++ (NSInteger)unsupportedDevice SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger unsupportedOSVersion;)
++ (NSInteger)unsupportedOSVersion SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger unsupportedSDKVersion;)
++ (NSInteger)unsupportedSDKVersion SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -426,6 +423,7 @@ SWIFT_CLASS_NAMED("KeyPair")
 
 @class NSBundle;
 @class UIColor;
+@class UIImage;
 @class IPGenuinePresenceAssuranceOptions;
 @class IPLivenessAssuranceOptions;
 SWIFT_CLASS_NAMED("Options")
@@ -457,6 +455,7 @@ SWIFT_CLASS_NAMED("Options")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class IPAccessibilityOptions;
 SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @interface IPGenuinePresenceAssuranceOptions : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull notReadyOvalStrokeColor;
@@ -464,6 +463,15 @@ SWIFT_CLASS_NAMED("GenuinePresenceAssurance")
 @property (nonatomic) BOOL controlXPosition;
 @property (nonatomic) BOOL controlYPosition;
 @property (nonatomic) BOOL scanningPrompts;
+@property (nonatomic, strong) IPAccessibilityOptions * _Nonnull accessibility;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+SWIFT_CLASS_NAMED("Accessibility")
+@interface IPAccessibilityOptions : NSObject
+@property (nonatomic) BOOL isColorEnabled;
+@property (nonatomic) BOOL isSoundEnabled;
+@property (nonatomic) BOOL isVibrationEnabled;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -517,13 +525,6 @@ SWIFT_CLASS_NAMED("PublicKey")
 SWIFT_CLASS_NAMED("Session")
 @interface IPSession : NSObject
 - (BOOL)cancel;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-SWIFT_CLASS_NAMED("SuccessResult")
-@interface IPSuccessResult : NSObject
-@property (nonatomic, readonly, strong) UIImage * _Nullable frame;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

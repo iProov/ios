@@ -69,11 +69,11 @@ class ViewController: UIViewController {
                         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
 
-                    case let .failure(result):
+                    case let .failure(reasons):
                         hud.hide(animated: true)
 
-                        let feedbackCodes = result.reasons.map(\.feedbackCode).joined(separator: ", ")
-                        let failureDescription = result.reasons.map(\.localizedDescription).joined(separator: "\n\n")
+                        let feedbackCodes = reasons.map(\.feedbackCode).joined(separator: ", ")
+                        let failureDescription = reasons.map(\.localizedDescription).joined(separator: "\n\n")
                         let alert = UIAlertController(title: "❌ \(feedbackCodes)", message: failureDescription, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                         alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in

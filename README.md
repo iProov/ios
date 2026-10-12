@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Face SDK v13.2.1
+# iProov Face SDK v14.0.0
 
 ## Introduction
 
@@ -28,7 +28,7 @@ iProov also supports [Android](https://github.com/iproov/android), [Flutter](htt
 
 ### Requirements
 
-- iOS 15.0 and above
+- iOS 16.0 and above
 - Xcode 26.0 and above
 
 The framework has been written in Swift 5.10, and we recommend the use of Swift for the simplest and cleanest integration, however, it is also possible to call iProov from within an Objective-C app using our [Objective-C API](https://github.com/iProov/ios/wiki/Objective-C-Support), which provides an Objective-C friendly API to invoke the Swift code.
@@ -53,9 +53,9 @@ The SDK supports module stability. The advantage of this is that the SDK does no
 The framework package is provided via this repository, which contains the following:
 
 * **README.md** - This document!
-* **Example** - A basic sample project using iProov, written in Swift and using CocoaPods.
+* **Example** - A basic sample project using iProov, written in Swift and using Swift Package Manager.
 * **iProov.xcframework** - The iProov framework in XCFramework format. You can add this to your project manually if you aren't using a dependency manager.
-* **iProov.podspec** - Required by CocoaPods. You do not need to do anything with this file.
+* **iProov.podspec** - Used by our React Native wrapper to install the SDK with CocoaPods. You do not need to do anything with this file.
 * **resources** - Directory containing additional development resources you may find helpful.
 * **iProovTargets** - Directory containing dummy file, required for SPM.
 
@@ -71,9 +71,10 @@ You can obtain API credentials by registering on the [iProov Portal](https://por
 
 We recommend using Swift Package Manager for integrating our SDK with your app or SDK.
 
-> **Warning**: CocoaPods is no longer a recommended integration method as it's being put into read-only mode in December 2026. After that date, we won't be able to publish new releases to CocoaPods, which could leave you using an outdated version of the SDK.
+> **Warning**: CocoaPods trunk will become read-only in December 2026.
+> CocoaPods support has not been removed yet, purely to support our React Native wrapper while its SPM support is still experimental.  
 
-> You can still install the SDK manually in Xcode, but we don't recommend this method.
+You can still install the SDK manually in Xcode, but we don't recommend this method, please migrate to SPM.
 
 ### Swift Package Manager
 
@@ -87,9 +88,9 @@ We recommend using Swift Package Manager for integrating our SDK with your app o
 	https://github.com/iProov/ios-spm
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 13.2.1 as the lower bound.
-	
-3. Click _Add Package_ to add the SDK to your Xcode project and then click again to confirm.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 14.0.0 as the lower bound.
+
+4. Click _Add Package_ to add the SDK to your Xcode project and then click again to confirm.
 
 #### Installing via Package.swift
 
@@ -99,7 +100,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios-spm.git",
-	.upToNextMajor(from: "13.2.1")
+	.upToNextMajor(from: "14.0.0")
 ),
 ```
 
@@ -107,22 +108,7 @@ Then add `iProov` to the `dependencies` array of any target for which you wish t
 
 As Swift Package Manager downloads the full repository for a package, installing this main SDK package [iProov/ios](https://github.com/iProov/ios) can take a long time (over 2 minutes in some environments). The smaller repository [iProov/ios-spm](https://github.com/iProov/ios-spm) significantly reduces the SDK installation time by providing only a reference to the precompiled xcframework, which is published with [the latest SDK release](https://github.com/iProov/ios/releases).
 
-### CocoaPods
-
-> **Note**: The SDK is distributed as an XCFramework, therefore **you are required to use CocoaPods 1.9.0 or newer**.
-
-1. If you are not yet using CocoaPods in your project, first run `sudo gem install cocoapods` followed by `pod init`. (For further information on installing CocoaPods, [click here](https://guides.cocoapods.org/using/getting-started.html#installation).)
-
-2. Add the following to your Podfile (inside the target section):
-
-	```ruby
-	pod 'iProov'
-	```
-
-3. Run `pod install`.
-
 ### Manual Installation
-
 ![Xcode manual installation steps](https://github.com/iProov/ios/raw/master/images/xcode_manual_install.png)
 
 1. Select your project in Xcode.
@@ -131,7 +117,7 @@ As Swift Package Manager downloads the full repository for a package, installing
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/13.2.1).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/14.0.0).
 
 5. Under the **Embed** column, ensure **Embed & Sign** is set.
 
@@ -175,6 +161,7 @@ let streamingURLString = "wss://eu.rp.secure.iproov.me/ws" // Substitute as appr
 
 guard let streamingURL = URL(string: streamingURLString) else {
     // handle your URL error
+    return
 }
 
 IProov.launch(streamingURL: streamingURL, token: token) { status in
@@ -193,19 +180,15 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
         // to the server and authenticating the user.
         // This will be called multiple times as the progress updates.
 
-    case let .success(result):
+    case .success:
         // The user was successfully verified/enrolled and the token has been validated.
-        // You can access the following properties:
-        let frame: UIImage? = result.frame // This is a deprecated feature and will be nil.
 
-    case let .failure(result):
+    case let .failure(reasons):
         // The user was not successfully verified/enrolled, as their identity could not be verified,
         // or there was another issue with their verification/enrollment.
-        // You can access the following properties:
-        let reasons: [FailureReason] = result.reasons // Reasons why the claim failed
-        let feedbackCodes: String = result.reasons.map(\.feedbackCode).joined(separator: ",") // Codes referring to the failure reasons (see list below)
-        let localizedDescriptions: String = result.reasons.map(\.localizedDescription).joined(separator: " ") // Human-readable suggestions about what to do to get to a successful claim
-        let frame: UIImage? = result.frame // This is a deprecated feature and will be nil.
+        // `reasons` is a [FailureReason] describing why the claim failed:
+        let feedbackCodes: String = reasons.map(\.feedbackCode).joined(separator: ",") // Codes referring to the failure reasons (see list below)
+        let localizedDescriptions: String = reasons.map(\.localizedDescription).joined(separator: " ") // Human-readable suggestions about what to do to get to a successful claim
 
     case let .canceled(canceler):
         // Either:
@@ -217,7 +200,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 
     case let .error(error):
         // The user was not successfully verified/enrolled due to an error (e.g. lost internet connection)
-        // along with an `iProovError` with more information about the error (NSError in Objective-C).
+        // along with an `IProovError` with more information about the error (NSError in Objective-C).
         // It will be called once, or never.
 
     @unknown default:
@@ -231,7 +214,7 @@ IProov.launch(streamingURL: streamingURL, token: token) { status in
 > 
 > * You cannot rely on the fact a successful result was returned to prove that the user was authenticated or enrolled successfully (it is possible the iProov process could be manipulated locally by a malicious user). You can treat the success callback as a hint to your app to update the UI, etc. but you must always independently validate the token server-side (using the `/validate` API call) before performing any authenticated user actions.
 > 
-> * The `frame` returned in the success & failure results is a deprecated feature and will be nil. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server [`/validate`](https://secure.iproov.me/docs.html#operation/userVerifyValidate) API call.
+> * The SDK does not return a captured image. If you require an image for upload into your system for any reason (e.g. face matching, image analysis, user profile image, etc.) you should retrieve this securely via the server-to-server [`/validate`](https://secure.iproov.me/docs.html#operation/userVerifyValidate) API call.
 
 
 ### Canceling the SDK
@@ -254,7 +237,7 @@ You can customize the iProov session by passing in an `Options` reference when l
 
 | Option Name | Description | Default Value |
 | --- | --- | --- |
-| `filter` | Adjust the filter used for the face preview. [See below for further detail](#filter-options). | `LineDrawingFilter()` |
+| `filter` | Adjust the filter used for the face preview. [See below for further detail](#filter-options). | `NaturalFilter()` |
 | `stringsBundle`| App bundle from which strings should be retrieved.| `nil` |
 | `stringsTable` | App table from which strings should be retrieved. | `nil` |
 | `titleTextColor` | Text color for the title. | `.white` |
@@ -268,8 +251,8 @@ You can customize the iProov session by passing in an `Options` reference when l
 | `promptRoundedCorners` | Whether the prompt has rounded (`true`) or straight (`false`) corners. | `true` |
 | `disableExteriorEffects` | Whether the blur and vignette effect outside the oval should be disabled. | `false` |
 | `presentationDelegate` | Custom logic for presenting and dismissing the iProov UI. [See below for further details](#custom-iproovpresentationdelegate). | `DefaultPresentationDelegate()` |
-| `surroundColor` | Color applied the area outside the oval. | `.black.withAlphaComponent(0.4)` |
-| `headerBackgroundColor ` | The color of the header bar. | `nil` |
+| `surroundColor` | Color applied to the area outside the oval. | `.black.withAlphaComponent(0.4)` |
+| `headerBackgroundColor` | The color of the header bar. | `nil` |
 | `certificates` | Certificates to be passed as a string (the certificate's Subject Public Key Info as SHA-256 hash). [See below for further details](#certificate-pinning). | `[]` |
 | `timeout` | Network timeout to be applied to the WebSocket connection. | `10` (seconds) |
 | `viewDelegate` | Optional delegate to receive UI state updates. [See below for further details](#optional-iproovviewdelegate). | `nil` |
@@ -302,9 +285,7 @@ Example:
 options.filter = Options.NaturalFilter(style: .clear)
 ```
 
-> **Note**: `NaturalFilter` is available for Liveness Assurance claims only. Attempts to use `NaturalFilter` for Genuine Presence Assurance claims will result in an error.
-> 
-> If `disableExteriorEffects` is set to true, `filter` can not be set to `NaturalFilter.Style.blur`. This combination of options will result in an error.
+> **Note**: If `disableExteriorEffects` is set to true, `filter` can not be set to `NaturalFilter.Style.blur`. This combination of options will result in an error.
 
 ### Certificate Pinning
 
@@ -341,9 +322,37 @@ GPA-specific options can be set under `Options.genuinePresenceAssurance`:
 | --- | --- | --- |
 | `notReadyOvalStrokeColor` | Color for oval stroke when in a GPA "not ready" state. | `.white` |
 | `readyOvalStrokeColor`| Color for oval stroke when in the GPA "ready" state. | `#01AC41` |
-| `controlXPosition` | Whether to control x position of the face through showing prompts when using GPA. | `false` |
-| `controlYPosition` | Whether to control y position of the face through showing prompts when using GPA. | `false` |
+| `controlXPosition` | Whether to control x position of the face through showing prompts when using GPA.<br/>When any [accessibility option](#accessibility-options) is on, this is treated as enabled regardless of the value set here. | `false` |
+| `controlYPosition` | Whether to control y position of the face through showing prompts when using GPA.<br/>When any [accessibility option](#accessibility-options) is on, this is treated as enabled regardless of the value set here. | `false` |
 | `scanningPrompts` | Show a prompt 'Scanning' during GPA scan.<br/>Show a prompt 'Scan Completed' after GPA scan completes. | `false` |
+
+### Accessibility Options
+
+Accessibility options provide additional guidance for users with low vision. They can be set under `Options.genuinePresenceAssurance.accessibility`, apply to Genuine Presence Assurance only, and are all disabled by default:
+
+| Option Name | Description | Default Value |
+| --- | --- | --- |
+| `isColorEnabled` | Sweeps the `surroundColor` from orange through yellow to green as a gradient, as the user gets closer to being correctly positioned.<br/>Any colour configured for `surroundColor` is not used while this is enabled. | `false` |
+| `isSoundEnabled` | Plays a click that repeats faster and grows louder as the user gets closer to being correctly positioned, then a held tone during the scan itself.<br/>The click is suppressed while VoiceOver is running, since the spoken prompts already carry the guidance, but the held tone still plays. | `false` |
+| `isVibrationEnabled` | Vibrates in pulses that come faster and grow stronger as the user gets closer to being correctly positioned, then a continuous vibration during the scan itself.<br/>Unlike the sound this is not silenced while VoiceOver is running, because it is what carries proximity for a screen reader user. | `false` |
+
+```swift
+options.genuinePresenceAssurance.accessibility.isColorEnabled = true
+options.genuinePresenceAssurance.accessibility.isSoundEnabled = true
+options.genuinePresenceAssurance.accessibility.isVibrationEnabled = true
+```
+
+Enabling any of the three makes alignment stricter. The guidance follows how far the face is from being centred as well as how far it is from the right size, so `controlXPosition` and `controlYPosition` are treated as enabled for the capture regardless of how they are set. The values you set are not modified, but the user is asked to centre their face on both axes and gets prompts to move left, right, up or down, spoken by VoiceOver when it is running. Without this the guidance would be steering them toward a position the scan does not require.
+
+The instruction prompt also moves. Normally it sits partway down the screen, over the oval; with any of the three enabled it is raised higher, to sit at the top of the oval so the user can see their face more clearly. This applies to Genuine Presence Assurance only, so a Liveness claim keeps the instruction where it has always been even with the options set.
+
+With `isColorEnabled` on, the close button is also tinted dark, so it stays legible against the colours the surround sweeps through, where the standard white button all but disappears. This overrides `closeButtonTintColor`, and happens only if you have left `headerBackgroundColor` at its default. Setting a header colour means you have taken over the top of the screen, so your own tint is used unchanged.
+
+While `isSoundEnabled` is on, the SDK takes the shared `AVAudioSession` with the `.playback` category for the capture, and releases it once the scan completes. Audio playing in other apps pauses while the capture runs, then resumes. Audio your own app is playing carries on and mixes with the SDK's sounds, since both share your process's audio session. Consider pausing it, as it competes with guidance the user may be relying on.
+
+Nothing is audible if the device volume is turned all the way down, as an app cannot raise it on the user's behalf.
+
+Vibration needs supported hardware. iPad has none, so the option has no effect there. The user's own device settings can also silence it, in part or in full, and the SDK cannot detect or override that.
 
 ### Liveness Assurance Options
 
@@ -378,7 +387,7 @@ extension MyViewController: IProovPresentationDelegate {
 >
 > 1. With great power comes great responsibility! The iProov view controller requires full coverage of the entire screen in order to work properly. Do not attempt to present your view controller to the user in such a way that it only occupies part of the screen, or is obscured by other views. You must also ensure that the view controller is entirely removed from the user's view once dismissed.
 >
-> 2. **On iPad**, the iProov view controller must be presented fullscreen (using `.fullScreen` or `.overFullScreen` `modalPresentationStyle`, or `.fullScreenCover` in SwiftUI). If presented using a non-fullscreen style (e.g. `.pageSheet`, `.formSheet`, or SwiftUI `.sheet`), the SDK will display an overlay prompting the user to return to fullscreen.
+> 2. **On iPad**, the iProov view controller must be presented fullscreen (using `.fullScreen` or `.overFullScreen` `modalPresentationStyle`, or `.fullScreenCover` in SwiftUI). The SDK pauses the capture and displays an overlay prompting the user to return to fullscreen if it is presented using a non-fullscreen style (e.g. `.pageSheet`, `.formSheet`, or SwiftUI `.sheet`), if the app is in Split View or Slide Over, or if it is not the active window. It also pauses and asks the user to rotate the device if it is not in portrait orientation.
 >
 > 3. To avoid the risk of retain cycles, `Options` only holds a `weak` reference to your presentation delegate. Ensure that your presentation delegate is retained for the lifetime of the iProov capture session, or you may result in a defective flow.
 
@@ -430,44 +439,48 @@ You can customize the strings from your app or localize them into a different la
 
 ### Failures
 
-Failures occur when the user's identity could not be verified. A failure means that the capture was successfully received and processed by the server, which returned a result. Crucially, this differs from an error, where the capture itself failed due to a system failure.
+A **failure** occurs when iProov successfully processes a claim but the user's identity cannot be verified.
+Crucially, this differs from an error, where the capture itself failed due to a system failure.
 
-Failures are caught via the `.failure(result)` enum case in the callback. The `result` contains `reasons` that the user could not be verified/enrolled, where each `reason` having the following properties:
-
+Failures are caught via the `.failure(reasons:)` enum case in the callback. It provides up to three `reasons` why the user could not be verified/enrolled, where each `reason` has the following properties:
 - `feedbackCode` - A string representation of the feedback code.
-
 - `localizedDescription` - You should present this to the user as it may provide an informative hint for the user to increase their chances of iProoving successfully next time.
 
-The available feedback codes are as follows:
+The available failure reasons are as follows:
 
-| Enum value         | `localizedDescription` (English)                        | GPA | LA |
-|--------------------|---------------------------------------------------------|-----|----|
-| `unknown`          | Try again                                               | ✅  | ❌ |
-| `tooMuchMovement`  | Keep still                                              | ✅  | ❌ |
-| `tooBright`        | Move somewhere darker                                   | ✅  | ❌ |
-| `tooDark`          | Move somewhere brighter                                 | ✅  | ❌ |
-| `misalignedFace`   | Keep your face in the oval                              | ✅  | ❌ |
-| `faceTooFar`       | Move your face closer to the screen                     | ✅  | ❌ |
-| `faceTooClose`     | Move your face farther from the screen                  | ✅  | ❌ |
-| `sunglasses`       | Remove sunglasses                                       | ✅  | ❌ |
-| `systemError`      | System Error                                            | ⚠️  | ✅ |
-| `rejected`         | Transaction could not be completed                      | ⚠️  | ✅ |
-| `faceNotFound`     | Align your face in the oval and then try to keep still  | ⚠️  | ✅ |
-| `obscuredFace`     | Make sure your whole face is visible and remove any accessories that might cover your face                                                                | ✅  | ✅ |
-| `timeout`          | System timeout                                          | ⚠️  | ✅ |
-| `eyewear`          | Remove your eyewear                                     | ⚠️  | ✅ |
-| `multipleFaces`    | Ensure only one person is visible                       | ✅  | ✅ |
-| `eyesClosed`       | Make sure your eyes are open                            | ✅  | ✅ |
-| `userNotFound`     | Transaction could not be completed                      | ⚠️  | ✅ |
-| `lightingIssues`   | Make sure your face is well lit and free from glare     | ⚠️  | ✅ |
-| `framesBlurry`     | Align your face in the oval and then try to keep still  | ⚠️  | ✅ |
-| `deviceIssue`      | Try a different device                                  | ⚠️  | ✅ |
-| `motionIssue`      | Align your face in the oval and then try to keep still  | ⚠️  | ✅ |
-| `backgroundIssue`  | Move to a different location with a neutral background  | ⚠️  | ✅ |
-| `deviceRestart`    | Please restart your device and try again                | ⚠️  | ✅ |
-| `processingFault`  | Please try again                                        | ⚠️  | ✅ |
+| Enum value        | `localizedDescription` (English)                                          |
+|-------------------|---------------------------------------------------------------------------|
+| `systemError`     | System error.                                                             |
+| `lightingIssues`  | Make sure your face is well lit and free from glare.                      |
+| `faceNotFound`    | Align your face in the oval and then try to keep still.                   |
+| `timeout`         | System timeout.                                                           |
+| `eyewear`         | Remove your eyewear.                                                      |
+| `deviceIssue`     | Try a different device.                                                   |
+| `rejected`        | Transaction could not be completed.                                       |
+| `backgroundIssue` | Move to a different location with a neutral background.                   |
+| `motionIssue`     | Try a different device.                                                   |
+| `deviceRestart`   | Please restart your device and try again.                                 |
+| `framesBlurry`    | Align your face in the oval and then try to keep still. Please try again. |
+| `userNotFound`    | Transaction could not be completed.                                       |
+| `processingFault` | Please try again.                                                         |
 
-Key: ✅ = will be returned, ❌ = will not be returned, ⚠️ = may be returned in the future
+The legacy codes below may still be returned in some scenarios (for example, older SDKs, or features not yet enabled for your service provider):
+
+| Enum value        | `localizedDescription` (English)                                                            | GPA | LA |
+|-------------------|---------------------------------------------------------------------------------------------|-----|----|
+| `unknown`         | Try again                                                                                   | ✅  | ❌ |
+| `tooMuchMovement` | Keep still                                                                                  | ✅  | ❌ |
+| `tooBright`       | Move somewhere darker                                                                       | ✅  | ❌ |
+| `tooDark`         | Move somewhere brighter                                                                     | ✅  | ❌ |
+| `misalignedFace`  | Keep your face in the oval                                                                  | ✅  | ❌ |
+| `faceTooFar`      | Move your face closer to the screen                                                         | ✅  | ❌ |
+| `faceTooClose`    | Move your face farther from the screen                                                      | ✅  | ❌ |
+| `sunglasses`      | Remove sunglasses                                                                           | ✅  | ❌ |
+| `obscuredFace`    | Make sure your whole face is visible and remove any accessories that might cover your face. | ✅  | ✅ |
+| `eyesClosed`      | Make sure your eyes are open.                                                               | ✅  | ✅ |
+| `multipleFaces`   | Ensure only one person is visible.                                                          | ✅  | ✅ |
+
+Key: ✅ = will be returned, ❌ = will not be returned
 
 These are not an indication of tests being performed but only whether reasons of failure are reported.
 
@@ -480,13 +493,16 @@ Errors are caught via the `.error(error)` enum case in the callback. The `error`
 | Enum value | Description |
 |---|---|
 | `captureAlreadyActive` | An existing iProov capture is already in progress. Wait until the current capture completes before starting a new one. |
-| `cameraPermissionDenied ` | The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings. |
-| `consentRequired ` | The user has not granted consent. For iProov internal use only. You can safely ignore. |
+| `cameraPermissionDenied` | The user disallowed access to the camera when prompted. You should direct the user to re-enable camera access via Settings. |
+| `consentRequired` | The user has not granted consent. For iProov internal use only. You can safely ignore. |
 | `networkError(String?)` | An error occurred with the video streaming process. The associated string (if available) will contain further information about the error. |
 | `serverError(String?)` | A server-side error/token invalidation occurred. The associated string (if available) will contain further information about the error. |
 | `unexpectedError(String)` | An unexpected and unrecoverable error has occurred. The associated string will contain further information about the error. These errors should be reported to iProov for further investigation. |
 | `userTimeout` | The user has taken too long to complete the claim. |
 | `notSupported` | The device is not supported. |
+| `unsupportedDevice(String?)` | The device is not supported. Do not retry. |
+| `unsupportedOSVersion(String?)` | The operating system version is not supported. Do not retry. |
+| `unsupportedSDKVersion(String?)` | The SDK version is not supported. Do not retry. |
 
 ## API Client
 
@@ -498,13 +514,11 @@ For a simple iProov experience that is ready to run out-of-the-box and uses the 
 
 ### Installation
 
-1. Ensure that you have [CocoaPods installed](https://guides.cocoapods.org/using/getting-started.html#installation) and then run `pod install` from the Example directory to install the required dependencies.
+1. Rename `Credentials.example.swift` to `Credentials.swift` and update it with your Base URL, API Key and Secret. You can obtain these credentials from the [iProov Portal](https://portal.iproov.com).
 
-2. Rename `Credentials.example.swift` to `Credentials.swift` and update it with your Base URL, API Key and Secret. You can obtain these credentials from the [iProov Portal](https://portal.iproov.com).
+2. Open `Example.xcodeproj`. Xcode resolves the SDK from this repository and the remaining dependencies from their package repositories.
 
-3. Open `Example.xcworkspace`.
-
-4. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
+3. You can now build and run the project. Please note that you can only launch iProov on a real device; it will not work in the simulator.
 
 > **Warning**: The Example project uses the [iOS API Client](https://github.com/iProov/ios-api-client) to directly fetch tokens on-device and this is inherently insecure. Production implementations of iProov should always obtain tokens securely from a server-to-server call.
 
