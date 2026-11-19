@@ -1,6 +1,6 @@
 ![iProov: Flexible authentication for identity assurance](https://github.com/iProov/ios/raw/master/images/banner.jpg)
 
-# iProov Face SDK v14.0.0
+# iProov Face SDK v14.1.0
 
 ## Introduction
 
@@ -88,7 +88,7 @@ You can still install the SDK manually in Xcode, but we don't recommend this met
 	https://github.com/iProov/ios-spm
 	```
 	
-3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 14.0.0 as the lower bound.
+3. Set the _Dependency Rule_ to be _Up to Next Major Version_ and input 14.1.0 as the lower bound.
 
 4. Click _Add Package_ to add the SDK to your Xcode project and then click again to confirm.
 
@@ -100,7 +100,7 @@ If you prefer, you can add iProov via your Package.swift file as follows:
 .package(
 	name: "iProov",
 	url: "https://github.com/iProov/ios-spm.git",
-	.upToNextMajor(from: "14.0.0")
+	.upToNextMajor(from: "14.1.0")
 ),
 ```
 
@@ -117,7 +117,7 @@ As Swift Package Manager downloads the full repository for a package, installing
 
 3. Select the **General** tab and then scroll down to **Frameworks, Libraries, and Embedded Content**.
 
-4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/14.0.0).
+4. Add `iProov.xcframework` from the [release assets](https://github.com/iProov/ios/releases/tag/14.1.0).
 
 5. Under the **Embed** column, ensure **Embed & Sign** is set.
 
@@ -458,7 +458,7 @@ The available failure reasons are as follows:
 | `deviceIssue`     | Try a different device.                                                   |
 | `rejected`        | Transaction could not be completed.                                       |
 | `backgroundIssue` | Move to a different location with a neutral background.                   |
-| `motionIssue`     | Try a different device.                                                   |
+| `motionIssue`     | Align your face in the oval and then try to keep still.                   |
 | `deviceRestart`   | Please restart your device and try again.                                 |
 | `framesBlurry`    | Align your face in the oval and then try to keep still. Please try again. |
 | `userNotFound`    | Transaction could not be completed.                                       |
